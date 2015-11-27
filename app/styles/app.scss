@@ -1,0 +1,128 @@
+/* @import 'variables';
+@import 'fonts';
+
+/* RESET */
+html,body,div,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input, menu, section, button { margin: 0; padding: 0; }
+h1,h2,h3,h4,h5,h6,pre,code,address,caption,cite,code,em,strong,th { font-size: 1em; font-weight: normal; font-style: normal; }
+ul { list-style: none;list-style-position: inside; }
+fieldset,img { border: none; }
+caption,th { text-align: left; }
+table { border-collapse: collapse; border-spacing: 0; }
+strong {  font-weight: bold; }
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+article, aside, canvas, details,
+figcaption, figure, footer, header,
+hgroup, nav, section, summary, video {
+    display: block;
+}
+fieldset, img, iframe {
+  border: 0;
+}
+a {
+  outline: none;
+}
+li {
+  list-style: none;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+q:before, q:after {
+  content: '';
+}
+*, :focus {
+outline: none;
+border: none;
+-moz-outline: none;
+-webkit-outline: none;
+}
+  
+h1, h2, h3, h4 {
+  /* Mozilla */
+  -moz-user-select:  rgba(255,13,0,0.8);
+
+  /* Opera */
+  -o-user-select: rgba(255,13,0,0.8);
+       
+  /* Safari */
+   -khtml-user-select: rgba(255,13,0,0.8);
+}
+b, strong, a, div, span, table, tr, td, li, ul, p,img,sup{
+  /* Mozilla */
+  -moz-user-select: rgba(255,13,0,0.8);
+
+  /* Opera */
+  -o-user-select: rgba(255,13,0,0.8);
+       
+  /* Safari */
+   -khtml-user-select: rgba(255,13,0,0.8);
+}
+em, em *{
+  font-style:italic;
+}
+  
+*::selection  { 
+  background: rgba(255,13,0,0.8);
+    color:#ffffff; 
+}
+*::-o-selection  { 
+  background: rgba(255,13,0,0.8);
+    color:#ffffff; 
+}
+*::-moz-selection  { 
+  background: rgba(255,13,0,0.8);
+    color:#ffffff; 
+}
+*::-webkit-selection  { 
+  background: rgba(255,13,0,0.8);
+    color:#ffffff; 
+}
+input, button, textarea, select, optgroup, option {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+html { font-size: 62.5%;overflow-y: scroll;}
+
+a {
+  text-decoration: none;
+  outline: 0;
+}
+a:hover {
+  text-decoration: none;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  font-size: 0.85em;
+  letter-spacing: -0.015em;
+  background-color: #ffffff;
+}
+body{
+  font-family: "robotolight", "Helvetica Neue", Helvetica, Arial, sans; 
+  text-rendering: auto;
+  color: #3b3d3f;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:before {
+   outline: 0 !important;
+}
+input, textarea {
+   outline: 0 !important;
+   border: none;
+}
+ul, li{
+  list-style-type: none;
+}
+a, a:hover, a:focus, a:active{
+  text-decoration: none;
+}
+
