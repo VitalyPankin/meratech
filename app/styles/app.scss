@@ -1,5 +1,6 @@
-/* @import 'variables';
+@import 'variables';
 @import 'fonts';
+@import 'search-component';
 
 /* RESET */
 html,body,div,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input, menu, section, button { margin: 0; padding: 0; }
@@ -105,9 +106,12 @@ html {
   background-color: #ffffff;
 }
 body{
-  font-family: "robotolight", "Helvetica Neue", Helvetica, Arial, sans; 
+  font-family: "etelka-light", "Helvetica Neue", Helvetica, Arial, sans; 
   text-rendering: auto;
   color: #3b3d3f;
+  font-size: 1em;
+  background: #3b3d3f;
+  min-height: 1000px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -126,3 +130,207 @@ a, a:hover, a:focus, a:active{
   text-decoration: none;
 }
 
+
+
+
+.container-fluid{
+    margin: 0px 65px 0px 65px;
+}
+@media (max-width: 1400px){
+  .container-fluid{
+    margin: 0px;
+  }
+}
+
+.navbar{
+  height: 60px;
+  &.navbar-default{
+    background-color: rgba(255,255,255,0.9);
+    border: none;
+  }
+  .navbar-header{
+    .navbar-brand{
+      margin: 8px 0px 6px 0px;
+      margin-left: 0;
+      padding: 0;
+      height: 46px;
+      overflow: hidden;
+      @media (max-width: 767px){
+        &{
+          margin-left: 10px;
+        }
+      }
+    }
+    button.navbar-toggle{
+      border: none;
+      margin-top: 10px;
+      margin-right: 16px;
+      opacity: 0.6;
+      transform: translate(5px, 0);    
+      -webkit-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -moz-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -ms-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+
+      &:hover, &:focus{
+        background-color: transparent;
+      }
+      // transition: .3s cubic-bezier(0.175,.885,.32,1.275) all; bounce
+      .icon-bar{
+        background-color: #3b3d3f;;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        height: 4px;
+        width: 24px;
+        opacity: 0;
+        -webkit-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+        -moz-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+        -ms-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+        transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+        &.first{
+          opacity: 1;
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+          transform-origin: 0% 0%;
+        }
+        &.last{
+          opacity: 1;
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          transform-origin: 0% 100%;
+        }
+      }
+      &.collapsed{   
+        transform: translate(0, 0); 
+        opacity: 1;
+        .icon-bar{
+          background-color: #565C5F;
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .navbar-collapse{
+    border-top: none;
+    @media (max-width: 767px){
+      &{
+        background-color: $blackColor;
+        color: #ffffff;
+      }
+    }
+    .navbar-nav{
+      & > li{
+        & > a{
+          padding-top: 19px;
+          padding-left: 19px;
+          padding-right: 19px;
+          height: 60px;
+          font-size: 1.1em;
+          color: $blackColor;
+          -webkit-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) opacity, 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) color;
+          -moz-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) opacity, 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) color;
+          -ms-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) opacity, 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) color;
+          transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) opacity, 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) color;
+          &:hover{
+            color: $mainColor;
+            -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) opacity, 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) color;
+            -moz-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) opacity, 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) color;
+            -ms-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) opacity, 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) color;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) opacity, 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) color;
+          }
+        }
+        .caret{
+          position: relative;
+          border: none;
+          top: -5px;
+          margin-left: 7px;
+          width: 15px;
+          .icon-bar{
+            background-color: $mainColor;
+            margin-bottom: 2px;
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            height: 2px;
+            width: 15px;
+            display: block;
+            opacity: 0;
+            -webkit-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+            -moz-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+            -ms-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+            transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            opacity: 1;
+          }
+        }
+        &.open{
+          .caret{
+            .icon-bar{
+              opacity: 0;
+              &.first{
+                background-color: #3b3d3f;
+                opacity: 1;
+                -webkit-transform: rotate(45deg) translate(-1px, -1px);
+                transform: rotate(45deg) translate(-1px, -1px);
+                transform-origin: 0% 0%;
+              }
+              &.last{
+                background-color: #3b3d3f;
+                opacity: 1;
+                -webkit-transform: rotate(-45deg) translate(-0.5px, 0.5px);
+                transform: rotate(-45deg) translate(-0.5px, 0.5px);
+                transform-origin: 0% 100%;
+              }
+            }
+          }
+        }
+      }
+      &.navbar-lang{
+        & > li{
+          & > a{
+            padding-right: 6px;
+            padding-left: 22px;
+            font-family: "etelka-medium", "Helvetica Neue", Helvetica, Arial, sans; 
+            font-size: 0.85em;
+            -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) opacity, 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) color;
+            -moz-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) opacity, 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) color;
+            -ms-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) opacity, 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) color;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) opacity, 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) color;
+            &.active{
+              color: $mainColor;
+            }
+            &:not(.active):hover{
+              opacity: 0.7;
+            }
+          }
+          &:last-child > a{
+            padding-left: 6px;
+            padding-right: 0px;
+          }
+          @media (max-width: 1400px){          
+            &:last-child > a{
+              padding-left: 6px;
+              padding-right: 19px;
+            }
+          }
+        }
+      }
+    }
+    .search-toggle{
+      cursor: pointer;
+      height: 60px;
+      width: 60px;
+      text-align: center;
+      font-size: 1.5em;
+      line-height: 2.7em;
+      color: $mainColor;
+      border-left: 1px solid rgba(0,0,0,0.05);
+      border-right: 1px solid rgba(0,0,0,0.05);
+      &:hover{
+        background-color: rgba(0,0,0,0.035);
+      }
+    }
+  }
+}

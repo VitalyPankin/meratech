@@ -1,0 +1,95 @@
+
+
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar first"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar last"></span>
+      </button>
+
+      <a class="navbar-brand" href="#">{{logo-meratech}}</a>
+    </div>
+
+
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right navbar-lang">
+        <li><a href="#" class="active">RU</a></li>
+        <li><a href="#">EN</a></li>
+        <!--li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li-->
+      </ul>
+      {{search-block}}
+
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Мир meratech</a></li>
+          <li><a href="#">Пресс-центр</a></li>
+          <li><a href="#">Сегменты бизнеса</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Каталог 
+            <span class="caret">
+              <span class="icon-bar first"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar last"></span>
+            </span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      <!--
+        {{#link-to "subscribers" tagName="li"}}
+        <a href="#" class="subscribers"><span>Subscribers</span></a>
+        {{/link-to}}
+        {{#link-to "meetings" tagName="li"}}
+          <a href="#" class="conferences" {{action 'refresh' 'meetings'}} ><span>Meetings</span></a>
+        {{/link-to}}
+        {{#link-to "calls" tagName="li"}}
+          <a href="#" class="calls" {{action 'refresh' 'calls'}}><span>Calls</span></a>
+        {{/link-to}}
+        {{#link-to "did-groups" tagName="li"}}
+          <a href="#" class="didgroups"><span>DID</span></a>
+        {{/link-to}}
+        {{#link-to "call-flows" tagName="li"}}
+          <a href="#" class="callflows"><span>CallFlow</span></a>
+        {{/link-to}}
+
+        {{#link-to lastReport tagName="li"}}
+          <a href="#" class="reports"><span>Reports</span></a>
+        {{/link-to}}
+
+        {{#link-to "settings" tagName="li"}}
+          <a href="#" class="settings"><span>Settings</span></a>
+        {{/link-to}}-->
+
+      <!--ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="http://docs.wydevoice.com" target="_blank">Bridge documentation</a></li>
+            <li><a {{bind-attr href=swaggerUrl}} target="_blank">API browser</a></li>
+            {{#link-to 'logout' tagName="li"}}
+              <a href="#">Logout</a>
+            {{/link-to}}
+          </ul>
+        </li>
+      </ul><!--/.nav-collapse -->
+    </div>
+  </div>
+
