@@ -2,16 +2,22 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   classNames: ['nav navbar-nav navbar-right search-component'],
+  classNameBindings: ['isActive:active'],
   layoutName: 'components/search-block',
-
-  isOpen: function() {
-    var currentOperationId = this.get('session.currentOperationId');
-    if (!currentOperationId || currentOperationId === '') { return;} 
-
-    return this.get('swagger').getOperation(currentOperationId).tag === this.get('tag.name');
-  }.property('session.currentOperationId')/*,
+  isActive: false,
 
 
+
+  actions: {
+    makeSearch: function(e){
+      this.toggleProperty('isActive');
+    },
+    focusOut: function(e){
+      console.log('focusOut');
+    }
+  }
+
+/*
   operationsByTagGroupedByAdress: function() {
 
     var arr = Ember.A();
