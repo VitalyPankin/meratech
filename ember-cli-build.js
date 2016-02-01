@@ -35,11 +35,25 @@ module.exports = function(defaults) {
   // app.import('bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js');
 
 
+  app.import('vendor/revolution/js/jquery.themepunch.revolution.min.js');
+  app.import('vendor/revolution/js/jquery.themepunch.tools.min.js');
+  app.import('vendor/revolution/css/settings.css');
+  app.import('vendor/revolution/css/layers.css');
+  app.import('vendor/revolution/css/navigation.css');
+
+   var sliderRevolutionExtensions = pickFiles('vendor/revolution/js/extensions', {
+      srcDir: '/',
+      files: ['**/*.min.js'],
+      destDir: '/assets/extensions'
+  });
+
+
+
   app.import('bower_components/font-awesome/css/font-awesome.css');
   app.import('bower_components/font-awesome/css/font-awesome.css.map', { destDir: 'assets' });
   app.import('bower_components/bootstrap/dist/css/bootstrap.css');
   app.import('bower_components/bootstrap/dist/css/bootstrap.css.map', { destDir: 'assets' });
 
-  return mergeTrees([app.toTree(), awesomeFonts]);
+  return mergeTrees([app.toTree(), awesomeFonts, sliderRevolutionExtensions]);
 
 };
