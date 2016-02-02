@@ -1,0 +1,27 @@
+.article-title{
+  color: $blackColor;
+  font-size: 24px;
+  font-family: "etelka-thin";
+  &:before{
+    color: $mainColor;
+    content: '/';
+    font-family: "etelka-text";
+    margin-right: 14px;
+    font-weight: 900;
+  }
+  span{
+    font-family: "etelka-text";
+  }
+}
+.title-main{
+  font-family: "etelka-text";
+  font-size: 40px;
+  letter-spacing: -.02em;
+}
+.title-white{
+  color: #ffffff;
+}
+.hero-desription{
+  font-family: "etelka-text";
+  color: $blackColor;
+}

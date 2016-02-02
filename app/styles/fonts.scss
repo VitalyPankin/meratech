@@ -61,7 +61,17 @@
          url('../fonts/etelkatextpro-webfont.svg#etelka_text_proregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
+}
+@font-face {
+    font-family: 'etelka-medium';
+    src: url('../fonts/etelkamediumpro-webfont.eot');
+    src: url('../fonts/etelkamediumpro-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/etelkamediumpro-webfont.woff2') format('woff2'),
+         url('../fonts/etelkamediumpro-webfont.woff') format('woff'),
+         url('../fonts/etelkamediumpro-webfont.ttf') format('truetype'),
+         url('../fonts/etelkamediumpro-webfont.svg#etelka_text_proregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
