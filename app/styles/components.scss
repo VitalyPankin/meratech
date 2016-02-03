@@ -3,8 +3,17 @@
   display: block;
   height: 40px;
   width: 165px;
-  padding-top: 16px;
+  padding-top: 10px;
+  font-size: 1.2em;
   font-family: "etelka-text";
   box-sizing: border-box;
-  text-align: center;  
+  text-align: center; 
+  cursor: pointer; 
+}
+.button-red{
+  background-color: $mainColorLighter;
+  color: #ffffff;
+  &:hover{
+  background-color: $mainColor;
+  }
 }
