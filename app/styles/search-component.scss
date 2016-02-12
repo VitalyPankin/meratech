@@ -3,6 +3,7 @@
   border-right: 1px solid rgba(0, 0, 0, 0.05);
   height: 60px;
   width: 60px;
+  box-sizing: content-box;
   overflow: hidden;
   -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
   -moz-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
@@ -11,6 +12,10 @@
   &.active{
     width: 260px;
     background-color: #ffffff;
+    .search-toggle{
+      background-color: #e52625;
+      color: #ffffff;
+    }
   }
   input{
     background-color: transparent;
@@ -19,7 +24,8 @@
     float: left;
     border: none;
     font-family: "etelka-light", sans;
-    font-size: 2em;
+    font-size: 1.2em;
+    padding-left: 12px;
   }
   .search-toggle{
     cursor: pointer;
@@ -30,7 +36,8 @@
     line-height: 2.7em;
     color: $mainColor;
     &:hover{
-      background-color: rgba(0,0,0,0.035);
+      background-color: #e52625;
+      color: #ffffff;
     }
   }
 }
