@@ -2,6 +2,7 @@ header{
   position: absolute;
   top: 0;
   width: 100%;
+  z-index: 1001;
 }
 .main-navigation{
   .navbar-header{
@@ -194,4 +195,11 @@ header{
 	  	}
     }
   }
+}
+
+.tp-bannertimer{
+	top: auto;
+  height: 4px;
+  bottom: 205px;
+  background-color: rgb(212, 39, 38);
 }
