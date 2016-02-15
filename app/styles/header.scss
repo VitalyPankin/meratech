@@ -203,3 +203,85 @@ header{
   bottom: 205px;
   background-color: rgb(212, 39, 38);
 }
+
+.top-container{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.industry-menu{
+  position: absolute;
+  width: 100%;
+  height: 205px;
+  bottom: 0; 
+  li{
+    float: left;
+    width: 14.285714285714285714285714285714%;
+    height: 205px;
+    position: relative;
+    background-color: rgba(21, 18, 28, 0.5);
+    box-sizing: border-box;
+    border-right: 1px solid transparent;
+    z-index: 1001;
+    &:last-child{
+      border-right: none;
+    }
+    &:before{
+      font-family: "Meratech";
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      text-align: center;
+      font-size: 96px;
+      line-height: 170px;
+      color: #eb3e3a;
+      opacity: 0.9;
+    }
+    &.cows:before{
+      content: "M";
+    }
+    &.pigs:before{
+      content: "E";
+    }
+    &.chicken:before{
+      content: "R";
+    }
+    &.meat:before{
+      content: "A";
+    }
+    &.beer:before{
+      content: "T";
+    }
+    &.milk:before{
+      content: "C";
+    }
+    &.laundry:before{
+      content: "H";
+    }
+    span{
+      position: absolute;
+      top: 150px;
+      color: #fff;
+      font-family: "etelka-thin";
+      font-size: 1.25em;
+      text-align: center;
+      width: 100%;
+    }
+    div{
+      background: rgba(21, 18, 28, 0.5) url('images/menu-back.png');
+      background-size: (309px, 206px);
+      -webkit-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -moz-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -ms-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+    }
+    &:hover div{
+      border-right: none;
+      -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -moz-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -ms-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+    }
+  }
+}
