@@ -219,8 +219,9 @@ header{
     float: left;
     width: 14.285714285714285714285714285714%;
     height: 205px;
+    overflow: hidden;
     position: relative;
-    background-color: rgba(21, 18, 28, 0.5);
+    background-color: rgba(21, 18, 28, 0.75);
     box-sizing: border-box;
     border-right: 1px solid transparent;
     z-index: 1001;
@@ -237,14 +238,19 @@ header{
       line-height: 170px;
       color: #eb3e3a;
       opacity: 0.9;
+      z-index: +2;
+      -webkit-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -moz-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -ms-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
     }
     &.cows:before{
       content: "M";
     }
-    &.pigs:before{
+    &.chicken:before{
       content: "E";
     }
-    &.chicken:before{
+    &.pigs:before{
       content: "R";
     }
     &.meat:before{
@@ -259,6 +265,45 @@ header{
     &.laundry:before{
       content: "H";
     }
+    &:after{
+      background: url('images/menu-assets.png');
+      background-repeat: no-repeat;
+      background-size: (180px, 1360px); 
+      position: absolute;
+      content: ' ';
+      width: 100%;
+      height: 200px;
+      display: block;
+      left: 100%;
+      top: 0px;
+      z-index: +6;
+      // -webkit-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      // -moz-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      // -ms-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      // transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      transition: 0.175s cubic-bezier(0, 1, 0, 1) all;
+    }
+    &.cows:after{
+      background-position: center 24px; 
+    }
+    &.chicken:after{
+      background-position: center -178px; 
+    }
+    &.pigs:after{
+      background-position: center -380px; 
+    }
+    &.meat:after{
+      background-position: center -580px; 
+    }
+    &.beer:after{
+      background-position: center -780px; 
+    }
+    &.milk:after{
+      background-position: center -990px; 
+    }
+    &.laundry:after{
+      background-position: center -1185px; 
+    }
     span{
       position: absolute;
       top: 150px;
@@ -267,10 +312,18 @@ header{
       font-size: 1.25em;
       text-align: center;
       width: 100%;
+      z-index: +2;
     }
     div{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
       background: rgba(21, 18, 28, 0.5) url('images/menu-back.png');
-      background-size: (309px, 206px);
+      background-size: (309px, 206px); 
       -webkit-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
       -moz-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
       -ms-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
@@ -278,10 +331,58 @@ header{
     }
     &:hover div{
       border-right: none;
+      opacity: 1;
       -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
       -moz-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
       -ms-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
       transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
     }
+    &:hover:before{
+      transform: translate(0, -200px);
+      -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -moz-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -ms-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+    }
+    &:hover:after{
+      left: 0%;
+      // -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      // -moz-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      // -ms-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      // transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+
+      transition: 0.175s cubic-bezier(0, 1, 0, 1) all;
+
+              -webkit-animation: menuanimation forwards 10s infinite;
+              -moz-animation: menuanimation forwards 10s infinite;
+                      animation: menuanimation forwards 10s infinite;
+    }
+  }
+}
+@keyframes menuanimation {
+  0% {
+    transform: translate(0, 0);
+    -webkit-transition-timing-function: ease-out; /* Safari and Chrome */
+    transition-timing-function: ease-out;
+  }
+  50% {
+      transform: translate(-20px, 0);
+    -webkit-transition-timing-function: ease-in-out; /* Safari and Chrome */
+    transition-timing-function: ease-in-out;
+  }
+  100% {
+      transform: translate(0, 0);
+    -webkit-transition-timing-function: ease-in-out; /* Safari and Chrome */
+    transition-timing-function: ease-in-out;
+  }
+}
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  100% {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
   }
 }
