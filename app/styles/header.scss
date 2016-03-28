@@ -208,6 +208,7 @@ header{
   position: relative;
   width: 100%;
   overflow: hidden;
+  height: 940px;
 }
 
 .industry-menu{
@@ -323,7 +324,7 @@ header{
       opacity: 0;
       cursor: pointer;
       background: rgba(21, 18, 28, 0.5) url('images/menu-back.png');
-      background-size: (309px, 206px); 
+      background-size: cover; 
       -webkit-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
       -moz-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
       -ms-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
