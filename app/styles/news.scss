@@ -1,0 +1,52 @@
+.news-header{
+	background-image: url("images/press_header_back.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	.container-fluid{
+		background-image: url("images/images-overlay.png");
+		background-repeat: repeat;
+		.container{
+			padding-bottom: 0;
+		}
+	}
+}
+.news-header{
+	.page-title{
+		color: #ffffff;
+		text-align: center;
+		font-size: 2.8em;
+    font-family: 'etelka-medium';
+    margin-top: 105px;
+    margin-bottom: 40px;
+	}
+	.body{
+		&.controls{
+			padding-top: 35px;
+			padding-bottom: 35px;
+			background-color: rgba(1,0,6,0.6);
+			.select{
+				margin: 0 auto;
+				margin-top: 45px;
+				margin-bottom: 60px;
+    		font-family: 'etelka-light';
+				font-size: 2.2em;
+				color: #ffffff;
+				select-wrapper{
+					background: transparent;
+					border: none;
+					.select{
+    				font-family: 'etelka-medium';
+						background: transparent;
+						border: none;
+						width: 120px;
+						&:after{
+			        font-family: 'FontAwesome';
+			        content: '\f06e';
+			        color: #ff2120;
+						}
+					}
+				}
+			}
+		}
+	}
+}
