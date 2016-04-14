@@ -21,13 +21,11 @@ Router.map(function() {
   //     path: '/subscribers/:id'
   //   });
   // });
-  this.route("catalog",  function() {
-    this.route('catalog', {
-      path: '/catalog/:id'
-    });  
+  this.resource("catalog",  function() {
+    this.route('detail');  
 	});
   this.route('equipment', function() {
-    this.route('equipment', {
+    this.route('detail', {
       path: '/equipment/:id'
     });  
 	});

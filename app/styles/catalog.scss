@@ -1,0 +1,88 @@
+.catalog-details-header{
+	overflow: hidden;
+	padding-top: 225px;
+	height: 850px;
+	box-sizing: border-box;
+	position: relative;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f2f2f3+86,f1f2f4+100 */
+	background: url("images/catalog-overlay.png"); /* Old browsers */
+	background: url("images/catalog-overlay.png"), -moz-linear-gradient(top, #ffffff 60%, #f7f8f9 80%, #f1f2f4 100%); /* FF3.6-15 */
+	background: url("images/catalog-overlay.png"), -webkit-linear-gradient(top,  #ffffff 60%,#f7f8f9 80%,#f1f2f4 100%); /* Chrome10-25,Safari5.1-6 */
+	background: url("images/catalog-overlay.png"), linear-gradient(to bottom,  #ffffff 60%,#f7f8f9 80%,#f1f2f4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f1f2f4',GradientType=0 ); /* IE6-9 */
+	background-repeat: repeat;
+	.title{
+    font-family: 'etelka-text';
+    font-size: 5em;
+    text-transform: uppercase;
+    clear: left;
+    white-space: nowrap;
+    text-indent: -5px;
+    margin-bottom: 40px;
+    sup{
+    	font-size: .3em;
+    	position: relative;
+      top: -33px;
+    }
+    .yellow{
+    	color: #ccb622;
+    }
+	}
+	.body{
+    font-size: 1.45em;
+    line-height: 1.7em;
+    margin-bottom: 40px;
+    font-family: 'etelka-thin';
+	}
+	.registration{
+		b{
+    	font-family: 'etelka-text';
+		}
+	}
+	&:before, &:after{
+		width: calc(50% - 720px);
+		height: 50px;
+		position: absolute;
+		bottom: 0;
+		background: #ffffff;
+		content: '';
+		display: block;
+	}
+	&:before{
+		left: 0;
+	}
+	&:after{
+		right: 0;
+	}
+}
+@media (max-width: 1500px){
+	.catalog-details-header{
+		&:before, &:after{
+			width: calc(50% - 475px);
+		}
+	}
+}
+
+.use-icons{
+	margin-bottom: 50px;
+  height: 56px;
+  li{
+  	width: 58px;
+  	height: 56px;
+    background-size: $assetsImageSize;
+    background-image: url($assetsImage);
+    border: 2px solid rgba(0,0,0,1);
+    border-radius: 7px;
+    margin-right: 25px;
+    float: left;
+  }
+  .use-icon-foam{
+    background-position: -730px -76px;
+  }
+  .use-icon-brush{
+    background-position: -815px -76px;
+  }
+  .use-icon-disinfection{
+    background-position: -898px -76px;
+  }
+}

@@ -1,0 +1,41 @@
+.button{
+  margin-top: 45px;
+  min-width: 165px;
+  line-height: 40px;
+  font-size: 1.2em;
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center; 
+  cursor: pointer; 
+  height: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  &.button-red{
+    background-color: #e52625;
+    color: #ffffff;
+    font-family: 'etelka-text';
+  }
+
+  &.button-narrow{
+    font-family: 'etelka-narrow-text';
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 900;
+  }
+  &.button-transparent{
+    margin-top: 10px;
+    font-weight: 900;
+  }
+  &.button-download{  
+    &:before{
+      font-family: 'FontAwesome';
+      content: '\f01b';
+      transform: rotate(45deg);
+      margin-right: 8px;
+      font-size: 14px;
+      display: inline-block;
+      position: relative;
+      top: 1px;
+    }
+  }
+}
