@@ -1,8 +1,6 @@
 .catalog-details-header{
 	overflow: hidden;
-	padding-top: 225px;
 	height: 850px;
-	box-sizing: border-box;
 	position: relative;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f2f2f3+86,f1f2f4+100 */
 	background: url("images/catalog-overlay.png"); /* Old browsers */
@@ -11,39 +9,57 @@
 	background: url("images/catalog-overlay.png"), linear-gradient(to bottom,  #ffffff 60%,#f7f8f9 80%,#f1f2f4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f1f2f4',GradientType=0 ); /* IE6-9 */
 	background-repeat: repeat;
-	.title{
-    font-family: 'etelka-text';
-    font-size: 5em;
-    text-transform: uppercase;
-    clear: left;
-    white-space: nowrap;
-    text-indent: -5px;
-    margin-bottom: 40px;
-    sup{
-    	font-size: .3em;
-    	position: relative;
-      top: -33px;
-    }
-    .yellow{
-    	color: #ccb622;
-    }
-	}
-	.body{
-    font-size: 1.45em;
-    line-height: 1.7em;
-    margin-bottom: 40px;
-    font-family: 'etelka-thin';
-	}
-	.registration{
-		b{
-    	font-family: 'etelka-text';
+	.container{
+		position: relative;
+		padding-top: 225px;
+		height: 850px;
+		box-sizing: border-box;
+		.title{
+	    font-family: 'etelka-text';
+	    font-size: 5em;
+	    text-transform: uppercase;
+	    clear: left;
+	    white-space: nowrap;
+	    text-indent: -5px;
+	    margin-bottom: 40px;
+	    sup{
+	    	font-size: .3em;
+	    	position: relative;
+	      top: -33px;
+	    }
+	    .yellow{
+	    	color: #ccb622;
+	    }
+		}
+		.body{
+	    font-size: 1.45em;
+	    line-height: 1.7em;
+	    margin-bottom: 40px;
+	    font-family: 'etelka-thin';
+		}
+		.registration{
+			float: left;
+			b{
+	    	font-family: 'etelka-text';
+			}
+		}
+		.ph{
+			float: left;
+	    margin-left: 50px;
+	    font-size: 1.8em;
+	    margin-top: -1em;
+	    span{
+	    	font-size: 1.6em;
+    		font-family: 'etelka-medium';
+	    }
 		}
 	}
+
 	&:before, &:after{
 		width: calc(50% - 720px);
-		height: 50px;
+		height: 70px;
 		position: absolute;
-		bottom: 0;
+		bottom: -20px;
 		background: #ffffff;
 		content: '';
 		display: block;
@@ -54,11 +70,23 @@
 	&:after{
 		right: 0;
 	}
+	img{
+		position: absolute;
+		top: 80px;
+		left: 50%;
+		margin-left: -100px;
+	}
+	.heading-bottom{
+		position: absolute;
+		bottom: 0;
+		height: 50px;
+		left: calc(50% - 720px);
+	}
 }
 @media (max-width: 1500px){
 	.catalog-details-header{
 		&:before, &:after{
-			width: calc(50% - 475px);
+			width: calc(50% - 585px);
 		}
 	}
 }
@@ -85,4 +113,45 @@
   .use-icon-disinfection{
     background-position: -898px -76px;
   }
+}
+
+
+.catalog-header{
+	.page-title{
+		color: #ffffff;
+		text-align: center;
+		font-size: 2.8em;
+    font-family: 'etelka-medium';
+    margin-top: 105px;
+    margin-bottom: 40px;
+	}
+	.body{
+		&.controls{
+			padding-top: 35px;
+			padding-bottom: 35px;
+			.select{
+				margin: 0 auto;
+				margin-top: 45px;
+				margin-bottom: 60px;
+    		font-family: 'etelka-light';
+				font-size: 2.2em;
+				color: #ffffff;
+				select-wrapper{
+					background: transparent;
+					border: none;
+					.select{
+    				font-family: 'etelka-medium';
+						background: transparent;
+						border: none;
+						width: 120px;
+						&:after{
+			        font-family: 'FontAwesome';
+			        content: '\f06e';
+			        color: #ff2120;
+						}
+					}
+				}
+			}
+		}
+	}
 }
