@@ -10,6 +10,15 @@
   padding-right: 0px;
   overflow: hidden;
 }
+.container-fluid {
+  overflow: hidden;
+}
+.container-border{
+  border-top: 1px solid rgba(21, 18, 28, 0.06);
+}
+.container-center{
+  text-align: center;
+}
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -841,6 +850,169 @@ table{
       span{
         color: #a7a9ac;
       }
+    }
+  }
+}
+
+.centered-input{
+  width: 500px;
+  margin: 20px auto;
+  background-color: rgba(79, 77, 85, 0.2);
+  position: relative;
+  color: #ffffff;
+  &:after{
+    position: absolute;
+    right: 10px;
+    font-family: 'FontAwesome';
+    content: '\f002';
+    color: #ffffff;    
+    z-index: 2;
+    top: 4px;
+    font-size: 1.7em;
+  }
+  input{
+    width: 100%;
+    height: 40px;
+    font-size: 1.7em;
+    padding-left: 12px;
+    padding-right: 42px;
+    line-height: 42px;
+    background-color: transparent;
+    color: rgba(21, 18, 28, 0.73);
+    &::-webkit-input-placeholder {color: #ffffff;}
+    &::-moz-placeholder {color: #ffffff;}
+    &:-moz-placeholder {color: #ffffff;}
+    &:placeholder {color: #ffffff;}
+    &:-ms-input-placeholder {color: #ffffff;}
+  }
+}
+.tabs-menu-wrapper{
+  text-align: center;
+  height: 60px;
+  & > .tabs-menu{
+    display: inline-block;
+    margin: 0 auto;
+    & > li{
+      float: left;
+      padding: 0px 60px 0px 60px;
+      line-height: 52px;
+      font-size: 1.2em;
+      letter-spacing: -0.04em;
+      button{
+        background-color: transparent;
+        letter-spacing: -0.04em;
+        line-height: 1.1em;
+        display: block;
+        height: 40px;
+        margin: 10px 0px 10px 0px;
+        padding-left: 20px;
+        padding-right: 55px;
+        border-radius: 40px;
+        position: relative;
+        &[aria-expanded="true"]:before{
+          display: block;
+          content: "";
+          width: 0;
+          height: 0;
+          position: absolute;
+          border-style: solid;
+          border-width: 0 12px 14px 12px;
+          border-color: transparent transparent #4f4d55 transparent;
+          left: 50%;
+          top: 39px;
+          margin-left: -26px;
+        }
+        &.active{
+          background-color: rgba(79, 77, 85, 1);
+          color: rgba(255,255,255,0.8);
+          &:after{
+            font-family: 'FontAwesome';
+            content: '\f00d';
+            color: #eb3e3a;
+            display: inline-block;
+            position: absolute;
+            right: 15px;
+            top: 11px;
+            font-size: 1.35em;
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+}
+.radio-set{
+  /*--------------- Radio style ---------------*/
+  $radio-label-margin: 55px;
+  $radio-label-padding-left: 10px;
+  $radio-label-before-size: 18px;
+  $radio-label-before-color-select: #1565C0;
+  $radio-label-before-color-unselect: #E0E0E0;
+  $radio-label-after-size: $radio-label-before-size*3;
+  $ripple-color: white;
+    
+
+  @-webkit-keyframes ripple {
+    0%, 100% { opacity: 0; }
+    1% { opacity: 1; }
+  }
+
+  /* Standard syntax */
+  @keyframes ripple {
+      0%, 100% { opacity: 0; }
+      1% { opacity: 1; }
+  }
+
+  .radio-input {
+    display: none;
+  }
+  
+  .radio-label {
+    position: relative;
+    font-family: 'etelka-hairline';
+    cursor: pointer;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    height: 1.5em;
+    color: rgba(255,255,255,0.6);
+    margin: $radio-label-margin;
+    padding-left: ($radio-label-before-size + $radio-label-padding-left + 20px);  
+    letter-spacing: 0;
+    &:before, &:after {
+      position: absolute;
+      content: "";
+      border-radius: 50%;
+      transition: all .3s ease;
+    }
+    &:before {
+      top: 0;
+      left: 0;
+      width: $radio-label-before-size;
+      height: $radio-label-before-size;
+      background-color: $radio-label-before-color-select;
+      box-shadow: inset 0 0 0 (($radio-label-before-size / 2)+4) $radio-label-before-color-unselect; 
+    }
+    &:after {
+      top: 0%;
+      left: 0%;    
+      margin-top: -18px;
+      margin-left: -27px;
+      left: $radio-label-padding-left - 1px;
+      width: $radio-label-after-size;
+      height: $radio-label-after-size;
+      background-color: rgba($ripple-color, .3);
+      transform: scale(0);
+    }
+  }
+  
+  .radio-input:checked + .radio-label {
+    color: white;
+    &:before {
+      box-shadow: inset 0 0 0 4px $radio-label-before-color-unselect; 
+    }
+    &:after {
+      transform: scale(1);
+      animation: ripple 1s forwards;
     }
   }
 }

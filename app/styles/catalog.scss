@@ -118,17 +118,19 @@
 
 .catalog-header{
 	.page-title{
-		color: #ffffff;
 		text-align: center;
 		font-size: 2.8em;
     font-family: 'etelka-medium';
     margin-top: 105px;
-    margin-bottom: 40px;
+	}
+	.container{
+		padding-bottom: 0;
+	}
+	.centered-input{
+		margin-bottom: 40px;
 	}
 	.body{
 		&.controls{
-			padding-top: 35px;
-			padding-bottom: 35px;
 			.select{
 				margin: 0 auto;
 				margin-top: 45px;
@@ -153,5 +155,332 @@
 				}
 			}
 		}
+	}
+}
+.catalog-filter-container{
+	height: 140px;
+  width: 100%;
+  background-color: rgba(79, 77, 85, 1);
+  &.dropdown-menu{
+  	top: 313px;
+  	border: none;
+  	-webkit-box-shadow: none;
+  	box-shadow: none;
+  	border-radius: 0;
+  	padding: 0;
+  	width: 100%;
+  }
+}
+
+.filter-list{
+	margin: 0 auto;
+	display: table;
+  overflow: visible;
+  li{
+    display: table-cell;
+    width: 14.285714285714285714285714285714%;
+    height: 40px;
+    box-sizing: border-box;
+    cursor: pointer;
+    &:before{
+      margin-top: 24px;
+      width: 100%;
+      text-align: center;
+      font-size: 60px;
+      line-height: 65px;
+      color: #eb3e3a;
+      opacity: 1;
+      z-index: +2;
+      display: block;
+      -webkit-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -moz-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -ms-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+	    -ms-transform-origin: 50% 30%; /* IE 9 */
+	    -webkit-transform-origin: 50% 30%; /* Chrome, Safari, Opera */
+	    transform-origin: 50% 30%;
+    }
+    span{
+      color: #fff;
+      font-family: "etelka-thin";
+      font-size: 1.1em;
+      text-align: center;
+      width: 100%;
+      z-index: +2;
+      display: block;
+      line-height: 1.5em;
+      -webkit-transition: 0.125s  0.125s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -moz-transition: 0.125s  0.125s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -ms-transition: 0.125s  0.125s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      transition: 0.125s  0.125s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+    }
+    &:hover:before{
+      transform: scale(1.25, 1.25);
+      -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -moz-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -ms-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+    }
+    &:hover span{
+      transform: translate(0, 10px);
+      -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -moz-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -ms-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+    }
+  }
+}
+.industry-filter{
+  li{
+    &:before{
+      font-family: "Meratech";
+      margin-top: 24px;
+      width: 100%;
+      text-align: center;
+      font-size: 60px;
+      line-height: 65px;
+      color: #eb3e3a;
+      opacity: 1;
+      z-index: +2;
+      display: block;
+      -webkit-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -moz-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -ms-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+	    -ms-transform-origin: 50% 30%; /* IE 9 */
+	    -webkit-transform-origin: 50% 30%; /* Chrome, Safari, Opera */
+	    transform-origin: 50% 30%;
+	    text-shadow: 0px 0px 1px rgba(235, 62, 58, 0.8);
+    }
+    &.cows:before{
+      content: "M";
+    }
+    &.chicken:before{
+      content: "E";
+    }
+    &.pigs:before{
+      content: "R";
+    }
+    &.meat:before{
+      content: "A";
+    }
+    &.beer:before{
+      content: "T";
+    }
+    &.milk:before{
+      content: "C";
+    }
+    &.laundry:before{
+      content: "H";
+    }
+  }
+}
+.acid-filter{
+	max-width: 600px;
+	width: 100%;
+	color: #ffffff;
+	position: relative;
+	.scale{
+		width: 100%;
+		margin-right: 10px;
+		box-sizing: border-box;
+    font-family: "etelka-thin";
+    font-size: 0.75em;
+    color: #fff;
+    opacity: 0.4;
+    display: table;
+    margin-right: -20px;
+    position: absolute;
+    bottom: 0px;
+    line-height: 1em;
+    b{
+    	font-weight: 100;
+    	display: table-cell;
+			text-align: justufy;
+    	width: 9%;
+    }
+    &:after{
+    	content: "12";
+    	position: absolute;
+    	right: 1px;
+    }
+	}
+	.spectre{
+		height: 30px;
+		width: 100%;
+    position: absolute;
+    top: 65px;
+		background-image: -webkit-gradient(left, linear, 0 0, 0 609, from(#804548), color-stop(0.004, #894848), color-stop(0.006, #884949), color-stop(0.008, #894848), color-stop(0.009, #88494a), color-stop(0.011, #894949), color-stop(0.018, #894a48), color-stop(0.019, #894a48), color-stop(0.024, #884a48), color-stop(0.026, #864947), color-stop(0.031, #884a42), color-stop(0.032, #884b41), color-stop(0.041, #884d42), color-stop(0.042, #8a4e41), color-stop(0.044, #8a4f41), color-stop(0.047, #8a4f41), color-stop(0.055, #895041), color-stop(0.059, #8b5142), color-stop(0.06, #8b5243), color-stop(0.065, #8c5344), color-stop(0.068, #895245), color-stop(0.072, #895245), color-stop(0.075, #8a5447), color-stop(0.077, #8b5447), color-stop(0.078, #8b5547), color-stop(0.08, #8b5547), color-stop(0.08, #8c5645), color-stop(0.082, #8c5745), color-stop(0.083, #8c5745), color-stop(0.083, #8b5743), color-stop(0.09, #8c5842), color-stop(0.095, #8c5942), color-stop(0.095, #8b5941), color-stop(0.098, #8b5941), color-stop(0.098, #8c5941), color-stop(0.105, #8c5941), color-stop(0.105, #8b5941), color-stop(0.108, #8b5941), color-stop(0.108, #8a5a41), color-stop(0.11, #8b5a41), color-stop(0.113, #8b5b42), color-stop(0.116, #8b5b42), color-stop(0.116, #8a5c42), color-stop(0.118, #8c5d43), color-stop(0.124, #906143), color-stop(0.128, #906145), color-stop(0.129, #8f6245), color-stop(0.133, #8f6244), color-stop(0.137, #916343), color-stop(0.142, #916545), color-stop(0.146, #926544), color-stop(0.147, #916644), color-stop(0.149, #916644), color-stop(0.149, #906742), color-stop(0.152, #916842), color-stop(0.155, #926a43), color-stop(0.157, #936a42), color-stop(0.16, #936c3f), color-stop(0.164, #936d3f), color-stop(0.167, #946e3f), color-stop(0.169, #946f3f), color-stop(0.17, #956f3f), color-stop(0.197, #99743d), color-stop(0.198, #9a763d), color-stop(0.2, #9a783e), color-stop(0.203, #9a7a3e), color-stop(0.206, #9a7a3e), color-stop(0.21, #9a7c3e), color-stop(0.211, #9b7c3d), color-stop(0.215, #9c7c3b), color-stop(0.218, #9d7d3c), color-stop(0.223, #9f7e3d), color-stop(0.224, #9f7f3d), color-stop(0.226, #9e803c), color-stop(0.228, #9f813c), color-stop(0.231, #a0833c), color-stop(0.233, #a1833d), color-stop(0.234, #a0843e), color-stop(0.236, #a1843e), color-stop(0.243, #9f863b), color-stop(0.251, #a2893c), color-stop(0.252, #a28a3b), color-stop(0.256, #a28b3b), color-stop(0.257, #a38b3b), color-stop(0.259, #a28c3b), color-stop(0.262, #a48d3c), color-stop(0.266, #a58f3b), color-stop(0.267, #a5903b), color-stop(0.27, #a5903b), color-stop(0.277, #a7913c), color-stop(0.28, #a9913e), color-stop(0.287, #ab933e), color-stop(0.288, #ac933e), color-stop(0.29, #ac933e), color-stop(0.29, #ae943f), color-stop(0.292, #af9640), color-stop(0.297, #b39840), color-stop(0.298, #b49940), color-stop(0.3, #b59941), color-stop(0.302, #b59a41), color-stop(0.305, #b89b3f), color-stop(0.31, #ba9d3d), color-stop(0.315, #bd9e3c), color-stop(0.32, #bfa13b), color-stop(0.328, #c2a43b), color-stop(0.336, #c4a83c), color-stop(0.338, #c4a93c), color-stop(0.339, #c5a93d), color-stop(0.341, #c6a93d), color-stop(0.343, #c6aa3d), color-stop(0.351, #c7ae3d), color-stop(0.353, #c7af3d), color-stop(0.359, #c8b13e), color-stop(0.364, #c8b43f), color-stop(0.372, #c9b540), color-stop(0.38, #cab841), color-stop(0.382, #cab941), color-stop(0.385, #caba42), color-stop(0.389, #cbbb42), color-stop(0.392, #cbbd42), color-stop(0.399, #ccbf43), color-stop(0.4, #ccc043), color-stop(0.405, #ccc044), color-stop(0.41, #cdc244), color-stop(0.412, #cdc344), color-stop(0.417, #cdc545), color-stop(0.42, #cdc545), color-stop(0.43, #cfc847), color-stop(0.431, #cfc947), color-stop(0.436, #cfc947), color-stop(0.436, #cfca47), color-stop(0.446, #d0cb49), color-stop(0.451, #d0cd49), color-stop(0.458, #d1cf4a), color-stop(0.459, #d1d04a), color-stop(0.464, #d1d04a), color-stop(0.464, #d1d14b), color-stop(0.523, #d1d14d), color-stop(0.527, #d0d14d), color-stop(0.54, #ccce4a), color-stop(0.555, #cac943), color-stop(0.556, #cac843), color-stop(0.564, #c6c441), color-stop(0.566, #c5c440), color-stop(0.568, #c3c440), color-stop(0.573, #bec23f), color-stop(0.579, #bbbf40), color-stop(0.581, #bac041), color-stop(0.589, #b6be40), color-stop(0.594, #b3bd40), color-stop(0.6, #b1bc41), color-stop(0.604, #b1bb43), color-stop(0.605, #b0bb44), color-stop(0.607, #afba45), color-stop(0.61, #acb845), color-stop(0.617, #aab648), color-stop(0.62, #a8b649), color-stop(0.62, #a9b54c), color-stop(0.622, #a7b54e), color-stop(0.623, #a8b450), color-stop(0.625, #a6b450), color-stop(0.627, #a6b350), color-stop(0.633, #a3b254), color-stop(0.635, #a1b254), color-stop(0.638, #a0b153), color-stop(0.642, #9eb153), color-stop(0.645, #9db053), color-stop(0.655, #99ae53), color-stop(0.66, #94af53), color-stop(0.661, #94b053), color-stop(0.666, #92ae53), color-stop(0.671, #8fad54), color-stop(0.678, #8bab55), color-stop(0.684, #89a955), color-stop(0.686, #89a856), color-stop(0.688, #88a857), color-stop(0.704, #83a55b), color-stop(0.706, #82a55a), color-stop(0.711, #81a45a), color-stop(0.717, #7da35b), color-stop(0.732, #789e65), color-stop(0.735, #779e65), color-stop(0.737, #779d65), color-stop(0.74, #749b64), color-stop(0.752, #729a6b), color-stop(0.752, #71996e), color-stop(0.781, #65937a), color-stop(0.794, #628f77), color-stop(0.807, #608c7c), color-stop(0.821, #5e8b7b), color-stop(0.829, #5d8a82), color-stop(0.83, #5d8a82), color-stop(0.83, #5c8985), color-stop(0.832, #5b8787), color-stop(0.842, #598587), color-stop(0.845, #598389), color-stop(0.847, #588289), color-stop(0.85, #567f88), color-stop(0.858, #557e8a), color-stop(0.862, #547e88), color-stop(0.868, #537c86), color-stop(0.871, #527b87), color-stop(0.873, #527c87), color-stop(0.878, #517a89), color-stop(0.883, #537d8e), color-stop(0.894, #507a91), color-stop(0.901, #4f7793), color-stop(0.906, #4e7691), color-stop(0.924, #4a7195), color-stop(0.927, #497194), color-stop(0.937, #497199), color-stop(0.942, #487098), color-stop(0.945, #486f99), color-stop(0.945, #476d9a), color-stop(0.954, #476da2), color-stop(0.957, #466ca2), color-stop(0.962, #456ba5), color-stop(0.965, #456aa7), color-stop(0.967, #446aa6), color-stop(0.98, #4165a6), color-stop(0.985, #4164a8), color-stop(0.986, #4165a8), color-stop(0.988, #4063a9), color-stop(0.99, #4064aa), color-stop(0.996, #4064ad), to(#3e62ad));
+		background-image: -webkit-linear-gradient(left, #804548, #894848 0.4%, #884949, #894848 0.8%, #88494a 0.9%, #894949 1.1%, #894a48 1.8%, #894a48 1.9%, #884a48 2.4%, #864947 2.6%, #884a42 3.1%, #884b41 3.2%, #884d42 4.1%, #8a4e41 4.2%, #8a4f41 4.4%, #8a4f41 4.7%, #895041 5.5%, #8b5142 5.9%, #8b5243 6%, #8c5344 6.5%, #895245 6.8%, #895245 7.2%, #8a5447 7.5%, #8b5447 7.7%, #8b5547 7.8%, #8b5547 8%, #8c5645 8%, #8c5745 8.2%, #8c5745 8.3%, #8b5743 8.3%, #8c5842 9%, #8c5942 9.5%, #8b5941 9.5%, #8b5941 9.8%, #8c5941 9.8%, #8c5941 10.5%, #8b5941 10.5%, #8b5941 10.8%, #8a5a41 10.8%, #8b5a41 11%, #8b5b42, #8b5b42 11.6%, #8a5c42 11.6%, #8c5d43 11.8%, #906143 12.4%, #906145 12.8%, #8f6245 12.9%, #8f6244, #916343 13.7%, #916545 14.2%, #926544 14.6%, #916644 14.7%, #916644 14.9%, #906742 14.9%, #916842, #926a43 15.5%, #936a42 15.7%, #936c3f 16%, #936d3f 16.4%, #946e3f 16.7%, #946f3f 16.9%, #956f3f 17%, #99743d 19.7%, #9a763d 19.8%, #9a783e 20%, #9a7a3e, #9a7a3e 20.6%, #9a7c3e 21%, #9b7c3d 21.1%, #9c7c3b 21.5%, #9d7d3c 21.8%, #9f7e3d 22.3%, #9f7f3d 22.4%, #9e803c, #9f813c 22.8%, #a0833c 23.1%, #a1833d 23.3%, #a0843e 23.4%, #a1843e 23.6%, #9f863b 24.3%, #a2893c 25.1%, #a28a3b 25.2%, #a28b3b 25.6%, #a38b3b 25.7%, #a28c3b 25.9%, #a48d3c 26.2%, #a58f3b 26.6%, #a5903b 26.7%, #a5903b 27%, #a7913c 27.7%, #a9913e 28%, #ab933e 28.7%, #ac933e 28.8%, #ac933e 29%, #ae943f 29%, #af9640 29.2%, #b39840 29.7%, #b49940 29.8%, #b59941, #b59a41 30.2%, #b89b3f 30.5%, #ba9d3d, #bd9e3c, #bfa13b 32%, #c2a43b, #c4a83c 33.6%, #c4a93c 33.8%, #c5a93d 33.9%, #c6a93d, #c6aa3d 34.3%, #c7ae3d 35.1%, #c7af3d 35.3%, #c8b13e 35.9%, #c8b43f 36.4%, #c9b540, #cab841 38%, #cab941 38.2%, #caba42 38.5%, #cbbb42 38.9%, #cbbd42 39.2%, #ccbf43 39.9%, #ccc043 40%, #ccc044, #cdc244 41%, #cdc344 41.2%, #cdc545 41.7%, #cdc545 42%, #cfc847 43%, #cfc947 43.1%, #cfc947 43.6%, #cfca47 43.6%, #d0cb49 44.6%, #d0cd49 45.1%, #d1cf4a 45.8%, #d1d04a 45.9%, #d1d04a 46.4%, #d1d14b 46.4%, #d1d14d 52.3%, #d0d14d 52.7%, #ccce4a 54%, #cac943 55.5%, #cac843 55.6%, #c6c441 56.4%, #c5c440, #c3c440 56.8%, #bec23f 57.3%, #bbbf40 57.9%, #bac041 58.1%, #b6be40 58.9%, #b3bd40 59.4%, #b1bc41 60%, #b1bb43 60.4%, #b0bb44 60.5%, #afba45 60.7%, #acb845 61%, #aab648 61.7%, #a8b649 62%, #a9b54c 62%, #a7b54e 62.2%, #a8b450 62.3%, #a6b450, #a6b350 62.7%, #a3b254 63.3%, #a1b254 63.5%, #a0b153 63.8%, #9eb153 64.2%, #9db053 64.5%, #99ae53 65.5%, #94af53 66%, #94b053 66.1%, #92ae53, #8fad54 67.1%, #8bab55 67.8%, #89a955 68.4%, #89a856 68.6%, #88a857 68.8%, #83a55b 70.4%, #82a55a 70.6%, #81a45a 71.1%, #7da35b 71.7%, #789e65 73.2%, #779e65 73.5%, #779d65 73.7%, #749b64 74%, #729a6b 75.2%, #71996e 75.2%, #65937a 78.1%, #628f77, #608c7c 80.7%, #5e8b7b 82.1%, #5d8a82 82.9%, #5d8a82 83%, #5c8985 83%, #5b8787 83.2%, #598587 84.2%, #598389 84.5%, #588289 84.7%, #567f88 85%, #557e8a 85.8%, #547e88 86.2%, #537c86 86.8%, #527b87 87.1%, #527c87 87.3%, #517a89, #537d8e 88.3%, #507a91 89.4%, #4f7793 90.1%, #4e7691 90.6%, #4a7195 92.4%, #497194 92.7%, #497199 93.7%, #487098 94.2%, #486f99 94.5%, #476d9a 94.5%, #476da2 95.4%, #466ca2 95.7%, #456ba5 96.2%, #456aa7 96.5%, #446aa6 96.7%, #4165a6 98%, #4164a8 98.5%, #4165a8 98.6%, #4063a9, #4064aa 99%, #4064ad 99.6%, #3e62ad);
+		background-image: -moz-linear-gradient(left, #804548, #894848 0.4%, #884949, #894848 0.8%, #88494a 0.9%, #894949 1.1%, #894a48 1.8%, #894a48 1.9%, #884a48 2.4%, #864947 2.6%, #884a42 3.1%, #884b41 3.2%, #884d42 4.1%, #8a4e41 4.2%, #8a4f41 4.4%, #8a4f41 4.7%, #895041 5.5%, #8b5142 5.9%, #8b5243 6%, #8c5344 6.5%, #895245 6.8%, #895245 7.2%, #8a5447 7.5%, #8b5447 7.7%, #8b5547 7.8%, #8b5547 8%, #8c5645 8%, #8c5745 8.2%, #8c5745 8.3%, #8b5743 8.3%, #8c5842 9%, #8c5942 9.5%, #8b5941 9.5%, #8b5941 9.8%, #8c5941 9.8%, #8c5941 10.5%, #8b5941 10.5%, #8b5941 10.8%, #8a5a41 10.8%, #8b5a41 11%, #8b5b42, #8b5b42 11.6%, #8a5c42 11.6%, #8c5d43 11.8%, #906143 12.4%, #906145 12.8%, #8f6245 12.9%, #8f6244, #916343 13.7%, #916545 14.2%, #926544 14.6%, #916644 14.7%, #916644 14.9%, #906742 14.9%, #916842, #926a43 15.5%, #936a42 15.7%, #936c3f 16%, #936d3f 16.4%, #946e3f 16.7%, #946f3f 16.9%, #956f3f 17%, #99743d 19.7%, #9a763d 19.8%, #9a783e 20%, #9a7a3e, #9a7a3e 20.6%, #9a7c3e 21%, #9b7c3d 21.1%, #9c7c3b 21.5%, #9d7d3c 21.8%, #9f7e3d 22.3%, #9f7f3d 22.4%, #9e803c, #9f813c 22.8%, #a0833c 23.1%, #a1833d 23.3%, #a0843e 23.4%, #a1843e 23.6%, #9f863b 24.3%, #a2893c 25.1%, #a28a3b 25.2%, #a28b3b 25.6%, #a38b3b 25.7%, #a28c3b 25.9%, #a48d3c 26.2%, #a58f3b 26.6%, #a5903b 26.7%, #a5903b 27%, #a7913c 27.7%, #a9913e 28%, #ab933e 28.7%, #ac933e 28.8%, #ac933e 29%, #ae943f 29%, #af9640 29.2%, #b39840 29.7%, #b49940 29.8%, #b59941, #b59a41 30.2%, #b89b3f 30.5%, #ba9d3d, #bd9e3c, #bfa13b 32%, #c2a43b, #c4a83c 33.6%, #c4a93c 33.8%, #c5a93d 33.9%, #c6a93d, #c6aa3d 34.3%, #c7ae3d 35.1%, #c7af3d 35.3%, #c8b13e 35.9%, #c8b43f 36.4%, #c9b540, #cab841 38%, #cab941 38.2%, #caba42 38.5%, #cbbb42 38.9%, #cbbd42 39.2%, #ccbf43 39.9%, #ccc043 40%, #ccc044, #cdc244 41%, #cdc344 41.2%, #cdc545 41.7%, #cdc545 42%, #cfc847 43%, #cfc947 43.1%, #cfc947 43.6%, #cfca47 43.6%, #d0cb49 44.6%, #d0cd49 45.1%, #d1cf4a 45.8%, #d1d04a 45.9%, #d1d04a 46.4%, #d1d14b 46.4%, #d1d14d 52.3%, #d0d14d 52.7%, #ccce4a 54%, #cac943 55.5%, #cac843 55.6%, #c6c441 56.4%, #c5c440, #c3c440 56.8%, #bec23f 57.3%, #bbbf40 57.9%, #bac041 58.1%, #b6be40 58.9%, #b3bd40 59.4%, #b1bc41 60%, #b1bb43 60.4%, #b0bb44 60.5%, #afba45 60.7%, #acb845 61%, #aab648 61.7%, #a8b649 62%, #a9b54c 62%, #a7b54e 62.2%, #a8b450 62.3%, #a6b450, #a6b350 62.7%, #a3b254 63.3%, #a1b254 63.5%, #a0b153 63.8%, #9eb153 64.2%, #9db053 64.5%, #99ae53 65.5%, #94af53 66%, #94b053 66.1%, #92ae53, #8fad54 67.1%, #8bab55 67.8%, #89a955 68.4%, #89a856 68.6%, #88a857 68.8%, #83a55b 70.4%, #82a55a 70.6%, #81a45a 71.1%, #7da35b 71.7%, #789e65 73.2%, #779e65 73.5%, #779d65 73.7%, #749b64 74%, #729a6b 75.2%, #71996e 75.2%, #65937a 78.1%, #628f77, #608c7c 80.7%, #5e8b7b 82.1%, #5d8a82 82.9%, #5d8a82 83%, #5c8985 83%, #5b8787 83.2%, #598587 84.2%, #598389 84.5%, #588289 84.7%, #567f88 85%, #557e8a 85.8%, #547e88 86.2%, #537c86 86.8%, #527b87 87.1%, #527c87 87.3%, #517a89, #537d8e 88.3%, #507a91 89.4%, #4f7793 90.1%, #4e7691 90.6%, #4a7195 92.4%, #497194 92.7%, #497199 93.7%, #487098 94.2%, #486f99 94.5%, #476d9a 94.5%, #476da2 95.4%, #466ca2 95.7%, #456ba5 96.2%, #456aa7 96.5%, #446aa6 96.7%, #4165a6 98%, #4164a8 98.5%, #4165a8 98.6%, #4063a9, #4064aa 99%, #4064ad 99.6%, #3e62ad);
+		background-image: -o-linear-gradient(left, #804548, #894848 0.4%, #884949, #894848 0.8%, #88494a 0.9%, #894949 1.1%, #894a48 1.8%, #894a48 1.9%, #884a48 2.4%, #864947 2.6%, #884a42 3.1%, #884b41 3.2%, #884d42 4.1%, #8a4e41 4.2%, #8a4f41 4.4%, #8a4f41 4.7%, #895041 5.5%, #8b5142 5.9%, #8b5243 6%, #8c5344 6.5%, #895245 6.8%, #895245 7.2%, #8a5447 7.5%, #8b5447 7.7%, #8b5547 7.8%, #8b5547 8%, #8c5645 8%, #8c5745 8.2%, #8c5745 8.3%, #8b5743 8.3%, #8c5842 9%, #8c5942 9.5%, #8b5941 9.5%, #8b5941 9.8%, #8c5941 9.8%, #8c5941 10.5%, #8b5941 10.5%, #8b5941 10.8%, #8a5a41 10.8%, #8b5a41 11%, #8b5b42, #8b5b42 11.6%, #8a5c42 11.6%, #8c5d43 11.8%, #906143 12.4%, #906145 12.8%, #8f6245 12.9%, #8f6244, #916343 13.7%, #916545 14.2%, #926544 14.6%, #916644 14.7%, #916644 14.9%, #906742 14.9%, #916842, #926a43 15.5%, #936a42 15.7%, #936c3f 16%, #936d3f 16.4%, #946e3f 16.7%, #946f3f 16.9%, #956f3f 17%, #99743d 19.7%, #9a763d 19.8%, #9a783e 20%, #9a7a3e, #9a7a3e 20.6%, #9a7c3e 21%, #9b7c3d 21.1%, #9c7c3b 21.5%, #9d7d3c 21.8%, #9f7e3d 22.3%, #9f7f3d 22.4%, #9e803c, #9f813c 22.8%, #a0833c 23.1%, #a1833d 23.3%, #a0843e 23.4%, #a1843e 23.6%, #9f863b 24.3%, #a2893c 25.1%, #a28a3b 25.2%, #a28b3b 25.6%, #a38b3b 25.7%, #a28c3b 25.9%, #a48d3c 26.2%, #a58f3b 26.6%, #a5903b 26.7%, #a5903b 27%, #a7913c 27.7%, #a9913e 28%, #ab933e 28.7%, #ac933e 28.8%, #ac933e 29%, #ae943f 29%, #af9640 29.2%, #b39840 29.7%, #b49940 29.8%, #b59941, #b59a41 30.2%, #b89b3f 30.5%, #ba9d3d, #bd9e3c, #bfa13b 32%, #c2a43b, #c4a83c 33.6%, #c4a93c 33.8%, #c5a93d 33.9%, #c6a93d, #c6aa3d 34.3%, #c7ae3d 35.1%, #c7af3d 35.3%, #c8b13e 35.9%, #c8b43f 36.4%, #c9b540, #cab841 38%, #cab941 38.2%, #caba42 38.5%, #cbbb42 38.9%, #cbbd42 39.2%, #ccbf43 39.9%, #ccc043 40%, #ccc044, #cdc244 41%, #cdc344 41.2%, #cdc545 41.7%, #cdc545 42%, #cfc847 43%, #cfc947 43.1%, #cfc947 43.6%, #cfca47 43.6%, #d0cb49 44.6%, #d0cd49 45.1%, #d1cf4a 45.8%, #d1d04a 45.9%, #d1d04a 46.4%, #d1d14b 46.4%, #d1d14d 52.3%, #d0d14d 52.7%, #ccce4a 54%, #cac943 55.5%, #cac843 55.6%, #c6c441 56.4%, #c5c440, #c3c440 56.8%, #bec23f 57.3%, #bbbf40 57.9%, #bac041 58.1%, #b6be40 58.9%, #b3bd40 59.4%, #b1bc41 60%, #b1bb43 60.4%, #b0bb44 60.5%, #afba45 60.7%, #acb845 61%, #aab648 61.7%, #a8b649 62%, #a9b54c 62%, #a7b54e 62.2%, #a8b450 62.3%, #a6b450, #a6b350 62.7%, #a3b254 63.3%, #a1b254 63.5%, #a0b153 63.8%, #9eb153 64.2%, #9db053 64.5%, #99ae53 65.5%, #94af53 66%, #94b053 66.1%, #92ae53, #8fad54 67.1%, #8bab55 67.8%, #89a955 68.4%, #89a856 68.6%, #88a857 68.8%, #83a55b 70.4%, #82a55a 70.6%, #81a45a 71.1%, #7da35b 71.7%, #789e65 73.2%, #779e65 73.5%, #779d65 73.7%, #749b64 74%, #729a6b 75.2%, #71996e 75.2%, #65937a 78.1%, #628f77, #608c7c 80.7%, #5e8b7b 82.1%, #5d8a82 82.9%, #5d8a82 83%, #5c8985 83%, #5b8787 83.2%, #598587 84.2%, #598389 84.5%, #588289 84.7%, #567f88 85%, #557e8a 85.8%, #547e88 86.2%, #537c86 86.8%, #527b87 87.1%, #527c87 87.3%, #517a89, #537d8e 88.3%, #507a91 89.4%, #4f7793 90.1%, #4e7691 90.6%, #4a7195 92.4%, #497194 92.7%, #497199 93.7%, #487098 94.2%, #486f99 94.5%, #476d9a 94.5%, #476da2 95.4%, #466ca2 95.7%, #456ba5 96.2%, #456aa7 96.5%, #446aa6 96.7%, #4165a6 98%, #4164a8 98.5%, #4165a8 98.6%, #4063a9, #4064aa 99%, #4064ad 99.6%, #3e62ad);
+		background-image: linear-gradient(to right, #804548, #894848 0.4%, #884949, #894848 0.8%, #88494a 0.9%, #894949 1.1%, #894a48 1.8%, #894a48 1.9%, #884a48 2.4%, #864947 2.6%, #884a42 3.1%, #884b41 3.2%, #884d42 4.1%, #8a4e41 4.2%, #8a4f41 4.4%, #8a4f41 4.7%, #895041 5.5%, #8b5142 5.9%, #8b5243 6%, #8c5344 6.5%, #895245 6.8%, #895245 7.2%, #8a5447 7.5%, #8b5447 7.7%, #8b5547 7.8%, #8b5547 8%, #8c5645 8%, #8c5745 8.2%, #8c5745 8.3%, #8b5743 8.3%, #8c5842 9%, #8c5942 9.5%, #8b5941 9.5%, #8b5941 9.8%, #8c5941 9.8%, #8c5941 10.5%, #8b5941 10.5%, #8b5941 10.8%, #8a5a41 10.8%, #8b5a41 11%, #8b5b42, #8b5b42 11.6%, #8a5c42 11.6%, #8c5d43 11.8%, #906143 12.4%, #906145 12.8%, #8f6245 12.9%, #8f6244, #916343 13.7%, #916545 14.2%, #926544 14.6%, #916644 14.7%, #916644 14.9%, #906742 14.9%, #916842, #926a43 15.5%, #936a42 15.7%, #936c3f 16%, #936d3f 16.4%, #946e3f 16.7%, #946f3f 16.9%, #956f3f 17%, #99743d 19.7%, #9a763d 19.8%, #9a783e 20%, #9a7a3e, #9a7a3e 20.6%, #9a7c3e 21%, #9b7c3d 21.1%, #9c7c3b 21.5%, #9d7d3c 21.8%, #9f7e3d 22.3%, #9f7f3d 22.4%, #9e803c, #9f813c 22.8%, #a0833c 23.1%, #a1833d 23.3%, #a0843e 23.4%, #a1843e 23.6%, #9f863b 24.3%, #a2893c 25.1%, #a28a3b 25.2%, #a28b3b 25.6%, #a38b3b 25.7%, #a28c3b 25.9%, #a48d3c 26.2%, #a58f3b 26.6%, #a5903b 26.7%, #a5903b 27%, #a7913c 27.7%, #a9913e 28%, #ab933e 28.7%, #ac933e 28.8%, #ac933e 29%, #ae943f 29%, #af9640 29.2%, #b39840 29.7%, #b49940 29.8%, #b59941, #b59a41 30.2%, #b89b3f 30.5%, #ba9d3d, #bd9e3c, #bfa13b 32%, #c2a43b, #c4a83c 33.6%, #c4a93c 33.8%, #c5a93d 33.9%, #c6a93d, #c6aa3d 34.3%, #c7ae3d 35.1%, #c7af3d 35.3%, #c8b13e 35.9%, #c8b43f 36.4%, #c9b540, #cab841 38%, #cab941 38.2%, #caba42 38.5%, #cbbb42 38.9%, #cbbd42 39.2%, #ccbf43 39.9%, #ccc043 40%, #ccc044, #cdc244 41%, #cdc344 41.2%, #cdc545 41.7%, #cdc545 42%, #cfc847 43%, #cfc947 43.1%, #cfc947 43.6%, #cfca47 43.6%, #d0cb49 44.6%, #d0cd49 45.1%, #d1cf4a 45.8%, #d1d04a 45.9%, #d1d04a 46.4%, #d1d14b 46.4%, #d1d14d 52.3%, #d0d14d 52.7%, #ccce4a 54%, #cac943 55.5%, #cac843 55.6%, #c6c441 56.4%, #c5c440, #c3c440 56.8%, #bec23f 57.3%, #bbbf40 57.9%, #bac041 58.1%, #b6be40 58.9%, #b3bd40 59.4%, #b1bc41 60%, #b1bb43 60.4%, #b0bb44 60.5%, #afba45 60.7%, #acb845 61%, #aab648 61.7%, #a8b649 62%, #a9b54c 62%, #a7b54e 62.2%, #a8b450 62.3%, #a6b450, #a6b350 62.7%, #a3b254 63.3%, #a1b254 63.5%, #a0b153 63.8%, #9eb153 64.2%, #9db053 64.5%, #99ae53 65.5%, #94af53 66%, #94b053 66.1%, #92ae53, #8fad54 67.1%, #8bab55 67.8%, #89a955 68.4%, #89a856 68.6%, #88a857 68.8%, #83a55b 70.4%, #82a55a 70.6%, #81a45a 71.1%, #7da35b 71.7%, #789e65 73.2%, #779e65 73.5%, #779d65 73.7%, #749b64 74%, #729a6b 75.2%, #71996e 75.2%, #65937a 78.1%, #628f77, #608c7c 80.7%, #5e8b7b 82.1%, #5d8a82 82.9%, #5d8a82 83%, #5c8985 83%, #5b8787 83.2%, #598587 84.2%, #598389 84.5%, #588289 84.7%, #567f88 85%, #557e8a 85.8%, #547e88 86.2%, #537c86 86.8%, #527b87 87.1%, #527c87 87.3%, #517a89, #537d8e 88.3%, #507a91 89.4%, #4f7793 90.1%, #4e7691 90.6%, #4a7195 92.4%, #497194 92.7%, #497199 93.7%, #487098 94.2%, #486f99 94.5%, #476d9a 94.5%, #476da2 95.4%, #466ca2 95.7%, #456ba5 96.2%, #456aa7 96.5%, #446aa6 96.7%, #4165a6 98%, #4164a8 98.5%, #4165a8 98.6%, #4063a9, #4064aa 99%, #4064ad 99.6%, #3e62ad);
+	}
+	ul{
+		display: table;
+		width: 100%;
+		padding-top: 18px;
+		li{
+			display: table-cell;
+			cursor: pointer;
+			height: 100px;
+			position: relative;
+			line-height: 16px;
+			z-index: 10;
+			span{
+				display: inline-block;
+				border-bottom: 1px dashed rgba(255,255,255,0.4);
+		    font-size: 1.1em;
+		    font-family: "etelka-thin";
+			}
+			&:hover{ 
+				span{
+					border-bottom: 1px dashed rgba(255,255,255,1);
+				}
+
+				&:after{
+					border-color: #eb3e3a;
+				}
+			}
+			&:after{
+				position: absolute;
+				top: 30px;
+			}
+		}
+		.acidic{
+			width: 45%;
+			text-align: left;
+			&:after{
+				height: 5px;
+				border: 1px solid rgba(255,255,255,0.2);
+				border-bottom: none;
+				width: 100%;
+				content: '';
+				display: block;
+			}
+		}
+		.neutral{
+			width: 10%;
+			text-align: center;
+			&:after{
+				height: 5px;
+				border-left: 1px solid rgba(255,255,255,0.2);
+				width: 1px;
+				content: '';
+				display: block;
+				left: 50%;
+			}
+		}
+		.alkalic{
+			width: 45%;
+			text-align: right;
+			&:after{
+				height: 5px;
+				border: 1px solid rgba(255,255,255,0.2);
+				border-bottom: none;
+				width: 100%;
+				content: '';
+				display: block;
+			}
+		}
+	}
+}
+.catalog-filter-container{
+	.radio-set{
+		margin: 0 auto;
+	}
+}
+
+.catalog-list{
+	padding-top: 20px;
+	padding-bottom: 25px;
+	.item	{
+		float: left;
+		width: 50%;
+		position: relative;
+		height: 300px;
+		overflow: hidden;
+		cursor: pointer;
+		img{
+			width: 296px;
+			height: 306px;
+			left: 50%;
+			margin-left: -148px;
+			position: absolute;
+		}
+		span.title{
+			position: absolute;
+			bottom: 25px;
+			width: 100%;
+			text-align: center;
+		  font-family: "etelka-light";
+		  font-size: 1.3em;
+			b{
+		    font-family: "etelka-medium";
+			}
+		}
+	}
+}
+@media (min-width: 768px) {
+  .catalog-list {
+		.item	{
+			width: 50%; 
+	  } 
+  } 
+}
+
+@media (min-width: 992px) {
+  .catalog-list {
+		.item	{
+			width: 33.3333%; 
+	  } 
+  } 
+}
+
+@media (min-width: 1200px) {
+  .catalog-list {
+		.item	{
+			width: 25%; 
+	  } 
+  } 
+}
+@media (min-width: 1500px) {
+  .catalog-list {
+		.item	{
+			width: 20%; 
+	  } 
+  } 
+}
+
+
+
+.catalog-heading{
+	height: 135px;
+	width: 100%;
+	background-size: cover;
+	background-position: right;
+	&.heading-foam{
+	background-image: url("images/catalog-articles-foam.jpg");
+	}
+	&.heading-cip{
+	background-image: url("images/catalog-articles-cip.jpg");
+	background-position: center;
+	}
+	&.heading-additive{
+	background-image: url("images/catalog-articles-additive.jpg");
+	background-position: center;
+	}
+	&.heading-farm{
+	background-image: url("images/catalog-articles-farm.jpg");
+	}
+	&.heading-disinfection{
+	background-image: url("images/catalog-articles-disinfection.jpg");
+	background-position: center;
+	}
+	&.heading-laundry{
+	background-image: url("images/catalog-articles-laundry.jpg");
+	}
+	&.heading-grease{
+	background-image: url("images/catalog-articles-grease.jpg");
 	}
 }

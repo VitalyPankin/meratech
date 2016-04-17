@@ -13,7 +13,7 @@ Router.map(function() {
     });  
 	});
   this.route('contacts', { path: '/contacts' });
-  this.route('industries', { path: '/industries' });
+  this.route('press-center', { path: '/press-center' });
   // this.route("subscribers", {
   //   path: '/'
   // }, function() {
