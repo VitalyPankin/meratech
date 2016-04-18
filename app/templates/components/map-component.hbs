@@ -1,5 +1,37 @@
- 
-      <div class="search-toggle fa fa-search fa-lg navbar-right" {{action "makeSearch"}}></div>
-      <form role="search">
-          {{input placeholder="Searchy" value=requestText}}
-      </form>
+{{google-map name="my-map" zoom=zoom lat=lat lng=lng zoom=zoom gopt_mapTypeControl=false gopt_backgroundColor='#4f4d55' gopt_zoomControl=false gopt_scaleControl=false gopt_disableDefaultUI=true gopt_styles=styles markers=markers gopt_streetViewControl=true}}
+
+<div id="adress-block">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="title" {{action "showOffice"}}>Центральный офис</div>
+      <div class="body">
+        <div class="address">
+          шоссе Казанское, 25 строение 2<br>
+          Нижний Новгород,<br>
+          603087, Российская Федерация
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="phone">
+        8 (800) 333-58-88
+      </div>
+      <div class="email">
+        info@meratech.ru
+      </div>
+    </div>
+    <div class="col-md-3 col-md-offset-1">
+      <div class="title" {{action "showStorage"}}>Склад</div>
+      <div class="body">
+        <div class="address">
+          Россия, Нижний Новгород<br>
+          пос. Большая Ельня, промзона<br>
+          Территория бывшей воинской части<br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+            

@@ -13,15 +13,17 @@ module.exports = function(environment) {
       }
     },
 
-    
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' use.typekit.net connect.facebook.net maps.googleapis.com maps.gstatic.com",
-      'font-src': "'self' data: use.typekit.net",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' use.typekit.net connect.facebook.net *.googleapis.com maps.googleapis.com maps.gstatic.com",
+      'font-src': "'self' data: use.typekit.net fonts.gstatic.com *.googleapis.com",
       'connect-src': "'self'",
-      'img-src': "'self' www.facebook.com p.typekit.net",
-      'style-src': "'self' 'unsafe-inline' use.typekit.net",
+      'img-src': "'self' www.facebook.com p.typekit.net  *.googleapis.com maps.gstatic.com csi.gstatic.com",
+      'style-src': "'self' 'unsafe-inline' use.typekit.net  *.googleapis.com",
       'frame-src': "s-static.ak.facebook.com static.ak.facebook.com www.facebook.com"
+    },
+    googleMap: {
+      // your configuration goes here
     },
 
     APP: {

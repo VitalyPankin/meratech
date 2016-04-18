@@ -6,13 +6,13 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('contacts', { path: '/contacts' });
   this.route('index', { path: '/' });
   this.route('news', function() {
     this.route('news', {
       path: '/news/:id'
     });  
 	});
-  this.route('contacts', { path: '/contacts' });
   this.route('press-center', { path: '/press-center' });
   // this.route("subscribers", {
   //   path: '/'
