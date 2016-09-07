@@ -143,18 +143,20 @@ header{
           }
         }
         &.open{
+          & > a{
+            color: #fff;
+            background-color: rgba(21, 18, 28, 0.75) ;
+          }
           .caret{
             .icon-bar{
               opacity: 0;
               &.first{
-                background-color: #3b3d3f;
                 opacity: 1;
                 -webkit-transform: rotate(45deg) translate(-1px, -1px);
                 transform: rotate(45deg) translate(-1px, -1px);
                 transform-origin: 0% 0%;
               }
               &.last{
-                background-color: #3b3d3f;
                 opacity: 1;
                 -webkit-transform: rotate(-45deg) translate(-0.5px, 0.5px);
                 transform: rotate(-45deg) translate(-0.5px, 0.5px);
