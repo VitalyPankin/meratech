@@ -26,11 +26,14 @@ Router.map(function() {
   this.resource("catalog",  function() {
     this.route('detail');  
 	});
+ //  this.route('equipment', function() {
+ //    this.route('detail', {
+ //      path: '/equipment/:id'
+ //    });  
+	// });
   this.route('equipment', function() {
-    this.route('detail', {
-      path: '/equipment/:id'
-    });  
-	});
+    this.route('detail');  
+  });
 
 });
 
