@@ -1,3 +1,8 @@
+.equipment-1{
+	    background: #f9fafa url("images/equipment-1.jpg");
+	    background-size: 2920px, 1200px;
+	    background-position: center center;
+}
 .catalog-details-header{
 	overflow: hidden;
 	height: 850px;
@@ -120,8 +125,9 @@
 	.page-title{
 		text-align: center;
 		font-size: 2.8em;
-    font-family: 'etelka-medium';
-    margin-top: 105px;
+	    font-family: 'etelka-medium';
+	    margin-top: 105px;
+	    padding-bottom: 60px;
 	}
 	.container{
 		padding-bottom: 0;
