@@ -41,3 +41,51 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  
+  .search-component{
+    border: none;
+    height: 60px;
+    width: auto;
+    margin: 0;
+    margin-left: -15px;
+    margin-right: -15px;
+    box-sizing: content-box;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+    -moz-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+    -ms-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+    background-color: rgba(21, 18, 28, 0.25);
+    input{
+      background-color: transparent;
+      height: 60px;
+      width: 100%;
+      float: left;
+      border: none;
+      font-family: "etelka-light", sans;
+      font-size: 1.2em;
+      padding-left: 12px;
+      color: #ffffff;
+      &::-webkit-input-placeholder {color: rgba(255,255,255,0.3);}
+      &::-moz-placeholder {color: rgba(255,255,255,0.3);}
+      &:-moz-placeholder {color: rgba(255,255,255,0.3);}
+      &:placeholder {color: rgba(255,255,255,0.3);}
+      &:-ms-input-placeholder {color: rgba(255,255,255,0.3);}
+    }
+    &:after{
+      position: absolute;
+      top: 14px;
+      right: 24px;
+      font-family: 'FontAwesome';
+      content: '\f002';
+      color: #ff2120;
+      font-size: 20px;
+    }
+    .search-toggle{
+      display: none;
+    }
+  }
+}

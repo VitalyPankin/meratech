@@ -1,6 +1,7 @@
 @import 'variables';
 @import 'fonts';
 @import 'news';
+@import 'index';
 @import 'header';
 @import 'search-component';
 @import 'components';
@@ -8,6 +9,7 @@
 @import 'buttons';
 @import 'catalog';
 @import 'contacts';
+@import 'about';
 
 
 /* RESET */
@@ -96,7 +98,7 @@ input, button, textarea, select, optgroup, option {
   font-style: inherit;
   font-weight: inherit;
 }
-html { font-size: 62.5%;overflow-y: scroll;}
+html { font-size: 62.5%;}
 
 a {
   text-decoration: none;

@@ -10,7 +10,11 @@ header{
   }
   .navbar-collapse{
   	.navbar-right{
-  		margin-right: 0;
+      @media (min-width: 768px){
+        &{
+          margin-right: 0;
+        }
+      }
   	}
   }
 }
@@ -20,6 +24,7 @@ header{
   &.navbar-default{
     background-color: rgba(255,255,255,0.83);
     border: none;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
   }
   .navbar-header{
     .navbar-brand{
@@ -36,9 +41,9 @@ header{
     }
     button.navbar-toggle{
       border: none;
-      margin-top: 10px;
-      margin-right: 16px;
-      opacity: 0.6;
+      margin-top: 7px;
+      margin-right: 11px;
+      opacity: 1;
       transform: translate(5px, 0);    
       -webkit-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
       -moz-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
@@ -50,26 +55,28 @@ header{
       }
       // transition: .3s cubic-bezier(0.175,.885,.32,1.275) all; bounce
       .icon-bar{
-        background-color: #3b3d3f;;
+        background-color: #c71e21;
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
         height: 4px;
+        border-radius: 4px;
         width: 24px;
         opacity: 0;
+        margin-top: 3px;
         -webkit-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
         -moz-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
         -ms-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
         transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
         &.first{
           opacity: 1;
-          -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+          -webkit-transform: rotate(45deg) translate(-1px, 0);
+          transform: rotate(45deg) translate(-1px, 0);
           transform-origin: 0% 0%;
         }
         &.last{
           opacity: 1;
-          -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg) translate(-1px, 0);
+          transform: rotate(-45deg) translate(-1px, 0);
           transform-origin: 0% 100%;
         }
       }
@@ -77,7 +84,7 @@ header{
         transform: translate(0, 0); 
         opacity: 1;
         .icon-bar{
-          background-color: #565C5F;
+          background-color: #c71e21;
           -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
           opacity: 1;
@@ -106,6 +113,13 @@ header{
           -moz-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) opacity, 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) color;
           -ms-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) opacity, 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) color;
           transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) opacity, 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) color;
+          @media (max-width: 991px){
+            padding-left: 14px;
+            padding-right: 14px;
+          }          
+          @media (max-width: 767px){
+            color: #fff;
+          }
           &:hover{
             color: $mainColor;
             -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) opacity, 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) color;
@@ -143,9 +157,10 @@ header{
           }
         }
         &.open{
+          position: static;
           & > a{
             color: #fff;
-            background-color: rgba(21, 18, 28, 0.75) ;
+            background-color: rgba(45,43,52,0.9);
           }
           .caret{
             .icon-bar{
@@ -164,9 +179,59 @@ header{
               }
             }
           }
+          .dropdown-menu{
+            width: 100%;
+            border: none;
+            border-radius: 0;
+            background-color: rgba(45,43,52,0.9);
+            height: 400px;
+            padding: 0;
+            @media (max-width: 767px){ 
+              height: 300px;
+              border-top: 1px solid rgba(255,255,255,0.04);
+            }
+            a{
+              display: block;
+              height: 100%;
+              background-position: bottom right;
+              background-repeat: no-repeat;
+              .body{
+                margin: 90px 0px 0px 90px;
+                color: #ffffff;
+                font-size: 26px;
+                line-height: 45px;
+                font-family: "etelka-text", Helvetica, Arial, sans; 
+                @media (max-width: 767px){ 
+                  margin: 30px 0px 0px 30px;
+                }
+              }
+              .button{
+                margin: 30px 0px 0px 90px;
+                font-size: 14px;
+                display: inline-block; 
+                @media (max-width: 767px){ 
+                  margin: 30px 0px 0px 30px;
+                }
+              }
+            }
+          }
+          .catalog-menu-equipment{
+            background: url('images/catalog_menu_equipment.png');
+            background-size: 958px 453px;
+            background-size: 100% auto;
+            border-right: 1px solid rgba(255,255,255,0.04);
+          }
+          .catalog-menu-solutions{
+            background: url('images/catalog_menu_solutions.png');
+            background-size: 958px 453px;
+            background-size: 100% auto;
+          }
         }
       }
       &.navbar-lang{
+        @media (max-width: 767px){          
+          display: none;
+        }
         & > li{
           & > a{
             padding-right: 6px;
@@ -196,25 +261,30 @@ header{
           }
         }
       }
-      &.navbar-right{
-	  		margin-right: 0;
-	  	}
     }
   }
 }
 
 .tp-bannertimer{
 	top: auto;
-  height: 4px;
+  height: 2px;
   bottom: 205px;
-  background-color: rgb(212, 39, 38);
+  background-color: rgba(212, 39, 38, 0.7);
+  @media (max-width: 1199px){          
+    bottom: 160px;
+  }
+  @media (max-width: 991px){          
+    bottom: 140px;
+  }
+  @media (max-width: 767px){          
+    bottom: 0px;
+  }
 }
 
 .top-container{
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: 940px;
 }
 
 .industry-menu{
@@ -222,6 +292,10 @@ header{
   width: 100%;
   height: 205px;
   bottom: 0; 
+  @media (max-width: 767px){
+    position: static;
+    background-color: rgba(21, 18, 28, 0.75);
+  }
   li{
     float: left;
     width: 14.285714285714285714285714285714%;
@@ -231,7 +305,17 @@ header{
     background-color: rgba(21, 18, 28, 0.75);
     box-sizing: border-box;
     border-right: 1px solid transparent;
-    z-index: 1001;
+    z-index: 20;
+    @media (max-width: 767px){
+      width: 25% !important;
+      background: transparent;
+    }
+    @media (max-width: 480px){
+      width: 50% !important;
+    }
+    @media (max-width: 320px){
+      width: 100% !important;
+    }
     &:last-child{
       border-right: none;
     }
@@ -365,6 +449,109 @@ header{
                       animation: menuanimation forwards 10s infinite;
     }
   }
+
+  @media (max-width: 1199px){ 
+    height: 160px;
+    li{
+      &:before{
+        font-size: 85px;
+        line-height: 140px;
+      }
+      &:after{
+        background-size: (135px, 1020px); 
+        height: 160px;
+      }
+
+      span{
+        top: 110px;
+      }
+      &.cows:after{
+        background-position: center 24px; 
+      }
+      &.chicken:after{
+        background-position: center -130px; 
+      }
+      &.pigs:after{
+        background-position: center -284px; 
+      }
+      &.meat:after{
+        background-position: center -430px; 
+      }
+      &.beer:after{
+        background-position: center -588px; 
+      }
+      &.milk:after{
+        background-position: center -741px; 
+      }
+      &.laundry:after{
+        background-position: center -893px; 
+      }
+    }
+  }
+
+  @media (max-width: 991px){
+  height: 140px;
+  margin: 0 auto;
+  display: table;
+  overflow: visible;
+    li{
+    display: table-cell;
+    width: 14.285714285714285714285714285714%;
+    height: 140px;
+    box-sizing: border-box;
+    cursor: pointer;
+      &:before{
+        margin-top: 24px;
+        width: 100%;
+        text-align: center;
+        font-size: 60px;
+        line-height: 65px;
+        color: #eb3e3a;
+        opacity: 1;
+        z-index: +2;
+        display: block;
+        -webkit-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+        -moz-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+        -ms-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+        transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+        -ms-transform-origin: 50% 30%; /* IE 9 */
+        -webkit-transform-origin: 50% 30%; /* Chrome, Safari, Opera */
+        transform-origin: 50% 30%;
+      }
+      span{
+        top: 90px;
+        color: #fff;
+        font-family: "etelka-thin";
+        font-size: 1.1em;
+        text-align: center;
+        width: 100%;
+        z-index: +2;
+        display: block;
+        line-height: 1.5em;
+        -webkit-transition: 0.125s  0.125s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+        -moz-transition: 0.125s  0.125s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+        -ms-transition: 0.125s  0.125s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+        transition: 0.125s  0.125s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      }
+      &:hover:before{
+        transform: scale(1.25, 1.25);
+        -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+        -moz-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+        -ms-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+        transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      }
+      &:hover:after, &:after, div{
+        display: none;
+      }
+      &:hover span{
+        transform: translate(0, 10px);
+        -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+        -moz-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+        -ms-transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+        transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      }
+    }    
+  }
 }
 @keyframes menuanimation {
   0% {
@@ -393,3 +580,34 @@ header{
     filter: alpha(opacity=70);
   }
 }
+.meratech-display{
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 0 0 0 0;
+  border-style: none;
+  border-width: 0;
+  color: rgba(255,255,255,1.00);
+  letter-spacing: -0.03em;
+  font-family: "etelka-medium";
+  font-size: 80px;
+  font-style: normal;
+  line-height: 70px;
+  padding: 0;
+  text-decoration: none;
+}
+.meratech-smalltext{
+      background-color: transparent;
+    border-color: transparent;
+    border-radius: 0 0 0 0;
+    border-style: none;
+    border-width: 0;
+    color: rgba(255,255,255,1.00);
+    font-family: "etelka-light";
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 22;
+    padding: 0;
+    text-decoration: none;
+    text-shadow: none;
+  }

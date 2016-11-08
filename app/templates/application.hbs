@@ -1,24 +1,34 @@
+{{#if isAboutRoute}}
+  {{outlet}}
+{{else}}
   <header class="header">
-        {{main-navigation}}</header>
-{{outlet}}
+    {{main-navigation}}
+  </header>
+  {{outlet}}
 
   <footer>
-    <div class="container-fluid container-dark">
+    <div class="container-dark">
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
-            <a class="logo" href="/">{{logo-meratech}}</a>
-            <ul class="terms">
-              <li class="link">Privacy Policy</li>
-              <li class="link">Terms of Use</li>
-            </ul>
-            <ul class="social">
-              <li class="fa fa-facebook">Facebook</li>
-              <li class="fa fa-linkedin-square">Linked In</li>
-              <li class="fa fa-skype">Skype</li>
-            </ul>
+          <div class="col-md-3 alter-layout">
+            <div class="row">
+              <div class="col-md-12 col-sm-6">
+                <a class="logo" href="/">{{logo-meratech}}</a>
+              </div>
+              <div class="col-md-12 col-sm-6">
+                <ul class="terms">
+                  <li class="link">Privacy Policy</li>
+                  <li class="link">Terms of Use</li>
+                </ul>
+                <ul class="social">
+                  <li class="fa fa-facebook">Facebook</li>
+                  <li class="fa fa-linkedin-square">Linked In</li>
+                  <li class="fa fa-skype">Skype</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 col-sm-6">
             <div class="address">
               19 Delovaya st., Nizhny Novgorod<br>
               603093 Russia<br>
@@ -31,14 +41,14 @@
               info@meratech.ru
             </div>
           </div>
-          <div class="col-md-2">
+          <div class="col-md-2 col-sm-6">
             <ul>
-              <li>Мир <span>meratech</span></li>
-              <li>Пресс-центр</li>
-              <li>Сегменты бизнеса</li>
-              <li>Гигиенические средства</li>
-              <li>Оборудование</li>
-              <li>Проекты</li>
+              {{#link-to "about"}}<li>O <span>meratech</span></li>{{/link-to}}
+              {{#link-to "press-center"}}<li>Пресс-центр</li>{{/link-to}}
+              {{#link-to "media-center"}}<li>Документация</li>{{/link-to}}
+              {{#link-to "catalog"}}<li>Гигиенические средства</li>{{/link-to}}
+              {{#link-to "equipment"}}<li>Оборудование</li>{{/link-to}}
+              {{#link-to "index"}}<li>Проекты</li>{{/link-to}}
             </ul>
           </div>
           <div class="col-md-4">
@@ -55,3 +65,4 @@
       </div>
     </div>
   </footer>
+{{/if}}

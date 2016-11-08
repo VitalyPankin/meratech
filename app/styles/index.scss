@@ -1,0 +1,15 @@
+.press-center-link, .media-center-link{
+  background: transparent url('images/main-press.jpg');
+  position: relative;
+  background-size: 400px auto;
+  background-repeat: no-repeat;
+  .body{
+    width: 270px;
+  }
+}
+.press-center-link{
+  background-position: 250px 106px;
+}
+.media-center-link{
+  background-position: 215px -350px;
+}

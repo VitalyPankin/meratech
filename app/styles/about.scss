@@ -1,0 +1,274 @@
+section.about{
+  perspective: 12px;
+  -ms-perspective: 12px;
+  -webkit-perspective: 12px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  .intro{
+    width: 100%;
+    background-size: cover;
+    background-position: top center;
+    background-image: url("images/about/meratech.jpg");
+    padding-top: 300px;
+    padding-bottom: 200px;
+    .disclaimer{
+      max-width: 500px;
+      width: 100%;
+      padding: 0 40px;
+      box-sizing: border-box;
+      text-align: center;
+      margin: 0 auto;
+    }
+    .features{
+      background: rgba(72,74,84,0.3);
+      padding: 30px 0;
+      margin-top: 70px;
+      .item{
+        text-align: center;
+        .title{
+          text-align: center;
+          color: rgba(255,255,255,0.9);
+          font-family: 'etelka-medium';
+          font-size: 18px;
+          text-transform: uppercase;
+          letter-spacing: -0.03em;
+          text-shadow: 0px 1px 2px rgba(72,74,84,0.6);
+        }
+        .body{
+          width: 70%;
+          margin: 0 auto;
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+  .factory-back{
+    transform: translateZ(-48px) scale(8);
+    -webkit-transform: translateZ(-48px) scale(8);
+    background-image: url("images/about/factory.jpg");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 2000px;
+    width: 100%;
+    height: 100%;
+    min-height: 750px;
+    z-index: -1;
+    @media(min-width: 992px){
+      &.hidden-back{
+        display: none;
+      }
+    }
+  }
+  .lab{
+    transform: translateZ(5px) scale(0.62);
+    -webkit-transform: translateZ(5px) scale(0.62);
+    min-height: 750px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-top: 13%;
+    margin-top: -200px;
+    position: relative;
+    position: absolute;
+    z-index: 10;
+    top: 1400px;
+    @media(max-width: 991px){
+      top: 1850px;
+    }
+    @media(max-width: 767px){
+      top: 1950px;
+    }
+    .outer-wrapper{
+      transform: rotate(7deg) translateX(-25%);
+      width: 200%;
+      height: 700px;
+      transform-origin: 50% 50%;
+      overflow: hidden;
+    }
+    .wrapper{
+      transform: rotate(-7deg) translateX(0%);
+      transform-origin: 50% 44%;
+      width: 100%;
+      height: 100%;
+    }
+    .inner-wrapper{
+      width: 50%;
+      padding: 0 20px;
+      height: 160%;
+      transform: translateY(-20%);
+      margin: 0 auto;
+      background-image: url("images/about/lab.jpg");
+      background-position: 20% bottom;
+      background-size: cover;
+      background-repeat: no-repeat;
+      box-sizing: content-box;
+      position: relative;
+    }
+    .article{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -150px;
+      @media(max-width: 991px){
+        margin-left: -350px;
+      }
+      @media(max-width: 767px){
+        transform: translateX(-50%);
+        width: 90%;
+        margin-left: 0;
+      }
+      .title{
+        color: rgba(255,255,255,0.9);
+        text-shadow: 0px 1px 2px rgba(72,74,84,0.6);
+      }
+      .body{
+        @media(max-width: 1199px){
+          min-width: 450px;
+        }
+        @media(max-width: 991px){
+          max-width: 450px;
+        }
+      }
+    }
+  }
+  .production{
+    margin-top: -200px;
+    margin-top: 0px;
+    img{
+      width: 300px;
+      margin-top: 50px;
+    }
+    .wrapper{
+      background-color: rgba(255, 255, 255, 0.9);
+      padding-top: 200px;
+      padding-bottom: 100px;
+    }
+  }
+  .quality{
+    .wrapper{
+      background-image: url("images/images-overlay.png");
+      background-repeat: repeat;
+      padding-top: 120px;
+      padding-bottom: 520px;
+    }
+    img{
+      width: 210px;
+      margin-top: 25px;
+      margin-bottom: 30px;
+    }
+    .article{
+      .title{
+        color: rgba(255,255,255,0.9);
+        text-shadow: 0px 1px 2px rgba(72,74,84,0.6);
+      }
+    }
+  }
+  .research{
+    transform: translateZ(2px) scale(0.9015);
+    -webkit-transform: translateZ(2px) scale(0.836);
+    min-height: 750px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-top: 13%;
+    margin-top: -200px;
+    position: absolute;
+    top: 3200px;
+    z-index: 10;
+    @media(max-width: 911px){
+      top: 3700px;
+    }
+    .outer-wrapper{
+      transform: rotate(7deg) translateX(-25%);
+      width: 200%;
+      height: 700px;
+      transform-origin: 50% 50%;
+      overflow: hidden;
+    }
+    .wrapper{
+      transform: rotate(-7deg) translateX(0%);
+      transform-origin: 50% 44%;
+      width: 100%;
+      height: 100%;
+    }
+    .inner-wrapper{
+      width: 50%;
+      padding: 0 20px;
+      height: 160%;
+      transform: translateY(-20%);
+      margin: 0 auto;
+      background-image: url("images/about/petri.jpg");
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      box-sizing: content-box;
+      position: relative;
+    }
+    .container{
+      height: 100%;
+      padding: 480px 0;
+      box-sizing: border-box;
+    }
+    .article{
+      margin-top: -150px;
+      .title{
+      }
+    }
+  }
+  .outro{
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background: #fff;
+    .disclaimer{
+      max-width: 600px;
+      width: 100%;
+      padding: 0 40px;
+      box-sizing: border-box;
+      text-align: center;
+      margin: 100px auto 0px auto;
+      font-size: 15px;
+    }
+  }
+
+  .article{
+    @media(max-width: 767px){
+      padding: 0 20px;
+    }
+    > .title{
+      font-family: 'etelka-text';
+      font-size: 40px;
+      line-height: 44px;
+      &:after{
+        content: '';
+        display: block;
+        height: 1px;
+        width: 100px;
+        background-color: rgba(212, 39, 38, 0.7);
+        margin: 25px 0;
+      }
+    }
+    > .body{
+      min-width: 500px;    
+      p{
+        margin: 10px 0;
+      } 
+    }
+    &.video-about{
+      .title{
+        font-size: 48px;
+        line-height: 58px;
+        font-family: "etelka-medium";
+        letter-spacing: -0.03em;
+        @media(max-width: 767px){
+          font-size: 28px;
+        }
+        &:after{
+          content: none;
+        }
+      }
+    }
+  }
+}

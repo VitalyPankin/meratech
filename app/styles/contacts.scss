@@ -1,4 +1,4 @@
-.map-canvas {
+/*.map-canvas {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -85,4 +85,104 @@
 .gm-iv-address{
   margin-top: 80px !important;
   min-height: 58px !important;
+}
+*/
+
+article.contacts{
+  .container{
+    padding: 70px 10px;
+  }
+  .block-title{
+    font-size: 36px;
+    color: #4f4d55;
+    font-family: "etelka-medium";
+    letter-spacing: -0.03em;
+    text-align: left;
+    padding-bottom: 0;
+    margin-top: 70px;
+  }
+  .item{
+    .title{
+      font-size: 22px;
+      color: #4f4d55;
+      font-family: "etelka-text";
+      margin-bottom: 20px;
+      margin-top: 70px;
+    }
+    .body{
+      .address{
+        margin-left: 30px;
+        @media (max-width: 991px){
+          position: relative;
+          left: 30px;
+        }
+        @media (max-width: 767px){
+          left: 0;
+        }
+        &:before{
+          font-family: 'FontAwesome';
+          content: '\f041';
+          color: #c4161c;
+          margin-left: -30px;
+          font-size: 22px;
+          line-height: 14px;
+          width: 25px;
+          display: block;    
+          float: left;
+        }
+      }
+      .phone{
+        margin-left: 30px;
+        @media (max-width: 991px){
+          position: relative;
+          left: 30px;
+        }
+        font-family: 'etelka-text';
+        margin-top: 15px;
+        @media (max-width: 767px){
+          left: 0;
+        }
+        &:before{
+          font-family: 'FontAwesome';
+          content: '\f095';
+          color: #c4161c;
+          margin-left: -30px;
+          font-size: 22px;
+          line-height: 14px;
+          width: 25px;
+          display: block;
+          float: left;
+        }
+      }
+      .email{
+        margin-left: 30px;
+        @media (max-width: 991px){
+          position: relative;
+          left: 30px;
+        }
+        margin-top: 15px;
+        @media (max-width: 767px){
+          left: 0;
+        }
+        &:before{
+          font-family: 'FontAwesome';
+          content: '\f003';
+          color: #c4161c;
+          margin-left: -30px;
+          font-size: 18px;
+          line-height: 14px;
+          width: 25px;
+          display: block;
+          float: left;loat: none;
+        }
+      }
+      .map-link{
+        cursor: pointer;
+        display: block;
+        width: 140px;
+        margin-left: -2px;
+        margin-top: 20px; 
+      }
+    }
+  }
 }

@@ -1,6 +1,6 @@
 .equipment-1{
 	    background: #f9fafa url("images/equipment-1.jpg");
-	    background-size: 2920px, 1200px;
+	    background-size: cover;
 	    background-position: center center;
 }
 .catalog-details-header{
@@ -43,16 +43,13 @@
 	    font-family: 'etelka-thin';
 		}
 		.registration{
-			float: left;
 			b{
 	    	font-family: 'etelka-text';
 			}
 		}
 		.ph{
-			float: left;
-	    margin-left: 50px;
 	    font-size: 1.8em;
-	    margin-top: -1em;
+	    margin-top: 0.5em;
 	    span{
 	    	font-size: 1.6em;
     		font-family: 'etelka-medium';
@@ -123,9 +120,6 @@
 
 .catalog-header{
 	.page-title{
-		text-align: center;
-		font-size: 2.8em;
-	    font-family: 'etelka-medium';
 	    margin-top: 105px;
 	    padding-bottom: 60px;
 	}
@@ -415,6 +409,7 @@
 			position: absolute;
 		}
 		span.title{
+			color: #3b3d3f;
 			position: absolute;
 			bottom: 25px;
 			width: 100%;
@@ -488,5 +483,65 @@
 	}
 	&.heading-grease{
 	background-image: url("images/catalog-articles-grease.jpg");
+	}
+}
+.equipment-heros{
+	.container{
+		padding-bottom: 0;
+	}
+	.row{
+		margin-top: 150px;
+	}
+	.row:first-child{
+		margin-top: 50px;
+	}
+	img{
+		max-height: 500px;
+		&.prominent{
+			height: 400px;
+			margin-top: -100px;
+		}
+		&.grease{
+			height: 400px;
+			margin-top: -100px;
+		}
+		&.soap{
+			height: 500px;
+			margin-top: -170px;
+		}
+	}
+}
+.equipment-dark-hero{
+	background-image: url("images/equipment/black-back.jpg");
+	background-size: cover;
+	text-align: center;
+	.item{
+		padding-top: 60px;
+		text-align: center;
+		.title{
+			text-align: center;
+			color: #fff;
+	    font-size: 20px;
+	    line-height: 20px;
+			font-family: "etelka-medium";
+	    white-space: nowrap;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    letter-spacing: -0.03em;
+	    -webkit-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+	    -moz-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+	    -ms-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+	    transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+		}
+		img{
+			height: 400px;
+			margin: 60px auto 0 auto;
+		}
+	}
+	.heading{
+		text-align: left;
+	}
+	.button{
+		margin: 20px auto;
 	}
 }

@@ -41,4 +41,34 @@
       top: 1px;
     }
   }
+  &.button-learnmore{  
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 0px;
+    font-size: 12px;
+    &:before{
+      font-family: 'FontAwesome';
+      content: '\f18e';
+      margin-right: 8px;
+      font-size: 14px;
+      display: inline-block;
+      position: relative;
+      top: 1px;
+    }
+  }
+}
+.btn-archive{
+  float: right;
+  margin-right: 20px;
+  margin-top: 15px;
+  &:before{
+    font-family: 'FontAwesome';
+    content: '\f0ca';
+    margin-right: 8px;
+    font-size: 14px;
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    color: #ff2120;
+  }
 }

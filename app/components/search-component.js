@@ -24,37 +24,4 @@ export default Ember.Component.extend({
       }
     }
   },
-
-/*
-  operationsByTagGroupedByAdress: function() {
-
-    var arr = Ember.A();
-    var phoneNumbers = this.get('operationsByTag');
-    phoneNumbers.forEach(function(operation) {
-      var path = operation.get('path');
-      var soughtForElement = arr.findBy('path', path);
-      if(soughtForElement){
-        soughtForElement.operationList.pushObject(operation);
-      }else{
-        var operationList = Ember.A();
-        operationList.pushObject(operation);
-        arr.pushObject({
-          path:path,
-          operationList: operationList
-        });
-      }
-    });
-    return arr.sortBy('path');
-  }.property('operationsByTag'),
-*/
-
-  // focusOut: function() {
-  //   if(!this.get('isFocused')){
-  //     if(!this.get('requestText')){
-  //       this.set('isActive', false);
-  //       // for check if makeSearch not clicked right after focusOut
-  //       this.set('justFocusedOut', true);
-  //     }
-  //   }
-  // }.observes('isFocused')
 });

@@ -1,0 +1,209 @@
+<article class="news-header">
+  <div class="container">
+		<div class="page-title title">Медиа и документы</div>
+    <div class="body controls">
+      <div class="centered-input centered-input-media">
+        {{input insert-newline="search" allowedKeys="enter" value=searchField placeholder="Search by phrase"}}
+        {{#if isSearchOn}}
+        <div class="label">search for <span>{{confirmedValue}}</span> in <strong>media</strong></div>
+        {{/if}}
+      </div>
+    </div>
+	</div>
+</article>
+{{#if isSearchOn}}
+<article>
+	<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="heading heading-top">
+        	<span class="title title-dark">результаты</span>
+
+          {{#if isSomething}}
+					<span class="tip">7 найденных</span>
+          {{else}}
+          <span class="tip">нет найденных</span>
+          {{/if}}
+        </div>
+        {{#if isSomething}}
+        <ul class="documents-search row">
+          <li class="registration col-md-3">
+            <div class="title">Merafoam Chlor</div>
+            <div class="subtitle">Свидетельство о регистрации</div>
+            <div class="description">.pdf <span>(134 kB)</span></div>
+          </li>
+          <li class="leaflet col-md-3">
+            <div class="title">Merafoam Chlor</div>
+            <div class="subtitle">Информационный лифлет</div>
+            <div class="description">.pdf <span>(109 kB)</span></div>
+          </li>
+          <li class="sds col-md-3">
+            <div class="title">Merafoam Chlor</div>
+            <div class="subtitle">Security Data Sheet</div>
+            <div class="description">.pdf <span>(134 kB)</span></div>
+          </li>
+          <li class="pds col-md-3">
+            <div class="title">Merafoam Chlor</div>
+            <div class="subtitle">Product Data Sheet</div>
+            <div class="description">.pdf <span>(109 kB)</span></div>
+          </li>
+          <li class="registration col-md-3">
+            <div class="title">Merafoam Chlor AL</div>
+            <div class="subtitle">Свидетельство о регистрации</div>
+            <div class="description">.pdf <span>(134 kB)</span></div>
+          </li>
+          <li class="leaflet col-md-3">
+            <div class="title">Merafoam Chlor AL</div>
+            <div class="subtitle">Информационный лифлет</div>
+            <div class="description">.pdf <span>(109 kB)</span></div>
+          </li>
+          <li class="sds col-md-3">
+            <div class="title">Merafoam Chlor AL</div>
+            <div class="subtitle">Security Data Sheet</div>
+            <div class="description">.pdf <span>(134 kB)</span></div>
+          </li>
+        </ul>
+        {{else}}
+        <div class="page-title">Ничего не найдено</div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</article>
+
+{{#if isSomething}}
+<article class="container-grey">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="heading heading-top">
+          <span class="title title-dark">связанные материалы</span>
+        </div>
+        <div class="media-list">
+            <div class="col-md-3 item">
+              <div class="image product">
+                <img src="/assets/images/media/catalog-1.png">
+              </div>
+              <div class="category">Каталог</div>
+              <div class="title">Meragel Septospray</div>
+            </div>
+            <div class="col-md-3 item">
+              <div class="image">
+                <img src="/assets/images/media/catalog-2.png">
+              </div>
+              <div class="category product">Каталог</div>
+              <div class="title">Программа мойки поликарбонатных бутылей</div>
+            </div>
+            <div class="col-md-3 item">
+              <div class="image video">
+                <img src="/assets/images/media/video.png">
+              </div>
+              <div class="category clients">Видео</div>
+              <div class="title">Agristeryl и программа гигиены птицефабрики</div>
+            </div>
+            <div class="col-md-3 item">
+              <div class="image">
+                <img src="/assets/images/media/catalog-1.png">
+              </div>
+              <div class="category company">Каталог</div>
+              <div class="title">Новые номера ЕВРАЗЕС Aironit Forte</div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+{{/if}}
+{{else}}
+
+<article class="container-media">
+  <div class="outer-wrapper">
+    <div class="inner-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="page-title">Get all the documents you need</div>
+            <div class="body centered">
+            Введите название продукта в строку поиска выше и нажмите Enter.
+              <div class="media-intro">
+                <div class="stage-1"></div>
+                <div class="stage-2"></div>
+                <div class="stage-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+{{/if}}
+{{#if isSomething}}
+<article>
+    <div class="container-fluid">
+      <div class="container container-after-offset">
+        <div class="row">
+            <div class="col-md-6">
+              <div class="article">
+                  <div class="title">This is how we work for your success</div>
+                  <div class="body">The Uber brand is more than a name. It’s a set of values, attributes, and artwork that reflects the spirit of our company.  
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="video-about-block small">{{#link-to "about" class="button"}}more about <span>meratech</span>{{/link-to}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</article>
+{{/if}}
+<article class="container-dark-dotted">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="heading heading-top">
+          <span class="title title-dark-alter">последние релизы</span>
+        </div>
+        <div class="media-list">
+            <div class="col-md-6 hero-item">
+              <div class="image product">
+                <img src="/assets/images/media/catalog-iso-2.png">
+              </div>
+              <div class="category">Каталог</div>
+              <div class="title">Гигиена пивобезалкогольной промышленности</div>
+              <div class="description">The Uber brand is more than a name. It’s a set of values, attributes, and artwork that reflects the spirit of our company. </div>
+            </div>
+            <div class="col-md-3 item">
+              <div class="image">
+                <img src="/assets/images/media/catalog-2.png">
+              </div>
+              <div class="category product">Каталог</div>
+              <div class="title">Программа мойки поликарбонатных бутылей</div>
+            </div>
+            <div class="col-md-3 item">
+              <div class="image">
+                <img src="/assets/images/media/catalog-1.png">
+              </div>
+              <div class="category company">Каталог</div>
+              <div class="title">Новые номера ЕВРАЗЕС Aironit Forte</div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="container-grey">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="block-title title">Stay updated</div>
+      <div class="body centered">
+        Get the latest news from meratech about products, events and company.
+        <div class="centered-input centered-input-white">
+          <input placeholder="Search by phrase">
+          <button>Sign up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
