@@ -9,7 +9,7 @@ export default Ember.Route.extend({
   	}
   },
 	model(params) {
-		return this.controllerFor('industries').set('currentIndustryName', params.id);
+		return this.controllerFor('industries').set('currentIndustry', params.id);
     // return this.get('store').findRecord('photo', params.id);
   }
 });

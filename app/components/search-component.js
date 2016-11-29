@@ -12,7 +12,7 @@ export default Ember.Component.extend({
 
 
   actions: {
-    makeSearch: function(e){
+    makeSearch: function(){
       if(!!this.get('requestText')){
         // do search
         console.log('PEW!');

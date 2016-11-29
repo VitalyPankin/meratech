@@ -30,7 +30,7 @@ export default Ember.Controller.extend({
       name: 'laundry',
       title: 'Professional laundries'
     }
-    ]),
+  ]),
   currentIndustry: null,
   currentIndustryTitle: function(){
     switch(this.get('currentIndustry')){
@@ -59,5 +59,5 @@ export default Ember.Controller.extend({
         return  "Meat processing";
       }
     }
-  }.observes('currentIndustry')
+  }.property('currentIndustry')
 });

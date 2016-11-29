@@ -4,7 +4,6 @@ export default Ember.Route.extend({
 
   beforeModel(params) {
   	var industries = this.controllerFor('industries').get('industries');
-  	debugger;
     
   },
 	model(params) {

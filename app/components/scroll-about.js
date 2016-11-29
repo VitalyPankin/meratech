@@ -9,7 +9,7 @@ export default Ember.Component.extend({
 
   didInsertElement: function(){
     var _this = this;
-    Ember.$('section.about').on( 'scroll', function(e){
+    Ember.$('section.about').on( 'scroll', function(){
       var scrollTop = Ember.$(this).scrollTop();
       if(scrollTop>3400){
         _this.set('backIsHidden', true);
@@ -17,5 +17,8 @@ export default Ember.Component.extend({
         _this.set('backIsHidden', false);
       }
     });
-  }
+  },
+  backHidden: function(){
+    if(this.get('backIsHidden')){ return 'hidden-back'; }
+  }.property('backIsHidden')
 });

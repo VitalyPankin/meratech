@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
   actions: {
     search: function() {
       var searchField = this.get('searchField');
-      if(searchField=="merafoam"){
+      if(searchField==="merafoam"){
       	this.set('isSomething',true);
       }else{
       	this.set('isSomething',false);
