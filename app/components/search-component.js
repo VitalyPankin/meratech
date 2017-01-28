@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import { translationMacro as t } from "ember-i18n";
 
 export default Ember.Component.extend({
   classNames: ['nav navbar-nav navbar-right search-component'],
@@ -8,6 +9,7 @@ export default Ember.Component.extend({
   isFocused: false,
   justFocusedOut: false,
   requestText: '',
+  placeholderText: t("common.search"),
 
 
 

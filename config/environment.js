@@ -7,6 +7,10 @@ module.exports = function(environment) {
     wordpressHost: 'http://api.meratech.ru',
     rootURL: '/',
     locationType: 'auto',
+    timeDimention: 'Sec',
+    i18n: {
+      defaultLocale: 'ru'
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -21,7 +25,9 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+    moduleHandler: '_manager',
+    print: 'pdf'
   };
 
   if (environment === 'development') {
@@ -41,6 +47,12 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+    ENV['simple-auth'] = {
+      store: 'simple-auth-session-store:local-storage',
+      authorizer: 'authorizer:api-meratech',
+      crossOriginWhitelist: ['http://localhost:3001/'],
+      routeAfterAuthentication: '/protected'
+  };
   }
 
   if (environment === 'production') {

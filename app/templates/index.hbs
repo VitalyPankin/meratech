@@ -4,40 +4,54 @@
 <!-- START REVOLUTION SLIDER 5.0.7 auto mode -->
       {{slider-index}}
       <ul class="industry-menu">
-        <li class="cows">
-          <span>Cow breeding</span>
-          <div></div>
-        </li>
+        {{#link-to "industries" "cows"}}
+          <li class="cows">
+            <span>{{t "industries.cow_farms"}}</span>
+            <div></div>
+          </li>
+        {{/link-to}}
+        {{#link-to "industries" "poultry"}}
         <li class="chicken">
-          <span>Poultry</span>
+          <span>{{t "industries.poultry"}}</span>
           <div></div>
         </li>
+        {{/link-to}}
+        {{#link-to "industries" "pigs"}}
         <li class="pigs">
-          <span>Pig farms</span>
+          <span>{{t "industries.pig_farms"}}</span>
           <div></div>
         </li>
+        {{/link-to}}
+        {{#link-to "industries" "meat"}}
         <li class="meat">
-          <span>Meat processing</span>
+          <span>{{t "industries.meat_processing"}}</span>
           <div></div>
         </li>
+        {{/link-to}}
+        {{#link-to "industries" "brewery"}}
         <li class="beer">
-          <span>Brewery & Soft drinks</span>
+          <span>{{t "industries.brewery"}}</span>
           <div></div>
         </li>
+        {{/link-to}}
+        {{#link-to "industries" "milk"}}
         <li class="milk">
-          <span>Milk industry</span>
+          <span>{{t "industries.milk_industry"}}</span>
           <div></div>
         </li>
+        {{/link-to}}
+        {{#link-to "industries" "laundry"}}
         <li class="laundry">
-          <span>Laundry</span>
+          <span>{{t "industries.laundry"}}</span>
           <div></div>
         </li>
+        {{/link-to}}
         </ul>
 </article>
   <article>
-    <div class="container-fluid container-grey">
+    <div class="container-grey">
     <div class="container">
-      <div class="heading heading-top"><div class="title title-dark">news</div></div>
+      <div class="heading heading-top"><div class="title title-dark">{{t "common.news"}}</div></div>
       <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="news-item news-main">
@@ -75,23 +89,23 @@
     </div>
   </article>
   <article>
-    <div class="container-fluid container-white">
+    <div class="container-white">
     <div class="container container-offset-bottom">
       <div class="row">
         <div class="col-md-6 press-center-link">
-          <div class="heading heading-top"><div class="title">press <span>center</span></div></div>
+          <div class="heading heading-top"><div class="title">{{t "common.press"}} <span>{{t "common.center"}}</span></div></div>
           <div class="subarticle subarticle-short">
-            <div class="title">Press releases sweet and seductive</div>
-            <div class="body">All your dashboards are amazing! So clean<br> and easy to navigate, great job! All your dashboards<br> are amazing! So clean and easy to navigate, great job! All your dashboards are amazing! So clean and easy to navigate, great job!</div>
+            <div class="title">{{t "index.press_center.title"}}</div>
+            <div class="body">{{t "index.press_center.body"}}</div>
             <div class="button-link-forward">Watch the video</div>
           </div>
         </div>
         <div class="col-md-6 media-center-link">
-          <div class="heading heading-top"><div class="title">documentation</div></div>
+          <div class="heading heading-top"><div class="title">{{t "common.documentation"}}</div></div>
           <div class="subarticle subarticle-short">
-            <div class="title">Enchance your damn canister of chemshit as hell</div>
-            <div class="body">All your dashboards are amazing! So clean<br>  and easy to navigate, great job! All your<br> dashboards are amazing! So clean and easy to navigate,<br> great job! All your dashboards are amazing! So clean and easy to navigate, great job!</div>
-            {{#link-to "media-center" class="button button-red"}}В медиа-центр{{/link-to}}
+            <div class="title">{{t "index.documents.title"}}</div>
+            <div class="body">{{t "index.documents.body"}}</div>
+            {{#link-to "media-center" class="button button-red"}}{{t "common.go_to_media_center"}}{{/link-to}}
           </div>
         </div>
       </div>
@@ -99,34 +113,34 @@
     </div>
   </article>
   <article class="equipment-main">
-    <div class="container-fluid">
+    <div class="">
     <div class="container container-after-offset">
       <div class="row">
         <div class="col-md-12">
-          <div class="heading heading-top"><div class="title">professional <span>equipment</span></div></div>
+          <div class="heading heading-top"><div class="title">{{t "common.professional_1"}} <span>{{t "common.equipment"}}</span></div></div>
           <div class="article">
-            <div class="title">How performance looks like</div>
-            <div class="body">All your dashboards are amazing! So clean and easy to navigate, great job! All your dashboards are amazing! </div>
-            <div class="button button-red">Find product</div>
+            <div class="title">{{t "index.equipment.title"}}</div>
+            <div class="body">{{t "index.equipment.body"}} </div>
+            <div class="button button-red">{{t "common.find_product"}}</div>
             <ul class="equipment-list">
               <li class="cleaning_low">
-                <span>Системы мойки низкого давления</span>
+                <span>{{t "index.equipment.low_pressure"}}</span>
                 <div></div>
               </li>
               <li class="cleaning_high">
-                <span>Системы мойки высокого давления</span>
+                <span>{{t "index.equipment.high_pressure"}}</span>
                 <div></div>
               </li>
               <li class="lubrication">
-                <span>Системы смазки конвейеров</span>
+                <span>{{t "index.equipment.lubrication"}}</span>
                 <div></div>
               </li>
               <li class="co2">
-                <span>Установки CO<sub>2</sub></span>
+                <span>{{t "index.equipment.co2"}}</span>
                 <div></div>
               </li>
               <li class="dosation">
-                <span>Системы дозации</span>
+                <span>{{t "index.equipment.dosation"}}</span>
                 <div></div>
               </li>
             </ul>
@@ -137,17 +151,17 @@
     </div>
   </article>
 
-<article>
+<article class="equipment-index-hero">
   {{hero-index}} 
 </article>
 <article class="video-block">
   <div class="container-white">
     <div class="container container-offset-top">
           <div class="article video-about">
-            <div class="title">You need to know about us</div>
-            <div class="body">The Uber brand is more than a name. It’s a set of values, attributes, and artwork that reflects the spirit of our company.  </div>
+            <div class="title">{{t "index.video.title"}}</div>
+            <div class="body">{{t "index.video.body"}}</div>
             
-            <div class="video-about-block small">{{#link-to "about" class="button"}}more about <span>meratech</span>{{/link-to}}</div>
+            <div class="video-about-block small">{{#link-to "about" class="button"}}{{t "index.video.more"}} <span>meratech</span>{{/link-to}}</div>
           </div>
     </div>
   </div>

@@ -1,11 +1,11 @@
 <article class="news-header">
   <div class="container">
-		<div class="page-title title">Медиа и документы</div>
+		<div class="page-title title">{{t "media_center.media_center_title"}}</div>
     <div class="body controls">
       <div class="centered-input centered-input-media">
-        {{input insert-newline="search" allowedKeys="enter" value=searchField placeholder="Search by phrase"}}
-        {{#if isSearchOn}}
-        <div class="label">search for <span>{{confirmedValue}}</span> in <strong>media</strong></div>
+        {{input insert-newline="search" allowedKeys="enter" value=searchField placeholder="Search by phrase" submit="search"}}
+        {{#if searchQuery}}
+        <div class="label">{{t "media_center.search_for"}} <span>{{searchQuery}}</span> {{t "common.in"}} <strong>{{t "media_center.media"}}</strong></div>
         {{/if}}
       </div>
     </div>
@@ -17,67 +17,44 @@
     <div class="row">
       <div class="col-md-12">
         <div class="heading heading-top">
-        	<span class="title title-dark">результаты</span>
+        	<span class="title title-dark">{{t "common.results"}}</span>
 
-          {{#if isSomething}}
-					<span class="tip">7 найденных</span>
+          {{#if listResult.length}}
+					<span class="tip">{{listResult.length}} {{t "common.founded"}}</span>
           {{else}}
-          <span class="tip">нет найденных</span>
+          <span class="tip">{{t "common.no"}} {{t "common.founded"}}</span>
           {{/if}}
         </div>
-        {{#if isSomething}}
+        {{#if listResult.length}}
         <ul class="documents-search row">
-          <li class="registration col-md-3">
-            <div class="title">Merafoam Chlor</div>
-            <div class="subtitle">Свидетельство о регистрации</div>
-            <div class="description">.pdf <span>(134 kB)</span></div>
-          </li>
-          <li class="leaflet col-md-3">
-            <div class="title">Merafoam Chlor</div>
-            <div class="subtitle">Информационный лифлет</div>
-            <div class="description">.pdf <span>(109 kB)</span></div>
-          </li>
-          <li class="sds col-md-3">
-            <div class="title">Merafoam Chlor</div>
-            <div class="subtitle">Security Data Sheet</div>
-            <div class="description">.pdf <span>(134 kB)</span></div>
-          </li>
-          <li class="pds col-md-3">
-            <div class="title">Merafoam Chlor</div>
-            <div class="subtitle">Product Data Sheet</div>
-            <div class="description">.pdf <span>(109 kB)</span></div>
-          </li>
-          <li class="registration col-md-3">
-            <div class="title">Merafoam Chlor AL</div>
-            <div class="subtitle">Свидетельство о регистрации</div>
-            <div class="description">.pdf <span>(134 kB)</span></div>
-          </li>
-          <li class="leaflet col-md-3">
-            <div class="title">Merafoam Chlor AL</div>
-            <div class="subtitle">Информационный лифлет</div>
-            <div class="description">.pdf <span>(109 kB)</span></div>
-          </li>
-          <li class="sds col-md-3">
-            <div class="title">Merafoam Chlor AL</div>
-            <div class="subtitle">Security Data Sheet</div>
-            <div class="description">.pdf <span>(134 kB)</span></div>
-          </li>
+
+          {{#each listResult as |item index|}}
+          <a href="{{item.link}}">
+            <li class="{{item.type}} col-md-3">
+              {{#if isRuLocale}}
+              <div class="title">{{{item.name}}}</div>
+              <div class="subtitle">{{t (concat "media_center." item.type)}}</div>
+              <div class="description">.pdf <span>(~{{item.size}} {{t "common.kb"}})</span></div>
+              {{else}}
+              {{/if}}
+            </li>
+          </a>
+          {{/each}}
         </ul>
         {{else}}
-        <div class="page-title">Ничего не найдено</div>
+        <div class="page-title">{{t "common.nothing-found-alter"}}</div>
         {{/if}}
       </div>
     </div>
   </div>
 </article>
 
-{{#if isSomething}}
 <article class="container-grey">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="heading heading-top">
-          <span class="title title-dark">связанные материалы</span>
+          <span class="title title-dark">{{t "common.related-materials"}}</span>
         </div>
         <div class="media-list">
             <div class="col-md-3 item">
@@ -113,7 +90,6 @@
     </div>
   </div>
 </article>
-{{/if}}
 {{else}}
 
 <article class="container-media">
@@ -122,9 +98,9 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="page-title">Get all the documents you need</div>
+            <div class="page-title">{{t "media_center.media_center_slogan"}}</div>
             <div class="body centered">
-            Введите название продукта в строку поиска выше и нажмите Enter.
+              {{t "media_center.media_center_instruction"}}
               <div class="media-intro">
                 <div class="stage-1"></div>
                 <div class="stage-2"></div>
@@ -138,9 +114,8 @@
   </div>
 </article>
 {{/if}}
-{{#if isSomething}}
-<article>
-    <div class="container-fluid">
+{{!-- <article>
+    <div class="">
       <div class="container container-after-offset">
         <div class="row">
             <div class="col-md-6">
@@ -156,8 +131,7 @@
         </div>
       </div>
     </div>
-</article>
-{{/if}}
+</article> --}}
 <article class="container-dark-dotted">
   <div class="container">
     <div class="row">
@@ -194,7 +168,7 @@
   </div>
 </article>
 <article class="container-grey">
-  <div class="container-fluid">
+  <div class="">
     <div class="container">
       <div class="block-title title">Stay updated</div>
       <div class="body centered">

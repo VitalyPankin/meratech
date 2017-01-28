@@ -18,7 +18,7 @@ module.exports = function(defaults) {
       enabled: true
     },
     minifyJS: {
-      enabled: true
+      enabled: false
     },
     minifyCSS: {
       enabled: true
@@ -45,7 +45,8 @@ module.exports = function(defaults) {
 
 
   app.import('bower_components/bootstrap/dist/js/bootstrap.js');
-  // app.import('bower_components/jquery.cookie/jquery.cookie.js');
+  app.import('bower_components/jquery.cookie/jquery.cookie.js');
+  app.import('bower_components/moment/min/moment.min.js');
   // app.import('bower_components/jquery-mousewheel/jquery.mousewheel.min.js');
   // app.import('bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css');
   // app.import('bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js');

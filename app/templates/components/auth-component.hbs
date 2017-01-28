@@ -1,0 +1,26 @@
+{{#if session.isAuthenticated}}
+  <div class="link login" {{action 'invalidateSession'}}><div class="fa fa-user"></div>{{t "common.logout"}}</div>
+{{else}}
+  <div class="link login" data-toggle="modal" data-target="#myModal"><div class="fa fa-user"></div>{{t "common.login"}}</div>
+{{/if}}<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form {{action 'authenticate' on='submit'}}>
+      <div class="modal-body"> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          {{input id='identification' placeholder=placeholderLogin value=identification key-down="resetError"}}
+          {{input id='password' placeholder=placeholderPassword type='password' value=password key-down="resetError"}}
+          {{#if errorMessage}}
+            <div class="error">{{errorMessage}}</div>
+          {{/if}}
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="button button-red">{{t "common.login"}}</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

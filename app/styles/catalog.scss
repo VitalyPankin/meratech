@@ -3,6 +3,14 @@
 	    background-size: cover;
 	    background-position: center center;
 }
+.catalog-block-specs, .catalog-block-about, .catalog-block-specs-dark, .get-catalog{
+	.container{
+		@media (max-width: 767px){
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
+} 
 .catalog-details-header{
 	overflow: hidden;
 	height: 850px;
@@ -14,23 +22,47 @@
 	background: url("images/catalog-overlay.png"), linear-gradient(to bottom,  #ffffff 60%,#f7f8f9 80%,#f1f2f4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f1f2f4',GradientType=0 ); /* IE6-9 */
 	background-repeat: repeat;
+
+	@media (max-width: 1599px){
+		height: 750px;
+	}
+	@media (max-width: 991px){
+		height: auto;
+	}
+	@media (max-width: 767px){
+		padding-top: 390px;
+	}
 	.container{
 		position: relative;
 		padding-top: 225px;
 		height: 850px;
 		box-sizing: border-box;
+		@media (max-width: 1599px){
+			padding-top: 175px;
+			height: 750px;
+		}
+		@media (max-width: 767px){
+			padding-left: 15px;
+			padding-right: 15px;
+			height: 640px;
+		}
 		.title{
 	    font-family: 'etelka-text';
 	    font-size: 5em;
 	    text-transform: uppercase;
 	    clear: left;
 	    white-space: nowrap;
-	    text-indent: -5px;
 	    margin-bottom: 40px;
+	    letter-spacing: -0.03em;
+			@media (max-width: 991px){
+	    	font-size: 3.5em;
+			}
 	    sup{
-	    	font-size: .3em;
-	    	position: relative;
-	      top: -33px;
+		    font-size: .4em;
+		    position: relative;
+		    top: -27px;
+		    font-family: etelka-light;
+		    left: 3px;
 	    }
 	    .yellow{
 	    	color: #ccb622;
@@ -77,12 +109,45 @@
 		top: 80px;
 		left: 50%;
 		margin-left: -100px;
+
+		@media (max-width: 1599px){
+			height: 700px;
+			margin-left: 20px;
+		}
+		@media (max-width: 1199px){
+			margin-left: -20px;
+		}
+		@media (max-width: 991px){
+			margin-left: -70px;
+			height: 600px;
+		}
+		@media (max-width: 767px){
+			height: 600px;
+			position: absolute;
+			margin-top: -20px;
+			left: 50%;
+			margin-left: -290px;
+		}
 	}
+
 	.heading-bottom{
 		position: absolute;
 		bottom: 0;
 		height: 50px;
 		left: calc(50% - 720px);
+
+		@media (max-width: 1599px){
+			left: calc(50% - 585px);
+		}
+		@media (max-width: 1199px){
+			left: calc(50% - 485px);
+		}
+		@media (max-width: 991px){
+			left: calc(50% - 375px);
+		}
+		@media (max-width: 793px){
+			left: 15px;
+		}
 	}
 }
 @media (max-width: 1500px){
@@ -110,10 +175,40 @@
     background-position: -730px -76px;
   }
   .use-icon-brush{
-    background-position: -815px -76px;
+    background-position: -815px -77px;
   }
   .use-icon-disinfection{
     background-position: -898px -76px;
+  }
+  .use-icon-recircular{
+    background-position: -732px -157px;
+  }
+  .use-icon-cip{
+    background-position: -813px -156px;
+  }
+  .use-icon-pressure{
+    background-position: -898px -156px;
+  }
+  .use-icon-dishes{
+    background-position: -731px -228px;
+  }
+  .use-icon-laundry{
+    background-position: -814px -228px;
+  }
+  .use-icon-hands{
+    background-position: -896px -229px;
+  }
+  .use-icon-additive{
+    background-position: -731px -300px;
+  }
+  .use-icon-lubricant{
+    background-position: -810px -301px;
+  }
+  .use-icon-fogging{
+    background-position: -896px -305px;
+  }
+  .use-icon-hot-fogging{
+    background-position: -896px -376px;
   }
 }
 
@@ -162,7 +257,7 @@
   width: 100%;
   background-color: rgba(79, 77, 85, 1);
   &.dropdown-menu{
-  	top: 313px;
+  	top: 375px;
   	border: none;
   	-webkit-box-shadow: none;
   	box-shadow: none;
@@ -417,7 +512,7 @@
 		  font-family: "etelka-light";
 		  font-size: 1.3em;
 			b{
-		    font-family: "etelka-medium";
+		    font-family: "etelka-text";
 			}
 		}
 	}
@@ -453,6 +548,148 @@
   } 
 }
 
+.industry-list{
+	padding-top: 60px;
+	padding-bottom: 25px;
+	.item	{
+		float: left;
+		width: 100%;
+		position: relative;
+		height: 300px;
+		cursor: pointer;
+		color: #3b3d3f;
+		img{
+			width: 296px;
+			height: 306px;
+			position: absolute;
+			top: -40px;
+			left: -80px;
+      -webkit-transition: 0.225s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -moz-transition: 0.225s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -ms-transition: 0.225s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      transition: 0.225s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+		}
+		.title{
+			margin-left: 160px;
+			color: #3b3d3f;
+			text-align: left;
+		  font-family: "etelka-light";
+		  font-size: 1.3em;
+			b{
+		    font-family: "etelka-text";
+			}
+			&:after{
+				width: 50px;
+		    height: 1px;
+		    background-color: #f1332c;
+		    position1: absolute;
+		    bottom1: 0;
+		    left1: 0;
+		    display: block;
+		    margin: 15px 0 20px 0;
+		    content: '';
+			}
+		}
+		.description{
+			margin-left: 160px;
+			padding-right: 50px;
+			max-width: 300px;
+		}
+		dl{
+			width: 296px;
+			left: 0;
+			top: 0;
+			position: absolute;
+			opacity: 0;
+      -webkit-transition: 0.225s cubic-bezier(0.175, 0.885, 0.320, 1) opacity;
+      -moz-transition: 0.225s cubic-bezier(0.175, 0.885, 0.320, 1) opacity;
+      -ms-transition: 0.225s cubic-bezier(0.175, 0.885, 0.320, 1) opacity;
+      transition: 0.225s cubic-bezier(0.175, 0.885, 0.320, 1) opacity;
+			dt{
+		  	font-family: "etelka-light";
+		  	font-weight: 100;
+		  	line-height: 1em;
+			}
+			dd{
+				margin-bottom: 10px;
+        font-family: "etelka-medium";
+        letter-spacing: -0.03em;
+        font-size: 1.2em;
+				.circle{
+				  width: 15px;
+				  height: 15px;
+				  top: 2px;
+				  margin-left: 8px;
+				}
+			}
+		}
+		&:hover{
+			img{
+				left: -100px;
+				opacity: 0;
+	      -webkit-transition: 0.425s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+	      -moz-transition: 0.425s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+	      -ms-transition: 0.425s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+	      transition: 0.425s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+			}
+			dl{
+			opacity: 1;
+      -webkit-transition: 0.3s 0.15s cubic-bezier(0.175, 0.885, 0.320, 1) opacity;
+      -moz-transition: 0.3s 0.15s cubic-bezier(0.175, 0.885, 0.320, 1) opacity;
+      -ms-transition: 0.3s 0.15s cubic-bezier(0.175, 0.885, 0.320, 1) opacity;
+      transition: 0.3s 0.15s cubic-bezier(0.175, 0.885, 0.320, 1) opacity;
+			}
+		}
+	}
+}
+@media (max-width: 450px) {
+  .industry-list {
+		.item	{
+		  max-width: auto;
+	  } 
+  } 
+}
+@media (max-width: 767px) {
+  .industry-list {
+		.item	{
+			margin: 0 auto;
+			float: none; 
+		  max-width: 450px;
+	  } 
+  } 
+}
+
+@media (min-width: 768px) {
+  .industry-list {
+		.item	{
+			width: 50%; 
+	  } 
+  } 
+}
+
+@media (min-width: 992px) {
+  .industry-list {
+		.item	{
+			width: 50%; 
+	  } 
+  } 
+}
+
+@media (min-width: 1200px) {
+  .industry-list {
+		.item	{
+			width: 33.3333%; 
+	  } 
+  } 
+}
+@media (min-width: 1500px) {
+  .industry-list {
+		.item	{
+			width: 25%; 
+	  } 
+  } 
+}
+
 
 
 .catalog-heading{
@@ -460,28 +697,28 @@
 	width: 100%;
 	background-size: cover;
 	background-position: right;
-	&.heading-foam{
+	&.heading-opc_cleaning{
 	background-image: url("images/catalog-articles-foam.jpg");
 	}
-	&.heading-cip{
-	background-image: url("images/catalog-articles-cip.jpg");
-	background-position: center;
-	}
-	&.heading-additive{
+	&.heading-cip_cleaning{
 	background-image: url("images/catalog-articles-additive.jpg");
 	background-position: center;
 	}
-	&.heading-farm{
+	&.heading-additive{
+	background-image: url("images/catalog-articles-cip.jpg");
+	background-position: center;
+	}
+	&.heading-agriculture{
 	background-image: url("images/catalog-articles-farm.jpg");
 	}
-	&.heading-disinfection{
+	&.heading-disinfectant{
 	background-image: url("images/catalog-articles-disinfection.jpg");
 	background-position: center;
 	}
 	&.heading-laundry{
 	background-image: url("images/catalog-articles-laundry.jpg");
 	}
-	&.heading-grease{
+	&.heading-lubricant{
 	background-image: url("images/catalog-articles-grease.jpg");
 	}
 }

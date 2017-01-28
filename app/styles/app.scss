@@ -33,8 +33,9 @@ hgroup, nav, section, summary, video {
 fieldset, img, iframe {
   border: 0;
 }
-a {
+a, a:hover {
   outline: none;
+  color: inherit;
 }
 li {
   list-style: none;

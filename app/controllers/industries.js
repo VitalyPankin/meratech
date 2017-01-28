@@ -1,63 +1,116 @@
 import Ember from 'ember';
+import { translationMacro as t } from "ember-i18n";
 
 export default Ember.Controller.extend({
+  currentIndustry: null,
+  i18n: Ember.inject.service(),
+  isRuLocale: function(){
+    return this.get('i18n.locale')==='ru';
+  }.property('i18n.locale'),
   industries: Ember.A([
     {
       name: 'brewery',
-      title: 'Brewery industry'
+      title: () => this.get('i18n').t("industries.brewery")
     },
     {
       name: 'milk',
-      title: 'Milk industry'
+      title: () => this.get('i18n').t("industries.milk_industry")
     },
     {
       name: 'cows',
-      title: 'Cow farms'
+      title: () => this.get('i18n').t("industries.cow_farms")
     },
     {
       name: 'pigs',
-      title: 'Pig farms'
+      title: () => this.get('i18n').t("industries.pig_farms")
     },
     {
       name: 'poultry',
-      title: 'Polutry and chicken farms'
+      title: () => this.get('i18n').t("industries.poultry")
     },
     {
       name: 'meat',
-      title: 'Meat processing'
+      title: () => this.get('i18n').t("industries.meat_processing")
     },
     {
       name: 'laundry',
-      title: 'Professional laundries'
+      title: () => this.get('i18n').t("industries.laundry")
     }
   ]),
-  currentIndustry: null,
   currentIndustryTitle: function(){
     switch(this.get('currentIndustry')){
-      case 'poultry': {
-        return  "Chicken farm & poultry";
+      case 'cows':{
+        return this.get('i18n').t("industries.cow_farms");
       }
-      case 'brewery': {
-        return  "Brewery industry";
+      case 'poultry':{
+        return this.get('i18n').t("industries.poultry");
       }
-      case 'laundry': {
-        return  "Professional laundries";
+      case 'pigs':{
+        return this.get('i18n').t("industries.pig_farms");
       }
-      case 'milk': {
-        return  "Milk industry";
+      case 'meat':{
+        return this.get('i18n').t("industries.meat_processing");
       }
-      case 'cows': {
-        return  "Cow farms";
+      case 'brewery':{
+        return this.get('i18n').t("industries.brewery");
       }
-      case 'pigs': {
-        return  "Brewery industry";
+      case 'milk':{
+        return this.get('i18n').t("industries.milk_industry");
       }
-      case 'chicken': {
-        return  "Chicken farms";
-      }
-      case 'meat': {
-        return  "Meat processing";
+      case 'laundry':{
+        return this.get('i18n').t("industries.laundry");
       }
     }
-  }.property('currentIndustry')
+  }.property('currentIndustry'),
+  catalogFile: function(){
+    return this.get('documents').findBy("industry", this.get('currentIndustry'));
+  }.property('documents','currentIndustry'),
+  productsIndustryFiltered: function(){
+    let _this = this;
+    return this.get('products').filter(function(item, index, enumerable){
+      let result = false;
+      let filter = 'application_'+_this.get('currentIndustry');
+      if(!!item.get(filter)) { result=true; }
+      return result;
+    });
+  }.property('products','currentIndustry'),
+  productsFormatted: function(){
+    this.get('productsIndustryFiltered').forEach(function(item, index, enumerable){
+      let title = item.get('title');
+      if(title.substr(0, title.indexOf(' '))){
+        if(title.indexOf('Aironit Forte')+1){
+          item.set('title_formatted', 'Aironit Forte<sup>®</sup> <b>'+title.substr(14)+'</b>');  
+        }else{
+          item.set('title_formatted', title.substr(0, title.indexOf(' '))+'<sup>®</sup> <b>'+title.substr(title.indexOf(' ')+1)+'</b>');  
+        }
+      }else{
+        item.set('title_formatted',item.get('title')+'<sup>®</sup>');
+      }
+    });
+    return this.get('productsIndustryFiltered');
+  }.property('productsIndustryFiltered'),
+  productCategories: function(){
+    let categories = ["opc_cleaning", 'cip_cleaning', 'additive', 'agriculture', 'lubricant', 'disinfectant', 'laundry', 'personal'];
+    this.get('productsFormatted').uniqBy('product_type').forEach((item) => {
+      if(item.get('product_type') && categories.indexOf(item.get('product_type'))<0){ 
+        categories.push(item.get('product_type')); 
+      }
+    });
+    return categories;
+  }.property('productsFormatted'),
+  productsCategorized: function(){
+    let result = [];
+    let _this=this;
+    this.get('productCategories').forEach((category, index) => {
+        let trans = _this.get('i18n').t("catalog.types."+category);
+        result.push({
+          name: category,
+          translate: trans,
+          data: _this.get('productsFormatted').filter(function(item, index, enumerable){
+              return item.get('product_type') === category;
+            })
+        }); 
+    });
+    return result;
+  }.property('productsFiltered')
 });

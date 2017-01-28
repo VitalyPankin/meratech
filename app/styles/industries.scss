@@ -11,7 +11,7 @@
     	background-position: center center;
     	background-repeat: no-repeat;
     	.title{
-		    font-size: 36px;
+		    font-size: 48px;
 		    font-family: "etelka-medium";
 		    letter-spacing: -0.03em;
 		    margin: 0 auto;
@@ -21,6 +21,49 @@
     	}
     	&.poultry{
     		background-image: url("images/industries/poultry.png");
+    		background-size: auto 400px;
+	    	.title{
+			    color: #fff;
+	    	}
+    	}
+    	&.cows{
+    		background-image: url("images/industries/cow.png");
+    		background-size: auto 420px;
+	    	.title{
+			    color: #fff;
+			    text-indent: 100px;
+	    	}
+    	}
+    	&.pigs{
+    		background-image: url("images/industries/pigs.png");
+    		background-size: auto 400px;
+	    	.title{
+			    color: #fff;
+	    	}
+    	}
+    	&.meat{
+    		background-image: url("images/industries/meat.png");
+    		background-size: auto 400px;
+	    	.title{
+			    color: #fff;
+	    	}
+    	}
+    	&.milk{
+    		background-image: url("images/industries/milk.png");
+    		background-size: auto 400px;
+	    	.title{
+			    color: #fff;
+	    	}
+    	}
+    	&.brewery{
+    		background-image: url("images/industries/beer.png");
+    		background-size: auto 400px;
+	    	.title{
+			    color: #fff;
+	    	}
+    	}
+    	&.laundry{
+    		background-image: url("images/industries/laundry.png");
     		background-size: auto 400px;
 	    	.title{
 			    color: #fff;

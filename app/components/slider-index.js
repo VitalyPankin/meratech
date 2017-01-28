@@ -3,6 +3,9 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   classNames: [''],
   layoutName: 'components/slider-index',
+  willDestroyElement: function(){
+    jQuery("#rev_slider_4_1").revkill();
+  },
   didInsertElement: function(){
     var tpj=jQuery;     
     var revapi4;

@@ -1,0 +1,19 @@
+<div class="dropdown news-dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{displaySelectedMonths}} 
+  </a>
+  <ul class="dropdown-menu clearfix">
+  {{#each displayMonths as |month index|}}
+    <li {{action 'setMonth' month}}>{{t (concat "common.months."month)}}</li>
+  {{/each}}
+  </ul>
+</div>
+<div class="dropdown news-dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{selectedYear}} 
+  </a>
+  <ul class="dropdown-menu clearfix">
+
+  {{#each dateObject as |year index|}}
+  <li {{action 'setYear' year.year}}>{{year.year}}</li>
+  {{/each}}
+  </ul>
+</div>

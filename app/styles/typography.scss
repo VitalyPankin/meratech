@@ -13,6 +13,7 @@
     font-family: "etelka-text";
   }
 }
+
 .title-main{
   font-family: "etelka-text";
   font-size: 40px;
@@ -24,4 +25,9 @@
 .hero-desription{
   font-family: "etelka-light";
   color: rgba(255,255,255,0.8);
+}
+.equipment-index-hero{
+  .article-title{
+    text-transform: lowercase;
+  }
 }

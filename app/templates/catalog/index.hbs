@@ -1,106 +1,96 @@
 <article class="catalog-header">
-  <div class="container-fluid">
+  <div class="">
     <div class="container">
-			<div class="page-title">Professional hygiene solutions</div>
+			<div class="page-title">{{t "common.slogan"}}</div>
 			<div class="body controls">
 				<div class="centered-input">
-					<input placeholder="Search">
+					{{input placeholder=placeholderText value=search}}
 				</div>
 			</div>
 		</div>
 	</div>
-  <div class="container-fluid container-border">
+  <div class="container-border">
 	    <div class="tabs-menu-wrapper">
 	    	<ul class="tabs-menu">
-	    		<!--li>
-					  <button type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    Тип продукта
-					  </button>
-					  <div class="dropdown-menu catalog-filter-container">
-						  <ul class="filter-list container">
-				        <li class="cows">
-				          <span>Внешняя мойка</span>
-				        </li>
-				        <li class="chicken">
-				          <span>Внутренняя мойка</span>
-				        </li>
-				        <li class="pigs">
-				          <span>Дезинфекция</span>
-				        </li>
-				        <li class="meat">
-				          <span>Смазки</span>
-				        </li>
-				        <li class="beer">
-				          <span>Животноводство</span>
-				        </li>
-				        <li class="milk">
-				          <span>Усиливающие добавки</span>
-				        </li>
-				        <li class="laundry">
-				          <span>Другие средства</span>
-				        </li>
-			        </ul>
-					  </div>
-	    		</li-->
 	    		<li>
-					  <button type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    Сфера применения
-					  </button>
+	    			{{#if filterIndustry}}
+						  <button type="button" class="active" {{action "setIndustryFilter" '' on="mouseUp"}}>
+						    {{filterIndustryTitle}}
+						  </button>
+
+					  {{/if}}
+						  <button type="button" class={{filterIndustryClass}} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    {{t "catalog.scope"}}
+						  </button>
 					  <div class="dropdown-menu catalog-filter-container">
 						  <ul class="industry-filter filter-list container">
-				        <li class="cows">
-				          <span>Cow breeding</span>
+				        <li class="cows" {{action "setIndustryFilter" 'cows' on="mouseUp"}}>
+				          <span>{{t "industries.cow_farms"}}</span>
 				        </li>
-				        <li class="chicken">
-				          <span>Poultry</span>
+				        <li class="chicken" {{action "setIndustryFilter" 'poultry' on="mouseUp"}}>
+				          <span>{{t "industries.poultry"}}</span>
 				        </li>
-				        <li class="pigs">
-				          <span>Pig farms</span>
+				        <li class="pigs" {{action "setIndustryFilter" 'pigs' on="mouseUp"}}>
+				          <span>{{t "industries.pig_farms"}}</span>
 				        </li>
-				        <li class="meat">
-				          <span>Meat processing</span>
+				        <li class="meat" {{action "setIndustryFilter" 'meat' on="mouseUp"}}>
+				          <span>{{t "industries.meat_processing"}}</span>
 				        </li>
-				        <li class="beer">
-				          <span>Brewery &amp; Soft drinks</span>
+				        <li class="beer" {{action "setIndustryFilter" 'brewery' on="mouseUp"}}>
+				          <span>{{t "industries.brewery"}}</span>
 				        </li>
-				        <li class="milk">
-				          <span>Milk industry</span>
+				        <li class="milk" {{action "setIndustryFilter" 'milk' on="mouseUp"}}>
+				          <span>{{t "industries.milk_industry"}}</span>
 				        </li>
-				        <li class="laundry">
-				          <span>Laundry</span>
+				        <li class="laundry" {{action "setIndustryFilter" 'laundry' on="mouseUp"}}>
+				          <span>{{t "industries.laundry"}}</span>
 				        </li>
 			        </ul>
 					  </div>
 					</li>
 	    		<li>
-					  <button type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    Пенообразование
+	    			{{#if filterFoaming}}
+						  <button type="button" class="active" {{action "setFoamingFilter" '' on="mouseUp"}}>
+						    {{filterFoamingTitle}}
+						  </button>
+					  {{/if}}
+					  <button type="button" class={{filterFoamingClass}} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    {{t "catalog.foaming"}}
 					  </button>
 					  <div class="dropdown-menu catalog-filter-container">
 						  <div class="container container-center">
 							  <form class="radio-set">
-								  <input class="radio-input" type="radio" id="radio1" name="radio-category" checked>
-									<label class="radio-label" for="radio1">All</label>
-
-									<input class="radio-input" type="radio" id="radio2" name="radio-category" >
-									<label class="radio-label" for="radio2">Foaming</label>
-
-									<input class="radio-input" type="radio" id="radio3" name="radio-category" >
-									<label class="radio-label" for="radio3">Not foaming</label>
+							  	<div {{action "setFoamingFilter" 0 on="mouseUp"}}>
+									  <input class="radio-input" type="radio" id="radio1" name="radio-category" checked>
+										<label class="radio-label" for="radio1">{{t "common.all"}}</label>
+									</div>
+							  	<div {{action "setFoamingFilter" 2 on="mouseUp"}}>
+										<input class="radio-input" type="radio" id="radio2" name="radio-category">
+										<label class="radio-label" for="radio2">{{t "catalog.foaming_alt"}}</label>
+									</div>
+							  	<div {{action "setFoamingFilter" 1 on="mouseUp"}}>
+										<input class="radio-input" type="radio" id="radio3" name="radio-category">
+										<label class="radio-label" for="radio3">{{t "catalog.not_foaming"}}</label>
+									</div>
 							  </form>
 						  </div>
 					  </div>
 	    		</li>	
 	    		<li>
-					  <button type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    Кислотность (рН)
+	    			{{#if filterAcid}}
+						  <button type="button" class="active" {{action "setAcidFilter" '' on="mouseUp"}}>
+						    {{filterAcidTitle}}
+						  </button>
+					  {{/if}}
+					  <button type="button" class={{filterAcidClass}} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    {{t "catalog.ph_scale"}}
 					  </button>
 					  <div class="dropdown-menu catalog-filter-container">
 					  	<div class="acid-filter container">
 						  	<ul>
-						  		<li class="acidic"><span>Acidic</span></li>
-						  		<li class="neutral"><span>Neutral</span></li>
-						  		<li class="alkalic"><span>Alkalic</span></li>
+						  		<li class="acidic" {{action "setAcidFilter" 'acidic' on="mouseUp"}}><span>{{t "catalog.acidic"}}</span></li>
+						  		<li class="neutral" {{action "setAcidFilter" 'neutral' on="mouseUp"}}><span>{{t "catalog.neutral"}}</span></li>
+						  		<li class="alkalic" {{action "setAcidFilter" 'alkalic' on="mouseUp"}}><span>{{t "catalog.alkalic"}}</span></li>
 						  	</ul>
 						  	<div class="scale"><b>1</b> <b>2</b> <b>3</b> <b>4</b> <b>5</b> <b>6</b> <b>7</b> <b>8</b> <b>9</b> <b>10</b> <b>11</b></div>
 						  	<div class="spectre"></div>
@@ -111,333 +101,37 @@
 			</div>
 	</div>
 </article>
-<article>
-  <div class="container-fluid catalog-heading heading-foam">
-  	
+
+{{#unless productsFiltered.length}}
+	<div class="page-title search-title">{{t "common.nothing-found"}}</div>
+{{/unless}}
+{{#each productsCategorized as |category index|}}
+{{#if category.data.length}}
+ <article>
+  <div class="container-fluid catalog-heading heading-{{category.name}}">	
   </div>
-  <div class="container-fluid container-grey">
+  <div class="container-grey">
 		<div class="container">
       <div class="heading heading-top">
-      	<span class="title title-dark">внешняя мойка</span>
+      	<span class="title title-dark">{{category.translate}}</span>
       </div>
 	    <div class="row">
 	      <div class="col-md-12">
 	        <div class="catalog-list">
-	        	{{#link-to "catalog.detail"}}
+						{{#each category.data as |item index|}}
+	        	{{#link-to "catalog.detail" item.slug}}
 	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
+	        		<img src={{item.thumbnail}}>
+	        		<span class="title">{{{item.title_formatted}}}</span>
 	        	</div>
 	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
+						{{/each}}
 		      </div>
 	      </div>
 	    </div>
 	  </div>
   </div>
 </article>
-<article>
-  <div class="container-fluid catalog-heading heading-cip"></div>
-  <div class="container-fluid container-grey">
-		<div class="container">
-      <div class="heading heading-top">
-      	<span class="title title-dark">внешняя мойка</span>
-      </div>
-	    <div class="row">
-	      <div class="col-md-12">
-	        <div class="catalog-list">
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-		      </div>
-	      </div>
-	    </div>
-	  </div>
-  </div>
-</article>
-<article>
-  <div class="container-fluid catalog-heading heading-additive"></div>
-  <div class="container-fluid container-grey">
-		<div class="container">
-      <div class="heading heading-top">
-      	<span class="title title-dark">внешняя мойка</span>
-      </div>
-	    <div class="row">
-	      <div class="col-md-12">
-	        <div class="catalog-list">
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-		      </div>
-	      </div>
-	    </div>
-	  </div>
-  </div>
-</article>
-<article>
-  <div class="container-fluid catalog-heading heading-farm"></div>
-  <div class="container-fluid container-grey">
-		<div class="container">
-      <div class="heading heading-top">
-      	<span class="title title-dark">внешняя мойка</span>
-      </div>
-	    <div class="row">
-	      <div class="col-md-12">
-	        <div class="catalog-list">
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-		      </div>
-	      </div>
-	    </div>
-	  </div>
-  </div>
-</article>
-<article>
-  <div class="container-fluid catalog-heading heading-disinfection"></div>
-  <div class="container-fluid container-grey">
-		<div class="container">
-      <div class="heading heading-top">
-      	<span class="title title-dark">внешняя мойка</span>
-      </div>
-	    <div class="row">
-	      <div class="col-md-12">
-	        <div class="catalog-list">
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-		      </div>
-	      </div>
-	    </div>
-	  </div>
-  </div>
-</article>
-<article>
-  <div class="container-fluid catalog-heading heading-laundry"></div>
-  <div class="container-fluid container-grey">
-		<div class="container">
-      <div class="heading heading-top">
-      	<span class="title title-dark">внешняя мойка</span>
-      </div>
-	    <div class="row">
-	      <div class="col-md-12">
-	        <div class="catalog-list">
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-		      </div>
-	      </div>
-	    </div>
-	  </div>
-  </div>
-</article>
-<article>
-  <div class="container-fluid catalog-heading heading-grease"></div>
-  <div class="container-fluid container-grey">
-		<div class="container">
-      <div class="heading heading-top">
-      	<span class="title title-dark">внешняя мойка</span>
-      </div>
-	    <div class="row">
-	      <div class="col-md-12">
-	        <div class="catalog-list">
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog.detail"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-		      </div>
-	      </div>
-	    </div>
-	  </div>
-  </div>
-</article>
+{{/if}}
+{{/each}}
+

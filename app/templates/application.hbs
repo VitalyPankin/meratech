@@ -17,8 +17,8 @@
               </div>
               <div class="col-md-12 col-sm-6">
                 <ul class="terms">
-                  <li class="link">Privacy Policy</li>
-                  <li class="link">Terms of Use</li>
+                  <li class="link">{{t "common.privacy_policy"}}</li>
+                  <li class="link">{{t "common.terms_of_use"}}</li>
                 </ul>
                 <ul class="social">
                   <li class="fa fa-facebook">Facebook</li>
@@ -30,9 +30,15 @@
           </div>
           <div class="col-md-3 col-sm-6">
             <div class="address">
-              19 Delovaya st., Nizhny Novgorod<br>
-              603093 Russia<br>
-              LCC Meratech Rus Group
+              {{#if ruLocale}}
+                Казанское шоссе 25 стр.2<br>
+                603087, Россия, Нижний Новгород<br>
+                ООО Мератек Рус Груп
+              {{else}}
+                25 Kazanskoe ave., building 2,  Nizhny Novgorod<br>
+                603087 Russia<br>
+                LCC Meratech Rus Group
+              {{/if}}
             </div>
             <div class="phone">
               8 (800) 333-58-88
@@ -43,18 +49,18 @@
           </div>
           <div class="col-md-2 col-sm-6">
             <ul>
-              {{#link-to "about"}}<li>O <span>meratech</span></li>{{/link-to}}
-              {{#link-to "press-center"}}<li>Пресс-центр</li>{{/link-to}}
-              {{#link-to "media-center"}}<li>Документация</li>{{/link-to}}
-              {{#link-to "catalog"}}<li>Гигиенические средства</li>{{/link-to}}
-              {{#link-to "equipment"}}<li>Оборудование</li>{{/link-to}}
-              {{#link-to "index"}}<li>Проекты</li>{{/link-to}}
+              {{#link-to "about"}}<li>{{t "common.about_prep"}} <span>meratech</span></li>{{/link-to}}
+              {{#link-to "press-center"}}<li>{{t "common.press_center"}}</li>{{/link-to}}
+              {{#link-to "media-center"}}<li>{{t "common.documentation"}}</li>{{/link-to}}
+              {{#link-to "catalog"}}<li>{{t "common.hygiene_2"}} {{t "common.solutions"}}</li>{{/link-to}}
+              {{#link-to "equipment"}}<li>{{t "common.equipment"}}</li>{{/link-to}}
             </ul>
           </div>
           <div class="col-md-4">
-            <div class="title">Профессиональные гигиенические решения</div>
-            <div class="body">На протяжении долгого времени мы разрабатываем и производим самые современные моющие и дезинфицирующие средства для предприятий сельского хозяйства, мясоптицеперерабатывающих и молочных заводов, а также предприятий пивобезалкогольной промышленности. </div>
-            <div class="link login"><div class="fa fa-user"></div>Login</div>
+            <div class="title">{{t "common.footer.title"}}</div>
+            <div class="body">{{t "common.footer.body"}}</div>
+            {{auth-component}}
+            
           </div>
         </div>
         <div class="row">

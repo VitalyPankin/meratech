@@ -9,7 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('contacts', { path: '/contacts' });
   this.route('about', { path: '/about' });
-  this.route('media-center', { path: '/media' });
+  this.route('media-center', { path: '/media-center' });
   this.route('index', { path: '/' });
  //  this.resource('news', function() {
  //    this.route('news', {
@@ -18,18 +18,20 @@ Router.map(function() {
  //    this.route('detail');   
  //    this.route('index');   
 	// });
-  this.route('press-center', { path: '/press-center' });
+  this.route('press-center',  { path: '/press-center' });
 
-  this.route('news', function(){
-    this.route('new', {
-      path: '/news/:id'
-    });
-  });  
+ 
   this.route('articles', function(){
-    this.route('article', {
-      path: '/articles/:id'
+    this.route('detail', {
+      path: '/:id'
     });
   }); 
+
+  this.route('news', function(){
+    this.route('detail', {
+      path: '/:id'
+    });
+  });
   // this.route('industries'); 
   this.route('industries', {
       path: '/industry/:id'
@@ -42,15 +44,17 @@ Router.map(function() {
   //   });
   // });
   this.route("catalog",  function() {
-    this.route('detail');  
+    this.route('detail', {
+      path: '/:id'
+    }); 
 	});
+
  //  this.route('equipment', function() {
  //    this.route('detail', {
  //      path: '/equipment/:id'
  //    });  
 	// });
   this.route('equipment', function() {
-    this.route('detail');  
   });
   this.route('not-found', {path: '/*wildcard'});
 });

@@ -15,17 +15,17 @@
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right navbar-lang">
-        <li><a href="#" class="active">RU</a></li>
-        <li><a href="#">EN</a></li>
+        <li><a href="#" class="{{if ruLocale 'active' 'inactive'}}" {{action 'setLocale' 'ru'}}>RU</a></li>
+        <li><a href="#" class="{{if ruLocale 'inactive' 'active'}}" {{action 'setLocale' 'en'}}>EN</a></li>
       </ul>
-      {{search-component}}
+      {{!-- {{search-component}} --}}
 
       <ul class="nav navbar-nav navbar-right">
-          <li>{{#link-to "about"}}О компании{{/link-to}}</li>
-          <li>{{#link-to "press-center"}}Пресс-центр{{/link-to}}</li>
+          <li>{{#link-to "about"}}{{t "index.menu.about"}}{{/link-to}}</li>
+          <li>{{#link-to "press-center"}}{{t "index.menu.press_center"}}{{/link-to}}</li>
           <!--li>{{#link-to "segments"}}Сегменты бизнеса{{/link-to}}</li-->
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Каталог 
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{t "index.menu.catalog"}} 
             <span class="caret">
               <span class="icon-bar first"></span>
               <span class="icon-bar"></span>
@@ -34,19 +34,19 @@
             <ul class="dropdown-menu clearfix">
               {{#link-to "equipment" class="col-md-6 col-sm-6 col-xs-6 catalog-menu-equipment"}}
                 <div class="body">
-                  Профессиональное<br> оборудование
+                  {{t "common.professional_equipment"}}
                 </div>
-                <div class="button button-red">Узнать больше</div>
+                <div class="button button-red">{{t "common.go_to_catalog"}}</div>
               {{/link-to}}
               {{#link-to "catalog" class="col-md-6 col-sm-6 col-xs-6 catalog-menu-solutions"}}
                 <div class="body">
-                  Средства гигиены<br><br>
+                  {{t "common.hygiene_solitions"}}<br><br>
                 </div>
-                <div class="button button-red">Узнать больше</div>
+                <div class="button button-red">{{t "common.go_to_catalog"}}</div>
               {{/link-to}}
             </ul>
           </li>
-          <li>{{#link-to "contacts"}}Контакты{{/link-to}}</li>
+          <li>{{#link-to "contacts"}}{{t "index.menu.contacts"}} {{/link-to}}</li>
         </ul>
     </div>
   </div>

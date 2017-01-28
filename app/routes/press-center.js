@@ -1,12 +1,38 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  
+  session: Ember.inject.service('session'),
+  beforeModel: function(transition) {
+    if (!this.get('session.isAuthenticated')) {
+      this.set('session.attemptedTransition', transition);
+    }
+  },
 	model() {
-		// return this.store.findAll('post');
+    let _postsModel = this.controllerFor('application').get('postsModel');
+    if(_postsModel){
+      
+    }else{
+      _postsModel = this.get('store').query('post', {per_page: 500});
+      this.controllerFor('application').set('postsModel', _postsModel);
+    }
 
-		// By default the WP-API returns a maximum of 10 items.
-		// To get more we can set the `per_page` query.
-		debugger;
-		return this.store.query('post', {per_page: 99});
-	}
+    let _articlesModel = this.controllerFor('application').get('articlesModel');
+    if(_articlesModel){
+      
+    }else{
+      _articlesModel = this.get('store').query('article', {per_page: 500});
+      this.controllerFor('application').set('articlesModel', _articlesModel);
+    }
+    return Ember.RSVP.hash({
+      articles: _articlesModel,
+      posts: _postsModel
+    });
+	},
+
+  setupController: function(controller, model) {
+    this._super(...arguments);
+    this.controllerFor('press-center').set('posts', model.posts);
+    this.controllerFor('press-center').set('articles', model.articles);
+  }
 });
