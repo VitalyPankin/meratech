@@ -56,7 +56,8 @@ export default Ember.Controller.extend({
 	  	}
 	  }
   }.property('filterAcid'),
-  search: null,
+  searchQuery: null,
+  searchField: null,
   placeholderText: t("common.search"),
   i18n: Ember.inject.service(),
   productsFormatted: function(){
@@ -79,8 +80,8 @@ export default Ember.Controller.extend({
   	let _this = this;
   	return this.get('productsFormatted').filter(function(item, index, enumerable){
   		let result = true;
-  		if(_this.get('search')){
-  		 	result = ((item.get('title').toLowerCase().indexOf(_this.get('search').toLowerCase())+1) || (item.get('description_ru').toLowerCase().indexOf(_this.get('search').toLowerCase())+1) || (item.get('description_en').toLowerCase().indexOf(_this.get('search').toLowerCase())+1)) && result;
+  		if(_this.get('searchQuery')){
+  		 	result = ((item.get('title').toLowerCase().indexOf(_this.get('searchQuery').toLowerCase())+1) || (item.get('description_ru').toLowerCase().indexOf(_this.get('searchQuery').toLowerCase())+1) || (item.get('description_en').toLowerCase().indexOf(_this.get('searchQuery').toLowerCase())+1)) && result;
   		}
   		if(_this.get('filterIndustry')){
   		 	result = item.get('industry').includes(_this.get('filterIndustry')) && result;
@@ -104,7 +105,7 @@ export default Ember.Controller.extend({
 	  	// }
 	    return result;
 	  });
-  }.property('filterIndustry','filterFoaming','filterAcid','search','productsFormatted'),
+  }.property('filterIndustry','filterFoaming','filterAcid','searchQuery','productsFormatted'),
   productCategories: function(){
   	let categories = ["opc_cleaning", 'cip_cleaning', 'additive', 'agriculture', 'lubricant', 'disinfectant', 'laundry', 'personal'];
   	this.get('productsFiltered').uniqBy('product_type').forEach((item) => {
@@ -130,6 +131,10 @@ export default Ember.Controller.extend({
   	return result;
   }.property('productsFiltered'),
   actions: {
+    search: function(value) {
+      this.set('searchQuery',this.get('searchField'));
+      this.set('isSearchOn',true);
+    },
   	setIndustryFilter(value){
   		if(value){
   			this.set('filterIndustryClass', 'hidden');

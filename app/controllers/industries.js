@@ -35,6 +35,10 @@ export default Ember.Controller.extend({
     {
       name: 'laundry',
       title: () => this.get('i18n').t("industries.laundry")
+    },
+    {
+      name: 'fish',
+      title: () => this.get('i18n').t("industries.fish")
     }
   ]),
   currentIndustryTitle: function(){
@@ -61,7 +65,7 @@ export default Ember.Controller.extend({
         return this.get('i18n').t("industries.laundry");
       }
     }
-  }.property('currentIndustry'),
+  }.property('currentIndustry', 'i18n.locale'),
   catalogFile: function(){
     return this.get('documents').findBy("industry", this.get('currentIndustry'));
   }.property('documents','currentIndustry'),
@@ -97,7 +101,7 @@ export default Ember.Controller.extend({
       }
     });
     return categories;
-  }.property('productsFormatted'),
+  }.property('productsFormatted','currentIndustry'),
   productsCategorized: function(){
     let result = [];
     let _this=this;
@@ -112,5 +116,5 @@ export default Ember.Controller.extend({
         }); 
     });
     return result;
-  }.property('productsFiltered')
+  }.property('productsFormatted')
 });

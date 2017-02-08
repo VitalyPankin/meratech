@@ -1,0 +1,29 @@
+<article class="article-details">
+  <div class="container-image" style="background-image:url('{{article.image}}')">
+    <div class="container article">
+    {{#if isRuLocale}}
+			<div class="title">{{article.title_ru}}</div>
+    {{else}}
+			<div class="title">{{article.title_en}}</div>
+    {{/if}}
+    </div>
+  </div>
+  <div class="container-white">
+    <div class="container container-offset-top">
+    	<div class="row">
+	    	<div class="heading heading-top">
+	    		<div class="title title-dark">{{t 'common.articles'}}</div>
+					{{#link-to "press-center"}}<span class="btn-archive">{{t 'common.press_center'}}</span>{{/link-to}}
+	    	</div>
+				<div class="body content-block html-content">
+					<span class="date">{{readableDate}}</span>
+			    {{#if isRuLocale}}
+						<div class="title">{{{article.text_ru}}}</div>
+			    {{else}}
+						<div class="title">{{{article.text_en}}}</div>
+			    {{/if}}
+				</div>
+	    </div>
+    </div>
+  </div>
+</article>

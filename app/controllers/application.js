@@ -3,7 +3,6 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
 	currentPath: null,
-	wat: "sfdasfawefre",
 	isAboutRoute: false,
   productsModel: null,
   documentsModel: null,
@@ -21,7 +20,7 @@ export default Ember.Controller.extend({
   updateCurrentPath: function() {
     this.set('currentPath', this.get('currentPath'));
     console.log(this.get('currentPath'));
-    if(this.get('currentPath')==='about'){
+    if(this.get('currentPath')==='about' || this.get('currentPath')==='not-found'){
 	    this.set('isAboutRoute', true);
     }else{
 	    this.set('isAboutRoute', false);

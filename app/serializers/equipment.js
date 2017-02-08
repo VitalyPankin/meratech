@@ -4,7 +4,7 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
 
   normalizeResponse(store, primaryModelClass, payload, id, requestType) {
     payload = {
-      eqiupment: payload.data
+      equipment: payload.data
     };
 
     return this._super(store, primaryModelClass, payload, id, requestType);

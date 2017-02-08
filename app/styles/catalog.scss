@@ -1,7 +1,17 @@
 .equipment-1{
-	    background: #f9fafa url("images/equipment-1.jpg");
-	    background-size: cover;
-	    background-position: center center;
+  background: #f9fafa url("images/equipment-1.jpg");
+  background-size: cover;
+  background-position: center center;
+  .container-after-offset{
+  	padding-top: 110px;
+  }
+  .article{
+    padding-bottom: 20px;
+    padding-left: 15px;
+  }
+	@media (max-width: 991px){
+  	background-position: center left;
+	}
 }
 .catalog-block-specs, .catalog-block-about, .catalog-block-specs-dark, .get-catalog{
 	.container{
@@ -209,6 +219,12 @@
   }
   .use-icon-hot-fogging{
     background-position: -896px -376px;
+  }
+  .use-icon-floor{
+    background-position: -731px -376px;
+  }
+  .use-icon-filters{
+    background-position: -812px -376px;
   }
 }
 
@@ -699,6 +715,7 @@
 	background-position: right;
 	&.heading-opc_cleaning{
 	background-image: url("images/catalog-articles-foam.jpg");
+	background-position: left;
 	}
 	&.heading-cip_cleaning{
 	background-image: url("images/catalog-articles-additive.jpg");
@@ -720,6 +737,13 @@
 	}
 	&.heading-lubricant{
 	background-image: url("images/catalog-articles-grease.jpg");
+	}
+	&.heading-personal{
+	background-image: url("images/catalog-articles-personal.jpg");
+	}
+	&.heading-other{
+	background-image: url("images/catalog-articles-other.jpg");
+	background-position: center;
 	}
 }
 .equipment-heros{

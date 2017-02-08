@@ -6,6 +6,8 @@ export default Ember.Component.extend({
   classNameBindings: ['isActive:active'],
   layoutName: 'components/scroll-about',
   backIsHidden: false,
+  model: null,
+  isRuLocale: null,
 
   didInsertElement: function(){
     var _this = this;

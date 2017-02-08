@@ -10,12 +10,34 @@ export default Ember.Route.extend({
     }
   },
   model: function(params) {
-  	return this.get('store').query('posts', {filter: {name: params.id}}).then(models => models.get('firstObject'));
-    //return this.get('store').findRecord('product', params.id);
+    let _postsModel = this.controllerFor('application').get('postsModel');
+    let result = null;
+    if(_postsModel){
+      result = _postsModel.filter((item)=>{
+        if(params.id === item.get('slug')){
+          return true;
+        }
+        return false;
+      }).get('firstObject');
+    }else{
+      _postsModel = this.get('store').query('post', {per_page: 500});
+      result = _postsModel.then(models => models.filter((item)=>{
+        if(params.id === item.get('slug')){
+          return true;
+        }
+        return false;
+      }).get('firstObject'));
+      this.controllerFor('application').set('postsModel', _postsModel);
+    }
+    return Ember.RSVP.hash({
+      posts: _postsModel,
+      post: result
+    });
   },
 
   setupController: function(controller, model) {
     this._super(controller, model);
-    this.controllerFor('catalog.detail').set('posts', model);
+    this.controllerFor('news.detail').set('post', model.post);
+    this.controllerFor('news.detail').set('posts', model.posts);
   }
 });

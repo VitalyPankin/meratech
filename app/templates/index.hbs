@@ -1,6 +1,11 @@
 
 
 <article class="top-container">
+    <div class="loading">
+      <div class="ball ball-1"></div>
+      <div class="ball ball-2"></div>
+      <div class="ball ball-3"></div>
+    </div>
 <!-- START REVOLUTION SLIDER 5.0.7 auto mode -->
       {{slider-index}}
       <ul class="industry-menu">
@@ -48,46 +53,17 @@
         {{/link-to}}
         </ul>
 </article>
-  <article>
-    <div class="container-grey">
+<article>
+  <div class="container-grey">
     <div class="container">
       <div class="heading heading-top"><div class="title title-dark">{{t "common.news"}}</div></div>
       <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="news-item news-main">
-            <div class="date">01 апреля 2016</div>
-            <div class="title">Новая упаковка и программа Safe Packing</div>
-            <div class="body">All your dashboards are amazing! So clean and easy to navigate, great job! All your dashboards are amazing! So clean and easy to navigate, great job!</div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="news-item news-main">
-            <div class="date">01 апреля 2016</div>
-            <div class="title">Meragel Septospray</div>
-            <div class="body">All your dashboards are amazing! So clean and easy to navigate, great job! All your dashboards are amazing! </div>
-            <div class="button-link-forward">Watch product</div>
-          </div>
-        </div>      
-
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="news-item news-main">
-            <div class="date">01 апреля 2016</div>
-            <div class="title">Новая упаковка и программа Safe Packing</div>
-            <div class="body">All your dashboards are amazing! So clean and easy to navigate, great job! All your dashboards are amazing! So clean and easy to navigate, great job!</div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="news-item news-main">
-            <div class="date">01 апреля 2016</div>
-            <div class="title">Meragel Septospray</div>
-            <div class="body">All your dashboards are amazing! So clean and easy to navigate, great job! All your dashboards are amazing! </div>
-            <div class="button-link-forward">Watch product</div>
-          </div>
-        </div>
+        {{latest-news posts=model}}
       </div>
     </div>
-    </div>
-  </article>
+  </div>
+</article>
+
   <article>
     <div class="container-white">
     <div class="container container-offset-bottom">
@@ -97,7 +73,7 @@
           <div class="subarticle subarticle-short">
             <div class="title">{{t "index.press_center.title"}}</div>
             <div class="body">{{t "index.press_center.body"}}</div>
-            <div class="button-link-forward">Watch the video</div>
+            {{#link-to "press-center" class="button button-red"}}{{t "common.go_to_press_center"}}{{/link-to}}
           </div>
         </div>
         <div class="col-md-6 media-center-link">
@@ -121,28 +97,38 @@
           <div class="article">
             <div class="title">{{t "index.equipment.title"}}</div>
             <div class="body">{{t "index.equipment.body"}} </div>
-            <div class="button button-red">{{t "common.find_product"}}</div>
+            {{#link-to "equipment" class="button button-red"}}{{t "common.equipment"}}{{/link-to}}
             <ul class="equipment-list">
+              {{#link-to "equipment" (query-params anchor='#posts_onwall')}}
               <li class="cleaning_low">
                 <span>{{t "index.equipment.low_pressure"}}</span>
                 <div></div>
               </li>
+              {{/link-to}}
+              {{#link-to "equipment" (query-params anchor='#mobile')}}
               <li class="cleaning_high">
                 <span>{{t "index.equipment.high_pressure"}}</span>
                 <div></div>
               </li>
+              {{/link-to}}
+              {{#link-to "equipment" (query-params anchor='#lubrication')}}
               <li class="lubrication">
                 <span>{{t "index.equipment.lubrication"}}</span>
                 <div></div>
               </li>
+              {{/link-to}}
+              {{#link-to "equipment" (query-params anchor='#co2')}}
               <li class="co2">
                 <span>{{t "index.equipment.co2"}}</span>
                 <div></div>
               </li>
+              {{/link-to}}
+              {{#link-to "equipment" (query-params anchor='#dosation')}}
               <li class="dosation">
                 <span>{{t "index.equipment.dosation"}}</span>
                 <div></div>
               </li>
+              {{/link-to}}
             </ul>
           </div>
         </div>

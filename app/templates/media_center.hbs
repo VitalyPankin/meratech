@@ -3,7 +3,7 @@
 		<div class="page-title title">{{t "media_center.media_center_title"}}</div>
     <div class="body controls">
       <div class="centered-input centered-input-media">
-        {{input insert-newline="search" allowedKeys="enter" value=searchField placeholder="Search by phrase" submit="search"}}
+        {{input insert-newline="search" allowedKeys="enter" value=searchField placeholder=placeholderText submit="search"}}
         {{#if searchQuery}}
         <div class="label">{{t "media_center.search_for"}} <span>{{searchQuery}}</span> {{t "common.in"}} <strong>{{t "media_center.media"}}</strong></div>
         {{/if}}
@@ -29,13 +29,16 @@
         <ul class="documents-search row">
 
           {{#each listResult as |item index|}}
-          <a href="{{item.link}}">
-            <li class="{{item.type}} col-md-3">
+          <a target="_blank" href="{{item.link}}">
+            <li class="{{item.type}} col-md-3 col-sm-6 col-xs-12">
               {{#if isRuLocale}}
               <div class="title">{{{item.name}}}</div>
               <div class="subtitle">{{t (concat "media_center." item.type)}}</div>
               <div class="description">.pdf <span>(~{{item.size}} {{t "common.kb"}})</span></div>
               {{else}}
+              <div class="title">{{{item.name}}}</div>
+              <div class="subtitle">{{t (concat "media_center." item.type)}}</div>
+              <div class="description">.pdf <span>(~{{item.size}} {{t "common.kb"}})</span></div>
               {{/if}}
             </li>
           </a>
@@ -50,42 +53,29 @@
 </article>
 
 <article class="container-grey">
-  <div class="container">
+  <div class="container container-unpadded">
     <div class="row">
       <div class="col-md-12">
         <div class="heading heading-top">
           <span class="title title-dark">{{t "common.related-materials"}}</span>
         </div>
+        {{#if listDocumentsResult.length}}
         <div class="media-list">
-            <div class="col-md-3 item">
-              <div class="image product">
-                <img src="/assets/images/media/catalog-1.png">
+          {{#each listDocumentsResult as |item index|}}
+          <a target="_blank" href="{{item.link}}">
+            <div class="item col-md-3 col-sm-6 col-xs-12">
+              <div class="image {{item.type}}">
+                <img src="{{item.image}}">
               </div>
-              <div class="category">Каталог</div>
-              <div class="title">Meragel Septospray</div>
+              <div class="category">{{t (concat "media_center.types." item.type)}}</div>
+              <div class="title">{{{item.name}}}</div>
             </div>
-            <div class="col-md-3 item">
-              <div class="image">
-                <img src="/assets/images/media/catalog-2.png">
-              </div>
-              <div class="category product">Каталог</div>
-              <div class="title">Программа мойки поликарбонатных бутылей</div>
-            </div>
-            <div class="col-md-3 item">
-              <div class="image video">
-                <img src="/assets/images/media/video.png">
-              </div>
-              <div class="category clients">Видео</div>
-              <div class="title">Agristeryl и программа гигиены птицефабрики</div>
-            </div>
-            <div class="col-md-3 item">
-              <div class="image">
-                <img src="/assets/images/media/catalog-1.png">
-              </div>
-              <div class="category company">Каталог</div>
-              <div class="title">Новые номера ЕВРАЗЕС Aironit Forte</div>
-            </div>
+          </a>
+          {{/each}}
         </div>
+        {{else}}
+        <div class="page-title">{{t "common.nothing-found-alter"}}</div>
+        {{/if}}
       </div>
     </div>
   </div>
@@ -133,35 +123,44 @@
     </div>
 </article> --}}
 <article class="container-dark-dotted">
-  <div class="container">
+  <div class="container container-unpadded">
     <div class="row">
       <div class="col-md-12">
         <div class="heading heading-top">
-          <span class="title title-dark-alter">последние релизы</span>
+          <span class="title title-dark-alter">{{t "common.latest_releases"}}</span>
         </div>
         <div class="media-list">
-            <div class="col-md-6 hero-item">
-              <div class="image product">
-                <img src="/assets/images/media/catalog-iso-2.png">
+          {{#if isEquipmentCatalog}}
+            <a target="_blank" href="{{isEquipmentCatalog.file}}">
+              <div class="col-md-6 clearfix hero-item">
+                <div class="image product">
+                  <img src="/assets/images/media/catalog-iso-2.png">
+                </div>
+                <div class="category">{{t "media_center.types.catalog"}}</div>
+                {{#if isRuLocale}}
+                <div class="title">{{isEquipmentCatalog.title_ru}}</div>
+                <div class="description">{{isEquipmentCatalog.description_ru}}</div>
+                <div class="button button-red">{{t "common.get_catalog"}}</div>
+                {{else}}
+                <div class="title">{{isEquipmentCatalog.title_en}}</div>
+                <div class="description">{{isEquipmentCatalog.description_en}}</div>
+                <div class="button button-red">{{t "common.get_catalog"}}</div>
+                {{/if}}
               </div>
-              <div class="category">Каталог</div>
-              <div class="title">Гигиена пивобезалкогольной промышленности</div>
-              <div class="description">The Uber brand is more than a name. It’s a set of values, attributes, and artwork that reflects the spirit of our company. </div>
-            </div>
-            <div class="col-md-3 item">
-              <div class="image">
-                <img src="/assets/images/media/catalog-2.png">
+            </a>
+          {{/if}}
+
+          {{#each documentsLatest as |item index|}}
+          <a target="_blank" href="{{item.link}}">
+            <div class="item col-md-3 col-sm-6 col-xs-12">
+              <div class="image {{item.type}}">
+                <img src="{{item.image}}">
               </div>
-              <div class="category product">Каталог</div>
-              <div class="title">Программа мойки поликарбонатных бутылей</div>
+              <div class="category">{{t (concat "media_center.types." item.type)}}</div>
+              <div class="title">{{{item.name}}}</div>
             </div>
-            <div class="col-md-3 item">
-              <div class="image">
-                <img src="/assets/images/media/catalog-1.png">
-              </div>
-              <div class="category company">Каталог</div>
-              <div class="title">Новые номера ЕВРАЗЕС Aironit Forte</div>
-            </div>
+          </a>
+          {{/each}}
         </div>
       </div>
     </div>

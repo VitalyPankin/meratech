@@ -10,9 +10,10 @@ export default Model.extend({
 	date: attr('date'),
 	featured_media: attr('number'),
 	format: attr(),
-	tags: hasMany('tag', {async: true}),
+	tags: attr('string'),
 
 	file: attr('string'),
+	image: attr('string'),
 	type: attr('string'),
 	description_en: attr('string'),
 	description_ru: attr('string'),

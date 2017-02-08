@@ -1,4 +1,14 @@
 export default {
+  'about': {
+    'lab': {
+      'title': 'Research laboratory',
+      'body': "Our research labs form the core of the company's development and control department, the main of which is in France, where he develops hygiene products for more than 40 years. <br> <br> As a result of many years of research work with specialized research institutes, chemical and biological departments the largest universities in Europe, we have received more than 100 patents for chemical products and have created a unique range of hygiene products, which can meet the requirements of the market and is able to implement the most complex hygiene program for our customers."
+    },
+    'production': {
+      'title': 'Innovative production',
+      'body': '<p>Our production facilities are certified according to ISO 9001 and ISO 14001, are located in Europe and Russia. With this distribution of production capacity, we can carry out a flexible, cost-effective for our customers the pricing policy, as well as comply with the requirements and standards of the European environmental legislation. </p> <p> In the production process we use the unique equipment and more quality control phases. Each batch of the product passes the testing process based on internal testing and verified to conform to the specifications and safety standards in the laboratory, and we keep control samples from each of them. We use only highly advanced technology and chemical raw trusted European brands. </p> ',
+    }
+  },
   'index': {
     'menu': {
       'about': 'About us',
@@ -8,7 +18,7 @@ export default {
     },
     'equipment': {
       'title':'How performance looks like',
-      'body':'All your dashboards are amazing! So clean and easy to navigate, great job! All your dashboards are amazing!',
+      'body':'Reliable hardware companions which will help to provide any complex hygiene program for food production.',
       'low_pressure':'Low pressure stations',
       'high_pressure':'High pressure stations',
       'lubrication':'Lubrication systems',
@@ -16,12 +26,16 @@ export default {
       'dosation':'Dosation systems',
     },
     'press_center': {
-      'title':'Press releases sweet and seductive',
-      'body':'All your dashboards are amazing! So clean<br> and easy to navigate, great job! All your <br>dashboards are amazing! So clean and <br>easy to navigate, great job! All your <br>dashboards are amazing! So clean and easy <br>to navigate, great job!'
+      'title':'Press releases and research',
+      'body':"There you will find analytical information, science and research publications and news stories to help you learn more about the company."
+    },
+    'products': {
+      'title':'Outstanding efficiency and ecofiendly power',
+      'body':'Expert quality hygiene solutions for the professionals in every sector of food and drinks industry.'
     },
     'documents': {
-      'title':'Enchance your damn canister of chemshit as hell',
-      'body':'All your dashboards are amazing! So clean<br> and easy to navigate, great job! All your dashboards<br> are amazing! So clean and easy to navigate, great job! All your dashboards are amazing! So clean and easy to navigate, great job!'
+      'title':'Media resources and documents',
+      'body':'Accompanying and normative documents, <br/>catalogs and all the materials that will tell you<br/> about all <span class="red">meratech<sup>&reg;</sup></span> products.'
     },
     'video': {
       'title':'You need to know about us',
@@ -36,15 +50,57 @@ export default {
     'about_prep': 'About',
     'catalog': 'Catalog',
     'center': 'center',
+    'copyright': 'Copyright',
+    'copyright_disclaimer': 'All Rights Reserved. All other trademarks are the property of their respective owners and are used with their permission.',
     'details': 'Details',
     'documentation': 'Documentation',
     'equipment': 'Equipment',
     'email': 'email',
     'find_product': 'Find product',
-    'from': 'от',
+    'founded': 'founded',
+    'from': 'from',
     'get_catalog': 'Get catalog',
+    'get_catalog_hash': {
+      'poultry': {
+        'title': 'Get catalog for poultry',
+        'body': 'Complex hygiene program for poultry farms and poultry processing industry enterprises from industry professionals.',
+      },
+      'pigs': {
+        'title': 'Get catalog for pig farms',
+        'body': 'Hygiene program for pig food industry. Breeding rooms and meat processing cycle hygiene.',
+      },
+      'cows': {
+        'title': 'Get catalog for cow farms',
+        'body': 'Complex hygiene solutions for dairy farms and livestock enterprises',
+      },
+      'meat': {
+        'title': 'Get catalog for meat processing facilities',
+        'body': 'Universal hygiene program for meat processing industry, which provides exceptional hygiene control in the enterprise.',
+      },
+      'milk': {
+        'title': 'Get catalog for milk industry',
+        'body': 'Integrated hygiene program for all types of the milk processing enterprises.',
+      },
+      'brewery': {
+        'title': 'Get catalog for brewery industry',
+        'body': 'Innovative hygiene program for brewery enterprises of the food industry.',
+      },
+      'laundry': {
+        'title': 'Get catalog for professional laundry',
+        'body': 'Professional hygiene program for industrial laundries for sustainable and profitable maintenance cycle.',
+      },
+      'equipment': {
+        'title': 'Get equipment catalog',
+        'body': 'Stability and confidence in the reliability of our hygienic equipment will make you sure about tommorow, which proven in a variety of complex hygienic support programs for food enterprises.',
+      },
+      'all': {
+        'title': 'Get catalogues and documentation',
+        'body': 'Find and download all publications by <span class="red">meratech@</span> with this product.',
+      },
+    },
     'go_to_catalog': 'To catalog',
     'go_to_media_center': 'To media center',
+    'go_to_press_center': 'Press center',
     'hygiene_1': 'Hygiene',
     'hygiene_2': 'Hygiene',
     'hygiene_solitions': 'Hygiene solitions',
@@ -52,9 +108,11 @@ export default {
     'input_login': 'Input login',
     'input_password': 'Input password',
     'kb': 'kB',
+    'latest_releases': 'Latest releases',
+    'latest_news': 'Latest news',
     'learn_more': 'Learn more',
     'login': 'Login',
-    'logout': 'logout',
+    'logout': 'Logout',
     'months':{
       'january': 'January',
       'february': 'February',
@@ -72,13 +130,19 @@ export default {
     'news': 'News',
     'news_archive': 'All news',
     'no': 'no',
+    'no_data': 'No data',
     'articles_archive': 'All articles',
+    'no-translation': "Sorry, but we haven't translated this product yet",
     'nothing-found': "Are you sure you're right?",
     'nothing-found-alter': 'Nothing found',
     'nothing-exist': "Seem like we have nothing yet",
     'nothing-exist-news': "Seem like we don't have news like that",
     'nothing-exist-articles': "Seem like we don't have articles like that",
     'related-materials': 'Related materials',
+    'page_not_found': {
+      'title': "Oops! Looks like we've cleaned this page up",
+      'body': 'You can start from the <a href="/">homepage</a> or a href="/contacts">call or write us</a> abous this accident'
+    },
     'press': 'Press',
     'press_center': 'Press center',
     'privacy_policy': 'Privacy Policy',
@@ -96,7 +160,14 @@ export default {
     'to': 'to',
     'footer': {
       'title':'Professional hygiene solutions',
-      'body':'На протяжении долгого времени мы разрабатываем и производим самые современные моющие и дезинфицирующие средства для предприятий сельского хозяйства, мясоптицеперерабатывающих и молочных заводов, а также предприятий пивобезалкогольной промышленности.'
+      'body':'For a long time we design and manufacture the most innovative hygiene solutions for agricultural enterprises, dairies, beer and soft drinks industry enterprises.'
+    }
+  },
+  'contacts':{
+    'additive': 'add',
+    'types':{
+      'storage': 'Storages',
+      'office': 'Offices'
     }
   },
   'industries':{
@@ -106,7 +177,42 @@ export default {
     'milk_industry': 'Milk industry',
     'brewery': 'Brewery & soft drinks',
     'meat_processing': 'Meat processing',
-    'laundry': 'Laundry'
+    'laundry': 'Laundry',
+    'fish': 'Fish industry'
+  },
+  'equipment': {
+    'categories': {
+      'mobile': 'Mobile equipment',
+      'stationary': 'Stationary equipment',
+      'accessory': 'Accessory'
+    },
+    'subcategories': {
+      'pumps_module_single': 'Single-modular pump stations',
+      'posts_onwall': 'On-wall cleaning posts',
+      'pumps_modular_multi': 'Multi-modular pump stations',
+      'pumps_onwall': 'On-wall pump stations',
+      'inertia_drums': 'Inertia reels',
+      'station': 'Mobile cleaning stations',
+      'post': 'Mobile cleaning posts',
+      'other': '',
+      'description': {
+        'pumps_module_single': '',
+        'posts_onwall': '',
+        'pumps_modular_multi': '',
+        'pumps_onwall': '',
+        'inertia_drums': '',
+        'station': '',
+        'post': '',
+        'other': '',
+      },
+    },
+    'advantages': 'Advantages',
+    'articles': 'Vendor codes',
+    'complectation': 'Complectation',
+    'options': 'Options',
+    'specs': 'Specifications',
+    'title':'Equipment professionals',
+    'description':'Reliable and efficient equipment from the market-leading partners that becomes indispensable tool in the everyday battle for quality products and wealth of all food production.',
   },
   'press_center':{
     'looking_for': 'looking for',
@@ -127,19 +233,28 @@ export default {
     'media_center_instruction': 'Input product name in search field and hit Enter.',
     'leaflet': 'Leaflet',
     'registration': 'Registration certificate',
+    'registration_ru': 'EurAzES certificate',
+    'registration_en': 'Registration certificate',
     'leaflet_': 'Security Data Sheet',
     'registration_': 'Product Data Sheet',
+    'types':{
+      'catalog' : 'Catalog',
+      'article' : 'Article',
+      'brochure' : 'Brochure',
+      'publication' : 'Publication',
+      'video' : 'Video'
+    },
   },
   'catalog':{
     'types':{
-      'opc_cleaning': 'Внешняя мойка',
-      'cip_cleaning': 'Внутренняя мойка',
-      'agriculture': 'Животноводство',
-      'disinfectant': 'Дезинфекция',
-      'additive': 'Добавки',
-      'lubricant': 'Смазки',
-      'laundry': 'Прачечная',
-      'personal': 'Гигиена персонала',
+      'opc_cleaning': 'Open plant cleaning',
+      'cip_cleaning': 'CIP cleaning',
+      'agriculture': 'Agriculture',
+      'disinfectant': 'Disinfectant',
+      'additive': 'Additives',
+      'lubricant': 'Lubricants',
+      'laundry': 'Laundry',
+      'personal': 'Personal hygiene',
       'other': 'Other'
     },
     'documentation':{
@@ -363,14 +478,16 @@ export default {
       'mark_f' : 'Flammable'
     },
     'advantages': 'Advantages',
-    'scope': 'Сфера применения',
-    'foaming': 'Пенообразование',
-    'foaming_alt': 'Пенный',
-    'not_foaming': 'Беспенный',
-    'ph_scale': 'Кислотность (рН)',
-    'acidic': 'Кислотный',
-    'neutral': 'Нейтральный',
-    'alkalic': 'Щелочной',
+    'equipment_slogan': 'Equipment online catalog',
+    'equipment_text': 'If you need a complete solution, which includes equipment installation, refer to them in this section, then please contact our managers for advice on your project.',
+    'scope': 'Scope',
+    'foaming': 'Foaming',
+    'foaming_alt': 'Foaming',
+    'not_foaming': 'Not foaming',
+    'ph_scale': 'рН scale',
+    'acidic': 'Acidic',
+    'neutral': 'Neutral',
+    'alkalic': 'Alkalic',
     'usage': 'Usage',
     'date_at': 'at',
     'evrazes': 'EurAsES',

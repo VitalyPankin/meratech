@@ -1,12 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  beforeModel(params) {
+  session: Ember.inject.service('session'),
+  beforeModel(transition) {
     if (!this.get('session.isAuthenticated')) {
-      this.set('session.attemptedTransition', params);
+      this.set('session.attemptedTransition', transition);
     }
   	var industries = this.controllerFor('industries').get('industries');
-  	var currentIndustry = params.params.industries.id;
+  	var currentIndustry = transition.params.industries.id;
   	if(!industries.isAny('name', currentIndustry)){
   		this.transitionTo('/not-found');
   	}

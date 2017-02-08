@@ -8,7 +8,16 @@ export default Ember.Controller.extend({
     return this.get('i18n.locale')==='ru';
   }.property('i18n.locale'),
   session: Ember.inject.service('session'),
+  contentAvailable: function(){
+    if(this.get('advantages') || this.get('usage') || this.get('description')){
+      return true;
+    }
+    return false;
+  }.property('advantages','usage','description'),
   docuFolder: '/wpContent/uploads/publicDocuments/',
+  host: function(){
+    return ENV.wordpressHost;
+  }.property(),
   title_formatted: function(){
     let title = this.get('product.title');
     if(title.substr(0, title.indexOf(' '))){
@@ -22,12 +31,14 @@ export default Ember.Controller.extend({
   }.property('product','i18n.locale'),
   date: function(){
     let date = this.get('product.registration_date');
-    return date.substr(6)+'.'+date.substr(4,2)+'.'+date.substr(0,4);
+    if(this.get('product.registration_date')) { date.substr(6)+'.'+date.substr(4,2)+'.'+date.substr(0,4);}
+    return 0;
   }.property('product'),
   mark: function(){ 
+    let name = this.get('product.mark.firstObject') ? this.get('product.mark.firstObject') .trim() : '';
     return {
-      name: this.get('product.mark').get('firstObject').trim(),
-      translate: "catalog.mark.mark_"+(this.get('product.mark').get('firstObject')).trim().toLowerCase()  
+      name: name,
+      translate: name ? "catalog.mark.mark_"+this.get('product.mark').get('firstObject').trim().toLowerCase() : ''
     };
   }.property('product'),
   density: function(){
@@ -96,25 +107,25 @@ export default Ember.Controller.extend({
   }.property('product','i18n.locale'),
   registration: function(){
     if(this.get('product.registration') && (this.get('product.registration').indexOf(this.get('i18n.locale'))+1)){
-      return '/wp-content/uploads/public_documents/'+'registration_'+this.get('product.slug').underscore()+"_"+this.get('i18n.locale')+'.pdf';
+      return ENV.wordpressHost+'/wp-content/uploads/documents/'+'registration_'+this.get('product.slug').underscore()+"_"+this.get('i18n.locale')+'.pdf';
     }
     return false;
   }.property('product','i18n.locale'),
   leaflet: function(){
     if(this.get('product.leaflet') && (this.get('product.leaflet').indexOf(this.get('i18n.locale'))+1)){
-      return '/wp-content/uploads/public_documents/'+'leaflet_'+this.get('product.slug').underscore()+"_"+this.get('i18n.locale')+'.pdf';
+      return ENV.wordpressHost+'/wp-content/uploads/documents/'+'leaflet_'+this.get('product.slug').underscore()+"_"+this.get('i18n.locale')+'.pdf';
     }
     return false;
   }.property('product','i18n.locale'),
   safed: function(){
     if(this.get('product.'+String('s')+('D').toLowerCase()+('s-').substr(0,1)) && (this.get('product.'+String('s')+('D').toLowerCase()+('s-').substr(0,1)).indexOf(this.get('i18n.locale'))+1)){
-      return this.get('phtitle').substr(0,20)+ENV.timeDimention.underscore()+('URED/').toLowerCase()+String('s')+('D').toLowerCase()+('s-').underscore()+this.get('product.slug').underscore()+"_"+this.get('i18n.locale')+"."+ENV.print;
+      return ENV.wordpressHost+this.get('phtitle').substr(0,20)+ENV.timeDimention.underscore()+('URED/').toLowerCase()+String('s')+('D').toLowerCase()+('s-').underscore()+this.get('product.slug').underscore()+"_"+this.get('i18n.locale')+"."+ENV.print;
     }
     return false;
   }.property('product','i18n.locale'),
   prod: function(){
     if(this.get('product.'+String('p')+('D').toLowerCase()+('s-').substr(0,1)) && (this.get('product.'+String('p')+('D').toLowerCase()+('s-').substr(0,1)).indexOf(this.get('i18n.locale'))+1)){
-      return this.get('phtitle').substr(0,20)+ENV.timeDimention.underscore()+('URED/').toLowerCase()+String('p')+('D').toLowerCase()+('s-').underscore()+this.get('product.slug').underscore()+"_"+this.get('i18n.locale')+"."+ENV.print;
+      return ENV.wordpressHost+this.get('phtitle').substr(0,20)+ENV.timeDimention.underscore()+('URED/').toLowerCase()+String('p')+('D').toLowerCase()+('s-').underscore()+this.get('product.slug').underscore()+"_"+this.get('i18n.locale')+"."+ENV.print;
     }
     return false;
   }.property('product','i18n.locale'),

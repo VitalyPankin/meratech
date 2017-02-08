@@ -7,11 +7,29 @@ section.about{
   overflow-y: auto;
   .intro{
     width: 100%;
-    background-size: cover;
-    background-position: top center;
-    background-image: url("images/about/meratech.jpg");
-    padding-top: 300px;
-    padding-bottom: 200px;
+    background-size: auto 300px;
+    background-position: center 150px;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-image: url("images/about/slogan.png");
+    padding-top: 450px;
+    padding-bottom: 350px;
+    min-height: 1590px;
+    @media(max-width: 991px){
+      background-size: 80% auto;
+    }
+    @media(max-width: 767px){
+      padding-top: 350px;
+      padding-bottom: 200px;
+      min-height: auto;
+    }
+    h6{
+      margin-top: 30px;
+    }
+    .page-title{
+      text-align: left;
+      padding-bottom: 50px;
+    }
     .disclaimer{
       max-width: 500px;
       width: 100%;
@@ -51,7 +69,7 @@ section.about{
     background-position: top center;
     background-repeat: no-repeat;
     position: absolute;
-    top: 2000px;
+    top: 1300px;
     width: 100%;
     height: 100%;
     min-height: 750px;
@@ -63,8 +81,8 @@ section.about{
     }
   }
   .lab{
-    transform: translateZ(5px) scale(0.62);
-    -webkit-transform: translateZ(5px) scale(0.62);
+    transform: translateZ(3px) scale(0.8);
+    -webkit-transform: translateZ(3px) scale(0.8);
     min-height: 750px;
     width: 100%;
     margin: 0 auto;
@@ -74,19 +92,28 @@ section.about{
     position: relative;
     position: absolute;
     z-index: 10;
-    top: 1400px;
+    top: 1300px;
+    @media(max-width: 1199px){
+      top: 1400px;
+    }
     @media(max-width: 991px){
-      top: 1850px;
+      top: 1550px;
     }
     @media(max-width: 767px){
-      top: 1950px;
+      transform: none;
+      -webkit-transform: none;
+      position: static;
+      min-height: auto;
     }
     .outer-wrapper{
       transform: rotate(7deg) translateX(-25%);
       width: 200%;
-      height: 700px;
+      height: 600px;
       transform-origin: 50% 50%;
       overflow: hidden;
+      @media(max-width: 767px){
+        height: 450px;
+      }
     }
     .wrapper{
       transform: rotate(-7deg) translateX(0%);
@@ -106,10 +133,13 @@ section.about{
       background-repeat: no-repeat;
       box-sizing: content-box;
       position: relative;
+      @media(max-width: 767px){
+        box-shadow:  inset -100000px 0 0 rgba(255,255,255,0.5);
+      }
     }
     .article{
       position: absolute;
-      top: 50%;
+      top: 52%;
       left: 50%;
       margin-top: -150px;
       @media(max-width: 991px){
@@ -123,6 +153,10 @@ section.about{
       .title{
         color: rgba(255,255,255,0.9);
         text-shadow: 0px 1px 2px rgba(72,74,84,0.6);
+        @media(max-width: 767px){
+          color: inherit;
+          text-shadow: none;
+        }
       }
       .body{
         @media(max-width: 1199px){
@@ -137,14 +171,24 @@ section.about{
   .production{
     margin-top: -200px;
     margin-top: 0px;
+    overflow: hidden;
+    position: relative;
     img{
       width: 300px;
       margin-top: 50px;
     }
     .wrapper{
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(255, 255, 255, 0.8);
       padding-top: 200px;
       padding-bottom: 100px;
+      @media(max-width: 767px){
+        padding-top: 100px;
+      }
+    }
+    img{
+      width: 210px;
+      margin-top: 25px;
+      margin-bottom: 30px;
     }
   }
   .quality{
@@ -163,6 +207,9 @@ section.about{
       .title{
         color: rgba(255,255,255,0.9);
         text-shadow: 0px 1px 2px rgba(72,74,84,0.6);
+      }
+      .body{
+        font-family: 'etelka-light';
       }
     }
   }
@@ -251,7 +298,10 @@ section.about{
       }
     }
     > .body{
-      min-width: 500px;    
+      min-width: 500px; 
+      @media(max-width: 767px){
+        min-width: auto; 
+      }   
       p{
         margin: 10px 0;
       } 

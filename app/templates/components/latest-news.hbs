@@ -1,0 +1,20 @@
+
+        {{#each postsTrimmed as |item index|}}
+        {{#link-to "news.detail" item.slug}}
+
+        <div class="col-lg-3 col-sm-6 col-xs-12 item">
+          <div class="news-item news-main">
+          {{#if isRuLocale}}
+            <div class="date">{{format-date item.date}}</div>
+            <div class="title">{{item.title_ru}}</div>
+            <div class="body">{{item.preview_ru}}</div>
+          {{else}}
+            <div class="date">{{format-date item.date}}</div>
+            <div class="title">{{item.title_en}}</div>
+            <div class="body">{{item.preview_en}}</div>
+          {{/if}}
+          <div class="button-link-forward">{{t "common.details"}}</div>
+          </div>
+        </div>
+        {{/link-to}}
+        {{/each}}

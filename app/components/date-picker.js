@@ -87,27 +87,10 @@ export default Ember.Component.extend({
   actions: {
     setYear: function(value){
       this.set('selectedYear', value);
-      console.log('selectedYear: '+this.get('selectedYear'));
     },
     setMonth: function(value){
       this.set('selectedMonth', value);
-      console.log('selectedMonth: '+this.get('selectedMonth'));
     }
-    /*
-    makeSearch: function(e){
-      $('#map').data('SmartContacts').settings.marker.setIcon($('#map').data('SmartContacts').settings.baseUrl+'img/design/mark_grey.png');
-                $('#map').data('SmartContacts').settings.sklad.setIcon($('#map').data('SmartContacts').settings.baseUrl+'img/design/mark_blue.png');
-                $('#map').data('SmartContacts').settings.map.panTo(new google.maps.LatLng(56.167568, 44.166394));
-                //$('#map').data('SmartContacts').settings.sklad.setIcon(settings.baseUrl+'img/design/mark_blue.png');
-              }else{
-                //alert($('#map').data('SmartContacts').settings.marker);
-                $('#map').data('SmartContacts').settings.marker.setIcon($('#map').data('SmartContacts').settings.baseUrl+'img/design/mark_blue.png');
-                $('#map').data('SmartContacts').settings.sklad.setIcon($('#map').data('SmartContacts').settings.baseUrl+'img/design/mark_grey.png');
-                if(!first_call) $('#map').data('SmartContacts').settings.map.panTo(new google.maps.LatLng(56.281330, 44.080741));
-                first_call = 0;
-
-      
-    }*/
   },
 
   didInsertElement: function(){

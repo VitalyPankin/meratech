@@ -15,7 +15,7 @@ export default Ember.Route.extend({
       return _model;
     }else{
       _model = this.store.query('product', {per_page: 500});
-      this.controllerFor('application').set('productsModel', this.store.query('product', {per_page: 500}));
+      this.controllerFor('application').set('productsModel', _model);
       return _model;
     }
   },

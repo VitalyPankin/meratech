@@ -1,1 +1,39 @@
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>Одна новость
+<article class="news-details">
+  <div class="container-image" style="background-image:url('{{post.image}}')">
+    <div class="container article">
+    {{#if isRuLocale}}
+			<div class="title">{{post.title_ru}}</div>
+    {{else}}
+			<div class="title">{{post.title_en}}</div>
+    {{/if}}
+    </div>
+  </div>
+  <div class="container-white">
+    <div class="container container-offset-top">
+    	<div class="row">
+	    	<div class="heading heading-top">
+	    		<div class="title title-dark">{{t 'common.news'}}</div>
+					{{#link-to "news"}}<span class="btn-archive">{{t 'common.news_archive'}}</span>{{/link-to}}
+	    	</div>
+				<div class="body content-block html-content">
+					<span class="date">{{readableDate}}</span>
+			    {{#if isRuLocale}}
+						<div class="title">{{{post.text_ru}}}</div>
+			    {{else}}
+						<div class="title">{{{post.text_en}}}</div>
+			    {{/if}}
+				</div>
+	    </div>
+    </div>
+  </div>
+</article>
+<article>
+  <div class="container-grey">
+    <div class="container">
+      <div class="heading heading-top"><div class="title title-dark">{{t "common.latest_news"}}</div></div>
+      <div class="row">
+        {{latest-news posts=posts}}
+      </div>
+    </div>
+  </div>
+</article>

@@ -1,6 +1,13 @@
 import Ember from 'ember';
 import config from './config/environment';
 
+Ember.Router.reopen({
+ doSomething: function() {
+    window.scrollTo(0,0);
+    return;
+  }.on('didTransition')
+});
+
 const Router = Ember.Router.extend({
   location: config.locationType,
   rootURL: config.rootURL
@@ -27,6 +34,11 @@ Router.map(function() {
     });
   }); 
 
+  this.route('pages', function(){
+    this.route('detail', {
+      path: '/:id'
+    });
+  });
   this.route('news', function(){
     this.route('detail', {
       path: '/:id'
@@ -55,7 +67,13 @@ Router.map(function() {
  //    });  
 	// });
   this.route('equipment', function() {
+    this.route('index', {
+      path: '/',
+      queryParams: ['anchor']
+    });
   });
+//  this.route('equipment', { path: '/equipment' , queryParams: ['anchor']});
+  this.route('equipment', { path: '/equipment' });
   this.route('not-found', {path: '/*wildcard'});
 });
 

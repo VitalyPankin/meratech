@@ -12,10 +12,11 @@
 	      <div class="row">
 	        <div class="col-md-12">
 	          <div class="subarticle">
-	            <div class="title">Скачать каталог для птицефабрик</div>
-	            <div class="body">Программа гигиены для птицефабрик и предприятий птицеперерабатывающей промышленности. Еще текст для того, чтобы стоочково скачать этот несчастный каталог. </div>
-	            <a href="{{catalogFile.file}}"><div class="button button-red">Скачать каталог</div></a>
-	            {{#link-to "media-center"}} <div class="button button button-download">Перейти в медиа-центр</div>{{/link-to}}
+	            <div class="title">{{t (concat "common.get_catalog_hash." currentIndustry ".title")}}</div>
+	            <div class="body">{{t (concat "common.get_catalog_hash." currentIndustry ".body")}}</div>
+	            <a href="{{catalogFile.file}}"><div class="button button-red">{{t "common.get_catalog"}}</div></a>
+	            {{#link-to "media-center"}} <div class="button button button-download">{{t "common.go_to_media_center"}}</div>{{/link-to}}
+	            <img class="download-catalog-image" src="{{catalogFile.image}}">
 	          </div>
 	        </div>
 	      </div>

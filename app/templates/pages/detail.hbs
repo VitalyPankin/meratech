@@ -1,0 +1,24 @@
+<article class="pages-details">
+  <div>
+    <div class="container article">
+    {{#if isRuLocale}}
+      <div class="page-title">{{model.title_ru}}</div>
+    {{else}}
+      <div class="page-title">{{model.title_en}}</div>
+    {{/if}}
+    </div>
+  </div>
+  <div class="container-white">
+    <div class="container">
+      <div class="row">
+        <div class="body content-block html-content">
+          {{#if isRuLocale}}
+            <div class="title">{{{model.content_ru}}}</div>
+          {{else}}
+            <div class="title">{{{model.content_en}}}</div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
