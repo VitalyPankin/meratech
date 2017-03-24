@@ -114,8 +114,9 @@ header{
           -ms-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) opacity, 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) color;
           transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) opacity, 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) color;
           @media (max-width: 991px){
-            padding-left: 14px;
-            padding-right: 14px;
+            padding-left: 13px;
+            padding-right: 13px;
+            font-size: 1.05em;
           }          
           @media (max-width: 767px){
             color: #fff;
@@ -576,7 +577,6 @@ header{
   position: relative;
   width: 100%;
   overflow: hidden;
-  min-height: 700px;
   background-color: #4f4d55;
   .loading {
     position: absolute;
@@ -646,7 +646,7 @@ header{
     &.meat:before{
       content: "A";
     }
-    &.beer:before{
+    &.brewery:before{
       content: "T";
     }
     &.milk:before{
@@ -685,7 +685,7 @@ header{
     &.meat:after{
       background-position: center -580px; 
     }
-    &.beer:after{
+    &.brewery:after{
       background-position: center -780px; 
     }
     &.milk:after{
@@ -776,7 +776,7 @@ header{
       &.meat:after{
         background-position: center -430px; 
       }
-      &.beer:after{
+      &.brewery:after{
         background-position: center -588px; 
       }
       &.milk:after{

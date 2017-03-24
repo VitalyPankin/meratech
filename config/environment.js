@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'meratech',
     environment: environment,
-    wordpressHost: 'http://api.meratech.ru',
+    wordpressHost: 'http://api.meratech.ru/',
     rootURL: '/',
     locationType: 'auto',
     timeDimention: 'Sec',

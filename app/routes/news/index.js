@@ -3,6 +3,10 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   session: Ember.inject.service('session'),
   
+  activate: function() {
+    this.controllerFor('news.index').set('toDate', null);
+    this.controllerFor('news.index').set('fromDate', null);
+  },
 
   beforeModel: function(transition) {
     if (!this.get('session.isAuthenticated')) {

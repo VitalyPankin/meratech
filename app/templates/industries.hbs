@@ -25,10 +25,11 @@
 	</article>
 	{{/if}}
 </div>
+{{#if productsCategorized.length}}
 {{#each productsCategorized as |category index|}}
 {{#if category.data.length}}
  <article>
-  <div class="container-fluid catalog-heading heading-{{category.name}}">	
+  <div class="container-fluid catalog-heading heading-{{category.name}}">
   </div>
   <div class="container-grey">
 		<div class="container">
@@ -74,6 +75,12 @@
 </article>
 {{/if}}
 {{/each}}
+{{else}}
+
+ <article>
+  <div class="page-title search-title">{{t "common.nothing-exist-industry"}}</div>
+</article>
+{{/if}}
 {{!-- <article>
   <div class="container-fluid catalog-heading heading-foam">
   	

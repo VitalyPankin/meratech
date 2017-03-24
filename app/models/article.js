@@ -18,5 +18,7 @@ export default Model.extend({
 	preview_en: attr('string'),
 	preview_ru: attr('string'),
 	title_en: attr('string'),
-	title_ru: attr('string')
+	title_ru: attr('string'),
+	file: attr('string'),
+	file_image: attr('string')
 });

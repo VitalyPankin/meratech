@@ -375,7 +375,7 @@
     &.meat:before{
       content: "A";
     }
-    &.beer:before{
+    &.brewery:before{
       content: "T";
     }
     &.milk:before{
@@ -507,7 +507,7 @@
 	padding-bottom: 25px;
 	.item	{
 		float: left;
-		width: 50%;
+		width: 100%;
 		position: relative;
 		height: 300px;
 		overflow: hidden;
@@ -532,6 +532,13 @@
 			}
 		}
 	}
+}
+@media (min-width: 512px) {
+  .catalog-list {
+		.item	{
+			width: 50%; 
+	  } 
+  } 
 }
 @media (min-width: 768px) {
   .catalog-list {
@@ -717,11 +724,11 @@
 	background-image: url("images/catalog-articles-foam.jpg");
 	background-position: left;
 	}
-	&.heading-cip_cleaning{
+	&.heading-cip_cleaning, &.heading-brewery_cip, &.heading-meat_cip{
 	background-image: url("images/catalog-articles-additive.jpg");
 	background-position: center;
 	}
-	&.heading-additive{
+	&.heading-additive, &.heading-brewery_additive{
 	background-image: url("images/catalog-articles-cip.jpg");
 	background-position: center;
 	}
@@ -735,15 +742,159 @@
 	&.heading-laundry{
 	background-image: url("images/catalog-articles-laundry.jpg");
 	}
-	&.heading-lubricant{
+	&.heading-lubricant, &.heading-brewery_lubrication{
 	background-image: url("images/catalog-articles-grease.jpg");
 	}
-	&.heading-personal{
+	&.heading-personal, &.heading-meat_personal{
 	background-image: url("images/catalog-articles-personal.jpg");
 	}
 	&.heading-other{
 	background-image: url("images/catalog-articles-other.jpg");
 	background-position: center;
+	}
+
+
+	&.heading-poultry_warehouse_cleaning{
+	background-image: url("images/catalog-articles/catalog-articles-cleaning-poultry-warehouse.jpg");
+	background-position: center;
+	}
+	&.heading-poultry_drink{
+	background-image: url("images/catalog-articles/catalog-articles-cleaning-water-circuits.jpg");
+	background-position: center;
+	}
+	&.heading-poultry_water{
+	background-image: url("images/catalog-articles-cip.jpg");
+	}
+	&.heading-poultry_warehouse_disinfection{
+	background-image: url("images/catalog-articles/catalog-articles-disinfection-poultry-warehouse.jpg");
+	background-position: left;
+	}
+	&.heading-poultry_egg{
+	background-image: url("images/catalog-articles/catalog-articles-poultry_egg_dis.jpg");
+	background-position: right;	
+;
+	}
+	&.heading-poultry_incubatory{
+	background-image: url("images/catalog-articles/catalog-articles-poultry_egg.jpg");
+	}
+	&.heading-poultry_meat{
+	background-image: url("images/catalog-articles/catalog-articles-poultry_processing.jpg");
+	background-position: left;
+	}
+
+
+	&.heading-pigs_warehouse_disinfection{
+	background-image: url("images/catalog-articles/catalog-articles-pigs-barn-dis.jpg");
+	background-position: center;
+	}
+	&.heading-pigs_warehouse_cleaning{
+	background-image: url("images/catalog-articles/catalog-articles-pigs-cleaning.jpg");
+	background-position: center;
+	}
+	&.heading-pigs_outer_equipment{
+	background-image: url("images/catalog-articles/catalog-articles-cip.jpg");
+	}
+	&.heading-pigs_drink{
+	background-image: url("images/catalog-articles/catalog-articles-pigs-water.jpg");
+	background-position: left;
+	}
+	&.heading-pigs_water{
+	background-image: url("images/catalog-articles/catalog-articles-disinfection.jpg");
+	}
+	&.heading-pigs_auto{
+	background-image: url("images/catalog-articles/catalog-articles-laundry.jpg");
+	}
+	
+
+	&.heading-meat_opc{
+	background-image: url("images/catalog-articles/catalog-articles-meat-opc-.jpg");
+	background-position: right;
+	}
+	&.heading-meat_processing_house{
+	background-image: url("images/catalog-articles-additive.jpg");
+	}
+	&.heading-meat_equipment_disinfection{
+	background-image: url("images/catalog-articles/catalog-articles-meat-disinfection.jpg");
+	background-position: right;
+	}
+	&.heading-meat_steel{
+	background-image: url("images/catalog-articles-farm.jpg");
+	}
+	&.heading-meat_floor{
+	background-image: url("images/catalog-articles-disinfection.jpg");
+	}
+	&.heading-meat_complicated_dirt{
+	background-image: url("images/catalog-articles-laundry.jpg");
+	}
+	&.heading-meat_auto{
+	background-image: url("images/catalog-articles-foam.jpg");
+	}
+	&.heading-meat_thermo{
+	background-image: url("images/catalog-articles/catalog-articles-meat-ovens.jpg");
+	background-position: center;
+	}
+	&.heading-meat_hand{
+	background-image: url("images/catalog-articles/catalog-articles-meat-other.jpg");
+	background-position: left;
+	}
+	&.heading-meat_water{
+	background-image: url("images/catalog-articles/catalog-articles-meat-soak.jpg");
+	background-position: right;
+	}
+	&.heading-meat_other{
+	background-image: url("images/catalog-articles/catalog-articles-meat-special.jpg");
+	background-position: center;
+	}
+	&.heading-meat_plastic{
+	background-image: url("images/catalog-articles/catalog-articles-meat-tare.jpg");
+	background-position: center;
+	}
+	
+
+	&.heading-brewery_opc{
+	background-image: url("images/catalog-articles-additive.jpg");
+	}
+	&.heading-brewery_keg{
+	background-image: url("images/catalog-articles-disinfection.jpg");
+	}
+	&.heading-brewery_pvc{
+	background-image: url("images/catalog-articles-laundry.jpg");
+	}
+	&.heading-brewery_steel{
+	background-image: url("images/catalog-articles-foam.jpg");
+	}
+	&.heading-brewery_floor{
+	background-image: url("images/catalog-articles-additive.jpg");
+	}
+	&.heading-brewery_plastic{
+	background-image: url("images/catalog-articles-cip.jpg");
+	}
+	&.heading-brewery_tunnel{
+	background-image: url("images/catalog-articles-farm.jpg");
+	}
+	&.heading-brewery_personal{
+	background-image: url("images/catalog-articles-disinfection.jpg");
+	}
+
+
+	&.heading-before_milking{
+	background-image: url("images/catalog-articles/catalog-articles-before-milking.jpg");
+	background-position: center;
+	}
+	&.heading-after_milking{
+	background-image: url("images/catalog-articles/catalog-articles-after-milking.jpg");
+	background-position: center;
+	}
+	&.heading-cleaning_milking_equipment{
+	background-image: url("images/catalog-articles/catalog-articles-equipment-milking.jpg");
+	background-position: left;
+	}
+	&.heading-cleaning_warehouse{
+	background-image: url("images/catalog-articles/catalog-articles-cleaning-warehouse.jpg");
+	background-position: center;
+	}
+	&.heading-hoof_hygiene{
+	background-image: url("images/catalog-articles-disinfection.jpg");
 	}
 }
 .equipment-heros{

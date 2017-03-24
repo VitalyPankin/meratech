@@ -1,4 +1,6 @@
-
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    display: block;
+}
 
 .container{
   padding-bottom: 55px;
@@ -185,6 +187,9 @@
   z-index: 1;
   padding-bottom: 0px;
 }
+.container-after-offset-x2{
+  padding-top: 150px;
+}
 .container-after-offset{
   padding-top: 90px;
 }
@@ -224,10 +229,10 @@
     overflow: hidden;
     display: -webkit-box;
     height: 14*18*2; /* Fallback for non-webkit */
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    // -webkit-line-clamp: 2;
+    // -webkit-box-orient: vertical;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
     -webkit-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
     -moz-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
     -ms-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
@@ -289,6 +294,7 @@
     }
   }
   &.news-news{
+    min-height: 330px;
     .image{
       height: 120px;
       margin-bottom: 20px;
@@ -313,6 +319,7 @@
         -moz-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
         -ms-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
         transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+        background-position: center;
       }
     }
     .body{
@@ -631,7 +638,7 @@
     }
   }
   p{
-
+    margin-bottom: 30px;
   }
   .two-columns{
     -webkit-column-count: 2; /* Chrome, Safari, Opera */
@@ -654,6 +661,8 @@
   img{
     max-width: 500px;
     padding-bottom: 25px;
+    width: auto;
+    height: auto;
     &.full{
       max-width: 100%;
     }
@@ -1511,7 +1520,7 @@ table{
 .documents-search{
   width: 100%;
   margin-top: 50px;
-  li{
+  a{
     padding-right: 20px;
     box-sizing: border-box;
     cursor: pointer;
@@ -1542,17 +1551,20 @@ table{
       margin-left: 95px;
       font-family: 'etelka-text';
       font-size: 14px;
+      cursor: pointer;
     }
     .subtitle{
       margin-left: 95px;
       margin-top: 5px;
       padding-right: 30px;
       height: 40px;
+      cursor: pointer;
     }
     .description{
       margin-left: 95px;
       margin-top: 30px;
       color: #f0332c;
+      cursor: pointer;
       span{
         color: #a7a9ac;
       }
@@ -1669,6 +1681,9 @@ table{
 .tabs-menu-wrapper{
   text-align: center;
   height: 60px;
+  @media (max-width: 767px) {
+    display: none;
+  }
   & > .tabs-menu{
     display: inline-block;
     margin: 0 auto;
@@ -1681,6 +1696,9 @@ table{
 
       @media (max-width: 1199px){
         padding: 0px;
+      }
+      @media (max-width: 767px) {
+        float: none;
       }
       button{
         background-color: transparent;
@@ -1877,9 +1895,18 @@ table{
 .page-title{
   text-align: center;
   font-size: 2.8em;
-    font-family: 'etelka-medium';
-    margin-top: 30px;
-    padding-bottom: 30px;
+  font-family: 'etelka-medium';
+  margin-top: 30px;
+  padding-bottom: 30px;
+
+  @media (max-width: 767px) {
+    font-size: 1.8em;
+  }
+  @media (max-width: 512px) {
+    font-size: 1.8em;
+    margin-top: 60px;
+  padding-bottom: 20px;
+  }
 }
 
 .search-title{
@@ -1937,6 +1964,109 @@ table{
 .pages-details{
   padding-top: 100px;
 }
+.equipment-index{
+  background-image: url('images/equipment/black-back.jpg');
+  background-position: center 70px;
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  background-attachment1: fixed;
+  color: #fff;
+  .heading-top .title{
+    padding-top: 40px;
+    margin-bottom: 40px;
+  }
+  .article{
+    > .title{
+      color: rgba(255,255,255,1);
+      padding-top: 30px;
+    }
+  }
+}
+.equipment-list-inner, .equipment-list-category{
+  margin-top: 50px;
+  a > div{
+    min-height: 350px;
+    background-position: top right;
+    background-size: auto 300px;
+    background-repeat: no-repeat;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    .title{
+      font-size: 26px;
+      max-width: 330px;
+      line-height: 34px;
+      padding-top: 50px;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      line-clamp: 2;
+      box-orient: vertical;
+    }
+    &.low_pressure_systems{
+      background-image: url('images/equipment/droid.png');
+    }
+    &.lubrication{
+      background-image: url('images/equipment/lubri.png');
+      background-size: auto 200px;
+    }
+    &.high_pressure_systems{
+      background-image: url('images/equipment/satellite.png');
+    }
+    &.co2_systems{
+      background-image: url('images/equipment/co2.png');
+    }
+    &.dosing_systems{
+      background-image: url('images/equipment/dosing.png');
+    }
+  }
+}
+.equipment-list-category{
+  a > div{
+    .title{
+      padding-top: 0px;
+    }
+    .body{
+      width: auto;
+      margin-top: 30px;
+      font-family: etelka-thin;
+      margin-right: 300px;
+      @media (max-width: 1199px){
+        margin-right: 250px;
+      }
+      @media (max-width: 991px){
+        margin-right: 300px;
+      }
+      @media (max-width: 767px){
+        margin-right: 250px;
+      }
+      @media (max-width: 500px){
+        margin-right: 0px;
+        margin-top: 300px;
+      }
+    }
+    @media (min-width: 1600px){
+      background-position: top right 10%;
+    }
+    @media (max-width: 1199px){
+      background-size: auto 250px;
+    }
+    @media (max-width: 991px){
+      background-size: auto 300px;
+      background-position: right top;
+    }
+    @media (max-width: 500px){
+      background-size: auto 250px;
+      background-position: left 80px;
+    }
+  }
+}
+
+.equipment-list-inner-white{
+  a > div{
+    .title{
+      color: #fff;
+    }
+  }
+}
 .equipment-hero{ 
   .heading-top{
     margin-bottom: 0;
@@ -1946,6 +2076,97 @@ table{
     background-position: right bottom;
     background-size: 600px auto;
     background-repeat: no-repeat;
+    @media (max-width: 991px){
+    background-size: 400px auto;
+    }
+    @media (max-width: 797px){
+    background: transparent;
+
+    }
+  }
+  .subarticle .body{
+    max-width: 600px;
+    @media (max-width: 1199px){
+      max-width: 400px;
+    }
+    @media (max-width: 991px){
+      max-width: 300px;
+    }
+  }
+}
+
+.article .equipment-list-item{
+  .image-holder{
+    text-align: center;
+    @media (max-width: 991px){
+      text-align: left;
+    }
+    img{
+      max-height: 500px;
+      margin: 0 auto;
+      margin-top: -70px;
+      @media (max-width: 991px){
+        margin-top: 0px;
+        margin: auto;
+        max-height: 350px;
+      }
+    }
+  }
+  .download-file{
+    margin-top: 20px;
+    display: block;
+  }
+  .image{
+    img{
+      background: rgba(21, 18, 28, 1);
+      margin: 0 auto;
+      position: relative;
+      max-height: 220px;
+      max-width: 100%;
+      box-shadow: 3px 3px 0px #dcdcdd;
+      position: relative;
+      -webkit-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -moz-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      -ms-transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+      transition: 0.175s cubic-bezier(0.175, 0.885, 0.320, 1) all;
+    }
+  }
+  .body {
+    width: auto;
+    max-width: 450px;
+  }
+}
+.project-hero{ 
+  .heading-top{
+    margin-bottom: 0;
+  }
+  .container-white{
+    background-image: url('images/heros/projects.jpg');
+    background-position: right bottom;
+    background-size: auto 100%;
+    background-color: #f8f8f8;
+    background-repeat: no-repeat;
+    @media (max-width: 991px){
+    background-size: 400px auto;
+    }
+    @media (max-width: 797px){
+    background: transparent;
+
+    }
+  }
+  .subarticle .body{
+    max-width: 600px;
+    @media (max-width: 1199px){
+      max-width: 400px;
+    }
+    @media (max-width: 991px){
+      max-width: 300px;
+    }
+  }
+}
+.hero-gray{
+  .container-white{
+    box-shadow: inset 10000px 1000px 0px rgba(0,0,0,0.03);
   }
 }
 .all-hero{ 
@@ -1957,5 +2178,44 @@ table{
     background-position: right bottom;
     background-size: 600px auto;
     background-repeat: no-repeat;
+  }
+}
+.download-page-content{
+  .article .equipment-list-item{
+    .title{
+      width: auto;
+      max-width: 900px;
+    }
+    .body{
+      margin-top: 50px;
+      max-width: 650px;
+      p{
+        margin-bottom: 20px;
+      }
+    }
+    .image{
+      img{
+        box-shadow: 3px 3px 0px #dcdcdd, 0px 0px 1px rgba(0,0,0,0.1);
+      }
+    }
+    .download-file{
+      float: left;
+    }
+    .image-holder{
+      text-align: center;
+      @media (max-width: 991px){
+        text-align: left;
+      }
+      img{
+        max-height: 450px;
+        margin: 0 auto;
+        margin-top: 30px;
+        @media (max-width: 991px){
+          margin-top: 0px;
+          margin: auto;
+          max-height: 350px;
+        }
+      }
+    }
   }
 }

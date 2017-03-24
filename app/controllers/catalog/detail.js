@@ -14,7 +14,7 @@ export default Ember.Controller.extend({
     }
     return false;
   }.property('advantages','usage','description'),
-  docuFolder: '/wpContent/uploads/publicDocuments/',
+  docuFolder: 'wpContent/uploads/publicDocuments/',
   host: function(){
     return ENV.wordpressHost;
   }.property(),
@@ -60,10 +60,12 @@ export default Ember.Controller.extend({
     let phrases = this.get('product.risk_phrases').replace(" ", "").split(",");
     let result = [];
     phrases.forEach((item) => {
-      result.push({
-        name: item.trim(),
-        translate: "catalog.phrases."+item.trim()
-      });
+      if(item.trim()){
+        result.push({
+          name: item.trim(),
+          translate: "catalog.phrases."+item.trim()
+        });
+      }
     });
     return result;
   }.property('product'),
@@ -71,10 +73,12 @@ export default Ember.Controller.extend({
     let phrases = this.get('product.safety_phrases').replace(" ", "").split(",");
     let result = [];
     phrases.forEach((item) => {
-      result.push({
-        name: item.trim(),
-        translate: "catalog.phrases."+item.trim()
-      });
+      if(item.trim()){
+        result.push({
+          name: item.trim(),
+          translate: "catalog.phrases."+item.trim()
+        });
+      }
     });
     return result;
   }.property('product'),
@@ -103,29 +107,29 @@ export default Ember.Controller.extend({
     return this.get('product.usage_'+this.get('i18n.locale'));
   }.property('product','i18n.locale'),
   phtitle: function(){
-    return this.get('docuFolder').underscore().substr(0,20)+'/file'+ENV.moduleHandler+'/../';
+    return this.get('docuFolder').underscore().dasherize().substr(0,19)+'/file'+ENV.moduleHandler+'/../';
   }.property('product','i18n.locale'),
   registration: function(){
     if(this.get('product.registration') && (this.get('product.registration').indexOf(this.get('i18n.locale'))+1)){
-      return ENV.wordpressHost+'/wp-content/uploads/documents/'+'registration_'+this.get('product.slug').underscore()+"_"+this.get('i18n.locale')+'.pdf';
+      return ENV.wordpressHost+'wp-content/uploads/documents/'+'registration_'+this.get('product.slug').underscore()+"_"+this.get('i18n.locale')+'.pdf';
     }
     return false;
   }.property('product','i18n.locale'),
   leaflet: function(){
     if(this.get('product.leaflet') && (this.get('product.leaflet').indexOf(this.get('i18n.locale'))+1)){
-      return ENV.wordpressHost+'/wp-content/uploads/documents/'+'leaflet_'+this.get('product.slug').underscore()+"_"+this.get('i18n.locale')+'.pdf';
+      return ENV.wordpressHost+'wp-content/uploads/public-documents/'+'leaflet_'+this.get('product.slug').underscore()+"_"+this.get('i18n.locale')+'.pdf';
     }
     return false;
   }.property('product','i18n.locale'),
   safed: function(){
     if(this.get('product.'+String('s')+('D').toLowerCase()+('s-').substr(0,1)) && (this.get('product.'+String('s')+('D').toLowerCase()+('s-').substr(0,1)).indexOf(this.get('i18n.locale'))+1)){
-      return ENV.wordpressHost+this.get('phtitle').substr(0,20)+ENV.timeDimention.underscore()+('URED/').toLowerCase()+String('s')+('D').toLowerCase()+('s-').underscore()+this.get('product.slug').underscore()+"_"+this.get('i18n.locale')+"."+ENV.print;
+      return ENV.wordpressHost+this.get('phtitle').substr(0,19)+ENV.timeDimention.underscore()+('URED/').toLowerCase()+String('s')+('D').toLowerCase()+('s-').underscore()+this.get('product.slug').underscore()+"_"+this.get('i18n.locale')+"."+ENV.print;
     }
     return false;
   }.property('product','i18n.locale'),
   prod: function(){
     if(this.get('product.'+String('p')+('D').toLowerCase()+('s-').substr(0,1)) && (this.get('product.'+String('p')+('D').toLowerCase()+('s-').substr(0,1)).indexOf(this.get('i18n.locale'))+1)){
-      return ENV.wordpressHost+this.get('phtitle').substr(0,20)+ENV.timeDimention.underscore()+('URED/').toLowerCase()+String('p')+('D').toLowerCase()+('s-').underscore()+this.get('product.slug').underscore()+"_"+this.get('i18n.locale')+"."+ENV.print;
+      return ENV.wordpressHost+this.get('phtitle').substr(0,19)+ENV.timeDimention.underscore()+('URED/').toLowerCase()+String('p')+('D').toLowerCase()+('s-').underscore()+this.get('product.slug').underscore()+"_"+this.get('i18n.locale')+"."+ENV.print;
     }
     return false;
   }.property('product','i18n.locale'),

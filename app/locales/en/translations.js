@@ -13,17 +13,13 @@ export default {
     'menu': {
       'about': 'About us',
       'press_center': 'Press center',
+      'media': 'Media',
       'catalog': 'Catalog',
       'contacts': 'Contact'
     },
     'equipment': {
       'title':'How performance looks like',
       'body':'Reliable hardware companions which will help to provide any complex hygiene program for food production.',
-      'low_pressure':'Low pressure stations',
-      'high_pressure':'High pressure stations',
-      'lubrication':'Lubrication systems',
-      'co2':'CO<sub>2</sub> generators',
-      'dosation':'Dosation systems',
     },
     'press_center': {
       'title':'Press releases and research',
@@ -60,6 +56,7 @@ export default {
     'founded': 'founded',
     'from': 'from',
     'get_catalog': 'Get catalog',
+    'get_acticle': 'Get article',
     'get_catalog_hash': {
       'poultry': {
         'title': 'Get catalog for poultry',
@@ -138,6 +135,7 @@ export default {
     'nothing-exist': "Seem like we have nothing yet",
     'nothing-exist-news': "Seem like we don't have news like that",
     'nothing-exist-articles': "Seem like we don't have articles like that",
+    'nothing-exist-industry': "Seem like we haven't finish this article yet",
     'related-materials': 'Related materials',
     'page_not_found': {
       'title': "Oops! Looks like we've cleaned this page up",
@@ -181,6 +179,13 @@ export default {
     'fish': 'Fish industry'
   },
   'equipment': {
+    'category': {
+      'low_pressure_systems':'Low pressure stations',
+      'high_pressure_systems':'High pressure stations',
+      'lubrication':'Lubrication systems',
+      'co2_systems':'CO<sub>2</sub> generators',
+      'dosing_systems':'Dosation systems',
+    },
     'categories': {
       'mobile': 'Mobile equipment',
       'stationary': 'Stationary equipment',
@@ -213,6 +218,10 @@ export default {
     'specs': 'Specifications',
     'title':'Equipment professionals',
     'description':'Reliable and efficient equipment from the market-leading partners that becomes indispensable tool in the everyday battle for quality products and wealth of all food production.',
+    'button_project':'Send request',
+    'title_project':'Automatic hygiene<br/> systems design',
+    'description_project':'Having a great experience in developing and implementing complex hygiene solutions at food industry enterprises, specialists from <span class="red">meratech&reg;</span> will help you with the full support of your individual project - from design to launching systems into operation.',
+    'description_equipment':'To get professional consultaion from the engineering department and catalog of this eqiupment category, contact our headquarters.',
   },
   'press_center':{
     'looking_for': 'looking for',
@@ -255,7 +264,56 @@ export default {
       'lubricant': 'Lubricants',
       'laundry': 'Laundry',
       'personal': 'Personal hygiene',
-      'other': 'Other'
+      'other': 'Other',
+
+
+
+      'before_milking' : 'Before milking hygiene',
+      'after_milking' : 'After milking hygiene',
+      'cleaning_milking_equipment' : 'Milking equipment cleaning and disinfection',
+      'cleaning_warehouse' : 'Equipment and warehouse disinfection',
+      'hoof_hygiene' : 'Hoof hygiene',
+
+      'poultry_warehouse_cleaning' : 'Warehouse cleaning',
+      'poultry_drink' : 'Drinking system hygiene',
+      'poultry_water' : 'Drinking water disinfection',
+      'poultry_warehouse_disinfection' : 'Warehouse disinfection',
+      'poultry_egg' : 'Egg cleaning and disinfection',
+      'poultry_incubatory' : 'Incubatory cleaning and disinfection',
+      'poultry_meat' : 'Poultry meat disinfection',
+
+      'pigs_warehouse_disinfection' : 'Complex warehouse disinfection',
+      'pigs_warehouse_cleaning' : 'Warehouse cleaning',
+      'pigs_outer_equipment' : 'Equipment foam cleaning',
+      'pigs_drink' : 'Drinking system cleaning',
+      'pigs_water' : 'Drinking water disinfection',
+      'pigs_auto' : 'Transport cleaning and disinfection',
+
+      'meat_opc' : 'Open Plant Cleaning',
+      'meat_processing_house' : 'Processing house cleaning',
+      'meat_equipment_disinfection' : 'Equipment disinfection',
+      'meat_steel' : 'Steel surfaces care',
+      'meat_floor' : 'Floor cleaning',
+      'meat_other' : 'Special products',
+      'meat_complicated_dirt' : 'Complicated dirt cleaning',
+      'meat_auto' : 'Transport cleaning and disinfection',
+      'meat_thermo' : 'Heat and boil chamber cleaning and disinfection',
+      'meat_cip' : 'Cleaning In Place',
+      'meat_water' : 'Eqiupment parts soaking',
+      'meat_plastic' : 'Plastic container cleaning',
+      'meat_personal' : 'Personal hygiene',
+
+      'brewery_cip' : 'Cleaning In Place',
+      'brewery_opc' : 'Open Plant Cleaning',
+      'brewery_additive' : 'Plastic container additive',
+      'brewery_lubrication' : 'Belt lubrication`',
+      'brewery_keg' : 'KEG cleaning',
+      'brewery_pvc' : 'PVC container cleaning',
+      'brewery_steel' : 'Steel surfaces care',
+      'brewery_floor' : 'Floor cleaning',
+      'brewery_plastic' : 'Plactic container cleaning',
+      'brewery_tunnel' : 'Tunnel pasterizators cleaning',
+      'brewery_personal' : 'Personal hygiene',
     },
     'documentation':{
       'reg': 'Registration certificate',

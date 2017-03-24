@@ -45,8 +45,8 @@
     <div class="heading heading-top"><div class="title title-dark">{{t "common.news"}}</div></div>
     <div class="row">
       <br><br>
-      {{#if postsFiltered }}
-          {{#each postsFiltered as |item index|}}
+      {{#if postsOrdered }}
+          {{#each postsOrdered as |item index|}}
           {{#link-to "news.detail" item.slug}}
 
             <div class="col-md-3 col-sm-6 col-xs-12">
@@ -65,7 +65,7 @@
   </div>
 </article>
 
-<article class="container-grey">
+{{!-- <article class="container-grey">
   <div class="">
     <div class="container">
       <div class="block-title title">Stay updated</div>
@@ -78,4 +78,4 @@
       </div>
     </div>
   </div>
-</article>
+</article> --}}

@@ -26,24 +26,22 @@
           {{/if}}
         </div>
         {{#if listResult.length}}
-        <ul class="documents-search row">
+        <div class="documents-search row">
 
           {{#each listResult as |item index|}}
-          <a target="_blank" href="{{item.link}}">
-            <li class="{{item.type}} col-md-3 col-sm-6 col-xs-12">
-              {{#if isRuLocale}}
-              <div class="title">{{{item.name}}}</div>
-              <div class="subtitle">{{t (concat "media_center." item.type)}}</div>
-              <div class="description">.pdf <span>(~{{item.size}} {{t "common.kb"}})</span></div>
-              {{else}}
-              <div class="title">{{{item.name}}}</div>
-              <div class="subtitle">{{t (concat "media_center." item.type)}}</div>
-              <div class="description">.pdf <span>(~{{item.size}} {{t "common.kb"}})</span></div>
-              {{/if}}
-            </li>
+          <a target="_blank" href="{{item.link}}" class="{{item.type}} col-md-3 col-sm-6 col-xs-12">
+            {{#if isRuLocale}}
+            <div class="title">{{{item.name}}}</div>
+            <div class="subtitle">{{t (concat "media_center." item.type)}}</div>
+            <div class="description">.pdf <span>(~{{item.size}} {{t "common.kb"}})</span></div>
+            {{else}}
+            <div class="title">{{{item.name}}}</div>
+            <div class="subtitle">{{t (concat "media_center." item.type)}}</div>
+            <div class="description">.pdf <span>(~{{item.size}} {{t "common.kb"}})</span></div>
+            {{/if}}
           </a>
           {{/each}}
-        </ul>
+        </div>
         {{else}}
         <div class="page-title">{{t "common.nothing-found-alter"}}</div>
         {{/if}}
@@ -166,7 +164,7 @@
     </div>
   </div>
 </article>
-<article class="container-grey">
+{{!-- <article class="container-grey">
   <div class="">
     <div class="container">
       <div class="block-title title">Stay updated</div>
@@ -179,4 +177,4 @@
       </div>
     </div>
   </div>
-</article>
+</article> --}}

@@ -129,7 +129,7 @@ export default Ember.Controller.extend({
   			}); 
   	});
   	return result;
-  }.property('productsFiltered'),
+  }.property('productsFiltered','i18n.locale'),
   actions: {
     search: function(value) {
       this.set('searchQuery',this.get('searchField'));

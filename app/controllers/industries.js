@@ -94,10 +94,15 @@ export default Ember.Controller.extend({
     return this.get('productsIndustryFiltered');
   }.property('productsIndustryFiltered'),
   productCategories: function(){
-    let categories = ["opc_cleaning", 'cip_cleaning', 'additive', 'agriculture', 'lubricant', 'disinfectant', 'laundry', 'personal'];
-    this.get('productsFormatted').uniqBy('product_type').forEach((item) => {
-      if(item.get('product_type') && categories.indexOf(item.get('product_type'))<0){ 
-        categories.push(item.get('product_type')); 
+    let categories = [];
+    this.get('productsFormatted').uniqBy('application_'+this.get('currentIndustry')).forEach((item) => {
+      if(item.get('application_'+this.get('currentIndustry'))){
+        let value = item.get('application_'+this.get('currentIndustry'));
+        value.forEach((_item) => {
+          if(categories.indexOf(_item)<0){ 
+            categories.push(_item); 
+          }
+        });
       }
     });
     return categories;
@@ -111,10 +116,10 @@ export default Ember.Controller.extend({
           name: category,
           translate: trans,
           data: _this.get('productsFormatted').filter(function(item, index, enumerable){
-              return item.get('product_type') === category;
+              return item.get('application_'+_this.get('currentIndustry')).indexOf(category)+1;
             })
         }); 
     });
     return result;
-  }.property('productsFormatted')
+  }.property('productsFormatted','i18n.locale')
 });

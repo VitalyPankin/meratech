@@ -3,6 +3,7 @@ section.about{
   -ms-perspective: 12px;
   -webkit-perspective: 12px;
   height: 100vh;
+  font-size: 1.05em;
   overflow-x: hidden;
   overflow-y: auto;
   .intro{
@@ -13,8 +14,8 @@ section.about{
     background-color: #fff;
     background-image: url("images/about/slogan.png");
     padding-top: 450px;
-    padding-bottom: 350px;
-    min-height: 1590px;
+    padding-bottom: 280px;
+    min-height: 1550px;
     @media(max-width: 991px){
       background-size: 80% auto;
     }
@@ -28,7 +29,7 @@ section.about{
     }
     .page-title{
       text-align: left;
-      padding-bottom: 50px;
+      padding-bottom: 30px;
     }
     .disclaimer{
       max-width: 500px;
@@ -61,6 +62,7 @@ section.about{
       }
     }
   }
+  .row > div h6{margin-top: 20px;}
   .factory-back{
     transform: translateZ(-48px) scale(8);
     -webkit-transform: translateZ(-48px) scale(8);
@@ -69,7 +71,7 @@ section.about{
     background-position: top center;
     background-repeat: no-repeat;
     position: absolute;
-    top: 1300px;
+    top: 1200px;
     width: 100%;
     height: 100%;
     min-height: 750px;
@@ -81,8 +83,8 @@ section.about{
     }
   }
   .lab{
-    transform: translateZ(3px) scale(0.8);
-    -webkit-transform: translateZ(3px) scale(0.8);
+    transform: translateZ(3px) scale(0.77);
+    -webkit-transform: translateZ(3px) scale(0.77);
     min-height: 750px;
     width: 100%;
     margin: 0 auto;
@@ -92,7 +94,7 @@ section.about{
     position: relative;
     position: absolute;
     z-index: 10;
-    top: 1300px;
+    top: 1350px;
     @media(max-width: 1199px){
       top: 1400px;
     }
@@ -170,7 +172,7 @@ section.about{
   }
   .production{
     margin-top: -200px;
-    margin-top: 0px;
+    margin-top: 50px;
     overflow: hidden;
     position: relative;
     img{
@@ -223,7 +225,7 @@ section.about{
     padding-top: 13%;
     margin-top: -200px;
     position: absolute;
-    top: 3200px;
+    top: 3300px;
     z-index: 10;
     @media(max-width: 911px){
       top: 3700px;

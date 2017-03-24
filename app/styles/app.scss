@@ -56,43 +56,60 @@ border: none;
   
 h1, h2, h3, h4 {
   /* Mozilla */
-  -moz-user-select:  rgba(255,13,0,0.8);
+  -moz-user-select:  transparent;
 
   /* Opera */
-  -o-user-select: rgba(255,13,0,0.8);
+  -o-user-select: transparent;
        
   /* Safari */
-   -khtml-user-select: rgba(255,13,0,0.8);
+   -khtml-user-select: transparent;
 }
 b, strong, a, div, span, table, tr, td, li, ul, p,img,sup{
   /* Mozilla */
-  -moz-user-select: rgba(255,13,0,0.8);
+  -moz-user-select: transparent;
 
   /* Opera */
-  -o-user-select: rgba(255,13,0,0.8);
+  -o-user-select: transparent;
        
   /* Safari */
-   -khtml-user-select: rgba(255,13,0,0.8);
+   -khtml-user-select: transparent;
 }
 em, em *{
   font-style:italic;
 }
   
+// *::selection  { 
+//   background: rgba(255,13,0,0.8);
+//     color:#ffffff; 
+// }
+// *::-o-selection  { 
+//   background: rgba(255,13,0,0.8);
+//     color:#ffffff; 
+// }
+// *::-moz-selection  { 
+//   background: rgba(255,13,0,0.8);
+//     color:#ffffff; 
+// }
+// *::-webkit-selection  { 
+//   background: rgba(255,13,0,0.8);
+//     color:#ffffff; 
+// }
+
 *::selection  { 
-  background: rgba(255,13,0,0.8);
-    color:#ffffff; 
+  background: transparent;
+    color: inherit; 
 }
 *::-o-selection  { 
-  background: rgba(255,13,0,0.8);
-    color:#ffffff; 
+  background: transparent;
+    color: inherit; 
 }
 *::-moz-selection  { 
-  background: rgba(255,13,0,0.8);
-    color:#ffffff; 
+  background: transparent;
+    color: inherit; 
 }
 *::-webkit-selection  { 
-  background: rgba(255,13,0,0.8);
-    color:#ffffff; 
+  background: transparent;
+    color: inherit; 
 }
 input, button, textarea, select, optgroup, option {
   font-family: inherit;

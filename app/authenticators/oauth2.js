@@ -1,6 +1,7 @@
 import OAuth2PasswordGrant from 'ember-simple-auth/authenticators/oauth2-password-grant';
+import ENV from '../config/environment';
 
 export default OAuth2PasswordGrant.extend({
   serverTokenRevocationEndpoint: '/revoke',
-  serverTokenEndpoint: 'http://api.meratech.ru/oauth1/request',
+  serverTokenEndpoint: Ember.computed(ENV.wordpressHost+'oauth1/request'),
 });

@@ -1,11 +1,12 @@
 import Ember from 'ember';
+import ENV from '../config/environment';
 import OAuth2PasswordGrant from 'ember-simple-auth/authenticators/oauth2-password-grant';
 const { RSVP, isEmpty, run, } = Ember;
 const assign = Ember.assign || Ember.merge;
 
 export default OAuth2PasswordGrant.extend({
-  serverTokenRevocationEndpoint: 'http://api.meratech.ru/',
-  serverTokenEndpoint: 'http://api.meratech.ru/',
+  serverTokenRevocationEndpoint: ENV.wordpressHost,
+  serverTokenEndpoint: ENV.wordpressHost,
 
   authenticate(identification, password, scope = []) {
     return new RSVP.Promise((resolve, reject) => {

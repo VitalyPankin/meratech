@@ -15,7 +15,6 @@ export default Ember.Route.extend({
 	model(params) {
     this.controllerFor('industries').set('currentIndustry', params.id);
     let industry = params.id;
-    if(industry==="brewery") { industry = 'beer'; }
 
     let _productsModel = this.controllerFor('application').get('productsModel');
     if(_productsModel){

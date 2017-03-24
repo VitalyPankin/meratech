@@ -8,6 +8,10 @@ export default Ember.Controller.extend({
   toDate: null,
   counter: 1,
   displayItems: 1,
+  init: function () {
+    this.set('toDate', null);
+    this.set('fromDate', null);
+  }.on('init'),
   isRuLocale: function(){
     return this.get('i18n.locale')==='ru';
   }.property('i18n.locale'),
@@ -28,20 +32,19 @@ export default Ember.Controller.extend({
     if(this.get('fromDate')) {
       return this.get('fromDate');
     }
-    return this.get('minimalDate')
+    return this.get('minimalDate');
   }.property('minimalDate', 'fromDate'),
   toDateSelected: function(){
     if(this.get('toDate')) {
       return this.get('toDate');
     }
-    return this.get('todayDate')
+    return this.get('todayDate');
   }.property('toDate','todayDate'),
   postsFiltered: function(){
     let _this = this;
     return this.get('posts').filter(function(item, index, enumerable){
       let date = moment(item.get('date') .toString().substr(0, item.get('date') .toString().indexOf('GMT')), 'ddd MMM DD YYYY HH:mm:ss');
       if(_this.get('search')) {
-        debugger;
         let search = _this.get('search');
         if((item.get('title_'+_this.get('i18n.locale')).toLowerCase().indexOf(search.toLowerCase())+1) || 
           (item.get('preview_'+_this.get('i18n.locale')).toLowerCase().indexOf(search.toLowerCase())+1) || 
@@ -61,6 +64,9 @@ export default Ember.Controller.extend({
       return true;
     });
   }.property('posts','currentCategory','toDate','fromDate','search','i18n.locale'),
+  postsOrdered: function(){
+    return this.get('postsFiltered').sortBy('date').reverse();
+  }.property('postsFiltered'),
   actions: {
     setFilter: function(value) {
       if(value){

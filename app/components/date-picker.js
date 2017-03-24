@@ -33,13 +33,20 @@ export default Ember.Component.extend({
         to = this.get('to'),
         yearsDiff = Math.floor(to.year()-from.year())+1,
         monthsDiff = Math.floor(to.diff(from, 'months', true))+1;
+        console.log('yearsDiff:'+yearsDiff+' monthsDiff:'+monthsDiff);
     if(yearsDiff){
       for (var i = 0; i < yearsDiff; i++) {
         let months = [];
         if(from.year()===from.year()+i) {
           //first year
-          for (var j = from.month(); j < 12; j++) {
-            months.push(this.get('months')[j]);
+          if(yearsDiff===1){
+            for (var j = from.month(); j < from.month()+monthsDiff-1; j++) {
+              months.push(this.get('months')[j]);
+            }
+          }else{
+            for (var j = from.month(); j < 12; j++) {
+              months.push(this.get('months')[j]);
+            }
           }
         }else if(to.year()===from.year()+i){
           for (var j = 0; j < to.month()+1; j++) {

@@ -67,9 +67,8 @@ Router.map(function() {
  //    });  
 	// });
   this.route('equipment', function() {
-    this.route('index', {
-      path: '/',
-      queryParams: ['anchor']
+    this.route('category', { path: ':category_id' }, function() {
+        this.route('item', { path: ':item_id' });
     });
   });
 //  this.route('equipment', { path: '/equipment' , queryParams: ['anchor']});

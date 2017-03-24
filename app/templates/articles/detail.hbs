@@ -1,29 +1,37 @@
-<article class="article-details">
-  <div class="container-image" style="background-image:url('{{article.image}}')">
-    <div class="container article">
-    {{#if isRuLocale}}
-			<div class="title">{{article.title_ru}}</div>
-    {{else}}
-			<div class="title">{{article.title_en}}</div>
-    {{/if}}
+<article class="download-page-content">
+  <div class="container container-after-offset-x2">
+          {{#link-to "press-center"}}<span class="btn-archive">{{t 'common.press_center'}}</span>{{/link-to}}
+    <div class="heading heading-top">
+      <div class="title">{{t 'common.articles'}}
+
+      </div>
     </div>
-  </div>
-  <div class="container-white">
-    <div class="container container-offset-top">
-    	<div class="row">
-	    	<div class="heading heading-top">
-	    		<div class="title title-dark">{{t 'common.articles'}}</div>
-					{{#link-to "press-center"}}<span class="btn-archive">{{t 'common.press_center'}}</span>{{/link-to}}
-	    	</div>
-				<div class="body content-block html-content">
-					<span class="date">{{readableDate}}</span>
-			    {{#if isRuLocale}}
-						<div class="title">{{{article.text_ru}}}</div>
-			    {{else}}
-						<div class="title">{{{article.text_en}}}</div>
-			    {{/if}}
-				</div>
-	    </div>
+    <div class="article">
+      <div class="equipment-list-item row">
+        <div class="col-md-12">
+          {{#if isRuLocale}}
+            <div class="title">{{article.title_ru}}</div>
+          {{else}}
+            <div class="title">{{article.title_en}}</div>
+          {{/if}} 
+        </div>
+        <div class="col-md-6 col-sm-12 col-md-push-6 image-holder">
+          <img src="{{article.image}}">
+        </div>
+        <div class="col-md-6 col-sm-12 col-md-pull-6">
+          {{#if isRuLocale}}
+            <div class="body">{{{article.text_ru}}}</div>
+          {{else}}
+            <div class="body">{{{article.text_en}}}</div>
+          {{/if}} 
+          <a class="download-file" target="_blank" href="{{article.file}}">
+            <div class="image">
+              <img src="{{article.file_image}}">
+            </div>
+            <div class="button button-red">{{t "common.get_acticle"}}</div>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </article>

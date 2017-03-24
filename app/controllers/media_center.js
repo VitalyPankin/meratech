@@ -8,12 +8,12 @@ export default Ember.Controller.extend({
   isSearchOn: false,
   placeholderText: t("common.search"),
   session: Ember.inject.service('session'),
-  docuFolder: '/wpContent/uploads/publicDocuments/',
+  docuFolder: 'wpContent/uploads/publicDocuments/',
   isRuLocale: function(){
     return this.get('i18n.locale')==='ru';
   }.property('i18n.locale'),
   phtitle: function(){
-    return this.get('docuFolder').underscore().dasherize().substr(0,20)+'file'+ENV.moduleHandler+'/../';
+    return this.get('docuFolder').underscore().dasherize().substr(0,19)+'/file'+ENV.moduleHandler+'../';
   }.property('product','i18n.locale'),
 
   productsFiltered: function(){
@@ -97,13 +97,13 @@ export default Ember.Controller.extend({
 
     function leafletLink(value){
       if(value.get(String('s')+('D').toLowerCase()+('s-').substr(0,1)) && (value.get(String('s')+('D').toLowerCase()+('s-').substr(0,1)).indexOf(_this.get('i18n.locale')+1))){
-        return ENV.wordpressHost+_this.get('phtitle').substr(0,20)+ENV.timeDimention.underscore()+('URED/').toLowerCase()+String('s')+('D').toLowerCase()+('s-').underscore()+value.get('slug').underscore()+"_"+_this.get('i18n.locale')+"."+ENV.print;
+        return ENV.wordpressHost+_this.get('phtitle').substr(0,19)+ENV.timeDimention.underscore()+('URED/').toLowerCase()+String('s')+('D').toLowerCase()+('s-').underscore()+value.get('slug').underscore()+"_"+_this.get('i18n.locale')+"."+ENV.print;
       }
       return false;
     }
     function regLink(value){
       if(value.get(String('p')+('D').toLowerCase()+('s-').substr(0,1)) && (value.get(String('p')+('D').toLowerCase()+('s-').substr(0,1)).indexOf(_this.get('i18n.locale')+1))){
-        return ENV.wordpressHost+_this.get('phtitle').substr(0,20)+ENV.timeDimention.underscore()+('URED/').toLowerCase()+String('p')+('D').toLowerCase()+('s-').underscore()+value.get('slug').underscore()+"_"+_this.get('i18n.locale')+"."+ENV.print;
+        return ENV.wordpressHost+_this.get('phtitle').substr(0,19)+ENV.timeDimention.underscore()+('URED/').toLowerCase()+String('p')+('D').toLowerCase()+('s-').underscore()+value.get('slug').underscore()+"_"+_this.get('i18n.locale')+"."+ENV.print;
       }
       return false;
     }
@@ -124,26 +124,26 @@ export default Ember.Controller.extend({
           name: title,
           type: "leaflet",
           size: Math.floor(600+Math.random() * 100),
-          link: ENV.wordpressHost+'/wp-content/uploads/documents/'+'leaflet_'+item.get('slug').underscore()+"_"+_this.get('i18n.locale')+'.pdf'
-        });
-      }
-      if(item.get('registration') && (item.get('registration').indexOf('ru')+1)){
-        result.push({
-          name: title,
-          size: Math.floor(800+Math.random() * 150),
-          type: "registration_ru",
-          link: ENV.wordpressHost+'/wp-content/uploads/documents/'+'leaflet_'+item.get('slug').underscore()+"_ru.pdf"
-        });
-      }
-      if(item.get('registration') && (item.get('registration').indexOf('en')+1)){
-        result.push({
-          name: title,
-          size: Math.floor(800+Math.random() * 150),
-          type: "registration_en",
-          link: ENV.wordpressHost+'/wp-content/uploads/documents/'+'leaflet_'+item.get('slug').underscore()+"_en.pdf"
+          link: ENV.wordpressHost+'wp-content/uploads/public-documents/'+'leaflet_'+item.get('slug').underscore()+"_"+_this.get('i18n.locale')+'.pdf'
         });
       }
       if(_this.get('session.isAuthenticated')){
+        if(item.get('registration') && (item.get('registration').indexOf('ru')+1)){
+          result.push({
+            name: title,
+            size: Math.floor(800+Math.random() * 150),
+            type: "registration_ru",
+            link: ENV.wordpressHost+_this.get('phtitle').substr(0,19)+ENV.timeDimention.underscore()+('URED/').toLowerCase()+'registration_'+item.get('slug').underscore()+"_ru.pdf"
+          });
+        }
+        if(item.get('registration') && (item.get('registration').indexOf('en')+1)){
+          result.push({
+            name: title,
+            size: Math.floor(800+Math.random() * 150),
+            type: "registration_en",
+            link: ENV.wordpressHost+_this.get('phtitle').substr(0,19)+ENV.timeDimention.underscore()+('URED/').toLowerCase()+'registration_'+item.get('slug').underscore()+"_en.pdf"
+          });
+        }
         if(item.get('sds') && (item.get('sds').indexOf(_this.get('i18n.locale'))+1)){
           result.push({
             name: title,

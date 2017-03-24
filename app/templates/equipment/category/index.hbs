@@ -1,0 +1,63 @@
+{{#if isCleaningCatalog}}
+<article class="get-catalog project-hero hero">
+  <div class="container-white container-after-offset">
+    <div class="container container-hero">
+      <div class="heading heading-top"></div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="subarticle">
+            <div class="title">{{t "equipment.title_project"}}</div>
+            <div class="body">{{t "equipment.description_project"}}</div>
+            {{#link-to "contacts"}}<div class="button button-red">{{t "equipment.button_project"}}</div>{{/link-to}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+{{/if}}
+<article>
+	<div class="container container-after-offset-x2 {{if isCleaningCatalog 'container-after-offset'}}">
+		<div class="heading heading-top">
+			<div class="title">{{t (concat "equipment.category." categoryTranslate)}}</div>
+		</div>
+    <div class="article">
+      <div class="equipment-list-category row">
+				{{#each items as |item index|}}
+	        {{#link-to "equipment.category.item" item.slug class="col-md-6 col-lg-6"}}
+	        <div class="" style="background-image: url('{{item.image}}');">
+
+          {{#if isRuLocale}}
+            <div class="title">{{item.title_ru}}</div>
+            <div class="body">{{{item.preview_ru}}}</div>
+          {{else}}
+            <div class="title">{{item.title_en}}</div>
+            <div class="body">{{{item.preview_en}}}</div>
+          {{/if}}
+	          <div class="button button-red">{{t "common.details"}}</div>
+	        </div>
+	        {{/link-to}}
+				{{/each}}
+
+      </div>
+    </div>
+	</div>
+</article>
+<article class="get-catalog equipment-hero hero-gray hero">
+  <div class="container-white">
+    <div class="container container-hero">
+      <div class="heading heading-top"></div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="subarticle">
+            <div class="title">{{t "common.get_catalog_hash.equipment.title"}}</div>
+            <div class="body">{{t "common.get_catalog_hash.equipment.body"}}</div>
+            <a href="{{host}}wp-content/uploads/2017/01/catalog_cleaning_eqiupment.pdf"><div class="button button-red">{{t "common.get_catalog"}}</div></a>
+            {{#link-to "media-center"}} <div class="button button button-download">{{t "common.go_to_media_center"}}</div>{{/link-to}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+

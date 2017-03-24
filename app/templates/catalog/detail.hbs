@@ -13,7 +13,6 @@
           <div class="body">{{description}}</div>
           <div class="registration">{{t "catalog.evrazes"}} <b>{{product.registration_number}} </b> {{#if date}}{{t "catalog.date_at"}} {{date}}{{/if}}</div>
           <div class="ph">pH <span style="color: {{product.color_code_style}}">{{ph}}</span></div>
-          <!--div class="button button-transparent button-download"></div-->
         </div>
       </div>
     </div>
@@ -57,12 +56,6 @@
           <div class="paragraph">
             <div class="title">{{t "common.documentation"}}</div>
             <div class="documents">
-              {{#if registration}}
-                <a href="{{registration}}" class="registration">
-                  <div class="title">{{t "catalog.documentation.reg"}}</div>
-                  <div class="description">.pdf <span>({{random-number 800 150}} kB)</span></div>
-                </a>
-              {{/if}}
               {{#if leaflet}}
                 <a href="{{leaflet}}" class="leaflet">
                   <div class="title">{{t "catalog.documentation.leaflet"}}</div>
@@ -70,6 +63,12 @@
                 </a>
               {{/if}}
               {{#if session.isAuthenticated}}
+                {{#if registration}}
+                  <a href="{{registration}}" class="registration">
+                    <div class="title">{{t "catalog.documentation.reg"}}</div>
+                    <div class="description">.pdf <span>({{random-number 800 150}} kB)</span></div>
+                  </a>
+                {{/if}}
                 {{#if prod}}
                   <a href="{{prod}}" class="pds">
                     <div class="title">{{t "catalog.documentation.pds"}}</div>
@@ -123,17 +122,25 @@
             <div class="body">
               <div class="subtitle">{{t "catalog.risk_phrases"}}</div>
               <dl>
+              {{#if risk_phrases.length}}
               {{#each risk_phrases as |item index|}}
                 <dt>{{item.name}}</dt>
                 <dd>{{t item.translate}}</dd>
               {{/each}}
+              {{else}}
+              {{t "common.no_data"}}
+              {{/if}}
               </dl>
               <div class="subtitle">{{t "catalog.safety_phrases"}}</div>
               <dl>
+              {{#if safety_phrases.length}}
               {{#each safety_phrases as |item index|}}
                 <dt>{{item.name}}</dt>
                 <dd>{{t item.translate}}</dd>
               {{/each}}
+              {{else}}
+              {{t "common.no_data"}}
+              {{/if}}
               </dl>
             </div>
           </div>

@@ -34,7 +34,7 @@
         </li>
         {{/link-to}}
         {{#link-to "industries" "brewery"}}
-        <li class="beer">
+        <li class="brewery">
           <span>{{t "industries.brewery"}}</span>
           <div></div>
         </li>
@@ -97,35 +97,34 @@
           <div class="article">
             <div class="title">{{t "index.equipment.title"}}</div>
             <div class="body">{{t "index.equipment.body"}} </div>
-            {{#link-to "equipment" class="button button-red"}}{{t "common.equipment"}}{{/link-to}}
             <ul class="equipment-list">
-              {{#link-to "equipment" (query-params anchor='#posts_onwall')}}
+              {{#link-to "equipment.category" "low-pressure-systems"}}
               <li class="cleaning_low">
-                <span>{{t "index.equipment.low_pressure"}}</span>
+                <span>{{t "equipment.category.low_pressure_systems"}}</span>
                 <div></div>
               </li>
               {{/link-to}}
-              {{#link-to "equipment" (query-params anchor='#mobile')}}
+              {{#link-to "equipment.category" "high-pressure-systems"}}
               <li class="cleaning_high">
-                <span>{{t "index.equipment.high_pressure"}}</span>
+                <span>{{t "equipment.category.high_pressure_systems"}}</span>
                 <div></div>
               </li>
               {{/link-to}}
-              {{#link-to "equipment" (query-params anchor='#lubrication')}}
+              {{#link-to "equipment.category" "lubrication"}}
               <li class="lubrication">
-                <span>{{t "index.equipment.lubrication"}}</span>
+                <span>{{t "equipment.category.lubrication"}}</span>
                 <div></div>
               </li>
               {{/link-to}}
-              {{#link-to "equipment" (query-params anchor='#co2')}}
+              {{#link-to "equipment.category" "co2-systems"}}
               <li class="co2">
-                <span>{{t "index.equipment.co2"}}</span>
+                <span>{{t "equipment.category.co2_systems"}}</span>
                 <div></div>
               </li>
               {{/link-to}}
-              {{#link-to "equipment" (query-params anchor='#dosation')}}
+              {{#link-to "equipment.category" "dosing-systems"}}
               <li class="dosation">
-                <span>{{t "index.equipment.dosation"}}</span>
+                <span>{{t "equipment.category.dosing_systems"}}</span>
                 <div></div>
               </li>
               {{/link-to}}
@@ -140,7 +139,7 @@
 <article class="equipment-index-hero">
   {{hero-index}} 
 </article>
-<article class="video-block">
+{{!-- <article class="video-block">
   <div class="container-white">
     <div class="container container-offset-top">
           <div class="article video-about">
@@ -151,4 +150,4 @@
           </div>
     </div>
   </div>
-</article>
+</article> --}}

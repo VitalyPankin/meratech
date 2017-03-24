@@ -41,12 +41,12 @@
               <div class="category {{item.category}}">{{t (concat "press_center."item.category)}}</div>
               {{#if isRuLocale}}
                 <div class="date">{{format-date item.date}}</div>
-                <div class="title">{{item.title_ru}}</div>
-                <div class="description">{{item.preview_ru}}</div>
+                <div class="title">{{{item.title_ru}}}</div>
+                <div class="description">{{{item.preview_ru}}}</div>
               {{else}}
                 <div class="date">{{format-date item.date}}</div>
-                <div class="title">{{item.title_en}}</div>
-                <div class="description">{{item.preview_en}}</div>
+                <div class="title">{{{item.title_en}}}</div>
+                <div class="description">{{{item.preview_en}}}</div>
               {{/if}}
 
             </div>
@@ -79,14 +79,14 @@
               <img src="{{item.image}}">
               <div class="wrapper">
                 {{#if isRuLocale}}
-                <div class="title">{{item.title_ru}}</div>
+                <div class="title">{{{item.title_ru}}}</div>
                 <div class="divider"></div>
-                <div class="body">{{item.preview_ru}}</div>
+                <div class="body">{{{item.preview_ru}}}</div>
                 <span class="button button-learnmore button-narrow">{{t 'common.learn_more'}}</span>
                 {{else}}
-                <div class="title">{{item.title_en}}</div>
+                <div class="title">{{{item.title_en}}}</div>
                 <div class="divider"></div>
-                <div class="body">{{item.preview_en}}</div>
+                <div class="body">{{{item.preview_en}}}</div>
                 <span class="button button-learnmore button-narrow">{{t 'common.learn_more'}}</span>
                 {{/if}}
               </div>
@@ -106,14 +106,14 @@
               <img src="{{item.image}}">
               <div class="wrapper">
                 {{#if isRuLocale}}
-                <div class="title">{{item.title_ru}}</div>
+                <div class="title">{{{item.title_ru}}}</div>
                 <div class="divider"></div>
-                <div class="body">{{item.preview_ru}}</div>
+                <div class="body">{{{item.preview_ru}}}</div>
                 <span class="button button-learnmore button-narrow">{{t 'common.learn_more'}}</span>
                 {{else}}
-                <div class="title">{{item.title_en}}</div>
+                <div class="title">{{{item.title_en}}}</div>
                 <div class="divider"></div>
-                <div class="body">{{item.preview_en}}</div>
+                <div class="body">{{{item.preview_en}}}</div>
                 <span class="button button-learnmore button-narrow">{{t 'common.learn_more'}}</span>
                 {{/if}}
               </div>
@@ -126,69 +126,7 @@
     </div>
   </div>
 </article>
-<!--article class="news-header-search">
-  <div class="container-fluid">
-    <div class="container">
-      <div class="page-title title">Пресс-центр <span class="red">поиск</span></div>
-      <div class="body controls">
-        <div class="centered-input centered-input-semiwhite">
-          <input placeholder="Search by phrase">
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="select-wrapper">search archive for 
-              <div class="dropdown news-dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">everything 
-                </a>
-                <ul class="dropdown-menu clearfix">
-                  <li>events</li>
-                  <li>products</li>
-                  <li>clients</li>
-                  <li>company</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="select-wrapper">related to
-              <div class="dropdown news-dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">meat processing 
-                </a>
-                <ul class="dropdown-menu clearfix">
-                  <li>meat processing</li>
-                  <li>cow breeding</li>
-                  <li>pig farms</li>
-                  <li>poultry</li>
-                  <li>milk processing</li>
-                  <li>brewery and beverages</li>
-                  <li>laundry</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="select-wrapper">from year
-              <div class="dropdown news-dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">2014 
-                </a>
-                <ul class="dropdown-menu clearfix">
-                  <li>2016</li>
-                  <li>2015</li>
-                  <li>2014</li>
-                  <li>2013</li>
-                  <li>2012</li>
-                  <li>2011</li>
-                  <li>2010</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</article-->
-<article class="container-grey">
+{{!-- <article class="container-grey">
   <div class="">
     <div class="container">
       <div class="block-title title">{{t 'common.stay_updated'}}</div>
@@ -196,9 +134,15 @@
         {{t 'common.stay_updated_text'}}
         <div class="centered-input centered-input-white">
           <input placeholder="{{t 'common.email'}}">
-          <button>{{t 'common.sign_up'}}</button>
+          <div class="g-recaptcha" data-sitekey="6Lf4_BkUAAAAAKoDiSoC_4TMQ9qCI2GPoAOwrWjv"></div>
+          <button
+          class="g-recaptcha"
+          data-sitekey="6LcPAhoUAAAAAORBq9QLk7-V5RTWI2yZ91jduKvt"
+          data-callback="YourOnSubmitFn">
+          {{t 'common.sign_up'}}
+          </button>
         </div>
       </div>
     </div>
   </div>
-</article>
+</article> --}}

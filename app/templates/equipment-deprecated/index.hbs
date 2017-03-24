@@ -1,0 +1,286 @@
+
+{{!-- <article class="equipment-dark-hero">
+		<div class="container">
+	    	<div class="heading heading-top">
+		      	<span class="title title-dark">системы мойки</span>
+		    </div>
+			<div class="row">
+		    <div class="col-md-6 item">
+        	<div class="title">
+        		Системы мойки высокого давления
+        	</div>
+			    	<img class="soap" src="/assets/images/equipment/satellite.png">
+		    </div>
+		    <div class="col-md-6 item">
+        	<div class="title">
+        		Системы мойки низкого давления
+        	</div>
+			    	<img class="soap" src="/assets/images/equipment/droid.png">
+		    </div>
+		  </div>
+		   <div class="button button-red">Подробнее</div>
+		</div>
+</article> --}}
+<article class="equipment-1">
+	    <div class="container container-after-offset">
+	    	<div class="row">
+		        <div class="col-md-12">
+		        	<div class="article">
+			            <div class="title">{{t "equipment.title"}}</div>
+			            <div class="body">{{t "equipment.description"}}</div>
+		        	</div>
+		        </div>
+	    	</div>
+	    </div>
+</article>
+{{#unless productsSubCategorized.length}}
+	<div class="page-title search-title">{{t "common.nothing-found"}}</div>
+{{/unless}}
+{{#each productsSubCategorized as |category index|}}
+{{#if category.subcategories.length}}
+ <article id='{{category.category}}'>
+  <div class="container">
+		<div class="container">
+      <div class="heading heading-top">
+      	<span class="title title-dark">{{t (concat "equipment.categories." category.category)}}</span>
+      </div>
+	    <div class="row">
+	      <div class="col-md-12">
+	        <div class="equipment-list equipment-list-{{category.category}} content-block html-content">
+						{{#each category.subcategories as |subcategory index|}}
+	        		{{#if subcategory.subcategory}}
+	        		<div class="subcategory" id='{{subcategory.subcategory}}'>
+	        			<div class="title">{{t (concat "equipment.subcategories." subcategory.subcategory)}}</div>
+	        			<div class="body">{{t (concat "equipment.subcategories.description." subcategory.subcategory)}}</div>
+	        		</div>
+	        		{{/if}}
+	        		<div class="row">
+								{{#each subcategory.list as |item index|}}
+								<div class="item col-md-12">
+									<div class="row">
+				      			<div class="col-md-12">
+						        	{{#if isRuLocale}}
+						        	<div class="title">{{{format-equipment item.title_ru}}}</div>
+						        	<div class="subtitle">{{{item.subtitle_ru}}}</div>
+						        	{{else}}
+						        	<div class="title">{{{format-equipment item.title_en}}}</div>
+						        	<div class="subtitle">{{{item.subtitle_en}}}</div>
+						        	{{/if}}
+						        </div>
+						      </div>
+						      {{#if item.multitable}}
+									
+									{{!-- IF MULTITABLE --}}
+																{{!-- <div class="item {{if (or (eq category.category 'accessory') (eq subcategory.subcategory 'posts_onwall')) 'col-md-6' 'col-md-12'}}"> --}}
+
+									<div class="row">
+				      			<div class="col-md-6">
+						        	{{#if isRuLocale}}
+							        	{{{item.description_ru}}}
+							        	{{#if item.advantages_ru}}
+							        		<div class="minititle">{{t "equipment.advantages"}}</div>
+							        		{{{item.advantages_ru}}}
+							        	{{/if}}
+						        	{{else}}
+							        	{{{item.description_en}}}
+							        	{{#if item.advantages_en}}
+							        		<div class="minititle">{{t "equipment.advantages"}}</div>
+							        		{{{item.advantages_en}}}
+							        	{{/if}}
+						        	{{/if}}
+					        	</div>
+				      			<div class="col-md-6">
+						        	<div class="image"><img src="{{{item.image}}}" alt="{{{item.title}}}" title="{{{item.title}}}"></div>
+						        </div>
+				      			<div class="col-md-12">
+						        	{{#if isRuLocale}}
+							        	{{#if item.specs_ru}}
+							        		<div class="minititle">{{t "equipment.specs"}}</div>
+							        		{{{item.specs_ru}}}
+							        	{{/if}}
+						        	{{else}}
+							        	{{#if item.specs_en}}
+							        		<div class="minititle">{{t "equipment.specs"}}</div>
+							        		{{{item.specs_en}}}
+							        	{{/if}}
+						        	{{/if}}
+					        	</div>
+				      			<div class="col-md-6">
+						        	{{#if isRuLocale}}
+							        	{{#if item.complectation_ru}}
+							        		<div class="minititle">{{t "equipment.complectation"}}</div>
+							        		{{{item.complectation_ru}}}
+							        	{{/if}}
+						        	{{else}}
+							        	{{#if item.complectation_en}}
+							        		<div class="minititle">{{t "equipment.complectation"}}</div>
+							        		{{{item.complectation_en}}}
+							        	{{/if}}
+						        	{{/if}}
+					        	</div>
+				      			<div class="col-md-6">
+						        	{{#if isRuLocale}}
+							        	{{#if item.options_ru}}
+							        		<div class="minititle">{{t "equipment.options"}}</div>
+							        		{{{item.options_ru}}}
+							        	{{/if}}
+						        	{{else}}
+							        	{{#if item.options_en}}
+							        		<div class="minititle">{{t "equipment.options"}}</div>
+							        		{{{item.options_en}}}
+							        	{{/if}}
+						        	{{/if}}
+					        	</div>
+					        </div>
+
+					        {{else}}
+									
+									{{!-- IF NOT MULTITABLE --}}
+
+									<div class="row">
+				      			<div class="col-md-6">
+						        	{{#if isRuLocale}}
+							        	{{{item.description_ru}}}
+							        	{{#if item.advantages_ru}}
+							        		<div class="minititle">{{t "equipment.advantages"}}</div>
+							        		{{{item.advantages_ru}}}
+							        	{{/if}}
+						        	{{else}}
+							        	{{{item.description_en}}}
+							        	{{#if item.advantages_en}}
+							        		<div class="minititle">{{t "equipment.advantages"}}</div>
+							        		{{{item.advantages_en}}}
+							        	{{/if}}
+						        	{{/if}}
+						        	{{#if isRuLocale}}
+							        	{{#if item.specs_ru}}
+							        		<div class="minititle">{{t "equipment.specs"}}</div>
+							        		{{{item.specs_ru}}}
+							        	{{/if}}
+						        	{{else}}
+							        	{{#if item.specs_en}}
+							        		<div class="minititle">{{t "equipment.specs"}}</div>
+							        		{{{item.specs_en}}}
+							        	{{/if}}
+						        	{{/if}}
+						        	{{#if isRuLocale}}
+							        	{{#if item.complectation_ru}}
+							        		<div class="minititle">{{t "equipment.complectation"}}</div>
+							        		{{{item.complectation_ru}}}
+							        	{{/if}}
+						        	{{else}}
+							        	{{#if item.complectation_en}}
+							        		<div class="minititle">{{t "equipment.complectation"}}</div>
+							        		{{{item.complectation_en}}}
+							        	{{/if}}
+						        	{{/if}}
+						        	{{#if isRuLocale}}
+							        	{{#if item.options_ru}}
+							        		<div class="minititle">{{t "equipment.options"}}</div>
+							        		{{{item.options_ru}}}
+							        	{{/if}}
+						        	{{else}}
+							        	{{#if item.options_en}}
+							        		<div class="minititle">{{t "equipment.options"}}</div>
+							        		{{{item.options_en}}}
+							        	{{/if}}
+						        	{{/if}}
+					        	</div>
+				      			<div class="col-md-6">
+						        	<div class="image"><img class="{{if (eq category.category 'accessory') 'small'}}" src="{{{item.image}}}" alt="{{item.title}}" title="{{item.title}}"></div>
+						        </div>
+					        </div>
+					        {{/if}}
+					      </div>
+								{{/each}}
+				      </div>
+						{{/each}}
+		      </div>
+	      </div>
+	    </div>
+	  </div>
+  </div>
+</article>
+{{/if}}
+{{/each}}
+
+{{!-- <article class="equipment-heros">
+	    <div class="container">
+		    <div class="heading heading-top">
+		    	<span class="title title-dark">дозирующее оборудование</span>
+		    </div>
+		    <div class="row">
+		        <div class="col-md-5 col-md-offset-1">
+				    <div class="subarticle ">
+				        <div class="title">Системы дозирования моющих растворов</div>
+				        <div class="body">Позволяют эффективно осуществлять гигиеническую мойку и дезинфекцию внутрицеховых площадей, открытых поверхностей и оборудования в производственных помещениях пищевых производств. Устанавливаются на стену или любую ровную вертикальную поверхность. Подключаются к системе подачи воды под давлением. </div>
+				    </div>
+			    </div>
+			    <div class="col-md-5 centered">
+			    	<img class="prominent" src="/assets/images/equipment/prominent.jpg">
+			    </div>
+		    </div>
+		    <div class="row">
+			    <div class="col-md-5 col-md-offset-1">
+			    	<img class="grease" src="/assets/images/equipment/grease.jpg">
+			    </div>
+			    <div class="col-md-5">
+				    <div class="subarticle ">
+				        <div class="title">Системы дозирования смазки</div>
+				        <div class="body">Позволяют эффективно осуществлять гигиеническую мойку и дезинфекцию внутрицеховых площадей, открытых поверхностей и оборудования в производственных помещениях пищевых производств. Устанавливаются на стену или любую ровную вертикальную поверхность. Подключаются к системе подачи воды под давлением. </div>
+				    </div>
+			    </div>
+		    </div>
+		    <div class="row">
+		        <div class="col-md-5 col-md-offset-1">
+				    <div class="subarticle ">
+				        <div class="title">Дозаторы для мыла</div>
+				        <div class="body">Позволяют эффективно осуществлять гигиеническую мойку и дезинфекцию внутрицеховых площадей, открытых поверхностей и оборудования в производственных помещениях пищевых производств. Устанавливаются на стену или любую ровную вертикальную поверхность. Подключаются к системе подачи воды под давлением. </div>
+				    </div>
+			    </div>
+			    <div class="col-md-5 centered">
+			    	<img class="soap" src="/assets/images/equipment/soap.jpg">
+			    </div>
+		    </div>
+	    </div>
+</article>
+<article class="equipment-dark-hero">
+		<div class="container">
+	    	<div class="heading heading-top">
+		      	<span class="title title-dark">системы мойки</span>
+		    </div>
+			<div class="row">
+		    <div class="col-md-6 item">
+        	<div class="title">
+        		Системы мойки высокого давления
+        	</div>
+			    	<img class="soap" src="/assets/images/equipment/satellite.png">
+		    </div>
+		    <div class="col-md-6 item">
+        	<div class="title">
+        		Системы мойки низкого давления
+        	</div>
+			    	<img class="soap" src="/assets/images/equipment/droid.png">
+		    </div>
+		  </div>
+		   <div class="button button-red">Подробнее</div>
+		</div>
+</article>
+<article class="equipment-heros">
+	    <div class="container">
+		    <div class="heading heading-top">
+		    </div>
+		    <div class="row">
+			    <div class="col-md-5 col-md-offset-1">
+			    	<img class="grease" src="/assets/images/equipment/grease.jpg">
+			    </div>
+			    <div class="col-md-5">
+				    <div class="subarticle ">
+				        <div class="title">Установки производства диоксида хлора</div>
+				        <div class="body">Позволяют эффективно осуществлять гигиеническую мойку и дезинфекцию внутрицеховых площадей, открытых поверхностей и оборудования в производственных помещениях пищевых производств. Устанавливаются на стену или любую ровную вертикальную поверхность. Подключаются к системе подачи воды под давлением. </div><br><br><br><br>
+				    </div>
+			    </div>
+		    </div>
+	    </div>
+</article> --}}
+

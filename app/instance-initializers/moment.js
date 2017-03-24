@@ -9,6 +9,14 @@ export function initialize(/* appInstance */) {
          format: 'Воскресение_Понедельник_Вторник_Среда_Четверг_Пятница_Суббота'.split('_'),
          standalone: 'Воскресение_Понедельник_Вторник_Среда_Четверг_Пятница_Суббота'.split('_'),
          isFormat: /D[oD]?(\[[^\[\]]*\]|\s+)+MMMM?|MMMM?(\[[^\[\]]*\]|\s+)+D[oD]?/  // from 2.14.0
+    },
+    calendar : {
+        lastDay : '[Вчера в] HH:mm',
+        sameDay : '[Сегодня в] HH:mm',
+        nextDay : '[Завтра в] HH:mm',
+        lastWeek : '[Прошлый] dddd [в] HH:mm',
+        nextWeek : 'dddd [в] HH:mm',
+        sameElse : 'L'
     }
 	});
 }

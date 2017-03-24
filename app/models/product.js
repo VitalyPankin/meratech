@@ -12,7 +12,7 @@ export default Model.extend({
 	format: attr(),
 	tags: hasMany('tag', {async: true}),
 
-	application_beer: attr(),
+	application_brewery: attr(),
 	application_cows: attr(),
 	application_meat: attr(),
 	application_milk: attr(),
