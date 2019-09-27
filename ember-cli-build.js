@@ -1,13 +1,13 @@
-/*jshint node:true*/
-/* global require, module */
-var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+'use strict';
+
+const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var pickFiles = require('broccoli-static-compiler'),
   mergeTrees = require('broccoli-merge-trees'),
   nodeSass = require('node-sass');
 
 module.exports = function(defaults) {
-  var app = new EmberApp(defaults, {
+  let app = new EmberApp(defaults, {
     sassOptions: {
       implementation: require('node-sass'),
     },
