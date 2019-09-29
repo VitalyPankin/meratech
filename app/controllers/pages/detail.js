@@ -1,20 +1,37 @@
-import Ember from 'ember';
-import { translationMacro as t } from "ember-i18n";
+import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
+import moment from 'moment';
 
-export default Ember.Controller.extend({
+// eslint-disable-next-line no-unused-vars
+import { translationMacro as t } from 'ember-i18n';
+
+export default Controller.extend({
+  session: service('session'),
+  i18n: service(),
   post: null,
-  i18n: Ember.inject.service(),
-  isRuLocale: function(){
-    return this.get('i18n.locale')==='ru';
-  }.property('i18n.locale'),
-  readableDate: function(){
+
+  isRuLocale: computed('i18n.locale', function() {
+    return this.get('i18n.locale') === 'ru';
+  }),
+
+  readableDate: computed('i18n.locale', function() {
     moment.locale(this.get('i18n.locale'));
 
-    let value = moment(this.get('post.date').toString().substr(0, this.get('post.date').toString().indexOf('GMT')), 'ddd MMM DD YYYY HH:mm:ss');
+    let value = moment(
+      this.get('post.date')
+        .toString()
+        .substr(
+          0,
+          this.get('post.date')
+            .toString()
+            .indexOf('GMT'),
+        ),
+      'ddd MMM DD YYYY HH:mm:ss',
+    );
 
-    return value.format("dddd, MMMM Do,  YYYY");
-  }.property('i18n.locale'),
-  session: Ember.inject.service('session'),
-  actions: {
-  }
+    return value.format('dddd, MMMM Do,  YYYY');
+  }),
+
+  actions: {},
 });

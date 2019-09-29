@@ -1,40 +1,53 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
+import { computed, observer } from '@ember/object';
 
-export default Ember.Controller.extend({
-  session: Ember.inject.service('session'),
-	currentPath: null,
-	isAboutRoute: false,
+export default Controller.extend({
+  session: service('session'),
+  ajaxLoader: service('ajax-loader'),
+  currentPath: null,
+  isAboutRoute: false,
   productsModel: null,
   documentsModel: null,
   postsModel: null,
   articlesModel: null,
 
   init() {
+    this._super(...arguments);
     this.get('i18n');
   },
-  ruLocale: function(){
+
+  ruLocale: computed('i18n.locale', function() {
     // console.log(this.get('i18n.locale'));
-    if(this.get('i18n.locale')==='ru') { return true; }
-    return false; 
-  }.property('i18n.locale'),
-  updateCurrentPath: function() {
-    this.set('currentPath', this.get('currentPath'));
-    console.log(this.get('currentPath'));
-    if(this.get('currentPath')==='about' || this.get('currentPath')==='not-found'){
-	    this.set('isAboutRoute', true);
-    }else{
-	    this.set('isAboutRoute', false);
+    if (this.get('i18n.locale') === 'ru') {
+      return true;
     }
-  }.observes('currentPath'),
+    return false;
+  }),
+
+  // eslint-disable-next-line ember/no-observers
+  updateCurrentPath: observer('currentPath', function() {
+    this.set('currentPath', this.get('currentPath'));
+    // eslint-disable-next-line no-console
+    console.log(this.get('currentPath'));
+    if (this.get('currentPath') === 'about' || this.get('currentPath') === 'not-found') {
+      this.set('isAboutRoute', true);
+    } else {
+      this.set('isAboutRoute', false);
+    }
+  }),
+
   actions: {
     invalidateSession() {
       this.get('session').invalidate();
     },
     authenticate() {
       let { identification, password } = this.getProperties('identification', 'password');
-      this.get('session').authenticate('authenticator:oauth2', identification, password).catch((reason) => {
-        this.set('errorMessage', reason.error || reason);
-      });
-    }
-  }
+      this.get('session')
+        .authenticate('authenticator:oauth2', identification, password)
+        .catch(reason => {
+          this.set('errorMessage', reason.error || reason);
+        });
+    },
+  },
 });

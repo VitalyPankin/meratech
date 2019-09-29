@@ -1,3 +1,7 @@
+{{#if ajaxLoader.isLoad}}
+  {{ajax-loader isLoad=ajaxLoader.isLoad}}
+{{/if}}
+
 {{#if isAboutRoute}}
   {{outlet}}
 {{else}}

@@ -1,24 +1,24 @@
 <article class="equipment-index">
-	<div class="container container-after-offset-x2">
-		<div class="heading heading-top">
-			<div class="title">{{t "common.professional_1"}} <span>{{t "common.equipment"}}</span>
-			</div>
-		</div>
+  <div class="container container-after-offset-x2">
+    <div class="heading heading-top">
+      <div class="title">{{t "common.professional_1"}} <span>{{t "common.equipment"}}</span></div>
+    </div>
     <div class="article">
-      {{!-- <div class="title">{{t "index.equipment.title"}}</div> --}}
+    {{!-- <div class="title">{{t "index.equipment.title"}}</div> --}}
       <div class="equipment-list-inner equipment-list-inner-white row">
-				{{#each equipmentCategories as |category index|}}
-	        {{#link-to "equipment.category" category.name class="col-md-6 col-lg-6"}}
-	        <div class={{category.underscore}}>
-	          <div class="title">{{t (concat "equipment.category." category.underscore)}}</div>
-	          <div class="button button-red">{{t "common.details"}}</div>
-	        </div>
-	        {{/link-to}}
-				{{/each}}
+        {{#each equipmentCategories as |category index|}}
+          {{#link-to "equipment.category" category.name class="col-md-6 col-lg-6"}}
+            <div class={{category.underscore}}>
+              <div class="title">{{t (concat "equipment.category." category.underscore)}}</div>
+              <div class="button button-red">{{t "common.details"}}</div>
+            </div>
+          {{/link-to}}
+        {{/each}}
       </div>
     </div>
-	</div>
+  </div>
 </article>
+
 <article class="get-catalog equipment-hero hero">
   <div class="container-white">
     <div class="container container-hero">

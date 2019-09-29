@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
-const {Model, attr, hasMany} = DS;
+const { Model, hasMany } = DS;
 
 export default Model.extend({
-	addresses: DS.hasMany('address')
+  addresses: hasMany('address'),
 });

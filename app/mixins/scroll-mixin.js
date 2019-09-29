@@ -1,8 +1,10 @@
-import Ember from 'ember';
+/* eslint-disable ember/no-new-mixins */
+import App from './app';
+import Mixin from '@ember/object/mixin';
 
-App.ResetScroll = Ember.Mixin.create({
+App.ResetScroll = Mixin.create({
   activate: function() {
-    this._super();
-    window.scrollTo(0,0);
-  }
+    this._super(...arguments);
+    window.scrollTo(0, 0);
+  },
 });

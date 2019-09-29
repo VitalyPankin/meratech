@@ -28,6 +28,10 @@ module.exports = function(environment) {
     },
     moduleHandler: '_manager',
     print: 'pdf',
+
+    // emberWordpress: {
+    //   host: 'http://api.meratech.ru',
+    // },
   };
 
   if (environment === 'development') {

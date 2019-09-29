@@ -1,8 +1,9 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
-export default Ember.Route.extend({
-  session: Ember.inject.service('session'),
-  
+export default Route.extend({
+  session: service('session'),
+
   activate: function() {
     this.controllerFor('news.index').set('toDate', null);
     this.controllerFor('news.index').set('fromDate', null);
@@ -13,13 +14,13 @@ export default Ember.Route.extend({
       this.set('session.attemptedTransition', transition);
     }
   },
-  model: function() {
 
+  model: function() {
     let _postsModel = this.controllerFor('application').get('postsModel');
-    if(_postsModel){
-      
-    }else{
-      _postsModel = this.get('store').query('post', {per_page: 500});
+    if (_postsModel) {
+      // ?
+    } else {
+      _postsModel = this.get('store').query('post', { per_page: 500 });
       this.controllerFor('application').set('postsModel', _postsModel);
     }
     return _postsModel;
@@ -28,5 +29,5 @@ export default Ember.Route.extend({
   setupController: function(controller, model) {
     this._super(controller, model);
     this.controllerFor('news.index').set('posts', model);
-  }
+  },
 });

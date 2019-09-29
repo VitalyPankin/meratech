@@ -2,6 +2,7 @@ import EmberRouter from '@ember/routing/router';
 import config from './config/environment';
 
 EmberRouter.reopen({
+  // eslint-disable-next-line ember/no-function-prototype-extensions
   doSomething: function() {
     window.scrollTo(0, 0);
     return;
@@ -14,9 +15,9 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('contacts', { path: '/contacts' });
-  this.route('about', { path: '/about' });
-  this.route('media-center', { path: '/media-center' });
+  this.route('contacts');
+  this.route('about');
+  this.route('media-center');
   this.route('index', { path: '/' });
   //  this.resource('news', function() {
   //    this.route('news', {
@@ -25,7 +26,7 @@ Router.map(function() {
   //    this.route('detail');
   //    this.route('index');
   // });
-  this.route('press-center', { path: '/press-center' });
+  this.route('press-center');
 
   this.route('articles', function() {
     this.route('detail', {
@@ -44,9 +45,8 @@ Router.map(function() {
     });
   });
   // this.route('industries');
-  this.route('industries', {
-    path: '/industry/:id',
-  });
+  this.route('industries', { path: '/industry/:id' });
+
   // this.route("subscribers", {
   //   path: '/'
   // }, function() {
@@ -71,7 +71,7 @@ Router.map(function() {
     });
   });
   //  this.route('equipment', { path: '/equipment' , queryParams: ['anchor']});
-  this.route('equipment', { path: '/equipment' });
+  this.route('equipment');
   this.route('not-found', { path: '/*wildcard' });
 });
 

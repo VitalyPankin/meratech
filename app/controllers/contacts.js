@@ -1,36 +1,42 @@
-import Ember from 'ember';
-import { translationMacro as t } from "ember-i18n";
+import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
 
-export default Ember.Controller.extend({
-  
-  i18n: Ember.inject.service(),
-  
-  isRuLocale: function(){
-    return this.get('i18n.locale')==='ru';
-  }.property('i18n.locale'),
+// eslint-disable-next-line no-unused-vars
+import { translationMacro as t } from 'ember-i18n';
 
-  addressesCategories: function(){
-  	let categories = [];
-  	this.get('addresses').uniqBy('type').forEach((item) => {
-  		if(item.get('type') && categories.indexOf(item.get('type'))<0){ 
-  			categories.push(item.get('type')); 
-  		}
-  	});
-  	return categories.sort();
-  }.property('addresses'),
+export default Controller.extend({
+  i18n: service(),
 
-  addressesCategorized: function(){
-  	let result = [];
-  	let _this=this;
-  	this.get('addressesCategories').forEach((category, index) => {
-  			let trans = _this.get('i18n').t("contacts.types."+category);
-  			result.push({
-  				name: category,
-  				data: _this.get('addresses').filter(function(item, index, enumerable){
-  						return item.get('type') === category;
-	  				})
-  			}); 
-  	});
-  	return result;
-  }.property('addressesCategories'),
+  isRuLocale: computed('i18n.locale', function() {
+    return this.get('i18n.locale') === 'ru';
+  }),
+
+  addressesCategories: computed('addresses', function() {
+    let categories = [];
+    this.get('addresses')
+      .uniqBy('type')
+      .forEach(item => {
+        if (item.get('type') && categories.indexOf(item.get('type')) < 0) {
+          categories.push(item.get('type'));
+        }
+      });
+    return categories.sort();
+  }),
+
+  addressesCategorized: computed('addressesCategories', function() {
+    let result = [];
+    let _this = this;
+    this.get('addressesCategories').forEach(category => {
+      // eslint-disable-next-line no-unused-vars
+      let trans = _this.get('i18n').t('contacts.types.' + category);
+      result.push({
+        name: category,
+        data: _this.get('addresses').filter(function(item) {
+          return item.get('type') === category;
+        }),
+      });
+    });
+    return result;
+  }),
 });
