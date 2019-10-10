@@ -15,27 +15,27 @@
           {{else}}
             <div class="title">{{model.title_en}}</div>
             <div class="body">{{{model.preview_en}}}</div>
-          {{/if}} 
+          {{/if}}
           {{#if isFile}}
-            {{#if isRuLocale}}
-              <a class="download-file" target="_blank" href="{{model.file_ru}}">
-                <div class="image">
-                  <img src="{{model.file_image_ru}}">
-                </div>
-                <div class="button button-red">{{t "common.get_catalog"}}</div>
-              </a>
-            {{else}}
-              <a class="download-file" target="_blank" href="{{model.file_en}}">
-                <div class="image">
-                  <img src="{{model.file_image_en}}">
-                </div>
-                <div class="button button-red">{{t "common.get_catalog"}}</div>
-              </a>
-            {{/if}} 
+          {{#if isRuLocale}}
+            <a class="download-file" target="_blank" href="{{model.file_ru}}">
+              <div class="image">
+                <img src="{{model.file_image_ru}}">
+              </div>
+              <div class="button button-red">{{t "common.get_catalog"}}</div>
+            </a>
           {{else}}
-            <div class="body">{{t "equipment.description_equipment"}}</div>
+          <a class="download-file" target="_blank" href="{{model.file_en}}">
+            <div class="image">
+              <img src="{{model.file_image_en}}">
+            </div>
+            <div class="button button-red">{{t "common.get_catalog"}}</div>
+          </a>
+          {{/if}}
+          {{else}}
+          <div class="body">{{t "equipment.description_equipment"}}</div>
             {{#link-to "contacts"}}<div class="button button-red">{{t "equipment.button_project"}}</div>{{/link-to}}
-          {{/if}} 
+          {{/if}}
         </div>
       </div>
     </div>

@@ -1,137 +1,135 @@
 <article class="catalog-header">
   <div class="">
     <div class="container">
-			<div class="page-title">{{t "common.slogan"}}</div>
-			<div class="body controls">
-				<div class="centered-input">
-					{{input insert-newline="search" allowedKeys="enter" placeholder=placeholderText value=searchField submit="search"}}
-				</div>
-			</div>
-		</div>
-	</div>
+      <div class="page-title">{{t "common.slogan"}}</div>
+      <div class="body controls">
+        <div class="centered-input">
+          {{input insert-newline="search" allowedKeys="enter" placeholder=placeholderText value=searchField submit="search"}}
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container-border">
-	    <div class="tabs-menu-wrapper">
-	    	<ul class="tabs-menu">
-	    		<li>
-	    			{{#if filterIndustry}}
-						  <button type="button" class="active" {{action "setIndustryFilter" '' on="mouseUp"}}>
-						    {{filterIndustryTitle}}
-						  </button>
-
-					  {{/if}}
-						  <button type="button" class={{filterIndustryClass}} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						    {{t "catalog.scope"}}
-						  </button>
-					  <div class="dropdown-menu catalog-filter-container">
-						  <ul class="industry-filter filter-list container">
-				        <li class="cows" {{action "setIndustryFilter" 'cows' on="mouseUp"}}>
-				          <span>{{t "industries.cow_farms"}}</span>
-				        </li>
-				        <li class="chicken" {{action "setIndustryFilter" 'poultry' on="mouseUp"}}>
-				          <span>{{t "industries.poultry"}}</span>
-				        </li>
-				        <li class="pigs" {{action "setIndustryFilter" 'pigs' on="mouseUp"}}>
-				          <span>{{t "industries.pig_farms"}}</span>
-				        </li>
-				        <li class="meat" {{action "setIndustryFilter" 'meat' on="mouseUp"}}>
-				          <span>{{t "industries.meat_processing"}}</span>
-				        </li>
-				        <li class="brewery" {{action "setIndustryFilter" 'brewery' on="mouseUp"}}>
-				          <span>{{t "industries.brewery"}}</span>
-				        </li>
-				        <li class="milk" {{action "setIndustryFilter" 'milk' on="mouseUp"}}>
-				          <span>{{t "industries.milk_industry"}}</span>
-				        </li>
-				        <li class="laundry" {{action "setIndustryFilter" 'laundry' on="mouseUp"}}>
-				          <span>{{t "industries.laundry"}}</span>
-				        </li>
-			        </ul>
-					  </div>
-					</li>
-	    		<li>
-	    			{{#if filterFoaming}}
-						  <button type="button" class="active" {{action "setFoamingFilter" '' on="mouseUp"}}>
-						    {{filterFoamingTitle}}
-						  </button>
-					  {{/if}}
-					  <button type="button" class={{filterFoamingClass}} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    {{t "catalog.foaming"}}
-					  </button>
-					  <div class="dropdown-menu catalog-filter-container">
-						  <div class="container container-center">
-							  <form class="radio-set">
-							  	<div {{action "setFoamingFilter" 0 on="mouseUp"}}>
-									  <input class="radio-input" type="radio" id="radio1" name="radio-category" checked>
-										<label class="radio-label" for="radio1">{{t "common.all"}}</label>
-									</div>
-							  	<div {{action "setFoamingFilter" 2 on="mouseUp"}}>
-										<input class="radio-input" type="radio" id="radio2" name="radio-category">
-										<label class="radio-label" for="radio2">{{t "catalog.foaming_alt"}}</label>
-									</div>
-							  	<div {{action "setFoamingFilter" 1 on="mouseUp"}}>
-										<input class="radio-input" type="radio" id="radio3" name="radio-category">
-										<label class="radio-label" for="radio3">{{t "catalog.not_foaming"}}</label>
-									</div>
-							  </form>
-						  </div>
-					  </div>
-	    		</li>	
-	    		<li>
-	    			{{#if filterAcid}}
-						  <button type="button" class="active" {{action "setAcidFilter" '' on="mouseUp"}}>
-						    {{filterAcidTitle}}
-						  </button>
-					  {{/if}}
-					  <button type="button" class={{filterAcidClass}} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    {{t "catalog.ph_scale"}}
-					  </button>
-					  <div class="dropdown-menu catalog-filter-container">
-					  	<div class="acid-filter container">
-						  	<ul>
-						  		<li class="acidic" {{action "setAcidFilter" 'acidic' on="mouseUp"}}><span>{{t "catalog.acidic"}}</span></li>
-						  		<li class="neutral" {{action "setAcidFilter" 'neutral' on="mouseUp"}}><span>{{t "catalog.neutral"}}</span></li>
-						  		<li class="alkalic" {{action "setAcidFilter" 'alkalic' on="mouseUp"}}><span>{{t "catalog.alkalic"}}</span></li>
-						  	</ul>
-						  	<div class="scale"><b>1</b> <b>2</b> <b>3</b> <b>4</b> <b>5</b> <b>6</b> <b>7</b> <b>8</b> <b>9</b> <b>10</b> <b>11</b></div>
-						  	<div class="spectre"></div>
-						  </div>
-					  </div>
-	    		</li>
-	    	</ul>
-			</div>
-	</div>
+    <div class="tabs-menu-wrapper">
+      <ul class="tabs-menu">
+        <li>
+          {{#if filterIndustry}}
+            <button type="button" class="active" {{action "setIndustryFilter" '' on="mouseUp" }}>
+              {{filterIndustryTitle}}
+            </button>
+          {{/if}}
+          <button type="button" class={{filterIndustryClass}} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{t "catalog.scope"}}
+          </button>
+          <div class="dropdown-menu catalog-filter-container">
+            <ul class="industry-filter filter-list container">
+              <li class="cows" {{action "setIndustryFilter" 'cows' on="mouseUp" }}>
+                <span>{{t "industries.cow_farms"}}</span>
+              </li>
+              <li class="chicken" {{action "setIndustryFilter" 'poultry' on="mouseUp" }}>
+                <span>{{t "industries.poultry"}}</span>
+              </li>
+              <li class="pigs" {{action "setIndustryFilter" 'pigs' on="mouseUp" }}>
+                <span>{{t "industries.pig_farms"}}</span>
+              </li>
+              <li class="meat" {{action "setIndustryFilter" 'meat' on="mouseUp" }}>
+                <span>{{t "industries.meat_processing"}}</span>
+              </li>
+              <li class="brewery" {{action "setIndustryFilter" 'brewery' on="mouseUp" }}>
+                <span>{{t "industries.brewery"}}</span>
+              </li>
+              <li class="milk" {{action "setIndustryFilter" 'milk' on="mouseUp" }}>
+                <span>{{t "industries.milk_industry"}}</span>
+              </li>
+              <li class="laundry" {{action "setIndustryFilter" 'laundry' on="mouseUp" }}>
+                <span>{{t "industries.laundry"}}</span>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          {{#if filterFoaming}}
+          <button type="button" class="active" {{action "setFoamingFilter" '' on="mouseUp" }}>
+            {{filterFoamingTitle}}
+          </button>
+          {{/if}}
+          <button type="button" class={{filterFoamingClass}} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{t "catalog.foaming"}}
+          </button>
+          <div class="dropdown-menu catalog-filter-container">
+            <div class="container container-center">
+              <form class="radio-set">
+                <div {{action "setFoamingFilter" 0 on="mouseUp" }}>
+                  <input class="radio-input" type="radio" id="radio1" name="radio-category" checked>
+                  <label class="radio-label" for="radio1">{{t "common.all"}}</label>
+                </div>
+                <div {{action "setFoamingFilter" 2 on="mouseUp" }}>
+                  <input class="radio-input" type="radio" id="radio2" name="radio-category">
+                  <label class="radio-label" for="radio2">{{t "catalog.foaming_alt"}}</label>
+                </div>
+                <div {{action "setFoamingFilter" 1 on="mouseUp" }}>
+                  <input class="radio-input" type="radio" id="radio3" name="radio-category">
+                  <label class="radio-label" for="radio3">{{t "catalog.not_foaming"}}</label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </li>
+        <li>
+          {{#if filterAcid}}
+          <button type="button" class="active" {{action "setAcidFilter" '' on="mouseUp" }}>
+            {{filterAcidTitle}}
+          </button>
+          {{/if}}
+          <button type="button" class={{filterAcidClass}} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{t "catalog.ph_scale"}}
+          </button>
+          <div class="dropdown-menu catalog-filter-container">
+            <div class="acid-filter container">
+              <ul>
+                <li class="acidic" {{action "setAcidFilter" "acidic" on="mouseUp" }}><span>{{t "catalog.acidic"}}</span></li>
+                <li class="neutral" {{action "setAcidFilter" "neutral" on="mouseUp" }}><span>{{t "catalog.neutral"}}</span></li>
+                <li class="alkalic" {{action "setAcidFilter" "alkalic" on="mouseUp" }}><span>{{t "catalog.alkalic"}}</span></li>
+              </ul>
+              <div class="scale"><b>1</b> <b>2</b> <b>3</b> <b>4</b> <b>5</b> <b>6</b> <b>7</b> <b>8</b> <b>9</b> <b>10</b> <b>11</b></div>
+              <div class="spectre"></div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 </article>
 
 {{#unless productsFiltered.length}}
-	<div class="page-title search-title">{{t "common.nothing-found"}}</div>
+  <div class="page-title search-title">{{t "common.nothing-found"}}</div>
 {{/unless}}
 {{#each productsCategorized as |category index|}}
-{{#if category.data.length}}
- <article>
-  <div class="container-fluid catalog-heading heading-{{category.name}}">	
-  </div>
-  <div class="container-grey">
-		<div class="container">
-      <div class="heading heading-top">
-      	<span class="title title-dark">{{category.translate}}</span>
+  {{#if category.data.length}}
+    <article>
+      <div class="container-fluid catalog-heading heading-{{category.name}}">
       </div>
-	    <div class="row">
-	      <div class="col-md-12">
-	        <div class="catalog-list">
-						{{#each category.data as |item index|}}
-	        	{{#link-to "catalog.detail" item.slug}}
-	        	<div class="item">
-	        		<img src={{item.thumbnail}}>
-	        		<span class="title">{{{item.title_formatted}}}</span>
-	        	</div>
-	        	{{/link-to}}
-						{{/each}}
-		      </div>
-	      </div>
-	    </div>
-	  </div>
-  </div>
-</article>
-{{/if}}
+      <div class="container-grey">
+        <div class="container">
+          <div class="heading heading-top">
+            <span class="title title-dark">{{category.translate}}</span>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="catalog-list">
+                {{#each category.data as |item index|}}
+                  {{#link-to "catalog.detail" item.slug}}
+                    <div class="item">
+                      <img src={{item.thumbnail}} alt="">
+                      <span class="title">{{{item.title_formatted}}}</span>
+                    </div>
+                  {{/link-to}}
+                {{/each}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  {{/if}}
 {{/each}}
-

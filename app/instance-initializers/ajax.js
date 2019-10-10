@@ -1,6 +1,6 @@
 /* eslint-disable ember/no-jquery */
-// import Component from '@ember/component';
 import { run } from '@ember/runloop';
+import { get } from '@ember/object';
 import $ from 'jquery';
 
 export function initialize(appInstance) {
@@ -11,25 +11,16 @@ export function initialize(appInstance) {
     appInstance.set('ajaxCounters', 0);
   });
 
-  let ajaxloader = appInstance.lookup('service:ajax-loader');
-
-  // let ajaxloader = Component.create({
-  //   tagName: 'div',
-  //   isLoad: false,
-  //   classNames: ['loading-notify'],
-  //   // container: appInstance.layout,
-  //   // container: appInstance.container,
-  //   renderer: appInstance.lookup('renderer:-dom'),
-  //   classNameBindings: ['isLoad'],
-  // });
-
-  // ajaxloader.appendTo('body');
+  var ajaxloaderElement = document.createElement('div');
+  ajaxloaderElement.setAttribute('id', 'ajax-loader');
+  ajaxloaderElement.setAttribute('class', 'loading-notify is-load');
+  document.body.appendChild(ajaxloaderElement);
 
   $.ajaxSetup({
     beforeSend: function(xhr, settings) {
       run(() => {
         if (appInstance.get('ajaxCounters') === 0 && !settings.noCounter) {
-          ajaxloader.set('isLoad', true);
+          // ajaxloaderElement.setAttribute('class', 'loading-notify is-load');
         }
 
         // do not set mask for buggy addthis widget, sometimes ajax callbacks do not work correct
@@ -38,16 +29,16 @@ export function initialize(appInstance) {
         }
       });
     },
+
     complete: function() {
       run(() => {
-        var counter = appInstance.get('ajaxCounters') - 1;
-
+        var counter = get(appInstance, 'ajaxCounters') - 1;
         window.scrollTo(0, 0);
         counter = counter < 0 ? 0 : counter;
         appInstance.set('ajaxCounters', counter);
         if (appInstance.get('ajaxCounters') === 0) {
           if (window.top === window.self) {
-            ajaxloader.set('isLoad', false);
+            // ajaxloaderElement.setAttribute('class', 'loading-notify');
           }
         }
       });

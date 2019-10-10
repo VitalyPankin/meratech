@@ -2,7 +2,7 @@
 /* eslint-disable ember/no-side-effects */
 /* eslint-disable ember/avoid-leaking-state-in-ember-objects */
 import Component from '@ember/component';
-import { computed, observer } from '@ember/object';
+import { get, computed, observer } from '@ember/object';
 import moment from 'moment';
 import layout from '../templates/components/date-picker';
 
@@ -32,22 +32,35 @@ export default Component.extend({
     'december',
   ],
 
-  displayMonths: computed('selectedMonth', 'selectedYear', 'dateObject', function() {
+  init() {
+    this._super(...arguments);
+
+    if (this.get('direction') === 'to') {
+      this.set('selectedYear', this.get('to').year());
+      this.set('selectedMonth', this.get('months')[this.get('to').month()]);
+    } else {
+      this.set('selectedYear', this.get('from').year());
+      this.set('selectedMonth', this.get('months')[this.get('from').month()]);
+    }
+  },
+
+  displayMonths: computed('selectedYear', function() {
     let months = this.get('dateObject').find(item => {
       if (item.year === this.get('selectedYear')) {
         return true;
       }
     });
+
     if (this.get('direction') === 'to') {
       this.set('selectedMonth', months.months[months.months.length - 1]);
     } else {
-      this.set('selectedMonth', months.months[0]);
+      this.set('selectedMonth', months ? months.months[0] : null);
     }
+
     return months.months;
   }),
 
   displaySelectedMonths: computed('selectedMonth', 'i18n.locale', function() {
-    // TODO
     return this.get('i18n')
       .t(
         'common.months.' +
@@ -107,6 +120,7 @@ export default Component.extend({
         months: months,
       });
     }
+
     return result;
   }),
 
@@ -131,17 +145,6 @@ export default Component.extend({
     }
   }),
 
-  init() {
-    this._super(...arguments);
-    if (this.get('direction') === 'to') {
-      this.set('selectedYear', this.get('to').year());
-      this.set('selectedMonth', this.get('months')[this.get('to').month()]);
-    } else {
-      this.set('selectedYear', this.get('from').year());
-      this.set('selectedMonth', this.get('months')[this.get('from').month()]);
-    }
-  },
-
   actions: {
     setYear: function(value) {
       this.set('selectedYear', value);
@@ -150,6 +153,4 @@ export default Component.extend({
       this.set('selectedMonth', value);
     },
   },
-
-  didInsertElement: function() {},
 });

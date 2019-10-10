@@ -6,7 +6,6 @@ import layout from '../templates/components/slider-index';
 
 export default Component.extend({
   classNames: [''],
-  // layoutName: 'components/slider-index',
   layout,
 
   willDestroyElement() {

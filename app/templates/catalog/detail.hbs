@@ -1,12 +1,12 @@
 <article class="catalog-details-header">
-  <img src="{{product.image}}">
+  <img src={{product.image}} alt="">
   <div class="">
     <div class="container container-catalog">
       <div class="row">
         <div class="col-md-5 col-sm-5">
           <ul class="use-icons">
             {{#each product.icons as |item index|}}
-              <li class="use-icon-{{item}}"></li>
+            <li class="use-icon-{{item}}"></li>
             {{/each}}
           </ul>
           <div class="title">{{{title_formatted}}}</div>
@@ -26,16 +26,16 @@
       <div class="heading heading-bottom"></div>
       <div class="row">
 
-      {{#if contentAvailable}}
+        {{#if contentAvailable}}
         <div class="col-md-3">
           <div class="paragraph padded">
             <div class="title">{{t "catalog.usage"}}</div>
             <div class="body">
-            {{#if usage}}
+              {{#if usage}}
               {{{usage}}}
-            {{else}}
+              {{else}}
               {{t "common.no_data"}}
-            {{/if}}
+              {{/if}}
             </div>
 
           </div>
@@ -45,9 +45,9 @@
             <div class="title">{{t "catalog.advantages"}}</div>
             <div class="body html-content">
               {{#if advantages}}
-                {{{advantages}}}
+              {{{advantages}}}
               {{else}}
-                {{t "common.no_data"}}
+              {{t "common.no_data"}}
               {{/if}}
             </div>
           </div>
@@ -57,143 +57,143 @@
             <div class="title">{{t "common.documentation"}}</div>
             <div class="documents">
               {{#if leaflet}}
-                <a href="{{leaflet}}" class="leaflet">
+                <a href={{leaflet}} class="leaflet">
                   <div class="title">{{t "catalog.documentation.leaflet"}}</div>
                   <div class="description">.pdf <span>({{random-number 600 100}} kB)</span></div>
                 </a>
               {{/if}}
               {{#if session.isAuthenticated}}
                 {{#if registration}}
-                  <a href="{{registration}}" class="registration">
+                  <a href={{registration}} class="registration">
                     <div class="title">{{t "catalog.documentation.reg"}}</div>
                     <div class="description">.pdf <span>({{random-number 800 150}} kB)</span></div>
                   </a>
                 {{/if}}
                 {{#if prod}}
-                  <a href="{{prod}}" class="pds">
+                  <a href={{prod}} class="pds">
                     <div class="title">{{t "catalog.documentation.pds"}}</div>
-                    <div class="description">.pdf <span>({{random-number 200 80}}  kB)</span></div>
+                    <div class="description">.pdf <span>({{random-number 200 80}} kB)</span></div>
                   </a>
                 {{/if}}
                 {{#if safed}}
-                  <a href="{{safed}}" class="sds">
+                  <a href={{safed}} class="sds">
                     <div class="title">{{t "catalog.documentation.sds"}}</div>
-                    <div class="description">.pdf <span>({{random-number 100 50}}  kB)</span></div>
+                    <div class="description">.pdf <span>({{random-number 100 50}} kB)</span></div>
                   </a>
                 {{/if}}
               {{/if}}
             </div>
           </div>
         </div>
-      {{else}}
-        <div class="page-title">{{t "common.no-translation"}}</div>
-      {{/if}}
+        {{else}}
+          <div class="page-title">{{t "common.no-translation"}}</div>
+        {{/if}}
 
       </div>
     </div>
   </div>
 </article>
 {{#if contentAvailable}}
-<article class="catalog-block-specs">
-  <div class="container-grey">
-    <div class="container container-catalog">
-      <div class="heading heading-top"></div>
+  <article class="catalog-block-specs">
+    <div class="container-grey">
+      <div class="container container-catalog">
+        <div class="heading heading-top"></div>
 
-      <div class="row">
-        <div class="col-md-3">
-          <div class="paragraph padded">
-            <div class="title">{{t "catalog.marking"}}</div>
-            <div class="body">
-              <div class="safety-signs">
-                <div class="hazard hazard-c"></div>
-                <div class="hazard hazard-n"></div>
-                {{#if mark.name}}
-                <div class="title">{{mark.name}}</div>
-                <div class="body">{{t mark.translate}}</div>
-                {{/if}}
+        <div class="row">
+          <div class="col-md-3">
+            <div class="paragraph padded">
+              <div class="title">{{t "catalog.marking"}}</div>
+              <div class="body">
+                <div class="safety-signs">
+                  <div class="hazard hazard-c"></div>
+                  <div class="hazard hazard-n"></div>
+                  {{#if mark.name}}
+                  <div class="title">{{mark.name}}</div>
+                  <div class="body">{{t mark.translate}}</div>
+                  {{/if}}
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="paragraph padded">
+              <div class="title">{{t "catalog.safety"}}</div>
+              <div class="body">
+                <div class="subtitle">{{t "catalog.risk_phrases"}}</div>
+                <dl>
+                  {{#if risk_phrases.length}}
+                  {{#each risk_phrases as |item index|}}
+                  <dt>{{item.name}}</dt>
+                  <dd>{{t item.translate}}</dd>
+                  {{/each}}
+                  {{else}}
+                  {{t "common.no_data"}}
+                  {{/if}}
+                </dl>
+                <div class="subtitle">{{t "catalog.safety_phrases"}}</div>
+                <dl>
+                  {{#if safety_phrases.length}}
+                  {{#each safety_phrases as |item index|}}
+                  <dt>{{item.name}}</dt>
+                  <dd>{{t item.translate}}</dd>
+                  {{/each}}
+                  {{else}}
+                  {{t "common.no_data"}}
+                  {{/if}}
+                </dl>
               </div>
             </div>
-
           </div>
-        </div>
-        <div class="col-md-5">
-          <div class="paragraph padded">
-            <div class="title">{{t "catalog.safety"}}</div>
-            <div class="body">
-              <div class="subtitle">{{t "catalog.risk_phrases"}}</div>
-              <dl>
-              {{#if risk_phrases.length}}
-              {{#each risk_phrases as |item index|}}
-                <dt>{{item.name}}</dt>
-                <dd>{{t item.translate}}</dd>
-              {{/each}}
-              {{else}}
-              {{t "common.no_data"}}
-              {{/if}}
-              </dl>
-              <div class="subtitle">{{t "catalog.safety_phrases"}}</div>
-              <dl>
-              {{#if safety_phrases.length}}
-              {{#each safety_phrases as |item index|}}
-                <dt>{{item.name}}</dt>
-                <dd>{{t item.translate}}</dd>
-              {{/each}}
-              {{else}}
-              {{t "common.no_data"}}
-              {{/if}}
-              </dl>
+          <div class="col-md-4">
+            <div class="paragraph">
+              <div class="title">{{t "catalog.properties"}}</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>{{t "catalog.consistency"}}</td>
+                    <td>{{t consistency}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{t "catalog.color"}}</td>
+                    <td><span class="circle" style="background-color: {{product.color_code}};"></span>{{colorName}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{t "catalog.density"}}</td>
+                    <td>{{density}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{t "catalog.temperature"}}</td>
+                    <td>+{{product.temp_from}}ºC .. +{{product.temp_to}}ºC</td>
+                  </tr>
+                  <tr>
+                    <td>pH</td>
+                    <td>{{ph}}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="paragraph">
-            <div class="title">{{t "catalog.properties"}}</div>
-            <table>
-              <tbody>
-                <tr>
-                  <td>{{t "catalog.consistency"}}</td>
-                  <td>{{t consistency}}</td>
-                </tr>
-                <tr>
-                  <td>{{t "catalog.color"}}</td>
-                  <td><span class="circle" style="background-color: {{product.color_code}};"></span>{{colorName}}</td>
-                </tr>
-                <tr>
-                  <td>{{t "catalog.density"}}</td>
-                  <td>{{density}}</td>
-                </tr>
-                <tr>
-                  <td>{{t "catalog.temperature"}}</td>
-                  <td>+{{product.temp_from}}ºC .. +{{product.temp_to}}ºC</td>
-                </tr>
-                <tr>
-                  <td>pH</td>
-                  <td>{{ph}}</td>
-                </tr>
-              </tbody>
-            </table>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</article>
-<article class="catalog-block-specs-dark">
-  <div class="container-dark">
-    <div class="container container-catalog">
-      <div class="heading heading-top"></div>
+  </article>
+  <article class="catalog-block-specs-dark">
+    <div class="container-dark">
+      <div class="container container-catalog">
+        <div class="heading heading-top"></div>
 
-      <div class="row">
-        <div class="col-md-3">
-          <div class="paragraph padded">
-            <div class="title">{{t "catalog.precautions"}}</div>
-            <div class="body">
-              <div class="precaution-signs clearfix">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="paragraph padded">
+              <div class="title">{{t "catalog.precautions"}}</div>
+              <div class="body">
+                <div class="precaution-signs clearfix">
 
-                {{#each product.safety as |item |}}
+                  {{#each product.safety as |item |}}
                   <div class="precaution {{item}}"></div>
-                {{/each}}
-              </div>
+                  {{/each}}
+                </div>
 
                 {{#if breathe}}
                 <div class="subtitle">{{t "catalog.breath_safety"}}:</div>
@@ -207,64 +207,64 @@
                 <div class="subtitle">{{t "catalog.eyes_safety"}}:</div>
                 <div class="subbody">{{{eyes}}}</div>
                 {{/if}}
-            </div>
+              </div>
 
-          </div>
-        </div>
-        <div class="col-md-5">
-          <div class="paragraph padded">
-            <div class="title">{{t "catalog.storage_info"}}</div>
-            <div class="body">
-
-              {{#if storage}}
-              <div class="subtitle">{{t "catalog.storage"}}</div>
-              <div class="subbody">{{{storage}}}</div>
-              {{#if environment}}
-              {{/if}}
-              <div class="subtitle">{{t "catalog.environment"}}</div>
-              <div class="subbody">{{{environment}}}</div>
-              {{/if}}
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="paragraph">
-            <div class="title">{{t "catalog.package"}}</div>
-            <div class="body">
-              <div class="package">
-                {{#if product.package_can}}
-                <div class="package-canister">
-                <span>{{product.package_can}}<u>{{t "catalog.kg"}}</u></span>
-                </div>
+          <div class="col-md-5">
+            <div class="paragraph padded">
+              <div class="title">{{t "catalog.storage_info"}}</div>
+              <div class="body">
+
+                {{#if storage}}
+                <div class="subtitle">{{t "catalog.storage"}}</div>
+                <div class="subbody">{{{storage}}}</div>
+                {{#if environment}}
                 {{/if}}
-                {{#if product.package_barrel}}
-                <div class="package-barrel">
-                  <span>{{product.package_barrel}}<u>{{t "catalog.kg"}}</u></span>
-                </div>
+                <div class="subtitle">{{t "catalog.environment"}}</div>
+                <div class="subbody">{{{environment}}}</div>
                 {{/if}}
-                {{#if product.package_cube}}
-                <div class="package-cube">
-                  <span>{{product.package_cube}}<u>{{t "catalog.kg"}}</u></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="paragraph">
+              <div class="title">{{t "catalog.package"}}</div>
+              <div class="body">
+                <div class="package">
+                  {{#if product.package_can}}
+                  <div class="package-canister">
+                    <span>{{product.package_can}}<u>{{t "catalog.kg"}}</u></span>
+                  </div>
+                  {{/if}}
+                  {{#if product.package_barrel}}
+                  <div class="package-barrel">
+                    <span>{{product.package_barrel}}<u>{{t "catalog.kg"}}</u></span>
+                  </div>
+                  {{/if}}
+                  {{#if product.package_cube}}
+                  <div class="package-cube">
+                    <span>{{product.package_cube}}<u>{{t "catalog.kg"}}</u></span>
+                  </div>
+                  {{/if}}
+                  {{#if product.package_sack}}
+                  <div class="package-sack">
+                    <span>{{product.package_sack}}<u>{{t "catalog.kg"}}</u></span>
+                  </div>
+                  {{/if}}
+                  {{#if product.package_bucket}}
+                  <div class="package-bucket">
+                    <span>{{product.package_bucket}}<u>{{t "catalog.kg"}}</u></span>
+                  </div>
+                  {{/if}}
                 </div>
-                {{/if}}
-                {{#if product.package_sack}}
-                <div class="package-sack">
-                  <span>{{product.package_sack}}<u>{{t "catalog.kg"}}</u></span>
-                </div>
-                {{/if}}
-                {{#if product.package_bucket}}
-                <div class="package-bucket">
-                  <span>{{product.package_bucket}}<u>{{t "catalog.kg"}}</u></span>
-                </div>
-                {{/if}}
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</article>
+  </article>
 {{/if}}
 <article class="related related-equipment">
   <div class="container-grey">
@@ -280,15 +280,15 @@
           <div class="description">{{t "catalog.equipment_text"}}</div>
           {{#link-to "equipment"}}<div class="button button-red">{{t "common.equipment"}}</div>{{/link-to}}
         </div>
-        
-          <div class="col-md-6 hero-item">
-            <div class="catalog-image">
-              <img src="/assets/images/media/catalog-2.png">
-            </div>
-            <div class="title">{{t "common.get_catalog_hash.equipment.title"}}</div>
-            <div class="description">{{t "common.get_catalog_hash.equipment.body"}}</div>
-            <a target="_blank" href="{{host}}/wp-content/uploads/2017/01/catalog_cleaning_eqiupment.pdf"><div class="button button-narrow button-download">{{t "common.get_catalog"}}</div></a>
+
+        <div class="col-md-6 hero-item">
+          <div class="catalog-image">
+            <img src="/assets/images/media/catalog-2.png">
           </div>
+          <div class="title">{{t "common.get_catalog_hash.equipment.title"}}</div>
+          <div class="description">{{t "common.get_catalog_hash.equipment.body"}}</div>
+          <a target="_blank" href="{{host}}/wp-content/uploads/2017/01/catalog_cleaning_eqiupment.pdf"><div class="button button-narrow button-download">{{t "common.get_catalog"}}</div></a>
+        </div>
       </div>
     </div>
   </div>

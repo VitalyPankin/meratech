@@ -54,6 +54,7 @@ Router.map(function() {
   //     path: '/subscribers/:id'
   //   });
   // });
+
   this.route('catalog', function() {
     this.route('detail', {
       path: '/:id',

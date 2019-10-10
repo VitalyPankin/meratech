@@ -1,6 +1,6 @@
 <article class="news-header">
   <div class="container">
-		<div class="page-title title">{{t "media_center.media_center_title"}}</div>
+    <div class="page-title title">{{t "media_center.media_center_title"}}</div>
     <div class="body controls">
       <div class="centered-input centered-input-media">
         {{input insert-newline="search" allowedKeys="enter" value=searchField placeholder=placeholderText submit="search"}}
@@ -9,116 +9,113 @@
         {{/if}}
       </div>
     </div>
-	</div>
+  </div>
 </article>
 {{#if isSearchOn}}
-<article>
-	<div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="heading heading-top">
-        	<span class="title title-dark">{{t "common.results"}}</span>
-
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="heading heading-top">
+            <span class="title title-dark">{{t "common.results"}}</span>
+            {{#if listResult.length}}
+              <span class="tip">{{listResult.length}} {{t "common.founded"}}</span>
+            {{else}}
+              <span class="tip">{{t "common.no"}} {{t "common.founded"}}</span>
+            {{/if}}
+          </div>
           {{#if listResult.length}}
-					<span class="tip">{{listResult.length}} {{t "common.founded"}}</span>
+            <div class="documents-search row">
+              {{#each listResult as |item index|}}
+                <a target="_blank" href="{{item.link}}" class="{{item.type}} col-md-3 col-sm-6 col-xs-12">
+                  {{#if isRuLocale}}
+                    <div class="title">{{{item.name}}}</div>
+                    <div class="subtitle">{{t (concat "media_center." item.type)}}</div>
+                    <div class="description">.pdf <span>(~{{item.size}} {{t "common.kb"}})</span></div>
+                  {{else}}
+                    <div class="title">{{{item.name}}}</div>
+                    <div class="subtitle">{{t (concat "media_center." item.type)}}</div>
+                    <div class="description">.pdf <span>(~{{item.size}} {{t "common.kb"}})</span></div>
+                  {{/if}}
+                </a>
+              {{/each}}
+            </div>
           {{else}}
-          <span class="tip">{{t "common.no"}} {{t "common.founded"}}</span>
+            <div class="page-title">{{t "common.nothing-found-alter"}}</div>
           {{/if}}
         </div>
-        {{#if listResult.length}}
-        <div class="documents-search row">
-
-          {{#each listResult as |item index|}}
-          <a target="_blank" href="{{item.link}}" class="{{item.type}} col-md-3 col-sm-6 col-xs-12">
-            {{#if isRuLocale}}
-            <div class="title">{{{item.name}}}</div>
-            <div class="subtitle">{{t (concat "media_center." item.type)}}</div>
-            <div class="description">.pdf <span>(~{{item.size}} {{t "common.kb"}})</span></div>
-            {{else}}
-            <div class="title">{{{item.name}}}</div>
-            <div class="subtitle">{{t (concat "media_center." item.type)}}</div>
-            <div class="description">.pdf <span>(~{{item.size}} {{t "common.kb"}})</span></div>
-            {{/if}}
-          </a>
-          {{/each}}
-        </div>
-        {{else}}
-        <div class="page-title">{{t "common.nothing-found-alter"}}</div>
-        {{/if}}
       </div>
     </div>
-  </div>
-</article>
+  </article>
 
-<article class="container-grey">
-  <div class="container container-unpadded">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="heading heading-top">
-          <span class="title title-dark">{{t "common.related-materials"}}</span>
-        </div>
-        {{#if listDocumentsResult.length}}
-        <div class="media-list">
-          {{#each listDocumentsResult as |item index|}}
-          <a target="_blank" href="{{item.link}}">
-            <div class="item col-md-3 col-sm-6 col-xs-12">
-              <div class="image {{item.type}}">
-                <img src="{{item.image}}">
+  <article class="container-grey">
+    <div class="container container-unpadded">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="heading heading-top">
+            <span class="title title-dark">{{t "common.related-materials"}}</span>
+          </div>
+          {{#if listDocumentsResult.length}}
+          <div class="media-list">
+            {{#each listDocumentsResult as |item index|}}
+            <a target="_blank" href="{{item.link}}">
+              <div class="item col-md-3 col-sm-6 col-xs-12">
+                <div class="image {{item.type}}">
+                  <img src="{{item.image}}">
+                </div>
+                <div class="category">{{t (concat "media_center.types." item.type)}}</div>
+                <div class="title">{{{item.name}}}</div>
               </div>
-              <div class="category">{{t (concat "media_center.types." item.type)}}</div>
-              <div class="title">{{{item.name}}}</div>
-            </div>
-          </a>
-          {{/each}}
+            </a>
+            {{/each}}
+          </div>
+          {{else}}
+            <div class="page-title">{{t "common.nothing-found-alter"}}</div>
+          {{/if}}
         </div>
-        {{else}}
-        <div class="page-title">{{t "common.nothing-found-alter"}}</div>
-        {{/if}}
       </div>
     </div>
-  </div>
-</article>
+  </article>
 {{else}}
-
-<article class="container-media">
-  <div class="outer-wrapper">
-    <div class="inner-wrapper">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="page-title">{{t "media_center.media_center_slogan"}}</div>
-            <div class="body centered">
-              {{t "media_center.media_center_instruction"}}
-              <div class="media-intro">
-                <div class="stage-1"></div>
-                <div class="stage-2"></div>
-                <div class="stage-3"></div>
+  <article class="container-media">
+    <div class="outer-wrapper">
+      <div class="inner-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="page-title">{{t "media_center.media_center_slogan"}}</div>
+              <div class="body centered">
+                {{t "media_center.media_center_instruction"}}
+                <div class="media-intro">
+                  <div class="stage-1"></div>
+                  <div class="stage-2"></div>
+                  <div class="stage-3"></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</article>
+  </article>
 {{/if}}
 {{!-- <article>
-    <div class="">
-      <div class="container container-after-offset">
-        <div class="row">
-            <div class="col-md-6">
-              <div class="article">
-                  <div class="title">This is how we work for your success</div>
-                  <div class="body">The Uber brand is more than a name. It’s a set of values, attributes, and artwork that reflects the spirit of our company.  
-                  </div>
-              </div>
+  <div class="">
+    <div class="container container-after-offset">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="article">
+            <div class="title">This is how we work for your success</div>
+            <div class="body">The Uber brand is more than a name. It’s a set of values, attributes, and artwork that reflects the spirit of our company.
             </div>
-            <div class="col-md-6">
-              <div class="video-about-block small">{{#link-to "about" class="button"}}more about <span>meratech</span>{{/link-to}}</div>
           </div>
+        </div>
+        <div class="col-md-6">
+          <div class="video-about-block small">{{#link-to "about" class="button"}}more about <span>meratech</span>{{/link-to}}</div>
         </div>
       </div>
     </div>
+  </div>
 </article> --}}
 <article class="container-dark-dotted">
   <div class="container container-unpadded">
@@ -129,23 +126,23 @@
         </div>
         <div class="media-list">
           {{#if isEquipmentCatalog}}
-            <a target="_blank" href="{{isEquipmentCatalog.file}}">
-              <div class="col-md-6 clearfix hero-item">
-                <div class="image product">
-                  <img src="/assets/images/media/catalog-iso-2.png">
-                </div>
-                <div class="category">{{t "media_center.types.catalog"}}</div>
-                {{#if isRuLocale}}
-                <div class="title">{{isEquipmentCatalog.title_ru}}</div>
-                <div class="description">{{isEquipmentCatalog.description_ru}}</div>
-                <div class="button button-red">{{t "common.get_catalog"}}</div>
-                {{else}}
-                <div class="title">{{isEquipmentCatalog.title_en}}</div>
-                <div class="description">{{isEquipmentCatalog.description_en}}</div>
-                <div class="button button-red">{{t "common.get_catalog"}}</div>
-                {{/if}}
+          <a target="_blank" href="{{isEquipmentCatalog.file}}">
+            <div class="col-md-6 clearfix hero-item">
+              <div class="image product">
+                <img src="/assets/images/media/catalog-iso-2.png">
               </div>
-            </a>
+              <div class="category">{{t "media_center.types.catalog"}}</div>
+              {{#if isRuLocale}}
+              <div class="title">{{isEquipmentCatalog.title_ru}}</div>
+              <div class="description">{{isEquipmentCatalog.description_ru}}</div>
+              <div class="button button-red">{{t "common.get_catalog"}}</div>
+              {{else}}
+              <div class="title">{{isEquipmentCatalog.title_en}}</div>
+              <div class="description">{{isEquipmentCatalog.description_en}}</div>
+              <div class="button button-red">{{t "common.get_catalog"}}</div>
+              {{/if}}
+            </div>
+          </a>
           {{/if}}
 
           {{#each documentsLatest as |item index|}}

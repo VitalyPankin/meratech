@@ -1,9 +1,7 @@
-
-
 <article class="news-header-search">
   <div class="">
     <div class="container">
-      <div class="page-title title">{{t 'common.news_archive'}} </div>
+      <div class="page-title title">{{t 'common.news_archive'}}</div>
       <div class="body controls">
         <div class="centered-input centered-input-semiwhite">
           {{input placeholder=placeholderText value=search}}
@@ -11,27 +9,38 @@
         <div class="row">
           <div class="col-md-4">
             <div class="select-wrapper news-select-wrapper">{{t 'press_center.looking_for'}}
-            <div class="dropup news-dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{#if currentCategory}}{{currentCategoryTitle}}{{else}}{{t 'common.everything'}}{{/if}} 
+              <div class="dropup news-dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  {{#if currentCategory}}
+                    {{currentCategoryTitle}}
+                  {{else}}
+                    {{t 'common.everything'}}
+                  {{/if}}
                 </a>
                 <ul class="dropdown-menu clearfix">
                   <li {{action 'setFilter' ''}}>{{t 'common.all'}}</li>
-                  <li {{action 'setFilter' 'events'}}>{{t 'press_center.events_'}}</li>
-                  <li {{action 'setFilter' 'products'}}>{{t 'press_center.products_'}}</li>
-                  <li {{action 'setFilter' 'clients'}}>{{t 'press_center.clients_'}}</li>
-                  <li {{action 'setFilter' 'company'}}>{{t 'press_center.company_'}}</li>
+                  <li {{action 'setFilter' 'events'}}>{{t
+                    'press_center.events_'}}</li>
+                  <li {{action 'setFilter' 'products'}}>{{t
+                    'press_center.products_'}}</li>
+                  <li {{action 'setFilter' 'clients'}}>{{t
+                    'press_center.clients_'}}</li>
+                  <li {{action 'setFilter' 'company'}}>{{t
+                    'press_center.company_'}}</li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="select-wrapper">{{t 'common.from'}}
-              {{date-picker from=minimalDate to=toDateSelected selected=(mut fromDate) direction='from'}}
+              {{!-- {{date-picker from=minimalDate to=toDateSelected
+              selected=(mut fromDate) direction='from'}} --}}
             </div>
           </div>
           <div class="col-md-4">
             <div class="select-wrapper">{{t 'common.to'}}
-              {{date-picker from=fromDateSelected to=todayDate selected=(mut toDate) direction='to'}}
+              {{!-- {{date-picker from=fromDateSelected to=todayDate
+              selected=(mut toDate) direction='to'}} --}}
             </div>
           </div>
         </div>
@@ -42,25 +51,30 @@
 
 <article>
   <div class="container">
-    <div class="heading heading-top"><div class="title title-dark">{{t "common.news"}}</div></div>
+    <div class="heading heading-top">
+      <div class="title title-dark">{{t
+        "common.news"}}</div>
+    </div>
     <div class="row">
       <br><br>
       {{#if postsOrdered }}
-          {{#each postsOrdered as |item index|}}
-          {{#link-to "news.detail" item.slug}}
+      {{#each postsOrdered as |item index|}}
+      {{#link-to "news.detail" item.slug}}
 
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              {{#if isRuLocale}}
-                {{news-item image=item.image date=item.date title=item.title_ru preview=item.preview_ru}}
-              {{else}}
-                {{news-item image=item.image date=item.date title=item.title_en preview=item.preview_en}}
-              {{/if}}
-            </div>
-          {{/link-to}}
-          {{/each}}
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        {{#if isRuLocale}}
+        {{news-item image=item.image date=item.date title=item.title_ru
+        preview=item.preview_ru}}
         {{else}}
-          <div class="page-title search-title">{{t "common.nothing-exist-news"}}</div>
+        {{news-item image=item.image date=item.date title=item.title_en
+        preview=item.preview_en}}
         {{/if}}
+      </div>
+      {{/link-to}}
+      {{/each}}
+      {{else}}
+      <div class="page-title search-title">{{t "common.nothing-exist-news"}}</div>
+      {{/if}}
     </div>
   </div>
 </article>

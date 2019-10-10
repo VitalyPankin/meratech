@@ -18,7 +18,7 @@ export default Controller.extend({
   readableDate: computed('i18n.locale', function() {
     moment.locale(this.get('i18n.locale'));
 
-    let value = moment(
+    const valueDate = new Date(
       this.get('post.date')
         .toString()
         .substr(
@@ -27,10 +27,11 @@ export default Controller.extend({
             .toString()
             .indexOf('GMT'),
         ),
-      'ddd MMM DD YYYY HH:mm:ss',
     );
 
-    return value.format('dddd, MMMM Do,  YYYY');
+    let value = moment(valueDate, 'ddd MMM DD YYYY HH:mm:ss');
+
+    return value.format('dddd, D MMMM,  YYYY');
   }),
 
   actions: {},

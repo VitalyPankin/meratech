@@ -3,5 +3,8 @@
 module.exports = {
   extends: 'recommended',
 
-  ignore: ['app/templates'],
+  rules: {
+    'no-bare-strings': true,
+    'no-inline-styles': false,
+  },
 };

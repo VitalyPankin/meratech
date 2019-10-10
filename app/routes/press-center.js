@@ -5,6 +5,11 @@ import { hash } from 'rsvp';
 export default Route.extend({
   session: service('session'),
 
+  activate: function() {
+    this.controllerFor('press-center').set('toDate', null);
+    this.controllerFor('press-center').set('fromDate', null);
+  },
+
   beforeModel: function(transition) {
     if (!this.get('session.isAuthenticated')) {
       this.set('session.attemptedTransition', transition);
