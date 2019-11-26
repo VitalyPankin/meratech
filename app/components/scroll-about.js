@@ -19,13 +19,13 @@ export default Component.extend({
   }),
 
   didInsertElement: function() {
-    $('section.about').on('scroll', () => {
-      let scrollTop = $(this).scrollTop();
-      if (scrollTop > 3400) {
-        this.set('backIsHidden', true);
-      } else {
-        this.set('backIsHidden', false);
-      }
-    });
+    // $('section.about').on('scroll', () => {
+    //   let scrollTop = $(this).scrollTop();
+    //   if (scrollTop > 3400) {
+    //     this.set('backIsHidden', true);
+    //   } else {
+    //     this.set('backIsHidden', false);
+    //   }
+    // });
   },
 });

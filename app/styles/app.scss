@@ -137,10 +137,13 @@ html {
 body{
   font-family: "etelka-light", "Helvetica Neue", Helvetica, Arial, sans; 
   text-rendering: auto;
-  color: #3b3d3f;
+  color: #191a1b;
   font-size: 1em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #3b3d3f;
 }
 
 *, *:before {

@@ -26,10 +26,9 @@ export default Controller.extend({
   }),
 
   // eslint-disable-next-line ember/no-observers
-  updateCurrentPath: observer('currentPath', function() {
-    this.set('currentPath', this.get('currentPath'));
+  updateCurrentPath: observer('target.currentPath', function() {
+    this.set('currentPath', this.get('target.currentPath'));
     // eslint-disable-next-line no-console
-    console.log(this.get('currentPath'));
     if (this.get('currentPath') === 'about' || this.get('currentPath') === 'not-found') {
       this.set('isAboutRoute', true);
     } else {

@@ -139,6 +139,9 @@
 		padding-bottom: 70px;
 	}
 	.item{
+		height: 420px;
+		overflow: hidden;
+		
 	  @media (max-width: 991px){
 			margin-bottom: 40px;
 	  }
@@ -874,8 +877,7 @@
 		color: #fff;
 		padding-top: 120px;    
 		font-size: 54px;
-    line-height: 60px;    
-    max-width: 700px;
+    line-height: 60px;
     width: auto;
 	  @media (max-width: 767px){  
 			font-size: 36px;

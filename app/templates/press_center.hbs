@@ -54,54 +54,59 @@
   <div class="container-grey">
     <div class="container">
       <div class="row">
-        <br><br>
-        <div class="news-list">
-          {{#if isFiltered}}
+        <div class="col-md-12">
+          <div class="heading heading-top">
+            <span class="title title-dark">{{t "common.news"}}</span>
+          </div>
+          <br><br>
+          <div class="news-list">
+            {{#if isFiltered}}
 
-            {{#if postsOrdered }}
-              {{#each postsOrdered as |item index|}}
-                {{#link-to "news.detail" item.slug}}
-                  <div class="col-md-3 col-sm-6 col-xs-12">
-                    {{#if isRuLocale}}
-                      {{news-item image=item.image date=item.date title=item.title_ru preview=item.preview_ru}}
-                    {{else}}
-                      {{news-item image=item.image date=item.date title=item.title_en preview=item.preview_en}}
-                    {{/if}}
-                  </div>
-                {{/link-to}}
-              {{/each}}
-            {{else}}
-              <div class="page-title search-title">{{t "common.nothing-exist-news"}}</div>
-            {{/if}}
-
-          {{else}}
-          
-            {{#if postsTrimmed }}
-              {{#each postsTrimmed as |item index|}}
-                {{#link-to "news.detail" item.slug}}
-                  <div class="col-lg-3 col-sm-6 col-xs-12 item">
-                    <div class="image">
-                      <div class="img" style="background-image: url({{item.image}})"></div>
-                      <span class="details">{{t "common.details"}}</span>
+              {{#if postsOrdered }}
+                {{#each postsOrdered as |item index|}}
+                  {{#link-to "news.detail" item.slug}}
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                      {{#if isRuLocale}}
+                        {{news-item image=item.image date=item.date title=item.title_ru preview=item.preview_ru}}
+                      {{else}}
+                        {{news-item image=item.image date=item.date title=item.title_en preview=item.preview_en}}
+                      {{/if}}
                     </div>
-                    <div class="category {{item.category}}">{{t (concat "press_center."item.category)}}</div>
-                    {{#if isRuLocale}}
-                      <div class="date">{{format-date item.date}}</div>
-                      <div class="title">{{{item.title_ru}}}</div>
-                      <div class="description">{{{item.preview_ru}}}</div>
-                    {{else}}
-                      <div class="date">{{format-date item.date}}</div>
-                      <div class="title">{{{item.title_en}}}</div>
-                      <div class="description">{{{item.preview_en}}}</div>
-                    {{/if}}
-                  </div>
-                {{/link-to}}
-              {{/each}}
-            {{else}}
-              <div class="page-title search-title">{{t "common.nothing-exist-news"}}</div>
-            {{/if}}
+                  {{/link-to}}
+                {{/each}}
+              {{else}}
+                <div class="page-title search-title">{{t "common.nothing-exist-news"}}</div>
+              {{/if}}
 
-          {{/if}}
+            {{else}}
+            
+              {{#if postsTrimmed }}
+                {{#each postsTrimmed as |item index|}}
+                  {{#link-to "news.detail" item.slug}}
+                    <div class="col-lg-3 col-sm-6 col-xs-12 item">
+                      <div class="image">
+                        <div class="img" style="background-image: url({{item.image}})"></div>
+                        <span class="details">{{t "common.details"}}</span>
+                      </div>
+                      <div class="category {{item.category}}">{{t (concat "press_center."item.category)}}</div>
+                      {{#if isRuLocale}}
+                        <div class="date">{{format-date item.date}}</div>
+                        <div class="title">{{{item.title_ru}}}</div>
+                        <div class="description">{{{item.preview_ru}}}</div>
+                      {{else}}
+                        <div class="date">{{format-date item.date}}</div>
+                        <div class="title">{{{item.title_en}}}</div>
+                        <div class="description">{{{item.preview_en}}}</div>
+                      {{/if}}
+                    </div>
+                  {{/link-to}}
+                {{/each}}
+              {{else}}
+                <div class="page-title search-title">{{t "common.nothing-exist-news"}}</div>
+              {{/if}}
+
+            {{/if}}
+          </div>
         </div>
       </div>
     </div>

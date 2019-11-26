@@ -12,12 +12,12 @@ export default Helper.extend({
     let now = moment();
     const valueDate = new Date(params.toString().substr(0, params.toString().indexOf('GMT')));
     let value = moment(valueDate, 'ddd MMM DD YYYY HH:mm:ss');
-
+    const yearFormat = now.isSame(value, 'year') ? '' : ' YYYY';
     if (parseInt(now.diff(value, 'days', true)) > 14) {
       if (this.get('_locale') === 'en') {
-        return value.format('MMMM D');
+        return value.format('MMMM D' + yearFormat);
       } else {
-        return value.format('D MMMM');
+        return value.format('D MMMM' + yearFormat);
       }
     }
 

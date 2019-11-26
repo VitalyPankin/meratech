@@ -1,6 +1,6 @@
-{{!-- <header class="header">
+<header class="header">
   {{main-navigation}}
-</header> --}}
+</header>
 <article class="intro">
   <div class="container">
     <div class="page-title">
@@ -16,6 +16,30 @@
       {{else}}
         {{{model.content_en}}}
       {{/if}}
+    </div>
+  </div>
+</article>
+<article class="ecofriendly">
+  <div class="ecofriendly-back {{backHidden}}"></div>
+  <div class="wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="article">
+            <div class="title">{{t "about.ecology.title"}}</div>
+            <div class="body">
+              {{t "about.ecology.body_1"}}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="article">
+            <div class="body">
+              {{t "about.ecology.body_2"}}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </article>
@@ -38,7 +62,7 @@
   <div class="wrapper">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 col-xs-10">
           <div class="article">
             <div class="title">{{t "about.production.title"}}</div>
             <div class="body">
@@ -51,7 +75,7 @@
     </div>
   </div>
 </article>
-{{!-- <footer>
+<footer>
   <div class="container-dark">
     <div class="container">
       <div class="row">
@@ -114,4 +138,4 @@
       </div>
     </div>
   </div>
-</footer> --}}
+</footer>

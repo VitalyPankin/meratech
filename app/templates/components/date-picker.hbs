@@ -2,6 +2,7 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
     {{displaySelectedMonths}} 
   </a>
+  
   <ul class="dropdown-menu clearfix">
     {{#each displayMonths as |month|}}
       <li {{action "setMonth" month}}>{{t (concat "common.months."month)}}</li>

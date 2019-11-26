@@ -90,7 +90,8 @@ export default Controller.extend({
     function() {
       let _this = this;
       return this.get('posts').filter(function(item) {
-        let date = moment(
+        moment.locale('en');
+        const date = moment(
           item
             .get('date')
             .toString()
@@ -103,6 +104,7 @@ export default Controller.extend({
             ),
           'ddd MMM DD YYYY HH:mm:ss',
         );
+        moment.locale(_this.get('i18n.locale'));
         if (_this.get('search')) {
           let search = _this.get('search');
           if (
@@ -138,15 +140,16 @@ export default Controller.extend({
           if (_this.get('fromDate').diff(date, 'days') > 0) {
             return false;
           }
-        } else {
-          if (
-            moment()
-              .subtract(1, 'year')
-              .diff(date, 'days') > 0
-          ) {
-            return false;
-          }
         }
+        // else {
+        //   if (
+        //     moment()
+        //       .subtract(1, 'year')
+        //       .diff(date, 'days') > 0
+        //   ) {
+        //     return false;
+        //   }
+        // }
         return true;
       });
     },

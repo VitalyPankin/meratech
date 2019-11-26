@@ -2,6 +2,7 @@
 /* eslint-disable ember/no-side-effects */
 /* eslint-disable ember/avoid-leaking-state-in-ember-objects */
 import Component from '@ember/component';
+import { inject as service } from '@ember/service';
 import { get, computed, observer } from '@ember/object';
 import moment from 'moment';
 import layout from '../templates/components/date-picker';
@@ -10,6 +11,7 @@ import layout from '../templates/components/date-picker';
 import { translationMacro as t } from 'ember-i18n';
 
 export default Component.extend({
+  i18n: service(),
   layout,
   from: null,
   to: null,
@@ -34,7 +36,6 @@ export default Component.extend({
 
   init() {
     this._super(...arguments);
-
     if (this.get('direction') === 'to') {
       this.set('selectedYear', this.get('to').year());
       this.set('selectedMonth', this.get('months')[this.get('to').month()]);
@@ -44,18 +45,28 @@ export default Component.extend({
     }
   },
 
-  displayMonths: computed('selectedYear', function() {
+  selectedMonthHandler: observer('selectedYear', function() {
     let months = this.get('dateObject').find(item => {
       if (item.year === this.get('selectedYear')) {
         return true;
       }
     });
 
-    if (this.get('direction') === 'to') {
-      this.set('selectedMonth', months.months[months.months.length - 1]);
-    } else {
-      this.set('selectedMonth', months ? months.months[0] : null);
+    if (!months.months.includes(this.get('selectedMonth'))) {
+      if (this.get('direction') === 'to') {
+        this.set('selectedMonth', months.months[months.months.length - 1]);
+      } else {
+        this.set('selectedMonth', months ? months.months[0] : null);
+      }
     }
+  }),
+
+  displayMonths: computed('selectedYear', 'from', 'to', function() {
+    let months = this.get('dateObject').find(item => {
+      if (item.year === this.get('selectedYear')) {
+        return true;
+      }
+    });
 
     return months.months;
   }),
@@ -81,8 +92,8 @@ export default Component.extend({
       yearsDiff = Math.floor(to.year() - from.year()) + 1,
       monthsDiff = Math.floor(to.diff(from, 'months', true)) + 1;
 
-    // eslint-disable-next-line no-console
-    console.log('yearsDiff:' + yearsDiff + ' monthsDiff:' + monthsDiff);
+      // eslint-disable-next-line no-console
+      console.log('yearsDiff:' + yearsDiff + ' monthsDiff:' + monthsDiff);
 
     if (yearsDiff) {
       for (var i = 0; i < yearsDiff; i++) {
@@ -125,7 +136,8 @@ export default Component.extend({
   }),
 
   // eslint-disable-next-line ember/no-observers
-  updateSelected: observer('selectedMonth', function() {
+  updateSelected: observer('selectedMonth', 'selectedYear', function() {
+    moment.locale('en');
     if (this.get('direction') === 'to') {
       this.set(
         'selected',
@@ -143,6 +155,7 @@ export default Component.extend({
         ),
       );
     }
+    moment.locale(this.get('i18n.locale'));
   }),
 
   actions: {
