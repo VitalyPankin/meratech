@@ -1,25 +1,25 @@
-/* jshint node: true */
+'use strict';
 
 module.exports = function(environment) {
-  var ENV = {
+  let ENV = {
     modulePrefix: 'meratech',
-    environment: environment,
+    environment,
     wordpressHost: 'http://api.meratech.ru/',
     rootURL: '/',
     locationType: 'auto',
     timeDimention: 'Sec',
     i18n: {
-      defaultLocale: 'ru'
+      defaultLocale: 'ru',
     },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
-        // e.g. 'with-controller': true
+        // e.g. EMBER_NATIVE_DECORATOR_SUPPORT: true
       },
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
-        Date: false
-      }
+        Date: false,
+      },
     },
 
     APP: {
@@ -27,7 +27,11 @@ module.exports = function(environment) {
       // when it is created
     },
     moduleHandler: '_manager',
-    print: 'pdf'
+    print: 'pdf',
+
+    // emberWordpress: {
+    //   host: 'http://api.meratech.ru',
+    // },
   };
 
   if (environment === 'development') {
@@ -51,12 +55,13 @@ module.exports = function(environment) {
       store: 'simple-auth-session-store:local-storage',
       authorizer: 'authorizer:api-meratech',
       crossOriginWhitelist: ['http://localhost:3001/'],
-      routeAfterAuthentication: '/protected'
-  };
+      routeAfterAuthentication: '/protected',
+    };
+    ENV.APP.autoboot = false;
   }
 
   if (environment === 'production') {
-
+    // here you can enable a production-specific feature
   }
 
   return ENV;

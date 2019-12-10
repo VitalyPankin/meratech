@@ -1,120 +1,141 @@
-
-  <header class="header">
-    {{main-navigation}}
-  </header>
-  <article class="intro">
+<header class="header">
+  {{main-navigation}}
+</header>
+<article class="intro">
+  <div class="container">
+    <div class="page-title">
+      {{#if isRuLocale}}
+        {{{model.title_ru}}}
+      {{else}}
+        {{{model.title_en}}}
+      {{/if}}
+    </div>
+    <div class="content-block html-content">
+      {{#if isRuLocale}}
+        {{{model.content_ru}}}
+      {{else}}
+        {{{model.content_en}}}
+      {{/if}}
+    </div>
+  </div>
+</article>
+<article class="ecofriendly">
+  <div class="ecofriendly-back {{backHidden}}"></div>
+  <div class="wrapper">
     <div class="container">
-      <div class="page-title">
-
-        {{#if isRuLocale}}
-          {{{model.title_ru}}}
-        {{else}}
-          {{{model.title_en}}}
-        {{/if}}
-      </div>
-      <div class="content-block html-content">
-        {{#if isRuLocale}}
-          {{{model.content_ru}}}
-        {{else}}
-          {{{model.content_en}}}
-        {{/if}}
-      </div>
-    </div>
-    
-  </article>
-  <article class="lab">
-    <div class="outer-wrapper">
-      <div class="wrapper">
-        <div class="inner-wrapper">
+      <div class="row">
+        <div class="col-md-6">
           <div class="article">
-            <div class="title">{{t 'about.lab.title'}}</div>
+            <div class="title">{{t "about.ecology.title"}}</div>
             <div class="body">
-              {{t 'about.lab.body'}}
+              {{t "about.ecology.body_1"}}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="article">
+            <div class="body">
+              {{t "about.ecology.body_2"}}
             </div>
           </div>
         </div>
       </div>
     </div>
-  </article>
-  <article class="production">
-  <div class="factory-back {{backHidden}}"></div>
+  </div>
+</article>
+<article class="lab">
+  <div class="outer-wrapper">
     <div class="wrapper">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="article">
-              <div class="title">{{t 'about.production.title'}}</div>
-              <div class="body">
-              {{t 'about.production.body'}}
-                <img src="assets/images/iso-labels.png">
-              </div>
+      <div class="inner-wrapper">
+        <div class="article">
+          <div class="title">{{t "about.lab.title"}}</div>
+          <div class="body">
+            {{t "about.lab.body"}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="production">
+  <div class="factory-back {{backHidden}}"></div>
+  <div class="wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-xs-10">
+          <div class="article">
+            <div class="title">{{t "about.production.title"}}</div>
+            <div class="body">
+              {{t "about.production.body"}}
+              <img src="assets/images/iso-labels.png" alt="">
             </div>
           </div>
         </div>
       </div>
     </div>
-  </article>
- <footer>
-    <div class="container-dark">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 alter-layout">
-            <div class="row">
-              <div class="col-md-12 col-sm-6">
-                <a class="logo" href="/">{{logo-meratech}}</a>
-              </div>
-              <div class="col-md-12 col-sm-6">
-                <ul class="terms">
-                  {{#link-to "pages.detail" "privacy-policy"}}<li class="link">{{t "common.privacy_policy"}}</li>{{/link-to}}
-                  {{#link-to "pages.detail" "terms-of-use"}}<li class="link">{{t "common.terms_of_use"}}</li>{{/link-to}}
-                </ul>
-                <!--ul class="social">
-                  <li class="fa fa-facebook">Facebook</li>
-                  <li class="fa fa-linkedin-square">Linked In</li>
-                  <li class="fa fa-skype">Skype</li>
-                </ul-->
-              </div>
+  </div>
+</article>
+<footer>
+  <div class="container-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 alter-layout">
+          <div class="row">
+            <div class="col-md-12 col-sm-6">
+              <a class="logo" href="/">{{logo-meratech}}</a>
             </div>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="address">
-              {{#if ruLocale}}
-                Казанское шоссе 25 стр.2<br>
-                603087, Россия, Нижний Новгород<br>
-                ООО Мератек Рус Груп
-              {{else}}
-                25 Kazanskoe ave., building 2,  Nizhny Novgorod<br>
-                603087 Russia<br>
-                LCC Meratech Rus Group
-              {{/if}}
+            <div class="col-md-12 col-sm-6">
+              <ul class="terms">
+                {{#link-to "pages.detail" "privacy-policy"}}<li class="link">{{t "common.privacy_policy"}}</li>{{/link-to}}
+                {{#link-to "pages.detail" "terms-of-use"}}<li class="link">{{t "common.terms_of_use"}}</li>{{/link-to}}
+              </ul>
+              <!--ul class="social">
+                <li class="fa fa-facebook">Facebook</li>
+                <li class="fa fa-linkedin-square">Linked In</li>
+                <li class="fa fa-skype">Skype</li>
+              </ul-->
             </div>
-            <div class="phone">
-              8 (800) 333-58-88
-            </div>
-            <div class="email">
-              info@meratech.ru
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-6">
-            <ul>
-              {{#link-to "about"}}<li>{{t "common.about_prep"}} <span>meratech</span></li>{{/link-to}}
-              {{#link-to "press-center"}}<li>{{t "common.press_center"}}</li>{{/link-to}}
-              {{#link-to "media-center"}}<li>{{t "common.documentation"}}</li>{{/link-to}}
-              {{#link-to "catalog"}}<li>{{t "common.hygiene_2"}} {{t "common.solutions"}}</li>{{/link-to}}
-              {{#link-to "equipment"}}<li>{{t "common.equipment"}}</li>{{/link-to}}
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <div class="title">{{t "common.footer.title"}}</div>
-            <div class="body">{{t "common.footer.body"}}</div>
-            {{auth-component}}  
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="copyright">{{t "common.copyright"}} © 2006-2015 meratech. {{t "common.copyright_disclaimer"}} </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="address">
+            {{#if ruLocale}}
+              Казанское шоссе 25 стр.2<br>
+              603087, Россия, Нижний Новгород<br>
+              ООО Мератек Рус Груп
+            {{else}}
+              25 Kazanskoe ave., building 2,  Nizhny Novgorod<br>
+              603087 Russia<br>
+              LCC Meratech Rus Group
+            {{/if}}
           </div>
+          <div class="phone">
+            8 (800) 333-58-88
+          </div>
+          <div class="email">
+            info@meratech.ru
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <ul>
+            {{#link-to "about"}}<li>{{t "common.about_prep"}} <span>meratech</span></li>{{/link-to}}
+            {{#link-to "press-center"}}<li>{{t "common.press_center"}}</li>{{/link-to}}
+            {{#link-to "media-center"}}<li>{{t "common.documentation"}}</li>{{/link-to}}
+            {{#link-to "catalog"}}<li>{{t "common.hygiene_2"}} {{t "common.solutions"}}</li>{{/link-to}}
+            {{#link-to "equipment"}}<li>{{t "common.equipment"}}</li>{{/link-to}}
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <div class="title">{{t "common.footer.title"}}</div>
+          <div class="body">{{t "common.footer.body"}}</div>
+          {{auth-component}}  
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright">{{t "common.copyright"}} © 2006-2015 meratech. {{t "common.copyright_disclaimer"}} </div>
         </div>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>

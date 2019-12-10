@@ -1,22 +1,32 @@
-import Ember from 'ember';
+/* eslint-disable ember/no-jquery */
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import $ from 'jquery';
+import layout from '../templates/components/main-navigation';
 
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: ['main-navigation navbar navbar-default navbar-static-top'],
-  layoutName: 'components/main-navigation',
+  // layoutName: 'components/main-navigation',
+  layout,
   isActive: false,
+
   init() {
-    this._super();
+    this._super(...arguments);
     this.get('i18n');
   },
-  ruLocale: function(){
+
+  ruLocale: computed('i18n.locale', function() {
     // console.log(this.get('i18n.locale'));
-    if(this.get('i18n.locale')==='ru') { return true; }
-    return false; 
-  }.property('i18n.locale'),
-  actions:{
-    setLocale: function(locale){
-      this.set('i18n.locale', locale);
-      Ember.$.cookie('user-lang', locale, {expires:365, path:'/'});
+    if (this.get('i18n.locale') === 'ru') {
+      return true;
     }
-  }
+    return false;
+  }),
+
+  actions: {
+    setLocale: function(locale) {
+      this.set('i18n.locale', locale);
+      $.cookie('user-lang', locale, { expires: 365, path: '/' });
+    },
+  },
 });

@@ -1,52 +1,61 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
-export default Ember.Route.extend({
-
-  session: Ember.inject.service('session'),
+export default Route.extend({
+  session: service('session'),
   toItem: false,
+
   beforeModel(transition) {
     if (!this.get('session.isAuthenticated')) {
       this.set('session.attemptedTransition', transition);
     }
-    if(transition.targetName==='equipment.category.item'){
+    if (transition.targetName === 'equipment.category.item') {
       this.set('toItem', true);
-    }else{
+    } else {
       this.set('toItem', false);
     }
   },
+
   model(params) {
     this.controllerFor('equipment.category.index').set('category', params.category_id);
-    this.controllerFor('equipment.category.index').set('isCleaningCatalog', (params.category_id).indexOf('pressure')+1 ? true : false);
+    this.controllerFor('equipment.category.index').set(
+      'isCleaningCatalog',
+      params.category_id.indexOf('pressure') + 1 ? true : false,
+    );
     let category = params.category_id;
 
-
     let _model = this.controllerFor('application').get('equipmentModel');
-    if(_model){
-      let __model = _model.filter((item)=>{
-        if(item.get('category')===category) return true;
+    if (_model) {
+      let __model = _model.filter(item => {
+        if (item.get('category') === category) return true;
         return false;
       });
       let length = __model.length;
-      if(length === 0){
+      if (length === 0) {
         this.transitionTo('/not-found');
-      }else if(length===1){
-        if(!this.get('toItem')){
+      } else if (length === 1) {
+        if (!this.get('toItem')) {
           this.transitionTo('equipment.category.item', __model.get('firstObject').get('slug'));
         }
       }
       return __model;
-    }else{
-      return this.store.query('item', {per_page: 500}).then(_model => {
-        let __model = _model.filter((item)=>{
-          if(item.get('category')===category) return true;
+    } else {
+      return this.store.query('item', { per_page: 500 }).then(_model => {
+        let __model = _model.filter(item => {
+          if (item.get('category') === category) return true;
           return false;
         });
         let length = __model.length;
-        if(length === 0){
+        if (length === 0) {
           this.transitionTo('/not-found');
-        }else if(length===1){
-          if(!this.get('toItem')){
-            this.transitionTo('equipment.category.item', __model.get('firstObject').get('slug'), { queryParams: { id: __model.get('firstObject').get('slug'), item_id: __model.get('firstObject').get('slug') }});
+        } else if (length === 1) {
+          if (!this.get('toItem')) {
+            this.transitionTo('equipment.category.item', __model.get('firstObject').get('slug'), {
+              queryParams: {
+                id: __model.get('firstObject').get('slug'),
+                item_id: __model.get('firstObject').get('slug'),
+              },
+            });
           }
         }
         this.controllerFor('application').set('equipmentModel', _model);
@@ -55,8 +64,8 @@ export default Ember.Route.extend({
     }
   },
 
-  setupController: function(controller, model, transition) {
+  setupController: function(controller, model) {
     this._super(controller, model);
     this.controllerFor('equipment.category').set('equipment', model);
-  }
+  },
 });

@@ -1,26 +1,31 @@
-import Ember from 'ember';
+/* eslint-disable ember/no-jquery */
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import $ from 'jquery';
+import layout from '../templates/components/scroll-about';
 
-export default Ember.Component.extend({
+export default Component.extend({
   tagName: 'section',
   classNames: ['about'],
   classNameBindings: ['isActive:active'],
-  layoutName: 'components/scroll-about',
+  layout,
+
   backIsHidden: false,
   model: null,
   isRuLocale: null,
 
-  didInsertElement: function(){
-    var _this = this;
-    Ember.$('section.about').on( 'scroll', function(){
-      var scrollTop = Ember.$(this).scrollTop();
-      if(scrollTop>3400){
-        _this.set('backIsHidden', true);
-      } else {
-        _this.set('backIsHidden', false);
-      }
-    });
+  backHidden: computed('backIsHidden', function() {
+    return this.get('backIsHidden') ? 'hidden-back' : '';
+  }),
+
+  didInsertElement: function() {
+    // $('section.about').on('scroll', () => {
+    //   let scrollTop = $(this).scrollTop();
+    //   if (scrollTop > 3400) {
+    //     this.set('backIsHidden', true);
+    //   } else {
+    //     this.set('backIsHidden', false);
+    //   }
+    // });
   },
-  backHidden: function(){
-    if(this.get('backIsHidden')){ return 'hidden-back'; }
-  }.property('backIsHidden')
 });

@@ -3,19 +3,19 @@
 	background-size: cover;
 	position: relative;
 	background-repeat: no-repeat;
-	:before{
-		background-image: url("images/images-overlay.png");
-		background-repeat: repeat;
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-	}
+	// :before{
+	// 	background-image: url("images/images-overlay.png");
+	// 	background-repeat: repeat;
+	// 	position: absolute;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	top: 0;
+	// 	left: 0;
+	// }
 	.container{
-		padding-bottom: 0;
+		// padding-bottom: 0;
 		position: relative;
-		z-index: 1;
+		// z-index: 1;
 	}
 	.page-title{
 		margin: 0 auto;
@@ -90,40 +90,48 @@
 		}
 	}
 }
-.news-dropdown{
+
+.news-dropdown {
 	font-size: 24px;
-	display: inline-block;
-	.dropdown-toggle{
+  display: inline-block;
+
+	.dropdown-toggle {
 		color: #ffffff;
     font-family: 'etelka-medium';
     text-transform: lowercase;
+  
 		&:after{
       font-family: 'FontAwesome';
       content: '\f078';
       color: #ff2120;
 			font-size: 16px;
 			position: relative;
-    	top: -2px;
+      top: -2px;
 		}
-	}
-	.dropdown-menu{    
+  }
+  
+	.dropdown-menu {    
 		background-color: rgba(14, 12, 20, 0.7);
     box-shadow: none;
     border: none;
 		color: rgba(255,255,255,0.4);
     font-family: 'etelka-thin';
-	  font-size: 24px;
-	  padding: 10px 15px;
+    font-size: 24px;
+    padding: 10px 15px;
     line-height: 30px;
     margin-top: -3px;
     margin-left: -15px;
-    li{
-		  white-space: nowrap;
-    	text-transform: lowercase;
-    	&:hover{
-			  color: rgba(255,255,255,1);
-	    }
-	  }
+    z-index: 99;
+  
+    li {
+      white-space: nowrap;
+      text-transform: lowercase;
+      cursor: pointer;
+
+      &:hover {
+        color: rgba(255,255,255,1);
+      }
+    }
 	}
 }
 .news-list{
@@ -131,6 +139,9 @@
 		padding-bottom: 70px;
 	}
 	.item{
+		height: 420px;
+		overflow: hidden;
+		
 	  @media (max-width: 991px){
 			margin-bottom: 40px;
 	  }
@@ -866,8 +877,7 @@
 		color: #fff;
 		padding-top: 120px;    
 		font-size: 54px;
-    line-height: 60px;    
-    max-width: 700px;
+    line-height: 60px;
     width: auto;
 	  @media (max-width: 767px){  
 			font-size: 36px;

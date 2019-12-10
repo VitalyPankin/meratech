@@ -1,8 +1,7 @@
-import Ember from "ember";
+import Helper from '@ember/component/helper';
 
-export default Ember.Helper.extend({
-
+export default Helper.extend({
   compute: function(params) {
-  	return Math.floor(params[0]+Math.random() * params[1]);
-  }
+    return Math.floor(params[0] + Math.random() * params[1]);
+  },
 });

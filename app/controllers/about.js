@@ -1,10 +1,11 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
 
-export default Ember.Controller.extend({
-  
-  i18n: Ember.inject.service(),
-  
-  isRuLocale: function(){
-    return this.get('i18n.locale')==='ru';
-  }.property('i18n.locale')
+export default Controller.extend({
+  i18n: service(),
+
+  isRuLocale: computed('i18n.locale', function() {
+    return this.get('i18n.locale') === 'ru';
+  }),
 });

@@ -17,31 +17,29 @@
 </article>
 {{/if}}
 <article>
-	<div class="container container-after-offset-x2 {{if isCleaningCatalog 'container-after-offset'}}">
-		<div class="heading heading-top">
-			<div class="title">{{t (concat "equipment.category." categoryTranslate)}}</div>
-		</div>
+  <div class="container container-after-offset-x2 {{if isCleaningCatalog "container-after-offset"}}">
+    <div class="heading heading-top">
+      <div class="title">{{t (concat "equipment.category." categoryTranslate)}}</div>
+    </div>
     <div class="article">
       <div class="equipment-list-category row">
-				{{#each items as |item index|}}
-	        {{#link-to "equipment.category.item" item.slug class="col-md-6 col-lg-6"}}
-	        <div class="" style="background-image: url('{{item.image}}');">
-
-          {{#if isRuLocale}}
-            <div class="title">{{item.title_ru}}</div>
-            <div class="body">{{{item.preview_ru}}}</div>
-          {{else}}
-            <div class="title">{{item.title_en}}</div>
-            <div class="body">{{{item.preview_en}}}</div>
-          {{/if}}
-	          <div class="button button-red">{{t "common.details"}}</div>
-	        </div>
-	        {{/link-to}}
-				{{/each}}
-
+        {{#each items as |item index|}}
+          {{#link-to "equipment.category.item" item.slug class="col-md-6 col-lg-6"}}
+            <div class="" style="background-image: url('{{item.image}}');">
+              {{#if isRuLocale}}
+                <div class="title">{{item.title_ru}}</div>
+                <div class="body">{{{item.preview_ru}}}</div>
+              {{else}}
+                <div class="title">{{item.title_en}}</div>
+                <div class="body">{{{item.preview_en}}}</div>
+              {{/if}}
+              <div class="button button-red">{{t "common.details"}}</div>
+            </div>
+          {{/link-to}}
+        {{/each}}
       </div>
     </div>
-	</div>
+  </div>
 </article>
 <article class="get-catalog equipment-hero hero-gray hero">
   <div class="container-white">
@@ -60,4 +58,3 @@
     </div>
   </div>
 </article>
-

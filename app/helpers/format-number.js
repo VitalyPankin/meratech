@@ -1,12 +1,20 @@
-import Ember from "ember";
+import Helper from '@ember/component/helper';
+import { inject as service } from '@ember/service';
+import { readOnly } from '@ember/object/computed';
+import { typeOf } from '@ember/utils';
 
-export default Ember.Helper.extend({
-  i18n: Ember.inject.service(),
+export default Helper.extend({
+  i18n: service(),
 
-  _locale: Ember.computed.readOnly('i18n.locale'),
+  _locale: readOnly('i18n.locale'),
 
   compute: function(params) {
-  	let value = params[0];
-    return value.toLocaleString(this.get('_locale')); 
-  }
+    let value = params[0];
+    let res = '';
+    if (typeOf(value) === 'number') {
+      res = value.toLocaleString(this.get('_locale'));
+    }
+
+    return res;
+  },
 });

@@ -1,13 +1,19 @@
-import Ember from 'ember';
-import { translationMacro as t } from "ember-i18n";
+/* eslint-disable ember/no-jquery */
+import Component from '@ember/component';
+import { inject as service } from '@ember/service';
+import $ from 'jquery';
+import layout from '../templates/components/auth-component';
 
-export default Ember.Component.extend({
+import { translationMacro as t } from 'ember-i18n';
+
+export default Component.extend({
+  session: service('session'),
   classNames: [''],
-  layoutName: 'components/auth-component',
-  session: Ember.inject.service('session'),
+  // layoutName: 'components/auth-component',
+  layout,
   errorMessage: null,
-  placeholderLogin: t("common.input_login"),
-  placeholderPassword: t("common.input_password"),
+  placeholderLogin: t('common.input_login'),
+  placeholderPassword: t('common.input_password'),
 
   // actions: {
   //   authenticate() {
@@ -17,28 +23,33 @@ export default Ember.Component.extend({
   //     });
   //   }
   // }
-  
+
   actions: {
-    resetError: function(){
+    resetError: function() {
       this.set('errorMessage', null);
     },
     authenticate() {
       let { identification, password } = this.getProperties('identification', 'password');
       try {
-        this.get('session').authenticate('authenticator:api-meratech', identification, password).then(() => {
-          Ember.$('#myModal').modal('hide');
-        }, (reason) => {
-          this.set('errorMessage', reason.error_description || reason);
-        }).catch((reason) => {
-          this.set('errorMessage', reason.error_description || reason);
-        });
-       throw "myException"; // generates an exception
-      }
-      catch (e) {
-      }
+        this.get('session')
+          .authenticate('authenticator:api-meratech', identification, password)
+          .then(
+            () => {
+              $('#myModal').modal('hide');
+            },
+            reason => {
+              this.set('errorMessage', reason.error_description || reason);
+            },
+          )
+          .catch(reason => {
+            this.set('errorMessage', reason.error_description || reason);
+          });
+        throw 'myException'; // generates an exception
+        // eslint-disable-next-line no-empty
+      } catch (e) {}
     },
     invalidateSession: function() {
-        this.get('session').invalidate();
-    }
-  }
+      this.get('session').invalidate();
+    },
+  },
 });

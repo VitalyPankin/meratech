@@ -1,252 +1,252 @@
 <div class="industries">
-	<article class="industries-hero">
-		<div class="industries-hero-image {{currentIndustry}}">
-			<div class="title">{{currentIndustryTitle}}</div>
-		</div>
-	</article>
-	{{#if catalogFile}}
-	<article class="get-catalog get-catalog-thin hero">
-	  <div class="container-white">
-	    <div class="container container-hero">
-	      <div class="heading heading-top"></div>
-	      <div class="row">
-	        <div class="col-md-12">
-	          <div class="subarticle">
-	            <div class="title">{{t (concat "common.get_catalog_hash." currentIndustry ".title")}}</div>
-	            <div class="body">{{t (concat "common.get_catalog_hash." currentIndustry ".body")}}</div>
-	            <a href="{{catalogFile.file}}"><div class="button button-red">{{t "common.get_catalog"}}</div></a>
-	            {{#link-to "media-center"}} <div class="button button button-download">{{t "common.go_to_media_center"}}</div>{{/link-to}}
-	            <img class="download-catalog-image" src="{{catalogFile.image}}">
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	  </div>
-	</article>
-	{{/if}}
+  <article class="industries-hero">
+    <div class="industries-hero-image {{currentIndustry}}">
+      <div class="title">{{currentIndustryTitle}}</div>
+    </div>
+  </article>
+  {{#if catalogFile}}
+  <article class="get-catalog get-catalog-thin hero">
+    <div class="container-white">
+      <div class="container container-hero">
+        <div class="heading heading-top"></div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="subarticle">
+              <div class="title">{{t (concat "common.get_catalog_hash." currentIndustry ".title")}}</div>
+              <div class="body">{{t (concat "common.get_catalog_hash." currentIndustry ".body")}}</div>
+              <a href="{{catalogFile.file}}"><div class="button button-red">{{t "common.get_catalog"}}</div></a>
+              {{#link-to "media-center"}} <div class="button button button-download">{{t "common.go_to_media_center"}}</div>{{/link-to}}
+              <img class="download-catalog-image" src="{{catalogFile.image}}">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  {{/if}}
 </div>
 {{#if productsCategorized.length}}
 {{#each productsCategorized as |category index|}}
 {{#if category.data.length}}
- <article>
+<article>
   <div class="container-fluid catalog-heading heading-{{category.name}}">
   </div>
   <div class="container-grey">
-		<div class="container">
+    <div class="container">
       <div class="heading heading-top">
-      	<span class="title title-dark">{{category.translate}}</span>
+        <span class="title title-dark">{{category.translate}}</span>
       </div>
-	    <div class="row">
-	      <div class="col-md-12">
-	        <div class="industry-list">
-						{{#each category.data as |item index|}}
-	        	{{#link-to "catalog.detail" item.slug}}
-	        	<div class="item">
-	        		<img src={{item.thumbnail}}>
-	        		<div class="title">{{{item.title_formatted}}}</div>
-	        		{{#if isRuLocale}}
-	        			<div class="description">{{{item.description_ru}}}</div>
-	        		{{else}}
-	        			<div class="description">{{{item.description_en}}}</div>
-	        		{{/if}}
+      <div class="row">
+        <div class="col-md-12">
+          <div class="industry-list">
+            {{#each category.data as |item index|}}
+            {{#link-to "catalog.detail" item.slug}}
+            <div class="item">
+              <img src={{item.thumbnail}}>
+              <div class="title">{{{item.title_formatted}}}</div>
+              {{#if isRuLocale}}
+              <div class="description">{{{item.description_ru}}}</div>
+              {{else}}
+              <div class="description">{{{item.description_en}}}</div>
+              {{/if}}
 
-	              <dl>
-	                <dt>{{t "catalog.consistency"}}</dt>
-	                <dd>{{t (concat 'catalog.' item.consistency)}}</dd>
-	                <dt>{{t "catalog.color"}}</dt>
-	        				{{#if isRuLocale}}
-	                <dd>{{item.color_name_ru}}<span class="circle" style="background-color: {{item.color_code}};"></span></dd>
-	        				{{else}}
-	                <dd>{{item.color_name_en}}<span class="circle" style="background-color: {{item.color_code}};"></span></dd>
-	        				{{/if}}
-	                <dt>{{t "catalog.density"}}</dt>
-	                <dd>{{format-number item.density}}</dd>
-	                <dt>pH</dt>
-	                <dd>{{format-number item.ph}}</dd>
-	              </dl>
-	        	</div>
-	        	{{/link-to}}
-						{{/each}}
-		      </div>
-	      </div>
-	    </div>
-	  </div>
+              <dl>
+                <dt>{{t "catalog.consistency"}}</dt>
+                <dd>{{t (concat 'catalog.' item.consistency)}}</dd>
+                <dt>{{t "catalog.color"}}</dt>
+                {{#if isRuLocale}}
+                <dd>{{item.color_name_ru}}<span class="circle" style="background-color: {{item.color_code}};"></span></dd>
+                {{else}}
+                <dd>{{item.color_name_en}}<span class="circle" style="background-color: {{item.color_code}};"></span></dd>
+                {{/if}}
+                <dt>{{t "catalog.density"}}</dt>
+                <dd>{{format-number item.density}}</dd>
+                <dt>pH</dt>
+                <dd>{{format-number item.ph}}</dd>
+              </dl>
+            </div>
+            {{/link-to}}
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </article>
 {{/if}}
 {{/each}}
 {{else}}
 
- <article>
+<article>
   <div class="page-title search-title">{{t "common.nothing-exist-industry"}}</div>
 </article>
 {{/if}}
 {{!-- <article>
   <div class="container-fluid catalog-heading heading-foam">
-  	
+
   </div>
   <div class="container-fluid container-grey">
-		<div class="container">
+    <div class="container">
       <div class="heading heading-top">
-      	<span class="title title-dark">внешняя мойка</span>
+        <span class="title title-dark">внешняя мойка</span>
       </div>
-	    <div class="row">
-	      <div class="col-md-12">
-	        <div class="catalog-list">
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-		      </div>
-	      </div>
-	    </div>
-	  </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="catalog-list">
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </article><article>
   <div class="container-fluid catalog-heading heading-cip"></div>
   <div class="container-fluid container-grey">
-		<div class="container">
+    <div class="container">
       <div class="heading heading-top">
-      	<span class="title title-dark">внешняя мойка</span>
+        <span class="title title-dark">внешняя мойка</span>
       </div>
-	    <div class="row">
-	      <div class="col-md-12">
-	        <div class="catalog-list">
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-		      </div>
-	      </div>
-	    </div>
-	  </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="catalog-list">
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </article>
 <article>
   <div class="container-fluid catalog-heading heading-additive"></div>
   <div class="container-fluid container-grey">
-		<div class="container">
+    <div class="container">
       <div class="heading heading-top">
-      	<span class="title title-dark">внешняя мойка</span>
+        <span class="title title-dark">внешняя мойка</span>
       </div>
-	    <div class="row">
-	      <div class="col-md-12">
-	        <div class="catalog-list industry-catalog-list">
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-	        	{{#link-to "catalog"}}
-	        	<div class="item">
-	        		<img src="/assets/images/canister.png">
-	        		<span class="title">Merafoam® <b>CL</b></span>
-	        	</div>
-	        	{{/link-to}}
-		      </div>
-	      </div>
-	    </div>
-	  </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="catalog-list industry-catalog-list">
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+            {{#link-to "catalog"}}
+            <div class="item">
+              <img src="/assets/images/canister.png">
+              <span class="title">Merafoam® <b>CL</b></span>
+            </div>
+            {{/link-to}}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </article> --}}

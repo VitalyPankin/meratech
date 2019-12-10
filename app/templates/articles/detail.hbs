@@ -1,18 +1,16 @@
 <article class="download-page-content">
   <div class="container container-after-offset-x2">
-          {{#link-to "press-center"}}<span class="btn-archive">{{t 'common.press_center'}}</span>{{/link-to}}
+      {{#link-to "press-center"}}<span class="btn-archive">{{t 'common.press_center'}}</span>{{/link-to}}
     <div class="heading heading-top">
-      <div class="title">{{t 'common.articles'}}
-
-      </div>
+      <div class="title">{{t 'common.articles'}}</div>
     </div>
     <div class="article">
       <div class="equipment-list-item row">
         <div class="col-md-12">
           {{#if isRuLocale}}
-            <div class="title">{{article.title_ru}}</div>
+            <div class="title">{{{article.title_ru}}}</div>
           {{else}}
-            <div class="title">{{article.title_en}}</div>
+            <div class="title">{{{article.title_en}}}</div>
           {{/if}} 
         </div>
         <div class="col-md-6 col-sm-12 col-md-push-6 image-holder">

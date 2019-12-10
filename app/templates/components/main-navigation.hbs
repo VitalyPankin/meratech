@@ -1,53 +1,48 @@
-
-
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar first"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar last"></span>
-      </button>
-
-      {{#link-to "index" class="navbar-brand"}}{{logo-meratech}}{{/link-to}}
-    </div>
-
-
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right navbar-lang">
-        <li><a href="#" class="{{if ruLocale 'active' 'inactive'}}" {{action 'setLocale' 'ru'}}>RU</a></li>
-        <li><a href="#" class="{{if ruLocale 'inactive' 'active'}}" {{action 'setLocale' 'en'}}>EN</a></li>
-      </ul>
-      {{!-- {{search-component}} --}}
-
-      <ul class="nav navbar-nav navbar-right">
-          <li>{{#link-to "about"}}{{t "index.menu.about"}}{{/link-to}}</li>
-          <li>{{#link-to "press-center"}}{{t "index.menu.press_center"}}{{/link-to}}</li>
-          <li>{{#link-to "media-center"}}{{t "index.menu.media"}}{{/link-to}}</li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{t "index.menu.catalog"}} 
-            <span class="caret">
-              <span class="icon-bar first"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar last"></span>
-            </span></a>
-            <ul class="dropdown-menu clearfix">
-              {{#link-to "equipment" class="col-md-6 col-sm-6 col-xs-6 catalog-menu-equipment"}}
-                <div class="body">
-                  {{t "common.professional_equipment"}}
-                </div>
-                <div class="button button-red">{{t "common.go_to_catalog"}}</div>
-              {{/link-to}}
-              {{#link-to "catalog" class="col-md-6 col-sm-6 col-xs-6 catalog-menu-solutions"}}
-                <div class="body">
-                  {{t "common.hygiene_solitions"}}<br><br>
-                </div>
-                <div class="button button-red">{{t "common.go_to_catalog"}}</div>
-              {{/link-to}}
-            </ul>
-          </li>
-          <li>{{#link-to "contacts"}}{{t "index.menu.contacts"}} {{/link-to}}</li>
-        </ul>
-    </div>
+<div class="container-fluid">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar first"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar last"></span>
+    </button>
+    {{#link-to "index" class="navbar-brand"}}{{logo-meratech}}{{/link-to}}
   </div>
 
+  <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right navbar-lang">
+      <li><a href="#" class="{{if ruLocale 'active' 'inactive'}}" {{action 'setLocale' 'ru'}}>RU</a></li>
+      <li><a href="#" class="{{if ruLocale 'inactive' 'active'}}" {{action 'setLocale' 'en'}}>EN</a></li>
+    </ul>
+    {{!-- {{search-component}} --}}
+
+    <ul class="nav navbar-nav navbar-right">
+      <li>{{#link-to "about"}}{{t "index.menu.about"}}{{/link-to}}</li>
+      <li>{{#link-to "press-center"}}{{t "index.menu.press_center"}}{{/link-to}}</li>
+      <li>{{#link-to "media-center"}}{{t "index.menu.media"}}{{/link-to}}</li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{t "index.menu.catalog"}}
+          <span class="caret">
+            <span class="icon-bar first"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar last"></span>
+          </span></a>
+        <ul class="dropdown-menu clearfix">
+          {{#link-to "equipment" class="col-md-6 col-sm-6 col-xs-6 catalog-menu-equipment"}}
+            <div class="body">
+              {{t "common.professional_equipment"}}
+            </div>
+            <div class="button button-red">{{t "common.go_to_catalog"}}</div>
+          {{/link-to}}
+          {{#link-to "catalog" class="col-md-6 col-sm-6 col-xs-6 catalog-menu-solutions"}}
+            <div class="body">
+              {{t "common.hygiene_solitions"}}<br><br>
+            </div>
+            <div class="button button-red">{{t "common.go_to_catalog"}}</div>
+          {{/link-to}}
+        </ul>
+      </li>
+      <li>{{#link-to "contacts"}}{{t "index.menu.contacts"}} {{/link-to}}</li>
+    </ul>
+  </div>
+</div>
