@@ -1,0 +1,50 @@
+<div id="rev_slider_4_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.0.7">
+  <ul>
+    {{#each preparedSlides as |slide|}}
+      <li 
+        data-index="rs-{{slide.acf.priority}}"
+        data-transition="zoomout" 
+        data-slotamount="default" 
+        data-easein="Power4.easeInOut" 
+        data-easeout="Power4.easeInOut" 
+        data-masterspeed="500" 
+        data-thumb={{slide.acf.src}}
+        data-rotate="0" 
+        data-fstransition="zoomout" 
+        data-fsmasterspeed="1300" 
+        data-fsslotamount="7" 
+        data-saveperformance="off" 
+        data-title={{slide.acf.slug}} 
+        data-description="">
+
+        <img
+          src={{slide.acf.src}}
+          alt={{slide.acf.slug}}
+          data-bgposition="center center" 
+          data-bgfit="cover" 
+          data-bgrepeat="no-repeat" 
+          data-bgparallax="10" 
+          class="rev-slidebg" data-no-retina>
+
+        {{-slider/title
+          justify=slide.acf.justify
+          title_1=slide.acf.title_1
+          title_2=slide.acf.title_2}}
+
+        {{-slider/description
+          isMobile=isMobile
+          justify=slide.acf.justify
+          description_1=slide.acf.description_1
+          description_2=slide.acf.description_2}}
+
+        {{#if slide.acf.button_link}}
+          {{-slider/button 
+            link=slide.acf.button_link
+            justify=slide.acf.justify}}
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+  <div class="tp-static-layers"></div>
+  <div class="tp-bannertimer"></div>
+</div>

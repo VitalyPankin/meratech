@@ -1,0 +1,507 @@
+[
+  {
+    "id": 1828,
+    "date": "2019-12-10T19:48:51",
+    "date_gmt": "2019-12-10T16:48:51",
+    "guid": {
+      "rendered": "http://api.meratech.ru/?post_type=slider_photos&#038;p=1828"
+    },
+    "modified": "2019-12-10T19:48:51",
+    "modified_gmt": "2019-12-10T16:48:51",
+    "slug": "milk-farms-hygiene",
+    "type": "slider_photos",
+    "link": "http://api.meratech.ru/slider_photos/milk-farms-hygiene/",
+    "title": {
+      "rendered": "Milk farms hygiene"
+    },
+    "acf": {
+      "priority": "7",
+      "justify": "left",
+      "src": "../../assets/images/slider/slider_7_.jpg",
+      "title_1": "Milk farms",
+      "title_2": "hygiene",
+      "description_1": "Being experts in food industry we bring all our best knowledges",
+      "description_2": "to improve tons of raw milk quality daily.",
+      "button_caption": "Details",
+      "button_link": "http://meratech.ru/industry/cows"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/slider_photos/1828"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/slider_photos"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/types/slider_photos"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/media?parent=1828"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+
+  {
+    "id": 1827,
+    "date": "2019-12-10T19:48:51",
+    "date_gmt": "2019-12-10T16:48:51",
+    "guid": {
+      "rendered": "http://api.meratech.ru/?post_type=slider_photos&#038;p=1827"
+    },
+    "modified": "2019-12-10T19:48:51",
+    "modified_gmt": "2019-12-10T16:48:51",
+    "slug": "research-and-development",
+    "type": "slider_photos",
+    "link": "http://api.meratech.ru/slider_photos/research-and-development/",
+    "title": {
+      "rendered": "Research and Development"
+    },
+    "acf": {
+      "priority": "6",
+      "justify": "left",
+      "src": "../../assets/images/slider/slider_6_.jpg",
+      "title_1": "Research and",
+      "title_2": "Development",
+      "description_1": "For more that 20 years our research lab has been working",
+      "description_2": "to create innovative hygiene products.",
+      "button_caption": "",
+      "button_link": ""
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/slider_photos/1827"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/slider_photos"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/types/slider_photos"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/media?parent=1827"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1826,
+    "date": "2019-12-10T19:48:51",
+    "date_gmt": "2019-12-10T16:48:51",
+    "guid": {
+      "rendered": "http://api.meratech.ru/?post_type=slider_photos&#038;p=1826"
+    },
+    "modified": "2019-12-10T19:48:51",
+    "modified_gmt": "2019-12-10T16:48:51",
+    "slug": "innovative-disinfection",
+    "type": "slider_photos",
+    "link": "http://api.meratech.ru/slider_photos/innovative-disinfection/",
+    "title": {
+      "rendered": "Innovative disinfection"
+    },
+    "acf": {
+      "priority": "5",
+      "justify": "right",
+      "src": "../../assets/images/slider/slider_4_.jpg",
+      "title_1": "Innovative",
+      "title_2": "disinfection",
+      "description_1": "Progress never stops and we use all modern chemical",
+      "description_2": "inventions to develop powerful and economic disinfection solutions.",
+      "button_caption": "",
+      "button_link": ""
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/slider_photos/1826"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/slider_photos"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/types/slider_photos"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/media?parent=1826"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1825,
+    "date": "2019-12-10T19:48:51",
+    "date_gmt": "2019-12-10T16:48:51",
+    "guid": {
+      "rendered": "http://api.meratech.ru/?post_type=slider_photos&#038;p=1825"
+    },
+    "modified": "2019-12-10T19:48:51",
+    "modified_gmt": "2019-12-10T16:48:51",
+    "slug": "industrial-engineering",
+    "type": "slider_photos",
+    "link": "http://api.meratech.ru/slider_photos/industrial-engineering/",
+    "title": {
+      "rendered": "Industrial engineering"
+    },
+    "acf": {
+      "priority": "4",
+      "justify": "center",
+      "src": "../../assets/images/slider/slider_2_.jpg",
+      "title_1": "Industrial",
+      "title_2": "engineering",
+      "description_1": "We build automatic reliable hygiene systems",
+      "description_2": "for every processing circle.",
+      "button_caption": "Details",
+      "button_link": "http://meratech.ru/equipment"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/slider_photos/1825"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/slider_photos"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/types/slider_photos"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/media?parent=1825"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1823,
+    "date": "2019-12-10T19:48:51",
+    "date_gmt": "2019-12-10T16:48:51",
+    "guid": {
+      "rendered": "http://api.meratech.ru/?post_type=slider_photos&#038;p=1823"
+    },
+    "modified": "2019-12-10T19:48:51",
+    "modified_gmt": "2019-12-10T16:48:51",
+    "slug": "pig-drinking",
+    "type": "slider_photos",
+    "link": "http://api.meratech.ru/slider_photos/pig-drinking/",
+    "title": {
+      "rendered": "Pig drinking"
+    },
+    "acf": {
+      "priority": "2",
+      "justify": "left",
+      "src": "../../assets/images/slider/slider_11_.jpg",
+      "title_1": "Agriculture",
+      "title_2": "protection",
+      "description_1": "We believe that everything starts from hygiene, therefore we invent complex",
+      "description_2": "solutions which allows to achieve high production performance.",
+      "button_caption": "Details",
+      "button_link": "http://meratech.ru/industry/pigs"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/slider_photos/1823"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/slider_photos"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/types/slider_photos"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/media?parent=1823"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1822,
+    "date": "2019-12-10T19:48:51",
+    "date_gmt": "2019-12-10T16:48:51",
+    "guid": {
+      "rendered": "http://api.meratech.ru/?post_type=slider_photos&#038;p=1822"
+    },
+    "modified": "2019-12-10T19:48:51",
+    "modified_gmt": "2019-12-10T16:48:51",
+    "slug": "2-people-look-at-a-catalog",
+    "type": "slider_photos",
+    "link": "http://api.meratech.ru/slider_photos/2-people-look-at-a-catalog/",
+    "title": {
+      "rendered": "2 people look at a catalog"
+    },
+    "acf": {
+      "priority": "1",
+      "justify": "left",
+      "src": "../../assets/images/slider/slider_10_.jpg",
+      "title_1": "Consulting and",
+      "title_2": "Trainings",
+      "description_1": "People are the basis of all processes, permanently studying",
+      "description_2": "people we influence on the process from the inside.",
+      "button_caption": "",
+      "button_link": ""
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/slider_photos/1822"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/slider_photos"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/types/slider_photos"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/media?parent=1822"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1821,
+    "date": "2019-12-10T19:48:25",
+    "date_gmt": "2019-12-10T16:48:25",
+    "guid": {
+      "rendered": "http://api.meratech.ru/?post_type=slider_photos&#038;p=1821"
+    },
+    "modified": "2019-12-10T19:48:25",
+    "modified_gmt": "2019-12-10T16:48:25",
+    "slug": "professional-hygiene-solutions",
+    "type": "slider_photos",
+    "link": "http://api.meratech.ru/slider_photos/professional-hygiene-solutions/",
+    "title": {
+      "rendered": "Professional Hygiene Solutions"
+    },
+    "acf": {
+      "priority": "0",
+      "justify": "left",
+      "src": "../../assets/images/slider/slider_1_.jpg",
+      "title_1": "Professional      ",
+      "title_2": "Hygiene Solutions",
+      "description_1": "We design and implement innovative hygiene",
+      "description_2": "solutions for all types of food industry facilities.",
+      "button_caption": "Details",
+      "button_link": "http://meratech.ru/catalog"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/slider_photos/1821"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/slider_photos"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/types/slider_photos"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/media?parent=1821"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1824,
+    "date": "2019-12-10T19:43:14",
+    "date_gmt": "2019-12-10T16:43:14",
+    "guid": {
+      "rendered": "http://api.meratech.ru/?post_type=slider_photos&#038;p=1824"
+    },
+    "modified": "2019-12-10T19:43:14",
+    "modified_gmt": "2019-12-10T16:43:14",
+    "slug": "ecological-biosafety",
+    "type": "slider_photos",
+    "link": "http://api.meratech.ru/slider_photos/ecological-biosafety/",
+    "title": {
+      "rendered": "Ecological biosafety"
+    },
+    "acf": {
+      "priority": "3",
+      "justify": "left",
+      "src": "../../assets/images/slider/slider_13.jpg",
+      "title_1": "Ecological",
+      "title_2": "biosafety",
+      "description_1": "Safe and healthy product begins it's path step by step in clean",
+      "description_2": "and hazardless environment. We're sure each step is important.",
+      "button_caption": "Details",
+      "button_link": "http://meratech.ru/industry/poultry"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/slider_photos/1824"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/slider_photos"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/types/slider_photos"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/media?parent=1824"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1829,
+    "date": "2019-12-10T19:43:00",
+    "date_gmt": "2019-12-10T16:43:00",
+    "guid": {
+      "rendered": "http://api.meratech.ru/?post_type=slider_photos&#038;p=1829"
+    },
+    "modified": "2019-12-10T19:43:00",
+    "modified_gmt": "2019-12-10T16:43:00",
+    "slug": "professional-laundry",
+    "type": "slider_photos",
+    "link": "http://api.meratech.ru/slider_photos/professional-laundry/",
+    "title": {
+      "rendered": "Professional laundry"
+    },
+    "acf": {
+      "priority": "8",
+      "justify": "left",
+      "src": "../../assets/images/slider/slider_12.jpg",
+      "title_1": "Professional",
+      "title_2": "laundry",
+      "description_1": "Today laundry industry needs effective energy safe technologies,",
+      "description_2": "offer our technology we help them to follow their targets.",
+      "button_caption": "",
+      "button_link": ""
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/slider_photos/1829"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/slider_photos"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/types/slider_photos"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://api.meratech.ru/wp-json/wp/v2/media?parent=1829"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

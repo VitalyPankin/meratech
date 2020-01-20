@@ -4,8 +4,7 @@
     <div class="ball ball-2"></div>
     <div class="ball ball-3"></div>
   </div>
-  <!-- START REVOLUTION SLIDER 5.0.7 auto mode -->
-  {{slider-index}}
+  {{slider-component slides=model.slides}}
   <ul class="industry-menu">
     {{#link-to "industries" "cows"}}
       <li class="cows">
@@ -57,96 +56,84 @@
     <div class="container">
       <div class="heading heading-top"><div class="title title-dark">{{t "common.news"}}</div></div>
       <div class="row">
-        {{latest-news posts=model}}
+        {{latest-news posts=model.posts}}
       </div>
     </div>
   </div>
 </article>
 
-  <article>
-    <div class="container-white">
-      <div class="container container-offset-bottom">
-        <div class="row">
-          <div class="col-md-6 press-center-link">
-            <div class="heading heading-top"><div class="title">{{t "common.press"}} <span>{{t "common.center"}}</span></div></div>
-            <div class="subarticle subarticle-short">
-              <div class="title">{{t "index.press_center.title"}}</div>
-              <div class="body">{{t "index.press_center.body"}}</div>
-              {{#link-to "press-center" class="button button-red"}}{{t "common.go_to_press_center"}}{{/link-to}}
-            </div>
+<article>
+  <div class="container-white">
+    <div class="container container-offset-bottom">
+      <div class="row">
+        <div class="col-md-6 press-center-link">
+          <div class="heading heading-top"><div class="title">{{t "common.press"}} <span>{{t "common.center"}}</span></div></div>
+          <div class="subarticle subarticle-short">
+            <div class="title">{{t "index.press_center.title"}}</div>
+            <div class="body">{{t "index.press_center.body"}}</div>
+            {{#link-to "press-center" class="button button-red"}}{{t "common.go_to_press_center"}}{{/link-to}}
           </div>
-          <div class="col-md-6 media-center-link">
-            <div class="heading heading-top"><div class="title">{{t "common.documentation"}}</div></div>
-            <div class="subarticle subarticle-short">
-              <div class="title">{{t "index.documents.title"}}</div>
-              <div class="body">{{t "index.documents.body"}}</div>
-              {{#link-to "media-center" class="button button-red"}}{{t "common.go_to_media_center"}}{{/link-to}}
-            </div>
+        </div>
+        <div class="col-md-6 media-center-link">
+          <div class="heading heading-top"><div class="title">{{t "common.documentation"}}</div></div>
+          <div class="subarticle subarticle-short">
+            <div class="title">{{t "index.documents.title"}}</div>
+            <div class="body">{{t "index.documents.body"}}</div>
+            {{#link-to "media-center" class="button button-red"}}{{t "common.go_to_media_center"}}{{/link-to}}
           </div>
         </div>
       </div>
     </div>
-  </article>
-  <article class="equipment-main">
-    <div class="">
-      <div class="container container-after-offset">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="heading heading-top"><div class="title">{{t "common.professional_1"}} <span>{{t "common.equipment"}}</span></div></div>
-            <div class="article">
-              <div class="title">{{t "index.equipment.title"}}</div>
-              <div class="body">{{t "index.equipment.body"}} </div>
-              <ul class="equipment-list">
-                {{#link-to "equipment.category" "low-pressure-systems"}}
-                  <li class="cleaning_low">
-                    <span>{{t "equipment.category.low_pressure_systems"}}</span>
-                    <div></div>
-                  </li>
-                {{/link-to}}
-                {{#link-to "equipment.category" "high-pressure-systems"}}
-                  <li class="cleaning_high">
-                    <span>{{t "equipment.category.high_pressure_systems"}}</span>
-                    <div></div>
-                  </li>
-                {{/link-to}}
-                {{#link-to "equipment.category" "lubrication"}}
-                  <li class="lubrication">
-                    <span>{{t "equipment.category.lubrication"}}</span>
-                    <div></div>
-                  </li>
-                {{/link-to}}
-                {{#link-to "equipment.category" "co2-systems"}}
-                  <li class="co2">
-                    <span>{{t "equipment.category.co2_systems"}}</span>
-                    <div></div>
-                  </li>
-                {{/link-to}}
-                {{#link-to "equipment.category" "dosing-systems"}}
-                  <li class="dosation">
-                    <span>{{t "equipment.category.dosing_systems"}}</span>
-                    <div></div>
-                  </li>
-                {{/link-to}}
-              </ul>
-            </div>
+  </div>
+</article>
+<article class="equipment-main">
+  <div class="">
+    <div class="container container-after-offset">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="heading heading-top"><div class="title">{{t "common.professional_1"}} <span>{{t "common.equipment"}}</span></div></div>
+          <div class="article">
+            <div class="title">{{t "index.equipment.title"}}</div>
+            <div class="body">{{t "index.equipment.body"}} </div>
+            <ul class="equipment-list">
+              {{#link-to "equipment.category" "low-pressure-systems"}}
+                <li class="cleaning_low">
+                  <span>{{t "equipment.category.low_pressure_systems"}}</span>
+                  <div></div>
+                </li>
+              {{/link-to}}
+              {{#link-to "equipment.category" "high-pressure-systems"}}
+                <li class="cleaning_high">
+                  <span>{{t "equipment.category.high_pressure_systems"}}</span>
+                  <div></div>
+                </li>
+              {{/link-to}}
+              {{#link-to "equipment.category" "lubrication"}}
+                <li class="lubrication">
+                  <span>{{t "equipment.category.lubrication"}}</span>
+                  <div></div>
+                </li>
+              {{/link-to}}
+              {{#link-to "equipment.category" "co2-systems"}}
+                <li class="co2">
+                  <span>{{t "equipment.category.co2_systems"}}</span>
+                  <div></div>
+                </li>
+              {{/link-to}}
+              {{#link-to "equipment.category" "dosing-systems"}}
+                <li class="dosation">
+                  <span>{{t "equipment.category.dosing_systems"}}</span>
+                  <div></div>
+                </li>
+              {{/link-to}}
+            </ul>
           </div>
         </div>
       </div>
     </div>
-  </article>
+  </div>
+</article>
 
 <article class="equipment-index-hero">
   {{hero-index}} 
 </article>
-{{!-- <article class="video-block">
-  <div class="container-white">
-    <div class="container container-offset-top">
-          <div class="article video-about">
-            <div class="title">{{t "index.video.title"}}</div>
-            <div class="body">{{t "index.video.body"}}</div>
-            
-            <div class="video-about-block small">{{#link-to "about" class="button"}}{{t "index.video.more"}} <span>meratech</span>{{/link-to}}</div>
-          </div>
-    </div>
-  </div>
-</article> --}}
